@@ -248,12 +248,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1012, 399);
+            this.button1.Location = new System.Drawing.Point(791, 495);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 44);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Sessões";
+            this.button1.Text = "Teste";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // FormCinema
