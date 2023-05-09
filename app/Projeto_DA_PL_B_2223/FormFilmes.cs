@@ -16,5 +16,10 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

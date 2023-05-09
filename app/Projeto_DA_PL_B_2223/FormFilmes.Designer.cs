@@ -37,6 +37,7 @@
             this.labelCategoria = new System.Windows.Forms.Label();
             this.labelFilme = new System.Windows.Forms.Label();
             this.textBoxFilmeFilme = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox2
@@ -120,11 +121,24 @@
             this.textBoxFilmeFilme.Size = new System.Drawing.Size(139, 22);
             this.textBoxFilmeFilme.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button1.Location = new System.Drawing.Point(137, 250);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 42);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "GUARDAR E SAIR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormFilmes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonVoltarFilme);
@@ -152,5 +166,6 @@
         private System.Windows.Forms.Label labelCategoria;
         private System.Windows.Forms.Label labelFilme;
         private System.Windows.Forms.TextBox textBoxFilmeFilme;
+        private System.Windows.Forms.Button button1;
     }
 }
