@@ -35,6 +35,7 @@
             this.buttonFuncionarios = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSair = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCinema
@@ -109,11 +110,21 @@
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(667, 368);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonFuncionarios);
@@ -137,6 +148,7 @@
         private System.Windows.Forms.Button buttonFuncionarios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Button button1;
     }
 }
 
