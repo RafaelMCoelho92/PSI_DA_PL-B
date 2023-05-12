@@ -18,7 +18,7 @@ namespace Projeto_DA_PL_B_2223
         }
         public TabPage getPage()
         {
-            return tabControl1.TabPages[0];
+            return tabPage1;
         }
     }
 }

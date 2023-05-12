@@ -166,7 +166,7 @@
             this.buttonVoltarAtend.Name = "buttonVoltarAtend";
             this.buttonVoltarAtend.Size = new System.Drawing.Size(108, 25);
             this.buttonVoltarAtend.TabIndex = 12;
-            this.buttonVoltarAtend.Text = "Criar Bilhete";
+            this.buttonVoltarAtend.Text = "Voltar";
             this.buttonVoltarAtend.UseVisualStyleBackColor = true;
             // 
             // label_cliente_anónimo
