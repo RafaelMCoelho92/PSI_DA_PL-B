@@ -33,16 +33,17 @@
             this.buttonClientes = new System.Windows.Forms.Button();
             this.buttonSessoes = new System.Windows.Forms.Button();
             this.buttonFuncionarios = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonSair = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelNomeCinema = new System.Windows.Forms.Label();
+            this.buttonSalas = new System.Windows.Forms.Button();
+            this.tabControlMenuPrincipal = new System.Windows.Forms.TabControl();
             this.SuspendLayout();
             // 
             // buttonCinema
             // 
-            this.buttonCinema.Location = new System.Drawing.Point(158, 135);
+            this.buttonCinema.Location = new System.Drawing.Point(35, 103);
+            this.buttonCinema.Margin = new System.Windows.Forms.Padding(6);
             this.buttonCinema.Name = "buttonCinema";
-            this.buttonCinema.Size = new System.Drawing.Size(75, 23);
+            this.buttonCinema.Size = new System.Drawing.Size(168, 125);
             this.buttonCinema.TabIndex = 0;
             this.buttonCinema.Text = "Cinema";
             this.buttonCinema.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // buttonFilmes
             // 
-            this.buttonFilmes.Location = new System.Drawing.Point(158, 173);
+            this.buttonFilmes.Location = new System.Drawing.Point(575, 103);
+            this.buttonFilmes.Margin = new System.Windows.Forms.Padding(6);
             this.buttonFilmes.Name = "buttonFilmes";
-            this.buttonFilmes.Size = new System.Drawing.Size(75, 23);
+            this.buttonFilmes.Size = new System.Drawing.Size(168, 125);
             this.buttonFilmes.TabIndex = 1;
             this.buttonFilmes.Text = "Filmes";
             this.buttonFilmes.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // buttonClientes
             // 
-            this.buttonClientes.Location = new System.Drawing.Point(158, 249);
+            this.buttonClientes.Location = new System.Drawing.Point(935, 103);
+            this.buttonClientes.Margin = new System.Windows.Forms.Padding(6);
             this.buttonClientes.Name = "buttonClientes";
-            this.buttonClientes.Size = new System.Drawing.Size(75, 23);
+            this.buttonClientes.Size = new System.Drawing.Size(168, 125);
             this.buttonClientes.TabIndex = 3;
             this.buttonClientes.Text = "Clientes";
             this.buttonClientes.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // buttonSessoes
             // 
-            this.buttonSessoes.Location = new System.Drawing.Point(158, 211);
+            this.buttonSessoes.Location = new System.Drawing.Point(755, 103);
+            this.buttonSessoes.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSessoes.Name = "buttonSessoes";
-            this.buttonSessoes.Size = new System.Drawing.Size(75, 23);
+            this.buttonSessoes.Size = new System.Drawing.Size(168, 125);
             this.buttonSessoes.TabIndex = 2;
             this.buttonSessoes.Text = "Sessões";
             this.buttonSessoes.UseVisualStyleBackColor = true;
@@ -80,58 +84,64 @@
             // 
             // buttonFuncionarios
             // 
-            this.buttonFuncionarios.Location = new System.Drawing.Point(158, 287);
+            this.buttonFuncionarios.Location = new System.Drawing.Point(395, 103);
+            this.buttonFuncionarios.Margin = new System.Windows.Forms.Padding(6);
             this.buttonFuncionarios.Name = "buttonFuncionarios";
-            this.buttonFuncionarios.Size = new System.Drawing.Size(75, 23);
+            this.buttonFuncionarios.Size = new System.Drawing.Size(168, 125);
             this.buttonFuncionarios.TabIndex = 4;
             this.buttonFuncionarios.Text = "Funcionários";
             this.buttonFuncionarios.UseVisualStyleBackColor = true;
             this.buttonFuncionarios.Click += new System.EventHandler(this.buttonFuncionarios_Click);
             // 
-            // label1
+            // labelNomeCinema
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(326, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 28);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "CINE GEST";
+            this.labelNomeCinema.AutoSize = true;
+            this.labelNomeCinema.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.labelNomeCinema.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNomeCinema.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomeCinema.ForeColor = System.Drawing.Color.Blue;
+            this.labelNomeCinema.Location = new System.Drawing.Point(657, 25);
+            this.labelNomeCinema.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelNomeCinema.Name = "labelNomeCinema";
+            this.labelNomeCinema.Size = new System.Drawing.Size(264, 53);
+            this.labelNomeCinema.TabIndex = 5;
+            this.labelNomeCinema.Text = "CINE GEST";
             // 
-            // buttonSair
+            // buttonSalas
             // 
-            this.buttonSair.Location = new System.Drawing.Point(667, 47);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(75, 23);
-            this.buttonSair.TabIndex = 6;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSalas.Location = new System.Drawing.Point(215, 103);
+            this.buttonSalas.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonSalas.Name = "buttonSalas";
+            this.buttonSalas.Size = new System.Drawing.Size(168, 125);
+            this.buttonSalas.TabIndex = 6;
+            this.buttonSalas.Text = "Salas";
+            this.buttonSalas.UseVisualStyleBackColor = true;
+            this.buttonSalas.Click += new System.EventHandler(this.buttonSalas_Click);
             // 
-            // button1
+            // tabControlMenuPrincipal
             // 
-            this.button1.Location = new System.Drawing.Point(667, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Sair";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tabControlMenuPrincipal.Location = new System.Drawing.Point(35, 261);
+            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(6);
+            this.tabControlMenuPrincipal.Name = "tabControlMenuPrincipal";
+            this.tabControlMenuPrincipal.SelectedIndex = 0;
+            this.tabControlMenuPrincipal.Size = new System.Drawing.Size(1535, 609);
+            this.tabControlMenuPrincipal.TabIndex = 8;
+            this.tabControlMenuPrincipal.SelectedIndexChanged += new System.EventHandler(this.tabControlMenuPrincipal_SelectedIndexChanged);
             // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1746, 926);
+            this.Controls.Add(this.tabControlMenuPrincipal);
+            this.Controls.Add(this.buttonSalas);
+            this.Controls.Add(this.labelNomeCinema);
             this.Controls.Add(this.buttonFuncionarios);
             this.Controls.Add(this.buttonClientes);
             this.Controls.Add(this.buttonSessoes);
             this.Controls.Add(this.buttonFilmes);
             this.Controls.Add(this.buttonCinema);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.ResumeLayout(false);
@@ -146,9 +156,9 @@
         private System.Windows.Forms.Button buttonClientes;
         private System.Windows.Forms.Button buttonSessoes;
         private System.Windows.Forms.Button buttonFuncionarios;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonSair;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelNomeCinema;
+        private System.Windows.Forms.Button buttonSalas;
+        private System.Windows.Forms.TabControl tabControlMenuPrincipal;
     }
 }
 

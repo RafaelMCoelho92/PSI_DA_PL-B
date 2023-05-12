@@ -30,8 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonApagarSala = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonEditarFilasColunas = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +43,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonAdicionarSala = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.buttonMenuPrincipal = new System.Windows.Forms.Button();
-            this.buttonEditarFuncionarios = new System.Windows.Forms.Button();
-            this.buttonEditarCinema = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -67,9 +64,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.buttonApagarSala);
-            this.tabPage1.Controls.Add(this.buttonMenuPrincipal);
-            this.tabPage1.Controls.Add(this.buttonEditarFuncionarios);
-            this.tabPage1.Controls.Add(this.buttonEditarCinema);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBoxListaSalas);
             this.tabPage1.Controls.Add(this.groupBoxInserirSalas);
@@ -81,6 +75,15 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // buttonApagarSala
+            // 
+            this.buttonApagarSala.Location = new System.Drawing.Point(425, 418);
+            this.buttonApagarSala.Name = "buttonApagarSala";
+            this.buttonApagarSala.Size = new System.Drawing.Size(153, 62);
+            this.buttonApagarSala.TabIndex = 9;
+            this.buttonApagarSala.Text = "Apagar Sala";
+            this.buttonApagarSala.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonEditarFilasColunas);
@@ -88,21 +91,12 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.numericUpDownNumeroColunas);
             this.groupBox1.Controls.Add(this.numericUpDownNumeroFilas);
-            this.groupBox1.Location = new System.Drawing.Point(16, 352);
+            this.groupBox1.Location = new System.Drawing.Point(6, 251);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(371, 245);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Sala";
-            // 
-            // buttonApagarSala
-            // 
-            this.buttonApagarSala.Location = new System.Drawing.Point(435, 519);
-            this.buttonApagarSala.Name = "buttonApagarSala";
-            this.buttonApagarSala.Size = new System.Drawing.Size(153, 62);
-            this.buttonApagarSala.TabIndex = 9;
-            this.buttonApagarSala.Text = "Apagar Sala";
-            this.buttonApagarSala.UseVisualStyleBackColor = true;
             // 
             // buttonEditarFilasColunas
             // 
@@ -160,7 +154,7 @@
             this.groupBoxListaSalas.Controls.Add(this.listBoxSalas);
             this.groupBoxListaSalas.Location = new System.Drawing.Point(604, 28);
             this.groupBoxListaSalas.Name = "groupBoxListaSalas";
-            this.groupBoxListaSalas.Size = new System.Drawing.Size(572, 569);
+            this.groupBoxListaSalas.Size = new System.Drawing.Size(572, 504);
             this.groupBoxListaSalas.TabIndex = 11;
             this.groupBoxListaSalas.TabStop = false;
             this.groupBoxListaSalas.Text = "Lista de Salas";
@@ -169,9 +163,9 @@
             // 
             this.listBoxSalas.FormattingEnabled = true;
             this.listBoxSalas.ItemHeight = 25;
-            this.listBoxSalas.Location = new System.Drawing.Point(6, 49);
+            this.listBoxSalas.Location = new System.Drawing.Point(6, 30);
             this.listBoxSalas.Name = "listBoxSalas";
-            this.listBoxSalas.Size = new System.Drawing.Size(548, 504);
+            this.listBoxSalas.Size = new System.Drawing.Size(548, 454);
             this.listBoxSalas.TabIndex = 0;
             // 
             // groupBoxInserirSalas
@@ -179,7 +173,7 @@
             this.groupBoxInserirSalas.Controls.Add(this.textBox1);
             this.groupBoxInserirSalas.Controls.Add(this.buttonAdicionarSala);
             this.groupBoxInserirSalas.Controls.Add(this.label7);
-            this.groupBoxInserirSalas.Location = new System.Drawing.Point(6, 121);
+            this.groupBoxInserirSalas.Location = new System.Drawing.Point(6, 28);
             this.groupBoxInserirSalas.Name = "groupBoxInserirSalas";
             this.groupBoxInserirSalas.Size = new System.Drawing.Size(572, 208);
             this.groupBoxInserirSalas.TabIndex = 10;
@@ -210,33 +204,6 @@
             this.label7.Size = new System.Drawing.Size(153, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome da Sala:";
-            // 
-            // buttonMenuPrincipal
-            // 
-            this.buttonMenuPrincipal.Location = new System.Drawing.Point(3, 3);
-            this.buttonMenuPrincipal.Name = "buttonMenuPrincipal";
-            this.buttonMenuPrincipal.Size = new System.Drawing.Size(181, 112);
-            this.buttonMenuPrincipal.TabIndex = 15;
-            this.buttonMenuPrincipal.Text = "Menu Principal";
-            this.buttonMenuPrincipal.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditarFuncionarios
-            // 
-            this.buttonEditarFuncionarios.Location = new System.Drawing.Point(376, 3);
-            this.buttonEditarFuncionarios.Name = "buttonEditarFuncionarios";
-            this.buttonEditarFuncionarios.Size = new System.Drawing.Size(181, 112);
-            this.buttonEditarFuncionarios.TabIndex = 14;
-            this.buttonEditarFuncionarios.Text = "Editar Funcionarios";
-            this.buttonEditarFuncionarios.UseVisualStyleBackColor = true;
-            // 
-            // buttonEditarCinema
-            // 
-            this.buttonEditarCinema.Location = new System.Drawing.Point(189, 3);
-            this.buttonEditarCinema.Name = "buttonEditarCinema";
-            this.buttonEditarCinema.Size = new System.Drawing.Size(181, 112);
-            this.buttonEditarCinema.TabIndex = 13;
-            this.buttonEditarCinema.Text = "Editar Cinema";
-            this.buttonEditarCinema.UseVisualStyleBackColor = true;
             // 
             // FormSala
             // 
@@ -276,8 +243,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonAdicionarSala;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button buttonMenuPrincipal;
-        private System.Windows.Forms.Button buttonEditarFuncionarios;
-        private System.Windows.Forms.Button buttonEditarCinema;
     }
 }

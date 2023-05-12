@@ -99,6 +99,9 @@
     <EmbeddedResource Include="FormCinema.resx">
       <DependentUpon>FormCinema.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFilmes.resx">
       <DependentUpon>FormFilmes.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSala.resx">
       <DependentUpon>FormSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSessoes.resx">
+      <DependentUpon>FormSessoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

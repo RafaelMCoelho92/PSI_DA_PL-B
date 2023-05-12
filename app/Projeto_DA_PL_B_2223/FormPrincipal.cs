@@ -19,32 +19,49 @@ namespace Projeto_DA_PL_B_2223
 
         private void buttonCinema_Click(object sender, EventArgs e)
         {
-            FormCinema form = new FormCinema();
-            form.ShowDialog();
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormCinema().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
         private void buttonFilmes_Click(object sender, EventArgs e)
         {
-            FormFilmes form = new FormFilmes();
-            form.ShowDialog();
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormFilmes().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
         private void buttonSessoes_Click(object sender, EventArgs e)
         {
-            FormSessoes form = new FormSessoes();
-            form.ShowDialog();
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormSessoes().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            FormClientes form = new FormClientes();
-            form.ShowDialog();
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormClientes().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
         private void buttonFuncionarios_Click(object sender, EventArgs e)
         {
-            FormFuncionarios form = new FormFuncionarios();
-            form.ShowDialog();
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormFuncionarios().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSalas_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormSala().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
         }
     }
 }
