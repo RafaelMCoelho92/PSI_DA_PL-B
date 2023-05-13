@@ -19,9 +19,13 @@ namespace Projeto_DA_PL_B_2223
         public FormPrincipal()
         {
             InitializeComponent();
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormLogin().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
+            {
+                tabControlMenuPrincipal.TabPages.Clear();
+                TabPage tab = new FormLogin().getPage();
+                tabControlMenuPrincipal.TabPages.Add(tab);
+            }
+            
 
         }
 

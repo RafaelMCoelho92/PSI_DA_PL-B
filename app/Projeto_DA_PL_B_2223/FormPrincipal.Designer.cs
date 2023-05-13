@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.buttonCinema = new System.Windows.Forms.Button();
             this.buttonFilmes = new System.Windows.Forms.Button();
             this.buttonClientes = new System.Windows.Forms.Button();
@@ -42,7 +43,9 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNomeFuncionarioLogado = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerFormPrincipal = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCinema
@@ -142,9 +145,9 @@
             this.toolStripStatusLabelHora,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabelNomeFuncionarioLogado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 980);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 532);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1746, 42);
+            this.statusStrip1.Size = new System.Drawing.Size(1528, 42);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -163,19 +166,29 @@
             // toolStripStatusLabelNomeFuncionarioLogado
             // 
             this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
-            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(145, 32);
-            this.toolStripStatusLabelNomeFuncionarioLogado.Text = "FAÇA LOGIN";
+            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(0, 32);
             // 
             // timerFormPrincipal
             // 
             this.timerFormPrincipal.Enabled = true;
             this.timerFormPrincipal.Tick += new System.EventHandler(this.timerFormPrincipal_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(241, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1746, 1022);
+            this.ClientSize = new System.Drawing.Size(1528, 574);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControlMenuPrincipal);
             this.Controls.Add(this.buttonSalas);
@@ -190,6 +203,7 @@
             this.Text = "CineGest";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,6 +224,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNomeFuncionarioLogado;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelHora;
         private System.Windows.Forms.Timer timerFormPrincipal;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

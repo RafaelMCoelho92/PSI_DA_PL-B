@@ -15,17 +15,26 @@ namespace Projeto_DA_PL_B_2223
         public FormLogin()
         {
             InitializeComponent();
+            // INVISIVEL OS OUTROS BOTOES ENQUANTO N FIZER LOG IN
         }
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
 
-        // BLOQUEAR/ INVISIVEL OS OUTROS BOTOES ENQUANTO N FIZER LOG IN
-
-        //DEPOIS DE LOGIN FEITO METER O NOME DO USER NO toolStripStatusLabelNomeFuncionarioLogado
-        // DESBLOQUEAR BOTOES
-
-        //CASO N TENHA NOME DE CINEMA MANDAR PARA A PAGINA DO CINEMA
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            if ( textBoxUsername.Text == "admin" && textBoxPassword.Text == "admin")
+            {
+                //DEPOIS DE LOGIN FEITO METER O NOME DO USER NO toolStripStatusLabelNomeFuncionarioLogado
+                // BOTOES VISIVEIS
+                // SE CINEMA == NULL -> FormCinema
+                //Senao tela inicial
+            }
+            else
+            {
+                MessageBox.Show("Username ou password errado, tente outra vez!");
+            }
+        }
     }
 }

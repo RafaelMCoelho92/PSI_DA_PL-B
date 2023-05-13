@@ -33,7 +33,7 @@
             this.labelUsername = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonEntrar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageLogIn.SuspendLayout();
@@ -50,7 +50,7 @@
             // 
             // tabPageLogIn
             // 
-            this.tabPageLogIn.Controls.Add(this.textBox1);
+            this.tabPageLogIn.Controls.Add(this.textBoxPassword);
             this.tabPageLogIn.Controls.Add(this.labelPassword);
             this.tabPageLogIn.Controls.Add(this.buttonEntrar);
             this.tabPageLogIn.Controls.Add(this.textBoxUsername);
@@ -88,15 +88,16 @@
             this.buttonEntrar.TabIndex = 2;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
+            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
-            // textBox1
+            // textBoxPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 194);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(180, 31);
-            this.textBox1.TabIndex = 1;
+            this.textBoxPassword.Location = new System.Drawing.Point(95, 194);
+            this.textBoxPassword.MaxLength = 10;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(180, 31);
+            this.textBoxPassword.TabIndex = 1;
             // 
             // labelPassword
             // 
@@ -126,7 +127,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageLogIn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Button buttonEntrar;
         private System.Windows.Forms.TextBox textBoxUsername;
