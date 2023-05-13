@@ -19,6 +19,7 @@ namespace Projeto_DA_PL_B_2223
         public FormPrincipal()
         {
             InitializeComponent();
+            //VER SE TEM UTILIZADOR LOGADO CASO NAO TENHA VAI CHAMAR A PAGINA DE LOG IN
             if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
             {
                 tabControlMenuPrincipal.TabPages.Clear();

@@ -52,7 +52,7 @@
             this.comboBoxEstadoFilme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxEstadoFilme.Name = "comboBoxEstadoFilme";
             this.comboBoxEstadoFilme.Size = new System.Drawing.Size(174, 33);
-            this.comboBoxEstadoFilme.TabIndex = 19;
+            this.comboBoxEstadoFilme.TabIndex = 2;
             this.comboBoxEstadoFilme.Text = "Desativado";
             // 
             // comboBoxCategoriaFilme
@@ -75,7 +75,7 @@
             this.comboBoxCategoriaFilme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxCategoriaFilme.Name = "comboBoxCategoriaFilme";
             this.comboBoxCategoriaFilme.Size = new System.Drawing.Size(174, 33);
-            this.comboBoxCategoriaFilme.TabIndex = 18;
+            this.comboBoxCategoriaFilme.TabIndex = 1;
             // 
             // listBoxFilmes
             // 
@@ -104,9 +104,10 @@
             this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGuardarFilme.Name = "buttonGuardarFilme";
             this.buttonGuardarFilme.Size = new System.Drawing.Size(333, 66);
-            this.buttonGuardarFilme.TabIndex = 11;
+            this.buttonGuardarFilme.TabIndex = 3;
             this.buttonGuardarFilme.Text = "GUARDAR";
             this.buttonGuardarFilme.UseVisualStyleBackColor = false;
+            this.buttonGuardarFilme.Click += new System.EventHandler(this.buttonGuardarFilme_Click);
             // 
             // labelCategoria
             // 
@@ -134,7 +135,7 @@
             this.textBoxNomeFilme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNomeFilme.Name = "textBoxNomeFilme";
             this.textBoxNomeFilme.Size = new System.Drawing.Size(206, 31);
-            this.textBoxNomeFilme.TabIndex = 12;
+            this.textBoxNomeFilme.TabIndex = 0;
             // 
             // tabControl1
             // 

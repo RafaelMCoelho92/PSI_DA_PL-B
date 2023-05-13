@@ -23,8 +23,16 @@ namespace Projeto_DA_PL_B_2223
 
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
+
+            string nome = textBoxNomeCinema.Text;
+            string morada = textBoxMoradaCinema.Text;
+            string email = textBoxEmailCinema.Text;
             validarDadosInseridos(); //metodo para validar os dados inseridos
-            atualizarDadosLabel(); // METODO PARA ATUALIZAR OS DADOS DAS LABELS
+            if (nome.Length > 0 && morada.Length > 0 && email.Length > 0)
+            {
+                atualizarDadosLabel(); // METODO PARA ATUALIZAR OS DADOS DAS LABELS
+            }
+
         }
         public void atualizarDadosLabel()
         {

@@ -21,5 +21,45 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabControl1.TabPages[0];
         }
+
+        private void buttonGuardarFilme_Click(object sender, EventArgs e)
+        {
+            string nomeFilme = textBoxNomeFilme.Text;
+            string categoriaFilme = comboBoxCategoriaFilme.Text;
+            string estadoFilme = comboBoxEstadoFilme.Text;
+            validarDadosInseridos(); // VALIDAR DADOS INSERIDOS
+            if (nomeFilme.Length > 0 && categoriaFilme.Length > 0)
+            {
+                atualizarListboxFilmes(nomeFilme, categoriaFilme, estadoFilme);
+            }
+
+        }
+        public void atualizarListboxFilmes(string nomeFilme, string categoriaFilme, string estadoFilme)
+        {
+            Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
+            listBoxFilmes.Items.Add(filme);
+        }
+        public void validarDadosInseridos()
+        {   // RECEBE VALORES DAS TEXTSBOX E VALIDA
+            string nomeFilme = textBoxNomeFilme.Text;
+            if (nomeFilme.Length == 0)
+            {
+                MessageBox.Show("Insira o nome do filme");
+                return;
+            }
+            string categoriaFilme = comboBoxCategoriaFilme.Text;
+            if (categoriaFilme.Length == 0)
+            {
+                MessageBox.Show("Escolha uma categoria do filme");
+                return;
+            }
+            string estadoFilme = comboBoxEstadoFilme.Text;
+            if (estadoFilme.Length == 0)
+            {
+                MessageBox.Show("Escolha o estado do filme");
+                return;
+            }
+        }
+        
     }
 }

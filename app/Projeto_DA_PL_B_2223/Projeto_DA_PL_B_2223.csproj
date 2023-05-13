@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cinema.cs" />
+    <Compile Include="Filme.cs" />
     <Compile Include="FormAtendimento.cs">
       <SubType>Form</SubType>
     </Compile>
