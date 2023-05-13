@@ -47,7 +47,11 @@ namespace Projeto_DA_PL_B_2223
             
             
             string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
-
+            if (tipoFuncionario.Length == 0)
+            {
+                MessageBox.Show("É necessário atribuir uma função");
+                return;
+            }
 
             // Instanciar e mandar o texto para a listbox com a info dos funcionarios criados 
             Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario);
