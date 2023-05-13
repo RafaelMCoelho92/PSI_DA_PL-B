@@ -37,19 +37,26 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("A morada não pode ser vazio");
                 return;
             }
-            string salarioFuncionario = textBoxSalarioFuncionario.Text;
-            if (salarioFuncionario.Length == 0)
+            
+            double salarioFuncionario;
+            if (!double.TryParse(textBoxSalarioFuncionario.Text, out salarioFuncionario))
             {
-                MessageBox.Show("É necessário um valor de salario Atribuido");
+                MessageBox.Show("O valor do salário deve ser numérico");
                 return;
             }
+            
+            
+            string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
+
+
             // Instanciar e mandar o texto para a listbox com a info dos funcionarios criados 
-            Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario);
+            Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario);
             textBoxMoradaFuncionario.Text = funcionario.MoradaFuncionario;
             textBoxNomeFuncionario.Text = funcionario.NomeFuncionario;
-            textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario;
+            
 
-            string funcionarioInfo = $"Nome: {nomeFuncionario}   Morada: {moradaFuncionario}   Salário: {salarioFuncionario}€";
+
+            string funcionarioInfo = $"Nome: {nomeFuncionario}   Morada: {moradaFuncionario}   Salário: {salarioFuncionario}€  Função {tipoFuncionario}";
             listBoxFuncionarios.Items.Add(funcionarioInfo);
 
           

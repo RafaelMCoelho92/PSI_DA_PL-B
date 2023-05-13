@@ -12,11 +12,11 @@ namespace Projeto_DA_PL_B_2223
         public string MoradaFuncionario { get; }
         public string SalarioFuncionario { get; }
 
-        public Funcionario(string nomeFuncionario, string moradaFuncionario, string salarioFuncionrio)
+        public Funcionario(string nomeFuncionario, string moradaFuncionario)
         {
             NomeFuncionario = nomeFuncionario;
             MoradaFuncionario = moradaFuncionario;
-            SalarioFuncionario = salarioFuncionrio;
+           
         }
     }
 }
