@@ -30,8 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBoxFilas = new System.Windows.Forms.TextBox();
             this.buttonApagarSala = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxColunas = new System.Windows.Forms.TextBox();
             this.buttonEditarFilasColunas = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.textBoxNomeSala = new System.Windows.Forms.TextBox();
             this.buttonAdicionarSala = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxFilas = new System.Windows.Forms.TextBox();
-            this.textBoxColunas = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,14 +74,23 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBoxFilas
+            // 
+            this.textBoxFilas.Location = new System.Drawing.Point(202, 302);
+            this.textBoxFilas.MaxLength = 2;
+            this.textBoxFilas.Name = "textBoxFilas";
+            this.textBoxFilas.Size = new System.Drawing.Size(153, 31);
+            this.textBoxFilas.TabIndex = 3;
+            // 
             // buttonApagarSala
             // 
             this.buttonApagarSala.Location = new System.Drawing.Point(425, 418);
             this.buttonApagarSala.Name = "buttonApagarSala";
             this.buttonApagarSala.Size = new System.Drawing.Size(153, 62);
-            this.buttonApagarSala.TabIndex = 7;
+            this.buttonApagarSala.TabIndex = 6;
             this.buttonApagarSala.Text = "Apagar Sala";
             this.buttonApagarSala.UseVisualStyleBackColor = true;
+            this.buttonApagarSala.Click += new System.EventHandler(this.buttonApagarSala_Click);
             // 
             // groupBox1
             // 
@@ -96,12 +105,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Sala";
             // 
+            // textBoxColunas
+            // 
+            this.textBoxColunas.Location = new System.Drawing.Point(196, 103);
+            this.textBoxColunas.MaxLength = 2;
+            this.textBoxColunas.Name = "textBoxColunas";
+            this.textBoxColunas.Size = new System.Drawing.Size(153, 31);
+            this.textBoxColunas.TabIndex = 4;
+            // 
             // buttonEditarFilasColunas
             // 
             this.buttonEditarFilasColunas.Location = new System.Drawing.Point(115, 167);
             this.buttonEditarFilasColunas.Name = "buttonEditarFilasColunas";
             this.buttonEditarFilasColunas.Size = new System.Drawing.Size(153, 62);
-            this.buttonEditarFilasColunas.TabIndex = 6;
+            this.buttonEditarFilasColunas.TabIndex = 5;
             this.buttonEditarFilasColunas.Text = "Editar Sala";
             this.buttonEditarFilasColunas.UseVisualStyleBackColor = true;
             this.buttonEditarFilasColunas.Click += new System.EventHandler(this.buttonEditarFilasColunas_Click);
@@ -180,22 +197,6 @@
             this.label7.Size = new System.Drawing.Size(153, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome da Sala:";
-            // 
-            // textBoxFilas
-            // 
-            this.textBoxFilas.Location = new System.Drawing.Point(202, 302);
-            this.textBoxFilas.MaxLength = 2;
-            this.textBoxFilas.Name = "textBoxFilas";
-            this.textBoxFilas.Size = new System.Drawing.Size(153, 31);
-            this.textBoxFilas.TabIndex = 4;
-            // 
-            // textBoxColunas
-            // 
-            this.textBoxColunas.Location = new System.Drawing.Point(196, 103);
-            this.textBoxColunas.MaxLength = 2;
-            this.textBoxColunas.Name = "textBoxColunas";
-            this.textBoxColunas.Size = new System.Drawing.Size(153, 31);
-            this.textBoxColunas.TabIndex = 5;
             // 
             // FormSala
             // 

@@ -20,10 +20,12 @@ namespace Projeto_DA_PL_B_2223
         }
 
         private void buttonCinema_Click(object sender, EventArgs e)
-        {
+        {           
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormCinema().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
+            //FormCinema formCinema = new FormCinema(); // depois que trocar pra buscar da BD em vez do textbox
+            //FormCinema.atualizarDadosLabel();
         }
 
         private void buttonFilmes_Click(object sender, EventArgs e)

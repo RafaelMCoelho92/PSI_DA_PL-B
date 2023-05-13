@@ -35,34 +35,72 @@ namespace Projeto_DA_PL_B_2223
 
         private void buttonEditarFilasColunas_Click(object sender, EventArgs e)
         {
+            //RECEBE AS DUAS VARIAVEIS EM STRING
             string fila = textBoxFilas.Text;
             string coluna = textBoxColunas.Text;
-
+            //VALIDA QUE NENHUMA DELAS ESTA VAZIA
+            if (fila.Length == 0  || coluna.Length == 0)
+            {
+                MessageBox.Show("Não pode ser vazio");
+                return;
+            }
+            //VERIFICAR QUE ESTA SELECIONADA A SALA DA LISTBOX
+            int index_selecionado = listBoxSalas.SelectedIndex;
+            if (index_selecionado == -1)
+            {
+                MessageBox.Show("Selecione uma sala da lista");
+                return;
+            }
+            // VARIAVEIS PARA UTILIZAR NO PARSE
             double valorFila = 0;
             double valorColuna = 0;
 
             try
-            {
+            {   // FAZER O PARSE-> OU SEJA PASSAR DE STRING PARA DOUBLE
                 valorFila = double.Parse(fila);
                 valorColuna = double.Parse(coluna);
-
+                // CASO VALOR SEJA MENOR OU IGUAL A ZERO-> MENSAGEM DE ERRO
                 if (valorFila <= 0 || valorColuna <= 0) 
                 {
                     MessageBox.Show("As Filas e as Colunas tem de ser superior a 0 (zero)");
                     return;
                 }
+                // CASO VALOR SEJA MAIOR QUE 20 -> MENSAGEM DE ERRO
                 if(valorFila > 20 || valorColuna > 20)
                 {
                     MessageBox.Show("As Filas e as Colunas tem de ser inferior a 20");
                     return;
                 }
             }
+            // CASO NAO SEJA NUMERO 
             catch (Exception)
             {
-                MessageBox.Show("Valor Invalido");
+                MessageBox.Show("Valor Invalido, insira um valor entre 1 e 20");
+            }
+
+            try
+            {   
+                Sala sala = listBoxSalas.Items[index_selecionado] as Sala; // CAST
+                sala.Alterar(valorFila, valorColuna); // VAI ALTERAR O VALOR DAS LINHAS E COLUNAS DA SALA
+                listBoxSalas.Items[index_selecionado] = sala; //Atualiza a listbox
+            }
+            catch(Exception) 
+            {   // caso haja algum erro
+                MessageBox.Show("Não é uma sala");
             }
  
 
+        }
+
+        private void buttonApagarSala_Click(object sender, EventArgs e)
+        {
+            int salaSelecionada = listBoxSalas.SelectedIndex;
+            if (salaSelecionada == -1)
+                {
+                    MessageBox.Show("Selecione uma sala");
+                }
+            Sala sala = listBoxSalas.Items[salaSelecionada] as Sala;
+            listBoxSalas.Items.Remove(sala);           
         }
     }
 }
