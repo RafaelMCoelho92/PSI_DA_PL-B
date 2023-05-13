@@ -19,6 +19,10 @@ namespace Projeto_DA_PL_B_2223
         public FormPrincipal()
         {
             InitializeComponent();
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormLogin().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+
         }
 
         private void buttonCinema_Click(object sender, EventArgs e)
@@ -72,8 +76,8 @@ namespace Projeto_DA_PL_B_2223
 
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
         {
-            //this .toolStripStatusLabelHora.Text = DateTime.Now.ToLongTimeString();
-            this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("F");
+            // MOSTRA A DATA E A HORA 
+            this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("G"); // F, U, ou G (senao apaga o G e ver as opcoes)
 
 
 

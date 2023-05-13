@@ -163,8 +163,8 @@
             // toolStripStatusLabelNomeFuncionarioLogado
             // 
             this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
-            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(150, 32);
-            this.toolStripStatusLabelNomeFuncionarioLogado.Text = "nomelogado";
+            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(145, 32);
+            this.toolStripStatusLabelNomeFuncionarioLogado.Text = "FAÇA LOGIN";
             // 
             // timerFormPrincipal
             // 

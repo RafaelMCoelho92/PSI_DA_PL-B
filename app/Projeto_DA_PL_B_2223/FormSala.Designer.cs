@@ -71,7 +71,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1197, 620);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Sala";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // textBoxFilas

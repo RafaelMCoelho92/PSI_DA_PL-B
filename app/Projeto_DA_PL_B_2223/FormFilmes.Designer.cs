@@ -45,15 +45,32 @@
             // comboBoxEstadoFilme
             // 
             this.comboBoxEstadoFilme.FormattingEnabled = true;
+            this.comboBoxEstadoFilme.Items.AddRange(new object[] {
+            "Desativado",
+            "Ativado"});
             this.comboBoxEstadoFilme.Location = new System.Drawing.Point(224, 176);
             this.comboBoxEstadoFilme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxEstadoFilme.Name = "comboBoxEstadoFilme";
             this.comboBoxEstadoFilme.Size = new System.Drawing.Size(174, 33);
             this.comboBoxEstadoFilme.TabIndex = 19;
+            this.comboBoxEstadoFilme.Text = "Desativado";
             // 
             // comboBoxCategoriaFilme
             // 
             this.comboBoxCategoriaFilme.FormattingEnabled = true;
+            this.comboBoxCategoriaFilme.Items.AddRange(new object[] {
+            "Comédia",
+            "Sci-Fi",
+            "Terror",
+            "Romance",
+            "Acção",
+            "Thriller",
+            "Drama",
+            "Mistério",
+            "Crime",
+            "Aventura",
+            "Fantasia",
+            "Animação"});
             this.comboBoxCategoriaFilme.Location = new System.Drawing.Point(224, 106);
             this.comboBoxCategoriaFilme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxCategoriaFilme.Name = "comboBoxCategoriaFilme";
@@ -84,7 +101,7 @@
             // 
             this.buttonGuardarFilme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonGuardarFilme.Location = new System.Drawing.Point(65, 277);
-            this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGuardarFilme.Name = "buttonGuardarFilme";
             this.buttonGuardarFilme.Size = new System.Drawing.Size(333, 66);
             this.buttonGuardarFilme.TabIndex = 11;
@@ -143,7 +160,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(998, 581);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Filmes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FormFilmes

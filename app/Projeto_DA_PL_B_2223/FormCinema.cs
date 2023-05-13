@@ -38,6 +38,7 @@ namespace Projeto_DA_PL_B_2223
             labelNomeCinema.Text = cinema.NomeCinema;
             labelMoradaCinema.Text = cinema.MoradaCinema;
             labelEmailCinema.Text = cinema.EmailCinema;
+            //Instanciar?
             //FormPrincipal.labelNomeCinema.Text = cinema.NomeCinema;// ATUALIZAR LABEL DO FORM PRINCIPAL
         }
         public void validarDadosInseridos()

@@ -30,22 +30,22 @@
         {
             this.tabControlClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
+            this.buttonPesquisarClientes = new System.Windows.Forms.Button();
+            this.buttonApagarClientes = new System.Windows.Forms.Button();
+            this.buttonGuardarClientes = new System.Windows.Forms.Button();
+            this.buttonVoltarClientes = new System.Windows.Forms.Button();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.textBoxValorBilhCompras = new System.Windows.Forms.TextBox();
+            this.labelValorTotalBilhetes = new System.Windows.Forms.Label();
+            this.textBoxNumBilhComprados = new System.Windows.Forms.TextBox();
+            this.labelNumBilhComprados = new System.Windows.Forms.Label();
+            this.textBoxNumFiscClientes = new System.Windows.Forms.TextBox();
             this.textBoxMoradaClientes = new System.Windows.Forms.TextBox();
             this.textBoxNomeClientes = new System.Windows.Forms.TextBox();
             this.labelNumeroFiscalClientes = new System.Windows.Forms.Label();
             this.labelMoradaClientes = new System.Windows.Forms.Label();
             this.labelNomesClientes = new System.Windows.Forms.Label();
-            this.textBoxNumFiscClientes = new System.Windows.Forms.TextBox();
-            this.labelNumBilhComprados = new System.Windows.Forms.Label();
-            this.textBoxNumBilhComprados = new System.Windows.Forms.TextBox();
-            this.labelValorTotalBilhetes = new System.Windows.Forms.Label();
-            this.textBoxValorBilhCompras = new System.Windows.Forms.TextBox();
-            this.buttonVoltarClientes = new System.Windows.Forms.Button();
-            this.buttonGuardarClientes = new System.Windows.Forms.Button();
-            this.buttonApagarClientes = new System.Windows.Forms.Button();
-            this.buttonPesquisarClientes = new System.Windows.Forms.Button();
             this.tabControlClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxFuncionario.SuspendLayout();
@@ -54,34 +54,22 @@
             // tabControlClientes
             // 
             this.tabControlClientes.Controls.Add(this.tabPage1);
-            this.tabControlClientes.Location = new System.Drawing.Point(11, 11);
-            this.tabControlClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControlClientes.Location = new System.Drawing.Point(16, 17);
             this.tabControlClientes.Name = "tabControlClientes";
             this.tabControlClientes.SelectedIndex = 0;
-            this.tabControlClientes.Size = new System.Drawing.Size(851, 411);
+            this.tabControlClientes.Size = new System.Drawing.Size(1276, 642);
             this.tabControlClientes.TabIndex = 6;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(843, 382);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1260, 595);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // listBoxClientes
-            // 
-            this.listBoxClientes.FormattingEnabled = true;
-            this.listBoxClientes.ItemHeight = 16;
-            this.listBoxClientes.Location = new System.Drawing.Point(410, 47);
-            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(362, 212);
-            this.listBoxClientes.TabIndex = 0;
             // 
             // groupBoxFuncionario
             // 
@@ -100,146 +88,150 @@
             this.groupBoxFuncionario.Controls.Add(this.labelNumeroFiscalClientes);
             this.groupBoxFuncionario.Controls.Add(this.labelMoradaClientes);
             this.groupBoxFuncionario.Controls.Add(this.labelNomesClientes);
-            this.groupBoxFuncionario.Location = new System.Drawing.Point(4, 4);
-            this.groupBoxFuncionario.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxFuncionario.Location = new System.Drawing.Point(6, 6);
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
-            this.groupBoxFuncionario.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxFuncionario.Size = new System.Drawing.Size(812, 354);
+            this.groupBoxFuncionario.Size = new System.Drawing.Size(1218, 553);
             this.groupBoxFuncionario.TabIndex = 4;
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "Clientes";
             // 
+            // buttonPesquisarClientes
+            // 
+            this.buttonPesquisarClientes.Location = new System.Drawing.Point(938, 27);
+            this.buttonPesquisarClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPesquisarClientes.Name = "buttonPesquisarClientes";
+            this.buttonPesquisarClientes.Size = new System.Drawing.Size(219, 39);
+            this.buttonPesquisarClientes.TabIndex = 25;
+            this.buttonPesquisarClientes.Text = "PESQUISAR";
+            this.buttonPesquisarClientes.UseVisualStyleBackColor = true;
+            // 
+            // buttonApagarClientes
+            // 
+            this.buttonApagarClientes.Location = new System.Drawing.Point(615, 408);
+            this.buttonApagarClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonApagarClientes.Name = "buttonApagarClientes";
+            this.buttonApagarClientes.Size = new System.Drawing.Size(159, 38);
+            this.buttonApagarClientes.TabIndex = 24;
+            this.buttonApagarClientes.Text = "APAGAR";
+            this.buttonApagarClientes.UseVisualStyleBackColor = true;
+            // 
+            // buttonGuardarClientes
+            // 
+            this.buttonGuardarClientes.Location = new System.Drawing.Point(914, 427);
+            this.buttonGuardarClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonGuardarClientes.Name = "buttonGuardarClientes";
+            this.buttonGuardarClientes.Size = new System.Drawing.Size(244, 102);
+            this.buttonGuardarClientes.TabIndex = 23;
+            this.buttonGuardarClientes.Text = "GUARDAR E SAIR";
+            this.buttonGuardarClientes.UseVisualStyleBackColor = true;
+            // 
+            // buttonVoltarClientes
+            // 
+            this.buttonVoltarClientes.Location = new System.Drawing.Point(24, 500);
+            this.buttonVoltarClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonVoltarClientes.Name = "buttonVoltarClientes";
+            this.buttonVoltarClientes.Size = new System.Drawing.Size(164, 45);
+            this.buttonVoltarClientes.TabIndex = 22;
+            this.buttonVoltarClientes.Text = "<VOLTAR";
+            this.buttonVoltarClientes.UseVisualStyleBackColor = true;
+            // 
+            // listBoxClientes
+            // 
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.ItemHeight = 25;
+            this.listBoxClientes.Location = new System.Drawing.Point(615, 73);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(541, 329);
+            this.listBoxClientes.TabIndex = 0;
+            // 
+            // textBoxValorBilhCompras
+            // 
+            this.textBoxValorBilhCompras.Location = new System.Drawing.Point(24, 394);
+            this.textBoxValorBilhCompras.Name = "textBoxValorBilhCompras";
+            this.textBoxValorBilhCompras.Size = new System.Drawing.Size(295, 31);
+            this.textBoxValorBilhCompras.TabIndex = 21;
+            // 
+            // labelValorTotalBilhetes
+            // 
+            this.labelValorTotalBilhetes.AutoSize = true;
+            this.labelValorTotalBilhetes.Location = new System.Drawing.Point(20, 348);
+            this.labelValorTotalBilhetes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelValorTotalBilhetes.Name = "labelValorTotalBilhetes";
+            this.labelValorTotalBilhetes.Size = new System.Drawing.Size(345, 25);
+            this.labelValorTotalBilhetes.TabIndex = 20;
+            this.labelValorTotalBilhetes.Text = "Valor Total de Bilhetes Comprados";
+            // 
+            // textBoxNumBilhComprados
+            // 
+            this.textBoxNumBilhComprados.Location = new System.Drawing.Point(24, 286);
+            this.textBoxNumBilhComprados.Name = "textBoxNumBilhComprados";
+            this.textBoxNumBilhComprados.Size = new System.Drawing.Size(295, 31);
+            this.textBoxNumBilhComprados.TabIndex = 11;
+            // 
+            // labelNumBilhComprados
+            // 
+            this.labelNumBilhComprados.AutoSize = true;
+            this.labelNumBilhComprados.Location = new System.Drawing.Point(20, 258);
+            this.labelNumBilhComprados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNumBilhComprados.Name = "labelNumBilhComprados";
+            this.labelNumBilhComprados.Size = new System.Drawing.Size(316, 25);
+            this.labelNumBilhComprados.TabIndex = 10;
+            this.labelNumBilhComprados.Text = "Número de Bilhetes Comprados";
+            // 
+            // textBoxNumFiscClientes
+            // 
+            this.textBoxNumFiscClientes.Location = new System.Drawing.Point(165, 144);
+            this.textBoxNumFiscClientes.Name = "textBoxNumFiscClientes";
+            this.textBoxNumFiscClientes.Size = new System.Drawing.Size(295, 31);
+            this.textBoxNumFiscClientes.TabIndex = 9;
+            // 
             // textBoxMoradaClientes
             // 
-            this.textBoxMoradaClientes.Location = new System.Drawing.Point(83, 60);
-            this.textBoxMoradaClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMoradaClientes.Location = new System.Drawing.Point(124, 94);
             this.textBoxMoradaClientes.Name = "textBoxMoradaClientes";
-            this.textBoxMoradaClientes.Size = new System.Drawing.Size(225, 22);
+            this.textBoxMoradaClientes.Size = new System.Drawing.Size(336, 31);
             this.textBoxMoradaClientes.TabIndex = 5;
             // 
             // textBoxNomeClientes
             // 
-            this.textBoxNomeClientes.Location = new System.Drawing.Point(83, 31);
-            this.textBoxNomeClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNomeClientes.Location = new System.Drawing.Point(124, 48);
             this.textBoxNomeClientes.Name = "textBoxNomeClientes";
-            this.textBoxNomeClientes.Size = new System.Drawing.Size(225, 22);
+            this.textBoxNomeClientes.Size = new System.Drawing.Size(336, 31);
             this.textBoxNomeClientes.TabIndex = 4;
             // 
             // labelNumeroFiscalClientes
             // 
             this.labelNumeroFiscalClientes.AutoSize = true;
-            this.labelNumeroFiscalClientes.Location = new System.Drawing.Point(13, 95);
-            this.labelNumeroFiscalClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNumeroFiscalClientes.Location = new System.Drawing.Point(20, 148);
             this.labelNumeroFiscalClientes.Name = "labelNumeroFiscalClientes";
-            this.labelNumeroFiscalClientes.Size = new System.Drawing.Size(94, 16);
+            this.labelNumeroFiscalClientes.Size = new System.Drawing.Size(150, 25);
             this.labelNumeroFiscalClientes.TabIndex = 2;
             this.labelNumeroFiscalClientes.Text = "Numero Fiscal";
             // 
             // labelMoradaClientes
             // 
             this.labelMoradaClientes.AutoSize = true;
-            this.labelMoradaClientes.Location = new System.Drawing.Point(13, 63);
-            this.labelMoradaClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelMoradaClientes.Location = new System.Drawing.Point(20, 98);
             this.labelMoradaClientes.Name = "labelMoradaClientes";
-            this.labelMoradaClientes.Size = new System.Drawing.Size(57, 16);
+            this.labelMoradaClientes.Size = new System.Drawing.Size(91, 25);
             this.labelMoradaClientes.TabIndex = 1;
             this.labelMoradaClientes.Text = "Morada:";
             // 
             // labelNomesClientes
             // 
             this.labelNomesClientes.AutoSize = true;
-            this.labelNomesClientes.Location = new System.Drawing.Point(13, 31);
-            this.labelNomesClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNomesClientes.Location = new System.Drawing.Point(20, 48);
             this.labelNomesClientes.Name = "labelNomesClientes";
-            this.labelNomesClientes.Size = new System.Drawing.Size(47, 16);
+            this.labelNomesClientes.Size = new System.Drawing.Size(74, 25);
             this.labelNomesClientes.TabIndex = 0;
             this.labelNomesClientes.Text = "Nome:";
             // 
-            // textBoxNumFiscClientes
-            // 
-            this.textBoxNumFiscClientes.Location = new System.Drawing.Point(110, 92);
-            this.textBoxNumFiscClientes.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNumFiscClientes.Name = "textBoxNumFiscClientes";
-            this.textBoxNumFiscClientes.Size = new System.Drawing.Size(198, 22);
-            this.textBoxNumFiscClientes.TabIndex = 9;
-            // 
-            // labelNumBilhComprados
-            // 
-            this.labelNumBilhComprados.AutoSize = true;
-            this.labelNumBilhComprados.Location = new System.Drawing.Point(13, 165);
-            this.labelNumBilhComprados.Name = "labelNumBilhComprados";
-            this.labelNumBilhComprados.Size = new System.Drawing.Size(199, 16);
-            this.labelNumBilhComprados.TabIndex = 10;
-            this.labelNumBilhComprados.Text = "Número de Bilhetes Comprados";
-            // 
-            // textBoxNumBilhComprados
-            // 
-            this.textBoxNumBilhComprados.Location = new System.Drawing.Point(16, 183);
-            this.textBoxNumBilhComprados.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNumBilhComprados.Name = "textBoxNumBilhComprados";
-            this.textBoxNumBilhComprados.Size = new System.Drawing.Size(198, 22);
-            this.textBoxNumBilhComprados.TabIndex = 11;
-            // 
-            // labelValorTotalBilhetes
-            // 
-            this.labelValorTotalBilhetes.AutoSize = true;
-            this.labelValorTotalBilhetes.Location = new System.Drawing.Point(13, 223);
-            this.labelValorTotalBilhetes.Name = "labelValorTotalBilhetes";
-            this.labelValorTotalBilhetes.Size = new System.Drawing.Size(217, 16);
-            this.labelValorTotalBilhetes.TabIndex = 20;
-            this.labelValorTotalBilhetes.Text = "Valor Total de Bilhetes Comprados";
-            // 
-            // textBoxValorBilhCompras
-            // 
-            this.textBoxValorBilhCompras.Location = new System.Drawing.Point(16, 252);
-            this.textBoxValorBilhCompras.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxValorBilhCompras.Name = "textBoxValorBilhCompras";
-            this.textBoxValorBilhCompras.Size = new System.Drawing.Size(198, 22);
-            this.textBoxValorBilhCompras.TabIndex = 21;
-            // 
-            // buttonVoltarClientes
-            // 
-            this.buttonVoltarClientes.Location = new System.Drawing.Point(16, 320);
-            this.buttonVoltarClientes.Name = "buttonVoltarClientes";
-            this.buttonVoltarClientes.Size = new System.Drawing.Size(109, 29);
-            this.buttonVoltarClientes.TabIndex = 22;
-            this.buttonVoltarClientes.Text = "<VOLTAR";
-            this.buttonVoltarClientes.UseVisualStyleBackColor = true;
-            // 
-            // buttonGuardarClientes
-            // 
-            this.buttonGuardarClientes.Location = new System.Drawing.Point(609, 273);
-            this.buttonGuardarClientes.Name = "buttonGuardarClientes";
-            this.buttonGuardarClientes.Size = new System.Drawing.Size(163, 65);
-            this.buttonGuardarClientes.TabIndex = 23;
-            this.buttonGuardarClientes.Text = "GUARDAR E SAIR";
-            this.buttonGuardarClientes.UseVisualStyleBackColor = true;
-            // 
-            // buttonApagarClientes
-            // 
-            this.buttonApagarClientes.Location = new System.Drawing.Point(410, 261);
-            this.buttonApagarClientes.Name = "buttonApagarClientes";
-            this.buttonApagarClientes.Size = new System.Drawing.Size(106, 24);
-            this.buttonApagarClientes.TabIndex = 24;
-            this.buttonApagarClientes.Text = "APAGAR";
-            this.buttonApagarClientes.UseVisualStyleBackColor = true;
-            // 
-            // buttonPesquisarClientes
-            // 
-            this.buttonPesquisarClientes.Location = new System.Drawing.Point(625, 17);
-            this.buttonPesquisarClientes.Name = "buttonPesquisarClientes";
-            this.buttonPesquisarClientes.Size = new System.Drawing.Size(146, 25);
-            this.buttonPesquisarClientes.TabIndex = 25;
-            this.buttonPesquisarClientes.Text = "PESQUISAR";
-            this.buttonPesquisarClientes.UseVisualStyleBackColor = true;
-            // 
             // FormClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 436);
+            this.ClientSize = new System.Drawing.Size(1320, 681);
             this.Controls.Add(this.tabControlClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormClientes";
             this.Text = "FormClientes";
             this.tabControlClientes.ResumeLayout(false);
