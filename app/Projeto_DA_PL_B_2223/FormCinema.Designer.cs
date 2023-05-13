@@ -78,27 +78,24 @@
             this.labelEmailCinema.AutoSize = true;
             this.labelEmailCinema.Location = new System.Drawing.Point(66, 188);
             this.labelEmailCinema.Name = "labelEmailCinema";
-            this.labelEmailCinema.Size = new System.Drawing.Size(138, 25);
+            this.labelEmailCinema.Size = new System.Drawing.Size(0, 25);
             this.labelEmailCinema.TabIndex = 2;
-            this.labelEmailCinema.Text = "EmailCinema";
             // 
             // labelMoradaCinema
             // 
             this.labelMoradaCinema.AutoSize = true;
             this.labelMoradaCinema.Location = new System.Drawing.Point(66, 117);
             this.labelMoradaCinema.Name = "labelMoradaCinema";
-            this.labelMoradaCinema.Size = new System.Drawing.Size(158, 25);
+            this.labelMoradaCinema.Size = new System.Drawing.Size(0, 25);
             this.labelMoradaCinema.TabIndex = 1;
-            this.labelMoradaCinema.Text = "MoradaCinema";
             // 
             // labelNomeCinema
             // 
             this.labelNomeCinema.AutoSize = true;
             this.labelNomeCinema.Location = new System.Drawing.Point(66, 49);
             this.labelNomeCinema.Name = "labelNomeCinema";
-            this.labelNomeCinema.Size = new System.Drawing.Size(141, 25);
+            this.labelNomeCinema.Size = new System.Drawing.Size(0, 25);
             this.labelNomeCinema.TabIndex = 0;
-            this.labelNomeCinema.Text = "NomeCinema";
             // 
             // groupBoxEditarCinema
             // 
@@ -121,7 +118,7 @@
             this.buttonGuardarCinema.Location = new System.Drawing.Point(180, 234);
             this.buttonGuardarCinema.Name = "buttonGuardarCinema";
             this.buttonGuardarCinema.Size = new System.Drawing.Size(153, 62);
-            this.buttonGuardarCinema.TabIndex = 6;
+            this.buttonGuardarCinema.TabIndex = 3;
             this.buttonGuardarCinema.Text = "Guardar";
             this.buttonGuardarCinema.UseVisualStyleBackColor = true;
             this.buttonGuardarCinema.Click += new System.EventHandler(this.buttonGuardarCinema_Click);
@@ -158,14 +155,14 @@
             this.textBoxMoradaCinema.Location = new System.Drawing.Point(111, 113);
             this.textBoxMoradaCinema.Name = "textBoxMoradaCinema";
             this.textBoxMoradaCinema.Size = new System.Drawing.Size(349, 31);
-            this.textBoxMoradaCinema.TabIndex = 2;
+            this.textBoxMoradaCinema.TabIndex = 1;
             // 
             // textBoxEmailCinema
             // 
             this.textBoxEmailCinema.Location = new System.Drawing.Point(111, 171);
             this.textBoxEmailCinema.Name = "textBoxEmailCinema";
             this.textBoxEmailCinema.Size = new System.Drawing.Size(349, 31);
-            this.textBoxEmailCinema.TabIndex = 1;
+            this.textBoxEmailCinema.TabIndex = 2;
             // 
             // textBoxNomeCinema
             // 
