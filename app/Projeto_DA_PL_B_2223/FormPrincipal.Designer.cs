@@ -41,7 +41,7 @@
             // buttonCinema
             // 
             this.buttonCinema.Location = new System.Drawing.Point(34, 103);
-            this.buttonCinema.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonCinema.Margin = new System.Windows.Forms.Padding(6);
             this.buttonCinema.Name = "buttonCinema";
             this.buttonCinema.Size = new System.Drawing.Size(168, 125);
             this.buttonCinema.TabIndex = 0;
@@ -52,7 +52,7 @@
             // buttonFilmes
             // 
             this.buttonFilmes.Location = new System.Drawing.Point(574, 103);
-            this.buttonFilmes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonFilmes.Margin = new System.Windows.Forms.Padding(6);
             this.buttonFilmes.Name = "buttonFilmes";
             this.buttonFilmes.Size = new System.Drawing.Size(168, 125);
             this.buttonFilmes.TabIndex = 3;
@@ -63,7 +63,7 @@
             // buttonClientes
             // 
             this.buttonClientes.Location = new System.Drawing.Point(934, 103);
-            this.buttonClientes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonClientes.Margin = new System.Windows.Forms.Padding(6);
             this.buttonClientes.Name = "buttonClientes";
             this.buttonClientes.Size = new System.Drawing.Size(168, 125);
             this.buttonClientes.TabIndex = 5;
@@ -74,7 +74,7 @@
             // buttonSessoes
             // 
             this.buttonSessoes.Location = new System.Drawing.Point(754, 103);
-            this.buttonSessoes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonSessoes.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSessoes.Name = "buttonSessoes";
             this.buttonSessoes.Size = new System.Drawing.Size(168, 125);
             this.buttonSessoes.TabIndex = 4;
@@ -85,7 +85,7 @@
             // buttonFuncionarios
             // 
             this.buttonFuncionarios.Location = new System.Drawing.Point(394, 103);
-            this.buttonFuncionarios.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonFuncionarios.Margin = new System.Windows.Forms.Padding(6);
             this.buttonFuncionarios.Name = "buttonFuncionarios";
             this.buttonFuncionarios.Size = new System.Drawing.Size(168, 125);
             this.buttonFuncionarios.TabIndex = 2;
@@ -110,7 +110,7 @@
             // buttonSalas
             // 
             this.buttonSalas.Location = new System.Drawing.Point(214, 103);
-            this.buttonSalas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonSalas.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSalas.Name = "buttonSalas";
             this.buttonSalas.Size = new System.Drawing.Size(168, 125);
             this.buttonSalas.TabIndex = 1;
@@ -121,7 +121,7 @@
             // tabControlMenuPrincipal
             // 
             this.tabControlMenuPrincipal.Location = new System.Drawing.Point(34, 261);
-            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(6);
             this.tabControlMenuPrincipal.Name = "tabControlMenuPrincipal";
             this.tabControlMenuPrincipal.SelectedIndex = 0;
             this.tabControlMenuPrincipal.Size = new System.Drawing.Size(1534, 706);
@@ -141,7 +141,7 @@
             this.Controls.Add(this.buttonSessoes);
             this.Controls.Add(this.buttonFilmes);
             this.Controls.Add(this.buttonCinema);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.ResumeLayout(false);

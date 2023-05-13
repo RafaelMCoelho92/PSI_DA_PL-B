@@ -35,19 +35,17 @@
             this.buttonEditarFilasColunas = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDownNumeroColunas = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownNumeroFilas = new System.Windows.Forms.NumericUpDown();
             this.groupBoxListaSalas = new System.Windows.Forms.GroupBox();
             this.listBoxSalas = new System.Windows.Forms.ListBox();
             this.groupBoxInserirSalas = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNomeSala = new System.Windows.Forms.TextBox();
             this.buttonAdicionarSala = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBoxFilas = new System.Windows.Forms.TextBox();
+            this.textBoxColunas = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroColunas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroFilas)).BeginInit();
             this.groupBoxListaSalas.SuspendLayout();
             this.groupBoxInserirSalas.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +61,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBoxFilas);
             this.tabPage1.Controls.Add(this.buttonApagarSala);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBoxListaSalas);
@@ -80,21 +79,20 @@
             this.buttonApagarSala.Location = new System.Drawing.Point(425, 418);
             this.buttonApagarSala.Name = "buttonApagarSala";
             this.buttonApagarSala.Size = new System.Drawing.Size(153, 62);
-            this.buttonApagarSala.TabIndex = 9;
+            this.buttonApagarSala.TabIndex = 7;
             this.buttonApagarSala.Text = "Apagar Sala";
             this.buttonApagarSala.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxColunas);
             this.groupBox1.Controls.Add(this.buttonEditarFilasColunas);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.numericUpDownNumeroColunas);
-            this.groupBox1.Controls.Add(this.numericUpDownNumeroFilas);
             this.groupBox1.Location = new System.Drawing.Point(6, 251);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(371, 245);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Sala";
             // 
@@ -103,9 +101,10 @@
             this.buttonEditarFilasColunas.Location = new System.Drawing.Point(115, 167);
             this.buttonEditarFilasColunas.Name = "buttonEditarFilasColunas";
             this.buttonEditarFilasColunas.Size = new System.Drawing.Size(153, 62);
-            this.buttonEditarFilasColunas.TabIndex = 8;
+            this.buttonEditarFilasColunas.TabIndex = 6;
             this.buttonEditarFilasColunas.Text = "Editar Sala";
             this.buttonEditarFilasColunas.UseVisualStyleBackColor = true;
+            this.buttonEditarFilasColunas.Click += new System.EventHandler(this.buttonEditarFilasColunas_Click);
             // 
             // label5
             // 
@@ -125,37 +124,13 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "N.º Colunas";
             // 
-            // numericUpDownNumeroColunas
-            // 
-            this.numericUpDownNumeroColunas.Location = new System.Drawing.Point(229, 103);
-            this.numericUpDownNumeroColunas.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numericUpDownNumeroColunas.Name = "numericUpDownNumeroColunas";
-            this.numericUpDownNumeroColunas.Size = new System.Drawing.Size(120, 31);
-            this.numericUpDownNumeroColunas.TabIndex = 6;
-            // 
-            // numericUpDownNumeroFilas
-            // 
-            this.numericUpDownNumeroFilas.Location = new System.Drawing.Point(229, 48);
-            this.numericUpDownNumeroFilas.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numericUpDownNumeroFilas.Name = "numericUpDownNumeroFilas";
-            this.numericUpDownNumeroFilas.Size = new System.Drawing.Size(120, 31);
-            this.numericUpDownNumeroFilas.TabIndex = 5;
-            // 
             // groupBoxListaSalas
             // 
             this.groupBoxListaSalas.Controls.Add(this.listBoxSalas);
             this.groupBoxListaSalas.Location = new System.Drawing.Point(604, 28);
             this.groupBoxListaSalas.Name = "groupBoxListaSalas";
             this.groupBoxListaSalas.Size = new System.Drawing.Size(572, 504);
-            this.groupBoxListaSalas.TabIndex = 11;
+            this.groupBoxListaSalas.TabIndex = 8;
             this.groupBoxListaSalas.TabStop = false;
             this.groupBoxListaSalas.Text = "Lista de Salas";
             // 
@@ -166,35 +141,36 @@
             this.listBoxSalas.Location = new System.Drawing.Point(6, 30);
             this.listBoxSalas.Name = "listBoxSalas";
             this.listBoxSalas.Size = new System.Drawing.Size(548, 454);
-            this.listBoxSalas.TabIndex = 0;
+            this.listBoxSalas.TabIndex = 9;
             // 
             // groupBoxInserirSalas
             // 
-            this.groupBoxInserirSalas.Controls.Add(this.textBox1);
+            this.groupBoxInserirSalas.Controls.Add(this.textBoxNomeSala);
             this.groupBoxInserirSalas.Controls.Add(this.buttonAdicionarSala);
             this.groupBoxInserirSalas.Controls.Add(this.label7);
             this.groupBoxInserirSalas.Location = new System.Drawing.Point(6, 28);
             this.groupBoxInserirSalas.Name = "groupBoxInserirSalas";
             this.groupBoxInserirSalas.Size = new System.Drawing.Size(572, 208);
-            this.groupBoxInserirSalas.TabIndex = 10;
+            this.groupBoxInserirSalas.TabIndex = 0;
             this.groupBoxInserirSalas.TabStop = false;
             this.groupBoxInserirSalas.Text = "Inserir Sala";
             // 
-            // textBox1
+            // textBoxNomeSala
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 31);
-            this.textBox1.TabIndex = 7;
+            this.textBoxNomeSala.Location = new System.Drawing.Point(196, 43);
+            this.textBoxNomeSala.Name = "textBoxNomeSala";
+            this.textBoxNomeSala.Size = new System.Drawing.Size(349, 31);
+            this.textBoxNomeSala.TabIndex = 1;
             // 
             // buttonAdicionarSala
             // 
             this.buttonAdicionarSala.Location = new System.Drawing.Point(196, 109);
             this.buttonAdicionarSala.Name = "buttonAdicionarSala";
             this.buttonAdicionarSala.Size = new System.Drawing.Size(153, 62);
-            this.buttonAdicionarSala.TabIndex = 7;
+            this.buttonAdicionarSala.TabIndex = 2;
             this.buttonAdicionarSala.Text = "Adicionar";
             this.buttonAdicionarSala.UseVisualStyleBackColor = true;
+            this.buttonAdicionarSala.Click += new System.EventHandler(this.buttonAdicionarSala_Click);
             // 
             // label7
             // 
@@ -204,6 +180,22 @@
             this.label7.Size = new System.Drawing.Size(153, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome da Sala:";
+            // 
+            // textBoxFilas
+            // 
+            this.textBoxFilas.Location = new System.Drawing.Point(202, 302);
+            this.textBoxFilas.MaxLength = 2;
+            this.textBoxFilas.Name = "textBoxFilas";
+            this.textBoxFilas.Size = new System.Drawing.Size(153, 31);
+            this.textBoxFilas.TabIndex = 4;
+            // 
+            // textBoxColunas
+            // 
+            this.textBoxColunas.Location = new System.Drawing.Point(196, 103);
+            this.textBoxColunas.MaxLength = 2;
+            this.textBoxColunas.Name = "textBoxColunas";
+            this.textBoxColunas.Size = new System.Drawing.Size(153, 31);
+            this.textBoxColunas.TabIndex = 5;
             // 
             // FormSala
             // 
@@ -215,10 +207,9 @@
             this.Text = "FormSala";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroColunas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroFilas)).EndInit();
             this.groupBoxListaSalas.ResumeLayout(false);
             this.groupBoxInserirSalas.ResumeLayout(false);
             this.groupBoxInserirSalas.PerformLayout();
@@ -235,13 +226,13 @@
         private System.Windows.Forms.Button buttonEditarFilasColunas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDownNumeroColunas;
-        private System.Windows.Forms.NumericUpDown numericUpDownNumeroFilas;
         private System.Windows.Forms.GroupBox groupBoxListaSalas;
         private System.Windows.Forms.ListBox listBoxSalas;
         private System.Windows.Forms.GroupBox groupBoxInserirSalas;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNomeSala;
         private System.Windows.Forms.Button buttonAdicionarSala;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxFilas;
+        private System.Windows.Forms.TextBox textBoxColunas;
     }
 }

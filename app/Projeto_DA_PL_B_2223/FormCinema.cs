@@ -23,13 +23,28 @@ namespace Projeto_DA_PL_B_2223
 
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
-            atualizarDadosLabel(); // ATUALIZA OS DADOS DAS LABELS
+            atualizarDadosLabel(); // METODO PARA ATUALIZAR OS DADOS DAS LABELS
         }
         private void atualizarDadosLabel()
-        {   // RECEBE AS VARIAVEIS DAS TEXTBOX
+        {   // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
             string nome = textBoxNomeCinema.Text;
+                if (nome.Length == 0 )
+                {
+                    MessageBox.Show("O nome não pode ser vazio");
+                    return;
+                }
             string morada = textBoxMoradaCinema.Text;
+                if (morada.Length == 0 )
+                {
+                    MessageBox.Show("A morada não pode ser vazio");
+                    return;
+                }
             string email = textBoxEmailCinema.Text;
+                if (email.Length == 0)
+                {
+                    MessageBox.Show("O email não pode ser vazio");
+                    return;
+                }
             // INSTANCIAR 
             Cinema cinema = new Cinema(nome, morada, email);
             // ENVIAR PARA OS LABELS
