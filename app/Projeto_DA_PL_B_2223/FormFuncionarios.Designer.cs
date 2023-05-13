@@ -72,14 +72,14 @@
             this.textBoxSalarioFuncionario.Location = new System.Drawing.Point(124, 197);
             this.textBoxSalarioFuncionario.Name = "textBoxSalarioFuncionario";
             this.textBoxSalarioFuncionario.Size = new System.Drawing.Size(336, 31);
-            this.textBoxSalarioFuncionario.TabIndex = 9;
+            this.textBoxSalarioFuncionario.TabIndex = 3;
             // 
             // buttonGuardarFuncionario
             // 
             this.buttonGuardarFuncionario.Location = new System.Drawing.Point(189, 291);
             this.buttonGuardarFuncionario.Name = "buttonGuardarFuncionario";
             this.buttonGuardarFuncionario.Size = new System.Drawing.Size(153, 62);
-            this.buttonGuardarFuncionario.TabIndex = 8;
+            this.buttonGuardarFuncionario.TabIndex = 4;
             this.buttonGuardarFuncionario.Text = "Guardar";
             this.buttonGuardarFuncionario.UseVisualStyleBackColor = true;
             this.buttonGuardarFuncionario.Click += new System.EventHandler(this.buttonGuardarFuncionario_Click);
@@ -87,24 +87,27 @@
             // comboBoxFuncaoFuncionario
             // 
             this.comboBoxFuncaoFuncionario.FormattingEnabled = true;
+            this.comboBoxFuncaoFuncionario.Items.AddRange(new object[] {
+            "Admin",
+            "Funcionario"});
             this.comboBoxFuncaoFuncionario.Location = new System.Drawing.Point(124, 139);
             this.comboBoxFuncaoFuncionario.Name = "comboBoxFuncaoFuncionario";
             this.comboBoxFuncaoFuncionario.Size = new System.Drawing.Size(336, 33);
-            this.comboBoxFuncaoFuncionario.TabIndex = 6;
+            this.comboBoxFuncaoFuncionario.TabIndex = 2;
             // 
             // textBoxMoradaFuncionario
             // 
             this.textBoxMoradaFuncionario.Location = new System.Drawing.Point(124, 94);
             this.textBoxMoradaFuncionario.Name = "textBoxMoradaFuncionario";
             this.textBoxMoradaFuncionario.Size = new System.Drawing.Size(336, 31);
-            this.textBoxMoradaFuncionario.TabIndex = 5;
+            this.textBoxMoradaFuncionario.TabIndex = 1;
             // 
             // textBoxNomeFuncionario
             // 
             this.textBoxNomeFuncionario.Location = new System.Drawing.Point(124, 48);
             this.textBoxNomeFuncionario.Name = "textBoxNomeFuncionario";
             this.textBoxNomeFuncionario.Size = new System.Drawing.Size(336, 31);
-            this.textBoxNomeFuncionario.TabIndex = 4;
+            this.textBoxNomeFuncionario.TabIndex = 0;
             // 
             // label8
             // 
@@ -158,7 +161,7 @@
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1260, 595);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Funcionarios";
@@ -169,7 +172,7 @@
             this.buttonApagarFuncionario.Location = new System.Drawing.Point(362, 466);
             this.buttonApagarFuncionario.Name = "buttonApagarFuncionario";
             this.buttonApagarFuncionario.Size = new System.Drawing.Size(153, 62);
-            this.buttonApagarFuncionario.TabIndex = 9;
+            this.buttonApagarFuncionario.TabIndex = 5;
             this.buttonApagarFuncionario.Text = "Apagar";
             this.buttonApagarFuncionario.UseVisualStyleBackColor = true;
             // 
