@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization; // foi para por data e hora
+
 
 
 namespace Projeto_DA_PL_B_2223
@@ -67,5 +69,16 @@ namespace Projeto_DA_PL_B_2223
             TabPage tab = new FormSala().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
+
+        private void timerFormPrincipal_Tick(object sender, EventArgs e)
+        {
+            //this .toolStripStatusLabelHora.Text = DateTime.Now.ToLongTimeString();
+            this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("F");
+
+
+
+        }
+
+
     }
 }

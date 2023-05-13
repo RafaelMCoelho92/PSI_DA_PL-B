@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonCinema = new System.Windows.Forms.Button();
             this.buttonFilmes = new System.Windows.Forms.Button();
             this.buttonClientes = new System.Windows.Forms.Button();
@@ -36,6 +37,12 @@
             this.labelNomeCinema = new System.Windows.Forms.Label();
             this.buttonSalas = new System.Windows.Forms.Button();
             this.tabControlMenuPrincipal = new System.Windows.Forms.TabControl();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelNomeFuncionarioLogado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerFormPrincipal = new System.Windows.Forms.Timer(this.components);
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCinema
@@ -128,11 +135,48 @@
             this.tabControlMenuPrincipal.TabIndex = 8;
             this.tabControlMenuPrincipal.SelectedIndexChanged += new System.EventHandler(this.tabControlMenuPrincipal_SelectedIndexChanged);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelHora,
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabelNomeFuncionarioLogado});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 980);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1746, 42);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelHora
+            // 
+            this.toolStripStatusLabelHora.Name = "toolStripStatusLabelHora";
+            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(102, 32);
+            this.toolStripStatusLabelHora.Text = "00:00:00";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(259, 32);
+            this.toolStripStatusLabel1.Text = "Nome do Funcionario: ";
+            // 
+            // toolStripStatusLabelNomeFuncionarioLogado
+            // 
+            this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
+            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(150, 32);
+            this.toolStripStatusLabelNomeFuncionarioLogado.Text = "nomelogado";
+            // 
+            // timerFormPrincipal
+            // 
+            this.timerFormPrincipal.Enabled = true;
+            this.timerFormPrincipal.Tick += new System.EventHandler(this.timerFormPrincipal_Tick);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1746, 1022);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControlMenuPrincipal);
             this.Controls.Add(this.buttonSalas);
             this.Controls.Add(this.labelNomeCinema);
@@ -144,6 +188,8 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +205,11 @@
         private System.Windows.Forms.Button buttonSalas;
         private System.Windows.Forms.TabControl tabControlMenuPrincipal;
         public System.Windows.Forms.Label labelNomeCinema;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNomeFuncionarioLogado;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelHora;
+        private System.Windows.Forms.Timer timerFormPrincipal;
     }
 }
 
