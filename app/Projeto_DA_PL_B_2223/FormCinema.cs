@@ -46,6 +46,7 @@ namespace Projeto_DA_PL_B_2223
                     return;
                 }
             // INSTANCIAR 
+            
             Cinema cinema = new Cinema(nome, morada, email);
             // ENVIAR PARA OS LABELS
             labelNomeCinema.Text = cinema.NomeCinema;
