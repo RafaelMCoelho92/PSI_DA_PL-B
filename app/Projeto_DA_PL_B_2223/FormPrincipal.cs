@@ -87,6 +87,11 @@ namespace Projeto_DA_PL_B_2223
 
         }
 
-
+        private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormLogin().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
     }
 }

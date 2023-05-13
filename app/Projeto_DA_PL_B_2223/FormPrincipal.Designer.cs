@@ -44,16 +44,19 @@
             this.toolStripStatusLabelNomeFuncionarioLogado = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerFormPrincipal = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonaAlterarFuncionario = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCinema
             // 
-            this.buttonCinema.Location = new System.Drawing.Point(34, 103);
-            this.buttonCinema.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonCinema.Location = new System.Drawing.Point(23, 66);
+            this.buttonCinema.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCinema.Name = "buttonCinema";
-            this.buttonCinema.Size = new System.Drawing.Size(168, 125);
+            this.buttonCinema.Size = new System.Drawing.Size(112, 80);
             this.buttonCinema.TabIndex = 0;
             this.buttonCinema.Text = "Cinema";
             this.buttonCinema.UseVisualStyleBackColor = true;
@@ -61,10 +64,10 @@
             // 
             // buttonFilmes
             // 
-            this.buttonFilmes.Location = new System.Drawing.Point(574, 103);
-            this.buttonFilmes.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonFilmes.Location = new System.Drawing.Point(383, 66);
+            this.buttonFilmes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFilmes.Name = "buttonFilmes";
-            this.buttonFilmes.Size = new System.Drawing.Size(168, 125);
+            this.buttonFilmes.Size = new System.Drawing.Size(112, 80);
             this.buttonFilmes.TabIndex = 3;
             this.buttonFilmes.Text = "Filmes";
             this.buttonFilmes.UseVisualStyleBackColor = true;
@@ -72,10 +75,10 @@
             // 
             // buttonClientes
             // 
-            this.buttonClientes.Location = new System.Drawing.Point(934, 103);
-            this.buttonClientes.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonClientes.Location = new System.Drawing.Point(623, 66);
+            this.buttonClientes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClientes.Name = "buttonClientes";
-            this.buttonClientes.Size = new System.Drawing.Size(168, 125);
+            this.buttonClientes.Size = new System.Drawing.Size(112, 80);
             this.buttonClientes.TabIndex = 5;
             this.buttonClientes.Text = "Clientes";
             this.buttonClientes.UseVisualStyleBackColor = true;
@@ -83,10 +86,10 @@
             // 
             // buttonSessoes
             // 
-            this.buttonSessoes.Location = new System.Drawing.Point(754, 103);
-            this.buttonSessoes.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonSessoes.Location = new System.Drawing.Point(503, 66);
+            this.buttonSessoes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSessoes.Name = "buttonSessoes";
-            this.buttonSessoes.Size = new System.Drawing.Size(168, 125);
+            this.buttonSessoes.Size = new System.Drawing.Size(112, 80);
             this.buttonSessoes.TabIndex = 4;
             this.buttonSessoes.Text = "Sessões";
             this.buttonSessoes.UseVisualStyleBackColor = true;
@@ -94,10 +97,10 @@
             // 
             // buttonFuncionarios
             // 
-            this.buttonFuncionarios.Location = new System.Drawing.Point(394, 103);
-            this.buttonFuncionarios.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonFuncionarios.Location = new System.Drawing.Point(263, 66);
+            this.buttonFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFuncionarios.Name = "buttonFuncionarios";
-            this.buttonFuncionarios.Size = new System.Drawing.Size(168, 125);
+            this.buttonFuncionarios.Size = new System.Drawing.Size(112, 80);
             this.buttonFuncionarios.TabIndex = 2;
             this.buttonFuncionarios.Text = "Funcionários";
             this.buttonFuncionarios.UseVisualStyleBackColor = true;
@@ -110,19 +113,19 @@
             this.labelNomeCinema.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelNomeCinema.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomeCinema.ForeColor = System.Drawing.Color.Blue;
-            this.labelNomeCinema.Location = new System.Drawing.Point(657, 25);
-            this.labelNomeCinema.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelNomeCinema.Location = new System.Drawing.Point(438, 16);
+            this.labelNomeCinema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNomeCinema.Name = "labelNomeCinema";
-            this.labelNomeCinema.Size = new System.Drawing.Size(264, 53);
+            this.labelNomeCinema.Size = new System.Drawing.Size(172, 33);
             this.labelNomeCinema.TabIndex = 5;
             this.labelNomeCinema.Text = "CINE GEST";
             // 
             // buttonSalas
             // 
-            this.buttonSalas.Location = new System.Drawing.Point(214, 103);
-            this.buttonSalas.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonSalas.Location = new System.Drawing.Point(143, 66);
+            this.buttonSalas.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSalas.Name = "buttonSalas";
-            this.buttonSalas.Size = new System.Drawing.Size(168, 125);
+            this.buttonSalas.Size = new System.Drawing.Size(112, 80);
             this.buttonSalas.TabIndex = 1;
             this.buttonSalas.Text = "Salas";
             this.buttonSalas.UseVisualStyleBackColor = true;
@@ -130,11 +133,11 @@
             // 
             // tabControlMenuPrincipal
             // 
-            this.tabControlMenuPrincipal.Location = new System.Drawing.Point(34, 261);
-            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(6);
+            this.tabControlMenuPrincipal.Location = new System.Drawing.Point(23, 167);
+            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlMenuPrincipal.Name = "tabControlMenuPrincipal";
             this.tabControlMenuPrincipal.SelectedIndex = 0;
-            this.tabControlMenuPrincipal.Size = new System.Drawing.Size(1534, 706);
+            this.tabControlMenuPrincipal.Size = new System.Drawing.Size(1023, 452);
             this.tabControlMenuPrincipal.TabIndex = 8;
             this.tabControlMenuPrincipal.SelectedIndexChanged += new System.EventHandler(this.tabControlMenuPrincipal_SelectedIndexChanged);
             // 
@@ -145,28 +148,29 @@
             this.toolStripStatusLabelHora,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabelNomeFuncionarioLogado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 532);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 584);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1528, 42);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1071, 26);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabelHora
             // 
             this.toolStripStatusLabelHora.Name = "toolStripStatusLabelHora";
-            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(102, 32);
+            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(63, 20);
             this.toolStripStatusLabelHora.Text = "00:00:00";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(259, 32);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(160, 20);
             this.toolStripStatusLabel1.Text = "Nome do Funcionario: ";
             // 
             // toolStripStatusLabelNomeFuncionarioLogado
             // 
             this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
-            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(0, 32);
+            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(0, 20);
             // 
             // timerFormPrincipal
             // 
@@ -176,18 +180,42 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(161, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonaAlterarFuncionario
+            // 
+            this.buttonaAlterarFuncionario.Location = new System.Drawing.Point(941, 17);
+            this.buttonaAlterarFuncionario.Name = "buttonaAlterarFuncionario";
+            this.buttonaAlterarFuncionario.Size = new System.Drawing.Size(115, 53);
+            this.buttonaAlterarFuncionario.TabIndex = 11;
+            this.buttonaAlterarFuncionario.Text = "TROCAR UTILIZADOR";
+            this.buttonaAlterarFuncionario.UseVisualStyleBackColor = true;
+            this.buttonaAlterarFuncionario.Click += new System.EventHandler(this.buttonaAlterarFuncionario_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(864, 20);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(72, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1528, 574);
+            this.ClientSize = new System.Drawing.Size(1071, 610);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.buttonaAlterarFuncionario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControlMenuPrincipal);
@@ -198,12 +226,13 @@
             this.Controls.Add(this.buttonSessoes);
             this.Controls.Add(this.buttonFilmes);
             this.Controls.Add(this.buttonCinema);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +254,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelHora;
         private System.Windows.Forms.Timer timerFormPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonaAlterarFuncionario;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
