@@ -18,5 +18,7 @@ namespace Projeto_DA_PL_B_2223
             MoradaCinema = moradaCinema;
             EmailCinema = emailCinema;
         }
+
+        
     }
 }
