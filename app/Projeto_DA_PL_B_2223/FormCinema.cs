@@ -56,19 +56,19 @@ namespace Projeto_DA_PL_B_2223
             string nome = textBoxNomeCinema.Text;
             if (nome.Length == 0)
             {
-                MessageBox.Show("O nome não pode ser vazio");
+                MessageBox.Show("O nome não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string morada = textBoxMoradaCinema.Text;
             if (morada.Length == 0)
             {
-                MessageBox.Show("A morada não pode ser vazio");
+                MessageBox.Show("A morada não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string email = textBoxEmailCinema.Text;
             if (email.Length == 0)
             {
-                MessageBox.Show("O email não pode ser vazio");
+                MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }
