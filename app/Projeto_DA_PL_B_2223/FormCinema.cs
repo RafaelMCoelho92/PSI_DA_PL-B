@@ -20,7 +20,7 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabControl1.TabPages[0];
         }
-
+        // GUARDA OS DADOS DO CINEMA
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
 
@@ -33,7 +33,7 @@ namespace Projeto_DA_PL_B_2223
                 atualizarDadosLabel(); // METODO PARA ATUALIZAR OS DADOS DAS LABELS
             }
 
-        }
+        }// ATUALIZA AS LABELS DA LISTBOX
         public void atualizarDadosLabel()
         {
             string nome = textBoxNomeCinema.Text;
@@ -49,6 +49,7 @@ namespace Projeto_DA_PL_B_2223
             //Instanciar?
             //FormPrincipal.labelNomeCinema.Text = cinema.NomeCinema;// ATUALIZAR LABEL DO FORM PRINCIPAL
         }
+        //VALIDA OS DADOS INSERIDOS 
         public void validarDadosInseridos()
         {
             // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS

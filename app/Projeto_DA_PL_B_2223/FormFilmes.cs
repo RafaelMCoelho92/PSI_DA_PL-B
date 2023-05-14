@@ -16,12 +16,12 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
         }
-
+        // METODO PARA CHAMAR NO FORM PRINCIPAL A PAGE DA TAB
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
-
+        //METODO PARA GUARDAR O FILME
         private void buttonGuardarFilme_Click(object sender, EventArgs e)
         {
             string nomeFilme = textBoxNomeFilme.Text;
@@ -34,11 +34,13 @@ namespace Projeto_DA_PL_B_2223
             }
 
         }
+        //METODO PARA ATUALIZAR A LISTBOX
         public void atualizarListboxFilmes(string nomeFilme, string categoriaFilme, string estadoFilme)
         {
             Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
             listBoxFilmes.Items.Add(filme);
         }
+        //METODO PARA VALIDAR DADOS INSERIDOS
         public void validarDadosInseridos()
         {   // RECEBE VALORES DAS TEXTSBOX E VALIDA
             string nomeFilme = textBoxNomeFilme.Text;

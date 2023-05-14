@@ -29,7 +29,7 @@ namespace Projeto_DA_PL_B_2223
             
 
         }
-
+        //VAI CHAMAR A TAB DO CINEMA
         private void buttonCinema_Click(object sender, EventArgs e)
         {           
             tabControlMenuPrincipal.TabPages.Clear();
@@ -38,7 +38,7 @@ namespace Projeto_DA_PL_B_2223
             //FormCinema formCinema = new FormCinema(); // depois que trocar pra buscar da BD em vez do textbox
             //FormCinema.atualizarDadosLabel();
         }
-
+        // CHAMA A TAB DOS FILMES
         private void buttonFilmes_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
@@ -46,39 +46,40 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
+        //CHAMA A TAB DAS SESSOES
         private void buttonSessoes_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormSessoes().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
-
+        //CHAMA A TAB DOS CLIENTES
         private void buttonClientes_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormClientes().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
-
+        // CHAMA A TAB DOS FUNCIONARIOS
         private void buttonFuncionarios_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormFuncionarios().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
-
+        // 
         private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
+        // CHAMA A TAB DAS SALAS
         private void buttonSalas_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormSala().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
-
+        
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
         {
             // MOSTRA A DATA E A HORA 
@@ -87,7 +88,7 @@ namespace Projeto_DA_PL_B_2223
 
 
         }
-
+        // CHAMA A TAB DOS FUNCIONARIOS
         private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();

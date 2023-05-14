@@ -37,23 +37,54 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("A morada não pode ser vazio");
                 return;
             }
-            string salarioFuncionario = textBoxSalarioFuncionario.Text;
-            if (salarioFuncionario.Length == 0)
+            
+            double salarioFuncionario;
+            if (!double.TryParse(textBoxSalarioFuncionario.Text, out salarioFuncionario))
             {
-                MessageBox.Show("É necessário um valor de salario Atribuido");
+                MessageBox.Show("O valor do salário deve ser numérico");
                 return;
             }
-            // Instanciar e mandar o texto para a listbox com a info dos funcionarios criados 
-            Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario);
-            textBoxMoradaFuncionario.Text = funcionario.MoradaFuncionario;
-            textBoxNomeFuncionario.Text = funcionario.NomeFuncionario;
-            textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario;
+            
+            
+            string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
+            if (tipoFuncionario.Length == 0)
+            {
+                MessageBox.Show("É necessário atribuir uma função");
+                return;
+            }
 
-            string funcionarioInfo = $"Nome: {nomeFuncionario}   Morada: {moradaFuncionario}   Salário: {salarioFuncionario}€";
-            listBoxFuncionarios.Items.Add(funcionarioInfo);
+            try
+            {
+                Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario.ToString(), tipoFuncionario);
+                textBoxMoradaFuncionario.Text = funcionario.MoradaFuncionario;
+                textBoxNomeFuncionario.Text = funcionario.NomeFuncionario;
+                textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario.ToString();
+                comboBoxFuncaoFuncionario.Text = funcionario.TipoFuncionario;
 
-          
+                listBoxFuncionarios.Items.Add(funcionario);
 
+            }
+            catch (Exception)
+            {   // caso haja algum erro
+                MessageBox.Show("Erro ao criar funcionário");
+            }
+
+
+        }
+
+        private void buttonApagarFuncionario_Click(object sender, EventArgs e)
+        {
+            int apagarFunc = listBoxFuncionarios.SelectedIndex;
+            if (apagarFunc == -1)
+            {
+                MessageBox.Show("Selecione um Funcionário");
+                return;
+            }
+            
+            if (listBoxFuncionarios.Items[apagarFunc] is Funcionario funcionario)
+            {
+                listBoxFuncionarios.Items.Remove(funcionario);
+            }
         }
     }
 }
