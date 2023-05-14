@@ -26,7 +26,7 @@ namespace Projeto_DA_PL_B_2223
             string nomeSala = textBoxNomeSala.Text;
                 if (nomeSala.Length == 0 )
                 {
-                    MessageBox.Show("O nome da sala não pode ser vazio");
+                    MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             Sala sala = new Sala(nomeSala);
             listBoxSalas.Items.Add(sala);
@@ -41,14 +41,14 @@ namespace Projeto_DA_PL_B_2223
             //VALIDA QUE NENHUMA DELAS ESTA VAZIA
             if (fila.Length == 0  || coluna.Length == 0)
             {
-                MessageBox.Show("Não pode ser vazio");
+                MessageBox.Show("Não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             //VERIFICAR QUE ESTA SELECIONADA A SALA DA LISTBOX
             int index_selecionado = listBoxSalas.SelectedIndex;
             if (index_selecionado == -1)
             {
-                MessageBox.Show("Selecione uma sala da lista");
+                MessageBox.Show("Selecione uma sala da lista!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // VARIAVEIS PARA UTILIZAR NO PARSE
@@ -62,20 +62,20 @@ namespace Projeto_DA_PL_B_2223
                 // CASO VALOR SEJA MENOR OU IGUAL A ZERO-> MENSAGEM DE ERRO
                 if (valorFila <= 0 || valorColuna <= 0) 
                 {
-                    MessageBox.Show("As Filas e as Colunas tem de ser superior a 0 (zero)");
+                    MessageBox.Show("As Filas e as Colunas tem de ser superior a 0 (zero)!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 // CASO VALOR SEJA MAIOR QUE 20 -> MENSAGEM DE ERRO
                 if(valorFila > 20 || valorColuna > 20)
                 {
-                    MessageBox.Show("As Filas e as Colunas tem de ser inferior a 20");
+                    MessageBox.Show("As Filas e as Colunas tem de ser inferior a 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
             // CASO NAO SEJA NUMERO 
             catch (Exception)
             {
-                MessageBox.Show("Valor Invalido, insira um valor entre 1 e 20");
+                MessageBox.Show("Valor Invalido, insira um valor entre 1 e 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             try
@@ -86,7 +86,7 @@ namespace Projeto_DA_PL_B_2223
             }
             catch(Exception) 
             {   // caso haja algum erro
-                MessageBox.Show("Não é uma sala");
+                MessageBox.Show("Não é uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
  
 
@@ -97,7 +97,7 @@ namespace Projeto_DA_PL_B_2223
             int salaSelecionada = listBoxSalas.SelectedIndex;
             if (salaSelecionada == -1)
                 {
-                    MessageBox.Show("Selecione uma sala");
+                    MessageBox.Show("Selecione uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             Sala sala = listBoxSalas.Items[salaSelecionada] as Sala;
             listBoxSalas.Items.Remove(sala);           

@@ -28,7 +28,7 @@ namespace Projeto_DA_PL_B_2223
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             string estadoFilme = comboBoxEstadoFilme.Text;
             validarDadosInseridos(); // VALIDAR DADOS INSERIDOS
-            if (nomeFilme.Length > 0 && categoriaFilme.Length > 0)
+            if (nomeFilme.Length > 0 && comboBoxCategoriaFilme.SelectedIndex>=0 && comboBoxEstadoFilme.SelectedIndex >=0)
             {
                 atualizarListboxFilmes(nomeFilme, categoriaFilme, estadoFilme);
             }
@@ -46,19 +46,29 @@ namespace Projeto_DA_PL_B_2223
             string nomeFilme = textBoxNomeFilme.Text;
             if (nomeFilme.Length == 0)
             {
-                MessageBox.Show("Insira o nome do filme");
+                MessageBox.Show("Insira o nome do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             if (categoriaFilme.Length == 0)
             {
-                MessageBox.Show("Escolha uma categoria do filme");
+                MessageBox.Show("Escolha uma categoria do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string estadoFilme = comboBoxEstadoFilme.Text;
             if (estadoFilme.Length == 0)
             {
-                MessageBox.Show("Escolha o estado do filme");
+                MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if(comboBoxCategoriaFilme.SelectedIndex <0)
+            {
+                MessageBox.Show("Escolha uma categoria da lista!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if(comboBoxEstadoFilme.SelectedIndex <0)
+            {
+                MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }
