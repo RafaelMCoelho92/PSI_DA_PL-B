@@ -57,23 +57,25 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("O número fiscal a inserir deve ser válido");
                     return;
                 }
+
+                // INSTANCIADO O OBJ CLIENTE E ENVIA PARA A LISTA DE CLIENTES ---> (POSTEIRORMENTE PARA ADICIONAR A UMA LISTA)
+                Cliente cliente = new Cliente(nomeCliente, moradaCliente, numFiscCliente);
+                textBoxNomeClientes.Text = cliente.NomeCliente;
+                textBoxMoradaClientes.Text = cliente.MoradaCliente;
+                textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
+
+                string clienteInfo = $"Nome: {nomeCliente}   " +
+                                     $"Morada: {moradaCliente}   " +
+                                     $"Número Fiscal: {numFiscCliente}";
+
+                // APENAS ADICIONA CLIENTES À LISTA CASO O CAMPO DO NUMERO FISCAL ESTEJA INSERIDO CORRETAMENTE
+                listBoxClientes.Items.Add(clienteInfo);
+
             }
-            catch (Exception)
+            catch (FormatException)
             {
                 MessageBox.Show("Apenas devem constar números neste campo");
             }
-
-            // INSTANCIADO O OBJ CLIENTE E ENVIA PARA A LISTA DE CLIENTES ---> (POSTEIRORMENTE PARA ADICIONAR A UMA ///LISTA)
-            Cliente cliente = new Cliente(nomeCliente, moradaCliente, numFiscCliente);
-            textBoxNomeClientes.Text = cliente.NomeCliente;
-            textBoxMoradaClientes.Text = cliente.MoradaCliente;
-            textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
-
-            string clienteInfo = $"Nome: {nomeCliente}   " +
-                $"Morada: {moradaCliente}   " +
-                $"Número Fiscal: {numFiscCliente}";
-            listBoxClientes.Items.Add(clienteInfo);
-
 
 
             /*
