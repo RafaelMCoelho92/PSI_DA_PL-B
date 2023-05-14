@@ -28,7 +28,7 @@ namespace Projeto_DA_PL_B_2223
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             string estadoFilme = comboBoxEstadoFilme.Text;
             validarDadosInseridos(); // VALIDAR DADOS INSERIDOS
-            if (nomeFilme.Length > 0 && categoriaFilme.Length > 0)
+            if (nomeFilme.Length > 0 && comboBoxCategoriaFilme.SelectedIndex>=0 && comboBoxEstadoFilme.SelectedIndex >=0)
             {
                 atualizarListboxFilmes(nomeFilme, categoriaFilme, estadoFilme);
             }
@@ -57,6 +57,16 @@ namespace Projeto_DA_PL_B_2223
             }
             string estadoFilme = comboBoxEstadoFilme.Text;
             if (estadoFilme.Length == 0)
+            {
+                MessageBox.Show("Escolha o estado do filme");
+                return;
+            }
+            if(comboBoxCategoriaFilme.SelectedIndex <0)
+            {
+                MessageBox.Show("Escolha uma categoria da lista.");
+                return;
+            }
+            if(comboBoxEstadoFilme.SelectedIndex <0)
             {
                 MessageBox.Show("Escolha o estado do filme");
                 return;
