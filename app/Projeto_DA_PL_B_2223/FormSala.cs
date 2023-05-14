@@ -20,7 +20,7 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabControl1.TabPages[0];
         }
-
+        // ADICIONA UMA SALA NA LIST BOX
         private void buttonAdicionarSala_Click(object sender, EventArgs e)
         {
             string nomeSala = textBoxNomeSala.Text;
@@ -32,7 +32,7 @@ namespace Projeto_DA_PL_B_2223
             listBoxSalas.Items.Add(sala);
 
         }
-
+        // ALTERA AS FILAS E AS COLUNAS EM UMA SALA
         private void buttonEditarFilasColunas_Click(object sender, EventArgs e)
         {
             //RECEBE AS DUAS VARIAVEIS EM STRING
@@ -91,7 +91,7 @@ namespace Projeto_DA_PL_B_2223
  
 
         }
-
+        // APAGA UMA SALA E AS FILAS E COLUNAS
         private void buttonApagarSala_Click(object sender, EventArgs e)
         {
             int salaSelecionada = listBoxSalas.SelectedIndex;
