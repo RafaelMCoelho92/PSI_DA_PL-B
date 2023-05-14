@@ -8,7 +8,6 @@ namespace Projeto_DA_PL_B_2223
 {
     internal class Funcionario
     {
-        private double salarioFuncionario;
 
         public string NomeFuncionario { get; }
         public string MoradaFuncionario { get; }

@@ -69,6 +69,22 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Erro ao criar funcionário");
             }
 
+
+        }
+
+        private void buttonApagarFuncionario_Click(object sender, EventArgs e)
+        {
+            int apagarFunc = listBoxFuncionarios.SelectedIndex;
+            if (apagarFunc == -1)
+            {
+                MessageBox.Show("Selecione um Funcionário");
+                return;
+            }
+            
+            if (listBoxFuncionarios.Items[apagarFunc] is Funcionario funcionario)
+            {
+                listBoxFuncionarios.Items.Remove(funcionario);
+            }
         }
     }
 }

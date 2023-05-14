@@ -189,6 +189,7 @@
             this.buttonApagarFuncionario.TabIndex = 5;
             this.buttonApagarFuncionario.Text = "Apagar";
             this.buttonApagarFuncionario.UseVisualStyleBackColor = true;
+            this.buttonApagarFuncionario.Click += new System.EventHandler(this.buttonApagarFuncionario_Click);
             // 
             // groupBoxListaFuncionarios
             // 
