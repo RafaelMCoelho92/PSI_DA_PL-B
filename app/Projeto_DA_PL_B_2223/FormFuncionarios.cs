@@ -31,7 +31,7 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("O nome não pode ser vazio");
                 return;
             }
-            string moradaFuncionario = textBoxMoradaFuncionario.Text;
+            string moradaFuncionario = textBoxMoradaFuncionario.Text;/
             if (moradaFuncionario.Length == 0)
             {
                 MessageBox.Show("A morada não pode ser vazio");
