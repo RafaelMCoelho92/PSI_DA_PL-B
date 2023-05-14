@@ -53,17 +53,21 @@ namespace Projeto_DA_PL_B_2223
                 return;
             }
 
-            // Instanciar e mandar o texto para a listbox com a info dos funcionarios criados 
-            Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario);
-            textBoxMoradaFuncionario.Text = funcionario.MoradaFuncionario;
-            textBoxNomeFuncionario.Text = funcionario.NomeFuncionario;
-            
+            try
+            {
+                Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario.ToString(), tipoFuncionario);
+                textBoxMoradaFuncionario.Text = funcionario.MoradaFuncionario;
+                textBoxNomeFuncionario.Text = funcionario.NomeFuncionario;
+                textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario.ToString();
+                comboBoxFuncaoFuncionario.Text = funcionario.TipoFuncionario;
 
+                listBoxFuncionarios.Items.Add(funcionario);
 
-            string funcionarioInfo = $"Nome: {nomeFuncionario}   Morada: {moradaFuncionario}   Salário: {salarioFuncionario}€  Função {tipoFuncionario}";
-            listBoxFuncionarios.Items.Add(funcionarioInfo);
-
-          
+            }
+            catch (Exception)
+            {   // caso haja algum erro
+                MessageBox.Show("Erro ao criar funcionário");
+            }
 
         }
     }
