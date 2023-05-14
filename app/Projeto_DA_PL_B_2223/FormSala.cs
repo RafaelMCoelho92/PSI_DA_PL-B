@@ -27,9 +27,14 @@ namespace Projeto_DA_PL_B_2223
                 if (nomeSala.Length == 0 )
                 {
                     MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
                 }
-            Sala sala = new Sala(nomeSala);
-            listBoxSalas.Items.Add(sala);
+                else
+                 {
+                Sala sala = new Sala(nomeSala);
+                listBoxSalas.Items.Add(sala);
+                 }
+
 
         }
         // ALTERA AS FILAS E AS COLUNAS EM UMA SALA

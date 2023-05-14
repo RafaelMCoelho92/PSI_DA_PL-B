@@ -19,7 +19,10 @@ namespace Projeto_DA_PL_B_2223
         public FormPrincipal()
         {
             InitializeComponent();
+            // FORM CENTRADO COM ECRA
+            this.CenterToScreen();
             //VER SE TEM UTILIZADOR LOGADO CASO NAO TENHA VAI CHAMAR A PAGINA DE LOG IN
+
             if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
             {
                 tabControlMenuPrincipal.TabPages.Clear();
