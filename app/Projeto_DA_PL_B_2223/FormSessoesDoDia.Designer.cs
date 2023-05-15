@@ -39,12 +39,13 @@
             // 
             // tabPageSessoesDoDia
             // 
+            this.tabPageSessoesDoDia.Controls.Add(this.buttonCriarBilheteSessDia);
             this.tabPageSessoesDoDia.Controls.Add(this.dateTimePickerSessoesDoDia);
             this.tabPageSessoesDoDia.Controls.Add(this.listBoxSessoesDoDia);
             this.tabPageSessoesDoDia.Location = new System.Drawing.Point(4, 22);
             this.tabPageSessoesDoDia.Name = "tabPageSessoesDoDia";
             this.tabPageSessoesDoDia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSessoesDoDia.Size = new System.Drawing.Size(571, 254);
+            this.tabPageSessoesDoDia.Size = new System.Drawing.Size(608, 331);
             this.tabPageSessoesDoDia.TabIndex = 0;
             this.tabPageSessoesDoDia.Text = "Sessões marcadas";
             this.tabPageSessoesDoDia.UseVisualStyleBackColor = true;
@@ -63,7 +64,7 @@
             this.listBoxSessoesDoDia.FormattingEnabled = true;
             this.listBoxSessoesDoDia.Location = new System.Drawing.Point(0, 29);
             this.listBoxSessoesDoDia.Name = "listBoxSessoesDoDia";
-            this.listBoxSessoesDoDia.Size = new System.Drawing.Size(565, 225);
+            this.listBoxSessoesDoDia.Size = new System.Drawing.Size(608, 251);
             this.listBoxSessoesDoDia.TabIndex = 0;
             // 
             // tabControl1
@@ -72,12 +73,12 @@
             this.tabControl1.Location = new System.Drawing.Point(47, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(579, 280);
+            this.tabControl1.Size = new System.Drawing.Size(616, 357);
             this.tabControl1.TabIndex = 0;
             // 
             // buttonCriarBilheteSessDia
             // 
-            this.buttonCriarBilheteSessDia.Location = new System.Drawing.Point(494, 328);
+            this.buttonCriarBilheteSessDia.Location = new System.Drawing.Point(476, 285);
             this.buttonCriarBilheteSessDia.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCriarBilheteSessDia.Name = "buttonCriarBilheteSessDia";
             this.buttonCriarBilheteSessDia.Size = new System.Drawing.Size(132, 34);
@@ -90,7 +91,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonCriarBilheteSessDia);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormSessoesDoDia";
             this.Text = "FormSessoesDoDia";

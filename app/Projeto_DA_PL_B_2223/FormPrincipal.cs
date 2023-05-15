@@ -101,5 +101,12 @@ namespace Projeto_DA_PL_B_2223
             TabPage tab = new FormLogin().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
+
+        private void labelNomeCinema_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormSessoesDoDia().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
     }
 }
