@@ -29,8 +29,11 @@ namespace Projeto_DA_PL_B_2223
                 TabPage tab = new FormLogin().getPage();
                 tabControlMenuPrincipal.TabPages.Add(tab);
             }
-            
 
+            // APOS VERIFICAR O FUNC LOGADO, APRESENTARÁ O FORMULÁRIO PRINCIPAL COM A TAB DAS SESSOES DO DIA
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tabSessDia = new FormSessoesDoDia().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tabSessDia);
         }
         //VAI CHAMAR A TAB DO CINEMA
         private void buttonCinema_Click(object sender, EventArgs e)
