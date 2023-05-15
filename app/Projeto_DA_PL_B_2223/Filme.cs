@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_DA_PL_B_2223
 {
+    [Serializable]
     internal class Filme
     {
         public string nomeFilme { get; set; }

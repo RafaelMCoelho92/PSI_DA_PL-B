@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Projeto_DA_PL_B_2223
 {
+    [Serializable]
     internal class Sala
     {
         public string nomeSala { get; set; }
