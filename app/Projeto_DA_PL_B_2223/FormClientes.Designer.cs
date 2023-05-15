@@ -55,7 +55,7 @@
             // 
             this.tabControlClientes.Controls.Add(this.tabPage1);
             this.tabControlClientes.Location = new System.Drawing.Point(8, 9);
-            this.tabControlClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControlClientes.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlClientes.Name = "tabControlClientes";
             this.tabControlClientes.SelectedIndex = 0;
             this.tabControlClientes.Size = new System.Drawing.Size(638, 334);
@@ -65,9 +65,9 @@
             // 
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(630, 308);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
@@ -91,9 +91,9 @@
             this.groupBoxFuncionario.Controls.Add(this.labelMoradaClientes);
             this.groupBoxFuncionario.Controls.Add(this.labelNomesClientes);
             this.groupBoxFuncionario.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxFuncionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
-            this.groupBoxFuncionario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxFuncionario.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxFuncionario.Size = new System.Drawing.Size(607, 288);
             this.groupBoxFuncionario.TabIndex = 4;
             this.groupBoxFuncionario.TabStop = false;
@@ -144,7 +144,7 @@
             // 
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.Location = new System.Drawing.Point(272, 39);
-            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(331, 186);
             this.listBoxClientes.TabIndex = 0;
@@ -152,7 +152,7 @@
             // textBoxValorBilhCompras
             // 
             this.textBoxValorBilhCompras.Location = new System.Drawing.Point(12, 205);
-            this.textBoxValorBilhCompras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxValorBilhCompras.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxValorBilhCompras.Name = "textBoxValorBilhCompras";
             this.textBoxValorBilhCompras.Size = new System.Drawing.Size(150, 20);
             this.textBoxValorBilhCompras.TabIndex = 21;
@@ -170,7 +170,7 @@
             // textBoxNumBilhComprados
             // 
             this.textBoxNumBilhComprados.Location = new System.Drawing.Point(12, 149);
-            this.textBoxNumBilhComprados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNumBilhComprados.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumBilhComprados.Name = "textBoxNumBilhComprados";
             this.textBoxNumBilhComprados.Size = new System.Drawing.Size(150, 20);
             this.textBoxNumBilhComprados.TabIndex = 11;
@@ -188,7 +188,7 @@
             // textBoxNumFiscClientes
             // 
             this.textBoxNumFiscClientes.Location = new System.Drawing.Point(82, 75);
-            this.textBoxNumFiscClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNumFiscClientes.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumFiscClientes.Name = "textBoxNumFiscClientes";
             this.textBoxNumFiscClientes.Size = new System.Drawing.Size(150, 20);
             this.textBoxNumFiscClientes.TabIndex = 9;
@@ -196,7 +196,7 @@
             // textBoxMoradaClientes
             // 
             this.textBoxMoradaClientes.Location = new System.Drawing.Point(62, 49);
-            this.textBoxMoradaClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxMoradaClientes.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxMoradaClientes.Name = "textBoxMoradaClientes";
             this.textBoxMoradaClientes.Size = new System.Drawing.Size(170, 20);
             this.textBoxMoradaClientes.TabIndex = 5;
@@ -204,7 +204,7 @@
             // textBoxNomeClientes
             // 
             this.textBoxNomeClientes.Location = new System.Drawing.Point(62, 25);
-            this.textBoxNomeClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNomeClientes.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNomeClientes.Name = "textBoxNomeClientes";
             this.textBoxNomeClientes.Size = new System.Drawing.Size(170, 20);
             this.textBoxNomeClientes.TabIndex = 4;
@@ -245,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 354);
             this.Controls.Add(this.tabControlClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormClientes";
             this.Text = "FormClientes";
             this.tabControlClientes.ResumeLayout(false);
