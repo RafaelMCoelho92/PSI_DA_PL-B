@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tabPageSessoesDoDia = new System.Windows.Forms.TabPage();
+            this.buttonCriarBilheteSessDia = new System.Windows.Forms.Button();
             this.dateTimePickerSessoesDoDia = new System.Windows.Forms.DateTimePicker();
             this.listBoxSessoesDoDia = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.buttonCriarBilheteSessDia = new System.Windows.Forms.Button();
             this.tabPageSessoesDoDia.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,17 @@
             this.tabPageSessoesDoDia.TabIndex = 0;
             this.tabPageSessoesDoDia.Text = "Sessões marcadas";
             this.tabPageSessoesDoDia.UseVisualStyleBackColor = true;
+            // 
+            // buttonCriarBilheteSessDia
+            // 
+            this.buttonCriarBilheteSessDia.Location = new System.Drawing.Point(476, 285);
+            this.buttonCriarBilheteSessDia.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCriarBilheteSessDia.Name = "buttonCriarBilheteSessDia";
+            this.buttonCriarBilheteSessDia.Size = new System.Drawing.Size(132, 34);
+            this.buttonCriarBilheteSessDia.TabIndex = 10;
+            this.buttonCriarBilheteSessDia.Text = "Criar Bilhete";
+            this.buttonCriarBilheteSessDia.UseVisualStyleBackColor = true;
+            this.buttonCriarBilheteSessDia.Click += new System.EventHandler(this.buttonCriarBilheteSessDia_Click);
             // 
             // dateTimePickerSessoesDoDia
             // 
@@ -75,16 +86,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(616, 357);
             this.tabControl1.TabIndex = 0;
-            // 
-            // buttonCriarBilheteSessDia
-            // 
-            this.buttonCriarBilheteSessDia.Location = new System.Drawing.Point(476, 285);
-            this.buttonCriarBilheteSessDia.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCriarBilheteSessDia.Name = "buttonCriarBilheteSessDia";
-            this.buttonCriarBilheteSessDia.Size = new System.Drawing.Size(132, 34);
-            this.buttonCriarBilheteSessDia.TabIndex = 10;
-            this.buttonCriarBilheteSessDia.Text = "Criar Bilhete";
-            this.buttonCriarBilheteSessDia.UseVisualStyleBackColor = true;
             // 
             // FormSessoesDoDia
             // 
