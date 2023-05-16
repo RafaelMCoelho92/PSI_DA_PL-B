@@ -44,8 +44,17 @@
             this.toolStripStatusLabelNomeFuncionarioLogado = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerFormPrincipal = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.definiçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cinemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sessoesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sessãoDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCinema
@@ -56,7 +65,6 @@
             this.buttonCinema.TabIndex = 0;
             this.buttonCinema.Text = "Cinema";
             this.buttonCinema.UseVisualStyleBackColor = true;
-            this.buttonCinema.Click += new System.EventHandler(this.buttonCinema_Click);
             // 
             // buttonFilmes
             // 
@@ -66,7 +74,6 @@
             this.buttonFilmes.TabIndex = 3;
             this.buttonFilmes.Text = "Filmes";
             this.buttonFilmes.UseVisualStyleBackColor = true;
-            this.buttonFilmes.Click += new System.EventHandler(this.buttonFilmes_Click);
             // 
             // buttonClientes
             // 
@@ -86,7 +93,6 @@
             this.buttonSessoes.TabIndex = 4;
             this.buttonSessoes.Text = "Sessões";
             this.buttonSessoes.UseVisualStyleBackColor = true;
-            this.buttonSessoes.Click += new System.EventHandler(this.buttonSessoes_Click);
             // 
             // buttonFuncionarios
             // 
@@ -96,7 +102,6 @@
             this.buttonFuncionarios.TabIndex = 2;
             this.buttonFuncionarios.Text = "Funcionários";
             this.buttonFuncionarios.UseVisualStyleBackColor = true;
-            this.buttonFuncionarios.Click += new System.EventHandler(this.buttonFuncionarios_Click);
             // 
             // labelNomeCinema
             // 
@@ -120,7 +125,6 @@
             this.buttonSalas.TabIndex = 1;
             this.buttonSalas.Text = "Salas";
             this.buttonSalas.UseVisualStyleBackColor = true;
-            this.buttonSalas.Click += new System.EventHandler(this.buttonSalas_Click);
             // 
             // tabControlMenuPrincipal
             // 
@@ -171,13 +175,77 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(609, 64);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.definiçõesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(791, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // definiçõesToolStripMenuItem
+            // 
+            this.definiçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cinemaToolStripMenuItem,
+            this.salaToolStripMenuItem,
+            this.funcionarioToolStripMenuItem,
+            this.sessoesToolStripMenuItem,
+            this.filmesToolStripMenuItem,
+            this.sessãoDoDiaToolStripMenuItem});
+            this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
+            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.definiçõesToolStripMenuItem.Text = "Definições";
+            // 
+            // cinemaToolStripMenuItem
+            // 
+            this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cinemaToolStripMenuItem.Text = "Cinema";
+            this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
+            // 
+            // salaToolStripMenuItem
+            // 
+            this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
+            this.salaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salaToolStripMenuItem.Text = "Sala";
+            this.salaToolStripMenuItem.Click += new System.EventHandler(this.salaToolStripMenuItem_Click);
+            // 
+            // funcionarioToolStripMenuItem
+            // 
+            this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionarioToolStripMenuItem.Text = "Funcionário";
+            this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
+            // 
+            // sessoesToolStripMenuItem
+            // 
+            this.sessoesToolStripMenuItem.Name = "sessoesToolStripMenuItem";
+            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sessoesToolStripMenuItem.Text = "Sessões";
+            this.sessoesToolStripMenuItem.Click += new System.EventHandler(this.sessoesToolStripMenuItem_Click);
+            // 
+            // filmesToolStripMenuItem
+            // 
+            this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filmesToolStripMenuItem.Text = "Filmes";
+            this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
+            // 
+            // sessãoDoDiaToolStripMenuItem
+            // 
+            this.sessãoDoDiaToolStripMenuItem.Name = "sessãoDoDiaToolStripMenuItem";
+            this.sessãoDoDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sessãoDoDiaToolStripMenuItem.Text = "Sessão do Dia";
             // 
             // FormPrincipal
             // 
@@ -186,6 +254,7 @@
             this.ClientSize = new System.Drawing.Size(791, 543);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControlMenuPrincipal);
             this.Controls.Add(this.buttonSalas);
             this.Controls.Add(this.labelNomeCinema);
@@ -194,11 +263,14 @@
             this.Controls.Add(this.buttonSessoes);
             this.Controls.Add(this.buttonFilmes);
             this.Controls.Add(this.buttonCinema);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +292,14 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelHora;
         private System.Windows.Forms.Timer timerFormPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem definiçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cinemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sessoesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sessãoDoDiaToolStripMenuItem;
     }
 }
 

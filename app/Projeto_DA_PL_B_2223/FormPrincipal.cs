@@ -35,7 +35,7 @@ namespace Projeto_DA_PL_B_2223
             TabPage tabSessDia = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tabSessDia);
         }
-        //VAI CHAMAR A TAB DO CINEMA
+        /*/VAI CHAMAR A TAB DO CINEMA
         private void buttonCinema_Click(object sender, EventArgs e)
         {           
             tabControlMenuPrincipal.TabPages.Clear();
@@ -58,7 +58,8 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormSessoes().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
-        }
+        }*/
+
         //CHAMA A TAB DOS CLIENTES
         private void buttonClientes_Click(object sender, EventArgs e)
         {
@@ -66,25 +67,27 @@ namespace Projeto_DA_PL_B_2223
             TabPage tab = new FormClientes().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
-        // CHAMA A TAB DOS FUNCIONARIOS
+
+        /* CHAMA A TAB DOS FUNCIONARIOS
         private void buttonFuncionarios_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormFuncionarios().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
-        }
+        }*/
+
         // 
         private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        // CHAMA A TAB DAS SALAS
+        /* CHAMA A TAB DAS SALAS
         private void buttonSalas_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormSala().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
-        }
+        }*/
         
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
         {
@@ -106,6 +109,51 @@ namespace Projeto_DA_PL_B_2223
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormSessoesDoDia().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        // CHAMA A TAB DOS CINEMAS
+        private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormCinema(this).getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        public void setNomeCinema(string nomeCinema)
+        {
+            labelNomeCinema.Text = nomeCinema;
+        }
+
+        // CHAMA A TAB DAS SALAS
+        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormSala().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        // CHAMA A TAB DOS FUNCIONAROS
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormLogin().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        // CHAMA A TAB DAS SESSOES
+        private void sessoesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormSessoes().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        // CHAMA A TAB DOS FILMES
+        private void filmesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormFilmes().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
     }
