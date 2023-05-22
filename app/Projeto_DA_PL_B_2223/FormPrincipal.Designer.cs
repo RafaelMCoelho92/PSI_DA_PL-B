@@ -169,14 +169,14 @@
             this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
             this.salaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salaToolStripMenuItem.Text = "Salas";
-            this.salaToolStripMenuItem.Click += new System.EventHandler(this.salaToolStripMenuItem_Click);
+            this.salaToolStripMenuItem.Click += new System.EventHandler(this.salasToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
             this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionários";
-            this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
+            this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // sessoesToolStripMenuItem
             // 
@@ -197,6 +197,7 @@
             this.sessãoDoDiaToolStripMenuItem.Name = "sessãoDoDiaToolStripMenuItem";
             this.sessãoDoDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sessãoDoDiaToolStripMenuItem.Text = "Sessão do Dia";
+            this.sessãoDoDiaToolStripMenuItem.Click += new System.EventHandler(this.sessãoDoDiaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 

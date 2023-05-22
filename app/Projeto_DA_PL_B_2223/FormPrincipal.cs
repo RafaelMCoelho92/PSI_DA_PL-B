@@ -34,31 +34,19 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tabSessDia = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tabSessDia);
-        }
-        /*/VAI CHAMAR A TAB DO CINEMA
-        private void buttonCinema_Click(object sender, EventArgs e)
-        {           
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormCinema().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
-            //FormCinema formCinema = new FormCinema(); // depois que trocar pra buscar da BD em vez do textbox
-            //FormCinema.atualizarDadosLabel();
-        }
-        // CHAMA A TAB DOS FILMES
-        private void buttonFilmes_Click(object sender, EventArgs e)
+        }       
+
+        // TAB CONTROL
+        private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormFilmes().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+
         }
 
-        //CHAMA A TAB DAS SESSOES
-        private void buttonSessoes_Click(object sender, EventArgs e)
+        // MOSTRA A DATA E A HORA 
+        private void timerFormPrincipal_Tick(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSessoes().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
-        }*/
+            this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("G"); // F, U, ou G (senao apaga o G e ver as opcoes)
+        }
 
         //CHAMA A TAB DOS CLIENTES
         private void buttonClientes_Click(object sender, EventArgs e)
@@ -68,47 +56,19 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
-        /* CHAMA A TAB DOS FUNCIONARIOS
-        private void buttonFuncionarios_Click(object sender, EventArgs e)
+        // CHAMA A TAB DAS SESSOES DO DIA CLICANDO NA LABEL DO TITULO DO CINEMA
+        private void labelNomeCinema_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormFuncionarios().getPage();
+            TabPage tab = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
-        }*/
-
-        // 
-        private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
-        /* CHAMA A TAB DAS SALAS
-        private void buttonSalas_Click(object sender, EventArgs e)
-        {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSala().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
-        }*/
-        
-        private void timerFormPrincipal_Tick(object sender, EventArgs e)
-        {
-            // MOSTRA A DATA E A HORA 
-            this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("G"); // F, U, ou G (senao apaga o G e ver as opcoes)
 
-
-
-        }
         // CHAMA A TAB DOS FUNCIONARIOS
         private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormLogin().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
-        }
-
-        private void labelNomeCinema_Click(object sender, EventArgs e)
-        {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
@@ -121,7 +81,7 @@ namespace Projeto_DA_PL_B_2223
         }
 
         // CHAMA A TAB DAS SALAS
-        private void salaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void salasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormSala().getPage();
@@ -129,10 +89,10 @@ namespace Projeto_DA_PL_B_2223
         }
 
         // CHAMA A TAB DOS FUNCIONAROS
-        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormLogin().getPage();
+            TabPage tab = new FormFuncionarios().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
@@ -149,6 +109,14 @@ namespace Projeto_DA_PL_B_2223
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormFilmes().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        // CHAMA A TAB DAS SESSOES DO DIA
+        private void sessãoDoDiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
