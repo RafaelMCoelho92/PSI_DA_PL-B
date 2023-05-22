@@ -32,14 +32,14 @@ namespace Projeto_DA_PL_B_2223
         // GUARDA OS DADOS DO CINEMA
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
+            // GUARDAR OS DADOS DO CINEMA NA BASE DE DADOS APÓS CLICAR NO BOTÃO 'GUARDAR'
             using (var db = new ApplicationContext())
             {
                 var cinema = new Cinema (textBoxNomeCinema.Text , textBoxMoradaCinema.Text, textBoxEmailCinema.Text);
                 db.Cinemas.Add(cinema);
                 db.SaveChanges();
 
-                var listCinemas = db.Cinemas.ToList();
-                labelNomeCinema.Text = listCinemas.LastOrDefault()?.NomeCinema;
+                // ATUALIZAR O TITULO DO CINEMA QUANDO SE GRAVA OS DADOS DO CINEMA
                 formPrincipal.setNomeCinema(cinema.NomeCinema);
             }
 
@@ -50,11 +50,10 @@ namespace Projeto_DA_PL_B_2223
             if (nome.Length > 0 && morada.Length > 0 && email.Length > 0)
             {
                 atualizarDadosLabel(); // METODO PARA ATUALIZAR OS DADOS DAS LABELS
-
             }
+        }
 
-
-        }// ATUALIZA AS LABELS DA LISTBOX
+        // ATUALIZA AS LABELS DA LISTBOX
         public void atualizarDadosLabel()
         {
             string nome = textBoxNomeCinema.Text;
@@ -67,9 +66,8 @@ namespace Projeto_DA_PL_B_2223
             labelNomeCinema.Text = cinema.NomeCinema;
             labelMoradaCinema.Text = cinema.MoradaCinema;
             labelEmailCinema.Text = cinema.EmailCinema;
-            //Instanciar?
-            //FormPrincipal.labelNomeCinema.Text = cinema.NomeCinema;// ATUALIZAR LABEL DO FORM PRINCIPAL
         }
+
         //VALIDA OS DADOS INSERIDOS 
         public void validarDadosInseridos()
         {

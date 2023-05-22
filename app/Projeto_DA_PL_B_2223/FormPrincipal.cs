@@ -120,11 +120,6 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
 
-        public void setNomeCinema(string nomeCinema)
-        {
-            labelNomeCinema.Text = nomeCinema;
-        }
-
         // CHAMA A TAB DAS SALAS
         private void salaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -155,6 +150,12 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormFilmes().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
+        }
+
+        // MÉTODO PARA ATUALIZAR A LABEL COM O TITULO DO CINEMA
+        public void setNomeCinema(string nomeCinema)
+        {
+            labelNomeCinema.Text = nomeCinema;
         }
     }
 }
