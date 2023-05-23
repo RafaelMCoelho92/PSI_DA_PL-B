@@ -14,13 +14,17 @@ namespace Projeto_DA_PL_B_2223
 
         public string NumFiscCliente { get; set; }
 
-        public Cliente(string numFiscCliente)
+        public Cliente(string nomePessoa, string moradaPessoa, string numFiscCliente):base(nomePessoa, moradaPessoa)
         {
             NumFiscCliente = numFiscCliente;
         }
         public Cliente()
         {
             // Construtor vazio necessário para o Entity Framework
+        }
+        public override string ToString()
+        {
+            return "NOME: " + NomePessoa + "  MORADA: " + MoradaPessoa + " NIF: " + NumFiscCliente;
         }
 
     }

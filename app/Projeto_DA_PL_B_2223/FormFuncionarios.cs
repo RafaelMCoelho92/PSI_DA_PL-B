@@ -55,7 +55,7 @@ namespace Projeto_DA_PL_B_2223
 
             try
             {
-                Funcionario funcionario = new Funcionario( salarioFuncionario.ToString(), tipoFuncionario);
+                Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario.ToString(), tipoFuncionario);
                 textBoxMoradaFuncionario.Text = funcionario.MoradaPessoa;
                 textBoxNomeFuncionario.Text = funcionario.NomePessoa;
                 textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario.ToString();
@@ -104,6 +104,10 @@ namespace Projeto_DA_PL_B_2223
                 
                 formPrincipal.Show();
             }
+        }
+        private void listBoxFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //formPrincipal.setNomeFuncionario(cinema.NomeCinema);
         }
     }
 }

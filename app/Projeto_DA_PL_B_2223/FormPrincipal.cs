@@ -165,6 +165,17 @@ namespace Projeto_DA_PL_B_2223
             labelNomeCinema.Text = nomeCinema;
         }
 
+        // MÉTODO PARA ATUALIZAR A LABEL COM O NOME DO FUNCIONARIO LOGADO
+        public void setNomeFuncionario(string nomePessoa)
+        {
+            toolStripStatusLabelNomeFuncionarioLogado.Text = nomePessoa;
+        }
 
+        private void toolStripStatusLabelNomeFuncionarioLogado_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormFuncionarios().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
     }
 }

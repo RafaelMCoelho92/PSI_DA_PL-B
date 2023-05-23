@@ -120,6 +120,7 @@
             this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
             this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(145, 32);
             this.toolStripStatusLabelNomeFuncionarioLogado.Text = "FAÇA LOGIN";
+            this.toolStripStatusLabelNomeFuncionarioLogado.Click += new System.EventHandler(this.toolStripStatusLabelNomeFuncionarioLogado_Click);
             // 
             // timerFormPrincipal
             // 

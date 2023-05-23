@@ -42,6 +42,8 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("É necessário um número fiscal");
                 return;
             }
+                VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
+
 
             // VARIAVEL PARA FAZER O PARSE
             double contribuinte = 0;
@@ -57,28 +59,39 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("O número fiscal a inserir deve ser válido");
                     return;
                 }
-
-                // INSTANCIADO O OBJ CLIENTE E ENVIA PARA A LISTA DE CLIENTES ---> (POSTEIRORMENTE PARA ADICIONAR A UMA LISTA)
-                Cliente cliente = new Cliente( numFiscCliente);
-                textBoxNomeClientes.Text = cliente.NomePessoa;
-                textBoxMoradaClientes.Text = cliente.MoradaPessoa;
-                textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
-
-                string clienteInfo = $"Nome: {nomeCliente}   " +
-                                     $"Morada: {moradaCliente}   " +
-                                     $"Número Fiscal: {numFiscCliente}";
-
-                // APENAS ADICIONA CLIENTES À LISTA CASO O CAMPO DO NUMERO FISCAL ESTEJA INSERIDO CORRETAMENTE
-                listBoxClientes.Items.Add(clienteInfo);
-
             }
             catch (FormatException)
             {
                 MessageBox.Show("Apenas devem constar números neste campo");
             }
+        }
+
+        // METODO PARA VERIFICAR SE JA EXISTE ALGUM CLIENTE NA LISTBOX DOS CLIENTES
+        private void VerificaClienteExistente(string nomeCliente, string moradaCliente, string numFiscCliente)
+        {
+            foreach (Cliente clienteExistente in listBoxClientes.Items)
+            {
+                if (clienteExistente.NumFiscCliente == numFiscCliente)
+                {
+                    MessageBox.Show("Não pode adicionar um cliente com um Numero Fiscal já utilizado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // NUMERO FISCAL DO CLIENTE JA EXISTE
+                }
+            }
+
+            // INSTANCIADO O OBJ CLIENTE E ENVIA PARA A LISTA DE CLIENTES
+            Cliente cliente = new Cliente(nomeCliente, moradaCliente, numFiscCliente);
+            textBoxNomeClientes.Text = cliente.NomePessoa;
+            textBoxMoradaClientes.Text = cliente.MoradaPessoa;
+            textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
+
+            // APENAS ADICIONA CLIENTES À LISTA CASO O CAMPO DO NUMERO FISCAL ESTEJA INSERIDO CORRETAMENTE
+            listBoxClientes.Items.Add(cliente);
+            return; // NUMERO FISCAL DO CLIENTE NAO EXISTE
+        }
 
 
-            /*
+
+        /*
              CRIAR LISTA DE CLIENTES
              List<Cliente> clientes = new List<Cliente>();
 
@@ -94,9 +107,6 @@ namespace Projeto_DA_PL_B_2223
 
             APÓS CRIADA A LISTA E VERIFICADO QUE NÃO HA NUMERO REPETIDO ADICIONA O OBJ CLIENTE À LISTA 
             clientes.Add(cliente);
-
-            */
-
-        }
+         */
     }
 }

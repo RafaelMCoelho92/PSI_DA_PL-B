@@ -17,9 +17,8 @@ namespace Projeto_DA_PL_B_2223
         public string MoradaPessoa { get; set; }
 
 
-        public Pessoa(int id, string nomePessoa, string moradaPessoa)
+        public Pessoa(string nomePessoa, string moradaPessoa)
         {
-            Id = id;
             NomePessoa = nomePessoa;
             MoradaPessoa = moradaPessoa;
 
@@ -28,10 +27,6 @@ namespace Projeto_DA_PL_B_2223
         {
             // Construtor vazio necessário para o Entity Framework
         }
-        public override string ToString()
-        {
 
-            return "NOME:" + NomePessoa + "  MORADA: " + MoradaPessoa;
-        }
     }
 }
