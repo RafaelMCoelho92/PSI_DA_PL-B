@@ -13,6 +13,7 @@ namespace Projeto_DA_PL_B_2223
         public string nomeSala { get; set; }
         public double Fila { get; set; }
         public double Coluna { get; set; }
+        public double Lugares { get; set; }
 
         //Constructor
         public Sala(string nomeSala)
@@ -20,13 +21,15 @@ namespace Projeto_DA_PL_B_2223
             this.nomeSala = nomeSala;
             Fila = 0;
             Coluna = 0;
+            Lugares = 0;
         }
         // METODO ALTERAR PARA EDITAR O VALOR DAS FILAS E COLUNAS DE UMA SALA
-        public string Alterar(double valorfila, double valorcoluna)
+        public string Alterar(double valorfila, double valorcoluna, double totalLugares)
         {
             Fila = valorfila;
             Coluna = valorcoluna;
-            string representacao = nomeSala + " Fila: " + Fila + " Coluna: " + Coluna;
+            Lugares = totalLugares;
+            string representacao = nomeSala + " Filas: " + Fila + " Colunas: " + Coluna + " Total Lugares: " + Lugares;
             return representacao;
 
         }
@@ -39,12 +42,9 @@ namespace Projeto_DA_PL_B_2223
         // OVERRIDE PARA DIZER COMO VAI ESCREVER NA LISTBOX
         public override string ToString()
         {
-            return nomeSala + " Fila: " + Fila + " Coluna: " + Coluna; 
+            return nomeSala + " Filas: " + Fila + " Colunas: " + Coluna + " Total Lugares: " + Lugares; 
         }
 
+        
     }
-    
-
-
-
 }
