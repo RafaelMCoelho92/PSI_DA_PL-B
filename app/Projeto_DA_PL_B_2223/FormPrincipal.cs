@@ -131,6 +131,11 @@ namespace Projeto_DA_PL_B_2223
             labelNomeCinema.Text = nomeCinema;
         }
 
-
+        private void toolStripStatusLabelNomeFuncionarioLogado_Click(object sender, EventArgs e)
+        {
+            tabControlMenuPrincipal.TabPages.Clear();
+            TabPage tab = new FormFuncionarios().getPage();
+            tabControlMenuPrincipal.TabPages.Add(tab);
+        }
     }
 }
