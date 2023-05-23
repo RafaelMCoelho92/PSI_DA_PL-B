@@ -15,9 +15,9 @@ namespace Projeto_DA_PL_B_2223
         public string SalarioFuncionario { get; set; }
         public string TipoFuncionario { get; set; }
 
-        public Funcionario( string salarioFuncionario,  string tipoFuncionario)
+        public Funcionario(string nomePessoa, string moradaPessoa, string salarioFuncionario,  string tipoFuncionario):base(nomePessoa,moradaPessoa)
         {
-
+            
             SalarioFuncionario = salarioFuncionario;
             TipoFuncionario = tipoFuncionario;
 
@@ -27,6 +27,10 @@ namespace Projeto_DA_PL_B_2223
             // Construtor vazio necessário para o Entity Framework
         }
 
+        public override string ToString()
+        {
+            return "NOME: " + NomePessoa + "  MORADA: " + MoradaPessoa + "  FUNÇÃO: " + TipoFuncionario + " SALARIO: " + SalarioFuncionario;
+        }
 
 
     }
