@@ -18,5 +18,10 @@ namespace Projeto_DA_PL_B_2223
         {
             NumFiscCliente = numFiscCliente;
         }
+        public Cliente()
+        {
+            // Construtor vazio necessário para o Entity Framework
+        }
+
     }
 }

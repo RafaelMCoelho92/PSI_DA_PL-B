@@ -24,6 +24,10 @@ namespace Projeto_DA_PL_B_2223
             MoradaPessoa = moradaPessoa;
 
         }
+        public Pessoa()
+        {
+            // Construtor vazio necessário para o Entity Framework
+        }
         public override string ToString()
         {
 

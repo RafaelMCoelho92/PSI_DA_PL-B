@@ -59,9 +59,9 @@ namespace Projeto_DA_PL_B_2223
                 }
 
                 // INSTANCIADO O OBJ CLIENTE E ENVIA PARA A LISTA DE CLIENTES ---> (POSTEIRORMENTE PARA ADICIONAR A UMA LISTA)
-                Cliente cliente = new Cliente(nomeCliente, moradaCliente, numFiscCliente);
-                textBoxNomeClientes.Text = cliente.NomeCliente;
-                textBoxMoradaClientes.Text = cliente.MoradaCliente;
+                Cliente cliente = new Cliente( numFiscCliente);
+                textBoxNomeClientes.Text = cliente.NomePessoa;
+                textBoxMoradaClientes.Text = cliente.MoradaPessoa;
                 textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
 
                 string clienteInfo = $"Nome: {nomeCliente}   " +
