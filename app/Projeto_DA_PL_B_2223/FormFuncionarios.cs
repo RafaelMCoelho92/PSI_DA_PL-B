@@ -86,5 +86,10 @@ namespace Projeto_DA_PL_B_2223
                 listBoxFuncionarios.Items.Remove(funcionario);
             }
         }
+
+        private void listBoxFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //formPrincipal.setNomeFuncionario(cinema.NomeCinema);
+        }
     }
 }
