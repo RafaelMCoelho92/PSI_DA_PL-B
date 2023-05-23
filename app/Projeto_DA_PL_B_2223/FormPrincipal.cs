@@ -21,7 +21,7 @@ namespace Projeto_DA_PL_B_2223
             InitializeComponent();
             // FORM CENTRADO COM ECRA
             this.CenterToScreen();
-            //VER SE TEM UTILIZADOR LOGADO CASO NAO TENHA VAI CHAMAR A PAGINA DE LOG IN
+
 
             if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
             {
@@ -34,7 +34,12 @@ namespace Projeto_DA_PL_B_2223
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tabSessDia = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tabSessDia);
-        }       
+        }
+        //VER SE TEM UTILIZADOR LOGADO CASO NAO TENHA VAI CHAMAR A PAGINA DE LOG IN
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+        }
 
         // TAB CONTROL
         private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,5 +130,7 @@ namespace Projeto_DA_PL_B_2223
         {
             labelNomeCinema.Text = nomeCinema;
         }
+
+
     }
 }

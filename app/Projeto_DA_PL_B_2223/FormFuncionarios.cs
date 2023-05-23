@@ -56,8 +56,8 @@ namespace Projeto_DA_PL_B_2223
             try
             {
                 Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario.ToString(), tipoFuncionario);
-                textBoxMoradaFuncionario.Text = funcionario.MoradaFuncionario;
-                textBoxNomeFuncionario.Text = funcionario.NomeFuncionario;
+                textBoxMoradaFuncionario.Text = funcionario.MoradaPessoa;
+                textBoxNomeFuncionario.Text = funcionario.NomePessoa;
                 textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario.ToString();
                 comboBoxFuncaoFuncionario.Text = funcionario.TipoFuncionario;
 

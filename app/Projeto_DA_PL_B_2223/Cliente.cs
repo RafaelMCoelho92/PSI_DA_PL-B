@@ -8,18 +8,14 @@ using System.Threading.Tasks;
 namespace Projeto_DA_PL_B_2223
 {
     [Serializable]
-    public class Cliente
+    public class Cliente:Pessoa
     {
         [Key]
-        public int Id { get; set; }
-        public string NomeCliente { get; set; } 
-        public string MoradaCliente { get; set; }
+
         public string NumFiscCliente { get; set; }
 
-        public Cliente(string nomeCliente, string moradaCliente, string numFiscCliente)
+        public Cliente(string numFiscCliente)
         {
-            NomeCliente = nomeCliente;
-            MoradaCliente = moradaCliente;
             NumFiscCliente = numFiscCliente;
         }
     }
