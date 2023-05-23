@@ -33,6 +33,13 @@ namespace Projeto_DA_PL_B_2223
             {
                 VerificaSalaExistente(nomeSala);
             }
+
+            using (var db = new ApplicationContext())
+            {
+                var sala = new Sala(textBoxNomeSala.Text);
+                db.Salas.Add(sala);
+                db.SaveChanges();
+            }
         }
 
         // METODO PARA VERIFICAR SE JA EXISTE ALGUMA SALA NA LISTBOX DAS SALAS

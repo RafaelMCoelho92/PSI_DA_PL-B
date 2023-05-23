@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -7,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace Projeto_DA_PL_B_2223
 {
-    internal class Bilhete
+    public class Bilhete
     {
-        public double idBilhete { get; }
-        public double lugarBilhete { get; }
+        [Key]
+        public double idBilhete { get; set; }
+        public double lugarBilhete { get; set; }
         public bool estadoBilhete { get; set; }
         //public Filme filmeBilhete { get; } -------> FILME e SALA vao estar na SESSAO
-        public Cliente clienteBilhete { get;}
+        public Cliente clienteBilhete { get; set; }
         //public Sala salaBilhete { get; }
         public Funcionario funcionarioBilhete { get; }
         //public Sessao sessaoBilhete { get; }

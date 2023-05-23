@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,13 +8,14 @@ using System.Threading.Tasks;
 namespace Projeto_DA_PL_B_2223
 {
     [Serializable]
-    internal class Funcionario
+    public class Funcionario
     {
-
-        public string NomeFuncionario { get; }
-        public string MoradaFuncionario { get; }
-        public string SalarioFuncionario { get; }
-        public string TipoFuncionario { get; }
+        [Key]
+        public int Id { get; set; }
+        public string NomeFuncionario { get; set; }
+        public string MoradaFuncionario { get; set; }
+        public string SalarioFuncionario { get; set; }
+        public string TipoFuncionario { get; set; }
 
         public Funcionario(string nomeFuncionario, string moradaFuncionario, string salarioFuncionario, string tipoFuncionario)
         {

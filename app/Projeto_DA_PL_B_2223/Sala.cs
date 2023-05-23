@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,10 @@ using System.Windows.Forms;
 namespace Projeto_DA_PL_B_2223
 {
     [Serializable]
-    internal class Sala
+    public class Sala
     {
+        [Key]
+        public int Id { get; set; }
         public string nomeSala { get; set; }
         public double Fila { get; set; }
         public double Coluna { get; set; }
@@ -19,10 +22,14 @@ namespace Projeto_DA_PL_B_2223
         public Sala(string nomeSala)
         {
             this.nomeSala = nomeSala;
-            Fila = 0;
-            Coluna = 0;
-            Lugares = 0;
         }
+
+        public Sala()
+        {
+
+        }
+
+
         // METODO ALTERAR PARA EDITAR O VALOR DAS FILAS E COLUNAS DE UMA SALA
         public string Alterar(double valorfila, double valorcoluna, double totalLugares)
         {
