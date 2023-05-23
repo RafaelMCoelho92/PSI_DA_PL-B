@@ -43,6 +43,7 @@
             this.buttonApagarFuncionario = new System.Windows.Forms.Button();
             this.groupBoxListaFuncionarios = new System.Windows.Forms.GroupBox();
             this.listBoxFuncionarios = new System.Windows.Forms.ListBox();
+            this.button_entrar = new System.Windows.Forms.Button();
             this.groupBoxFuncionario.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -168,6 +169,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button_entrar);
             this.tabPage1.Controls.Add(this.buttonApagarFuncionario);
             this.tabPage1.Controls.Add(this.groupBoxListaFuncionarios);
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
@@ -213,6 +215,16 @@
             this.listBoxFuncionarios.Size = new System.Drawing.Size(595, 292);
             this.listBoxFuncionarios.TabIndex = 0;
             // 
+            // button_entrar
+            // 
+            this.button_entrar.Location = new System.Drawing.Point(761, 341);
+            this.button_entrar.Name = "button_entrar";
+            this.button_entrar.Size = new System.Drawing.Size(160, 29);
+            this.button_entrar.TabIndex = 20;
+            this.button_entrar.Text = "ENTRAR";
+            this.button_entrar.UseVisualStyleBackColor = true;
+            this.button_entrar.Click += new System.EventHandler(this.button_entrar_Click);
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,5 +260,6 @@
         private System.Windows.Forms.ListBox listBoxFuncionarios;
         private System.Windows.Forms.Button buttonApagarFuncionario;
         private System.Windows.Forms.TextBox textBoxSalarioFuncionario;
+        private System.Windows.Forms.Button button_entrar;
     }
 }

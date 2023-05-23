@@ -17,6 +17,7 @@ namespace Projeto_DA_PL_B_2223
         public FormCinema()
         {
             InitializeComponent();
+            this.CenterToScreen(); // centra o form no ecrã
         }
 
         public FormCinema(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -38,9 +39,9 @@ namespace Projeto_DA_PL_B_2223
                 var cinema = new Cinema (textBoxNomeCinema.Text , textBoxMoradaCinema.Text, textBoxEmailCinema.Text);
                 db.Cinemas.Add(cinema);
                 db.SaveChanges();
-
+                
                 // ATUALIZAR O TITULO DO CINEMA QUANDO SE GRAVA OS DADOS DO CINEMA
-                formPrincipal.setNomeCinema(cinema.NomeCinema);
+                //formPrincipal.setNomeCinema(cinema.NomeCinema);
             }
 
             string nome = textBoxNomeCinema.Text;

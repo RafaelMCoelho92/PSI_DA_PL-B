@@ -39,6 +39,40 @@ namespace Projeto_DA_PL_B_2223
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            
+            ApplicationContext context = new ApplicationContext();
+            bool existem_cinemas = context.Cinemas.Count() > 0;
+
+            if (!existem_cinemas)
+            {
+                do
+                {
+                    FormCinema formCinema = new FormCinema();
+                    DialogResult resultado = formCinema.ShowDialog();
+
+                    DialogResult resposta = MessageBox.Show("Deseja sair da aplicação?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resposta == DialogResult.Yes)
+                    {
+                        this.Close();
+                        return; // Encerra o método e fecha a aplicação
+                    }
+                    else if (resposta == DialogResult.No)
+                    {
+                        tabControlMenuPrincipal.TabPages.Clear();
+                        TabPage tab = formCinema.getPage();
+                        tabControlMenuPrincipal.TabPages.Add(tab);
+                    }
+                }
+                while (context.Cinemas.Count() == 0); // Loop infinito
+            }
+            else
+            {
+                tabControlMenuPrincipal.TabPages.Clear();
+                TabPage tab = new FormFuncionarios().getPage();
+                tabControlMenuPrincipal.TabPages.Add(tab);
+            }
+            
+            
         }
 
         // TAB CONTROL

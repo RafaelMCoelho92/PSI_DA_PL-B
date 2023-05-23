@@ -86,5 +86,24 @@ namespace Projeto_DA_PL_B_2223
                 listBoxFuncionarios.Items.Remove(funcionario);
             }
         }
+
+        private void button_entrar_Click(object sender, EventArgs e)
+        {
+            int entrarFunc = listBoxFuncionarios.SelectedIndex;
+            if (entrarFunc == -1)
+            {
+                MessageBox.Show("Selecione um Funcionário");
+                return;
+            }
+
+            if (listBoxFuncionarios.Items[entrarFunc] is Funcionario funcionario)
+            {
+                // Crie uma instância do formulário formCinema
+                FormPrincipal formPrincipal = new FormPrincipal();
+                // Exiba o formulário formCinema
+                
+                formPrincipal.Show();
+            }
+        }
     }
 }
