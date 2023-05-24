@@ -42,8 +42,16 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("É necessário um número fiscal");
                 return;
             }
-                VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
+            
+            VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
 
+            // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS
+            using (var db = new ApplicationContext())
+            {
+                var cliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text);
+                db.Pessoas.Add(cliente);
+                db.SaveChanges();
+            }
 
             // VARIAVEL PARA FAZER O PARSE
             double contribuinte = 0;
@@ -84,29 +92,8 @@ namespace Projeto_DA_PL_B_2223
             textBoxMoradaClientes.Text = cliente.MoradaPessoa;
             textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
 
-            // APENAS ADICIONA CLIENTES À LISTA CASO O CAMPO DO NUMERO FISCAL ESTEJA INSERIDO CORRETAMENTE
             listBoxClientes.Items.Add(cliente);
             return; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
-
-
-
-        /*
-             CRIAR LISTA DE CLIENTES
-             List<Cliente> clientes = new List<Cliente>();
-
-             PERCORRER TODOS OS CLIENTES EXISTENTES NA LISTA DE MODO A VERIFICAR SE HA ALGUM NIF REPETIDO 
-             foreach (Cliente clienteExistente in clientes)
-             {
-                if (clienteExistente.NumFiscCliente == numFiscCliente)
-                {
-                    MessageBox.Show("Este número fiscal já foi inserido anteriormente");
-                    return;
-                }
-            }
-
-            APÓS CRIADA A LISTA E VERIFICADO QUE NÃO HA NUMERO REPETIDO ADICIONA O OBJ CLIENTE À LISTA 
-            clientes.Add(cliente);
-         */
     }
 }

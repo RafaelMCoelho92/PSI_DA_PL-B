@@ -69,7 +69,13 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Erro ao criar funcionário");
             }
 
-
+            // GUARDAR OS DADOS DOS FUNCIONARIOS NA BASE DE DADOS
+            using (var db = new ApplicationContext())
+            {
+                var funcionario = new Funcionario(textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);
+                db.Pessoas.Add(funcionario);
+                db.SaveChanges();
+            }
         }
 
         private void buttonApagarFuncionario_Click(object sender, EventArgs e)
@@ -87,27 +93,24 @@ namespace Projeto_DA_PL_B_2223
             }
         }
 
-        private void button_entrar_Click(object sender, EventArgs e)
+        // METODO PARA APARECER O NOME DO FUNCIONARIO NA LABEL ONDE DIZ "FAÇA LOGIN"
+        public void listBoxFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int entrarFunc = listBoxFuncionarios.SelectedIndex;
-            if (entrarFunc == -1)
+            int escolherFunc = listBoxFuncionarios.SelectedIndex;
+            if (escolherFunc == -1)
             {
-                MessageBox.Show("Selecione um Funcionário");
+                MessageBox.Show("Selecione um Funcionário!");
                 return;
             }
 
-            if (listBoxFuncionarios.Items[entrarFunc] is Funcionario funcionario)
-            {
-                // Crie uma instância do formulário formCinema
+            if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
+            {      
                 FormPrincipal formPrincipal = new FormPrincipal();
-                // Exiba o formulário formCinema
-                
-                formPrincipal.Show();
-            }
-        }
-        private void listBoxFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //formPrincipal.setNomeFuncionario(cinema.NomeCinema);
-        }
+                // Exibir o formulário principal apos entrar com o funcionario
+                formPrincipal.setNomeFuncionario(funcionario.NomePessoa);
+                TabPage tab = new FormSessoesDoDia().getPage(); //não esta a dar para abrir a tab das sessoes do dia apos clicar no funcionario
+                //formPrincipal.Show();                           nem está a aparecer o nome do funcionario, tambem porque a label tem texto
+            }                                                   //mas devia aparecer nova tab na mesma janela com o nome do funcionario no login
+        }                                                       //REVER!!!!!!!!!!!!!!!!!!
     }
 }

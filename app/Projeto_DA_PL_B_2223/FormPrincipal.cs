@@ -35,8 +35,8 @@ namespace Projeto_DA_PL_B_2223
             TabPage tabSessDia = new FormSessoesDoDia().getPage();
             tabControlMenuPrincipal.TabPages.Add(tabSessDia);
         }
+        
         //VER SE TEM UTILIZADOR LOGADO CASO NAO TENHA VAI CHAMAR A PAGINA DE LOG IN
-
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             

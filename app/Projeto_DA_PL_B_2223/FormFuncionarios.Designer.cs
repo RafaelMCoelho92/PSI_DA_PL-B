@@ -223,7 +223,6 @@
             this.button_entrar.TabIndex = 20;
             this.button_entrar.Text = "ENTRAR";
             this.button_entrar.UseVisualStyleBackColor = true;
-            this.button_entrar.Click += new System.EventHandler(this.button_entrar_Click);
             // 
             // FormFuncionarios
             // 
