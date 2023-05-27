@@ -89,8 +89,11 @@ namespace Projeto_DA_PL_B_2223
             if (email.Length == 0)
             {
                 MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
             }
+            else if (!email.Contains("@"))
+            {
+                    MessageBox.Show("O email tem de conter formato de email válido - (@) ", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } 
         }
     }
 }
