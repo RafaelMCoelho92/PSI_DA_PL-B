@@ -90,14 +90,14 @@ namespace Projeto_DA_PL_B_2223
                 funcionarioSelecionado.MoradaPessoa = textBoxMoradaFuncionario.Text;
                 funcionarioSelecionado.TipoFuncionario = comboBoxFuncaoFuncionario.Text;
                 funcionarioSelecionado.SalarioFuncionario = textBoxSalarioFuncionario.Text;
-
+                // Atualizar a exibição do funcionário na ListBox
                 int editarfuncionario = listBoxFuncionarios.SelectedIndex;
                 listBoxFuncionarios.Items[editarfuncionario] = funcionarioSelecionado;
             }
             else // se não tiver, cria um novo
             {
                 Funcionario novofuncionario =  new Funcionario (textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);                                                                                  
-                //textBoxNomeFuncionario.Text = novofuncionario.NomePessoa;
+               
                 listBoxFuncionarios.Items.Add (novofuncionario);
             }
 
