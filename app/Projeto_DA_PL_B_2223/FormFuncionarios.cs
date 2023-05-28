@@ -82,11 +82,31 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Erro ao criar funcionário");
             }
 
+
+            if (listBoxFuncionarios.SelectedIndex != -1) // se tiver um funcionario selecionado, altera os dados
+            {
+                Funcionario funcionarioSelecionado = (Funcionario)listBoxFuncionarios.SelectedItem;
+                funcionarioSelecionado.NomePessoa = textBoxNomeFuncionario.Text;
+                funcionarioSelecionado.MoradaPessoa = textBoxMoradaFuncionario.Text;
+                funcionarioSelecionado.TipoFuncionario = comboBoxFuncaoFuncionario.Text;
+                funcionarioSelecionado.SalarioFuncionario = textBoxSalarioFuncionario.Text;
+
+                int editarfuncionario = listBoxFuncionarios.SelectedIndex;
+                listBoxFuncionarios.Items[editarfuncionario] = funcionarioSelecionado;
+            }
+            else // se não tiver, cria um novo
+            {
+                Funcionario novofuncionario =  new Funcionario (textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);                                                                                  
+                //textBoxNomeFuncionario.Text = novofuncionario.NomePessoa;
+                listBoxFuncionarios.Items.Add (novofuncionario);
+            }
+
+
             // GUARDAR OS DADOS DOS FUNCIONARIOS NA BASE DE DADOS
             using (var db = new ApplicationContext())
             {
-                var funcionario = new Funcionario(textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);
-                db.Pessoas.Add(funcionario);
+                var novofuncionario = new Funcionario(textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);
+                db.Pessoas.Add(novofuncionario);
                 db.SaveChanges();
             }
         }
@@ -124,14 +144,16 @@ namespace Projeto_DA_PL_B_2223
 
             }
 
-            if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
+            /*  //////////////////////////////////// NAO PERCEBO PORQUE CRASHA QUANDO METEMOS A GRAVAR
+             * 
+             * if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
             {      
                 FormPrincipal formPrincipal = new FormPrincipal();
                 // Exibir o formulário principal apos entrar com o funcionario
                 formPrincipal.setNomeFuncionario(funcionario.NomePessoa);
                 TabPage tab = new FormSessoesDoDia().getPage(); //não esta a dar para abrir a tab das sessoes do dia apos clicar no funcionario
-                //formPrincipal.Show();                           nem está a aparecer o nome do funcionario, tambem porque a label tem texto
-            }                                                   //mas devia aparecer nova tab na mesma janela com o nome do funcionario no login
-        }                                                       //REVER!!!!!!!!!!!!!!!!!!
+                //formPrincipal.Show();                          nem está a aparecer o nome do funcionario, tambem porque a label tem texto
+            }           */                                       //mas devia aparecer nova tab na mesma janela com o nome do funcionario no login
+        }                                                       //REVER!!!!!!!!!!!!!!!!!!  
     }
 }
