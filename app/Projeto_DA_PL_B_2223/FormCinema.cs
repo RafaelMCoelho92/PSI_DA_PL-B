@@ -42,15 +42,18 @@ namespace Projeto_DA_PL_B_2223
         {
             this.formPrincipal = formPrincipal;
         }
-
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
-
         // GUARDA OS DADOS DO CINEMA
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
+            // a funcao abaixo retorna false se n cumprir qualquer um dos parametros, retorna true se cumprir a todos
+            if(!validarDadosInseridos())// se for FALSO sai, se for true continua
+            {
+                return;
+            }
             // Verificar se o cinema já existe na base de dados
             //using é para liberar os recursos no fim não é nescessario mas é boa pratica 
             using (var db = new ApplicationContext())
@@ -72,12 +75,9 @@ namespace Projeto_DA_PL_B_2223
 
                 db.SaveChanges();
             }
-
             // Atualizar os dados das labels
             atualizarDadosLabel();
         }
-
-
         // ATUALIZA AS LABELS DA LISTBOX
         public void atualizarDadosLabel()
         {
@@ -94,30 +94,41 @@ namespace Projeto_DA_PL_B_2223
         }
 
         //VALIDA OS DADOS INSERIDOS 
-        public void validarDadosInseridos()
+        public bool validarDadosInseridos()
         {
-            // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
-            string nome = textBoxNomeCinema.Text;
-            if (nome.Length == 0)
-            {
-                MessageBox.Show("O nome não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string morada = textBoxMoradaCinema.Text;
-            if (morada.Length == 0)
-            {
-                MessageBox.Show("A morada não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string email = textBoxEmailCinema.Text;
-            if (email.Length == 0)
-            {
-                MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (!email.Contains("@"))
-            {
+
+                // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
+
+            //Retorna falso para quando nao esta a cumprir os parametros
+            //retorna true quando cumpre
+                string nome = textBoxNomeCinema.Text;
+                if (nome.Length == 0)
+                {
+                    MessageBox.Show("O nome não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                string morada = textBoxMoradaCinema.Text;
+                if (morada.Length == 0)
+                {
+                    MessageBox.Show("A morada não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                string email = textBoxEmailCinema.Text;
+                if (email.Length == 0)
+                {
+                    MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (!email.Contains("@"))
+                {
                     MessageBox.Show("O email tem de conter formato de email válido - (@) ", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                } 
+                    return false;
+                }
+                else
+                {
+                    return true ;
+                }
+
         }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
