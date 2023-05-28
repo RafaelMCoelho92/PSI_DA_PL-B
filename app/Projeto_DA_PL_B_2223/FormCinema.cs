@@ -33,26 +33,32 @@ namespace Projeto_DA_PL_B_2223
         // GUARDA OS DADOS DO CINEMA
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
-            // GUARDAR OS DADOS DO CINEMA NA BASE DE DADOS APÓS CLICAR NO BOTÃO 'GUARDAR'
+            // Verificar se o cinema já existe na base de dados
+            //using é para liberar os recursos no fim não é nescessario mas é boa pratica 
             using (var db = new ApplicationContext())
             {
-                var cinema = new Cinema (textBoxNomeCinema.Text , textBoxMoradaCinema.Text, textBoxEmailCinema.Text);
-                db.Cinemas.Add(cinema);
+                var existeCinema = db.Cinemas.FirstOrDefault();
+                if (existeCinema != null)
+                {
+                    // O cinema já existe, atualizar os dados
+                    existeCinema.NomeCinema = textBoxNomeCinema.Text;
+                    existeCinema.MoradaCinema = textBoxMoradaCinema.Text;
+                    existeCinema.EmailCinema = textBoxEmailCinema.Text;
+                }
+                else
+                {
+                    // O cinema não existe, criar um novo cinema
+                    var cinema = new Cinema(textBoxNomeCinema.Text, textBoxMoradaCinema.Text, textBoxEmailCinema.Text);
+                    db.Cinemas.Add(cinema);
+                }
+
                 db.SaveChanges();
-                
-                // ATUALIZAR O TITULO DO CINEMA QUANDO SE GRAVA OS DADOS DO CINEMA
-                //formPrincipal.setNomeCinema(cinema.NomeCinema);
             }
 
-            string nome = textBoxNomeCinema.Text;
-            string morada = textBoxMoradaCinema.Text;
-            string email = textBoxEmailCinema.Text;
-            validarDadosInseridos(); //metodo para validar os dados inseridos
-            if (nome.Length > 0 && morada.Length > 0 && email.Length > 0)
-            {
-                atualizarDadosLabel(); // METODO PARA ATUALIZAR OS DADOS DAS LABELS
-            }
+            // Atualizar os dados das labels
+            atualizarDadosLabel();
         }
+
 
         // ATUALIZA AS LABELS DA LISTBOX
         public void atualizarDadosLabel()
@@ -100,7 +106,7 @@ namespace Projeto_DA_PL_B_2223
         {
             ApplicationContext context = new ApplicationContext();
             if (context.Cinemas.Any())
-            {  
+            {
                 this.Close();
             }
             else

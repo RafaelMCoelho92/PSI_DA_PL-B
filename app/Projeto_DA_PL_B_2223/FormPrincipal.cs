@@ -22,16 +22,6 @@ namespace Projeto_DA_PL_B_2223
             // FORM CENTRADO COM ECRA
             this.CenterToScreen();
 
-
-
-            /*   if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
-               {
-                   tabControlMenuPrincipal.TabPages.Clear();
-                   TabPage tab = new FormLogin().getPage();
-                   tabControlMenuPrincipal.TabPages.Add(tab);
-               }
-            */
-
             {
                 FormFuncionarios formFuncionarios = new FormFuncionarios();
                 tabControlMenuPrincipal.TabPages.Clear();
@@ -50,38 +40,11 @@ namespace Projeto_DA_PL_B_2223
 
             while (context.Cinemas.Count() == 0 ) // ENQUANTO A CONTAGEM DE CINEMAS FOR IGUAL A 0, VAI ABRIR O FORM DE CINEMA
                 
-                {
-                    FormCinema formCinema = new FormCinema(); // INSTANCIA DO FORM CINEMA
-                    formCinema.ShowDialog();
-
-                // JA NAO é PRECISO ISSO 
-                /*    DialogResult resposta = MessageBox.Show("Deseja sair da aplicação?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                  if (resposta == DialogResult.Yes)
-                   {
-                        // Encerra o método e fecha a aplicação
-                        this.Close();
-                        return; 
-                   }
-                   else if (resposta == DialogResult.No && context.Cinemas.Count() > 0 )
-
-                   {
-                       FormFuncionarios formFuncionarios = new FormFuncionarios();
-                       tabControlMenuPrincipal.TabPages.Clear();
-                       TabPage tab = formFuncionarios.getPage();
-                       tabControlMenuPrincipal.TabPages.Add(tab);
-                   }
-                */
-
+            {
+                FormCinema formCinema = new FormCinema(); // INSTANCIA DO FORM CINEMA
+                formCinema.ShowDialog();
             }
-
-
-
-
-
         }
-
-
 
         // TAB CONTROL
         private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
