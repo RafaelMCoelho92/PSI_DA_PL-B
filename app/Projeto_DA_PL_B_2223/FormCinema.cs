@@ -18,6 +18,11 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen(); // centra o form no ecrã
+            atualizarDadosAoEntrar();
+
+        }
+        public void atualizarDadosAoEntrar()
+        {
             using (ApplicationContext db = new ApplicationContext()) // using para liberar recursos no fim, boas praticas
             {
                 var cinema = db.Cinemas.FirstOrDefault(); //podemos usar tbm SingleOrDefaul,First(se n tiver vai abrir uma exceção)
@@ -33,7 +38,6 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
-
         public FormCinema(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
         {
             this.formPrincipal = formPrincipal;
