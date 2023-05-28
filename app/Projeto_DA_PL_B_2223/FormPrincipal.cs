@@ -23,57 +23,65 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
 
 
-            if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
+
+            /*   if (toolStripStatusLabelNomeFuncionarioLogado.Text == "")
+               {
+                   tabControlMenuPrincipal.TabPages.Clear();
+                   TabPage tab = new FormLogin().getPage();
+                   tabControlMenuPrincipal.TabPages.Add(tab);
+               }
+            */
+
             {
+                FormFuncionarios formFuncionarios = new FormFuncionarios();
                 tabControlMenuPrincipal.TabPages.Clear();
-                TabPage tab = new FormLogin().getPage();
+                TabPage tab = formFuncionarios.getPage();
                 tabControlMenuPrincipal.TabPages.Add(tab);
             }
 
-            // APOS VERIFICAR O FUNC LOGADO, APRESENTARÁ O FORMULÁRIO PRINCIPAL COM A TAB DAS SESSOES DO DIA
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tabSessDia = new FormSessoesDoDia().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tabSessDia);
+
         }
-        
-        //VER SE TEM UTILIZADOR LOGADO CASO NAO TENHA VAI CHAMAR A PAGINA DE LOG IN
+
+        //FUNCAO QUE EXECUTA AO ABRIR O FORM
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            
+            // PRA VER NA BASE DE DADOS
             ApplicationContext context = new ApplicationContext();
-            bool existem_cinemas = context.Cinemas.Count() > 0;
 
-            if (!existem_cinemas)
-            {
-                do
+            while (context.Cinemas.Count() == 0 ) // ENQUANTO A CONTAGEM DE CINEMAS FOR IGUAL A 0, VAI ABRIR O FORM DE CINEMA
+                
                 {
-                    FormCinema formCinema = new FormCinema();
-                    DialogResult resultado = formCinema.ShowDialog();
+                    FormCinema formCinema = new FormCinema(); // INSTANCIA DO FORM CINEMA
+                    formCinema.ShowDialog();
 
-                    DialogResult resposta = MessageBox.Show("Deseja sair da aplicação?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resposta == DialogResult.Yes)
-                    {
+                // JA NAO é PRECISO ISSO 
+                /*    DialogResult resposta = MessageBox.Show("Deseja sair da aplicação?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                  if (resposta == DialogResult.Yes)
+                   {
+                        // Encerra o método e fecha a aplicação
                         this.Close();
-                        return; // Encerra o método e fecha a aplicação
-                    }
-                    else if (resposta == DialogResult.No)
-                    {
-                        tabControlMenuPrincipal.TabPages.Clear();
-                        TabPage tab = formCinema.getPage();
-                        tabControlMenuPrincipal.TabPages.Add(tab);
-                    }
-                }
-                while (context.Cinemas.Count() == 0); // Loop infinito
+                        return; 
+                   }
+                   else if (resposta == DialogResult.No && context.Cinemas.Count() > 0 )
+
+                   {
+                       FormFuncionarios formFuncionarios = new FormFuncionarios();
+                       tabControlMenuPrincipal.TabPages.Clear();
+                       TabPage tab = formFuncionarios.getPage();
+                       tabControlMenuPrincipal.TabPages.Add(tab);
+                   }
+                */
+
             }
-            else
-            {
-                tabControlMenuPrincipal.TabPages.Clear();
-                TabPage tab = new FormFuncionarios().getPage();
-                tabControlMenuPrincipal.TabPages.Add(tab);
-            }
-            
-            
+
+
+
+
+
         }
+
+
 
         // TAB CONTROL
         private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
@@ -177,5 +185,7 @@ namespace Projeto_DA_PL_B_2223
             TabPage tab = new FormFuncionarios().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
         }
+
+
     }
 }

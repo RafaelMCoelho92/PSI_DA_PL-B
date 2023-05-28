@@ -95,5 +95,18 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("O email tem de conter formato de email válido - (@) ", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } 
         }
+
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            ApplicationContext context = new ApplicationContext();
+            if (context.Cinemas.Any())
+            {  
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Registe primeiro um cinema", "Aviso", MessageBoxButtons.OK , MessageBoxIcon.Warning );
+            }
+        }
     }
 }
