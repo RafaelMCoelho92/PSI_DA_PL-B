@@ -21,7 +21,7 @@ namespace Projeto_DA_PL_B_2223
             atualizarDadosAoEntrar();
 
         }
-        public void atualizarDadosAoEntrar()
+        private void atualizarDadosAoEntrar()
         {
             using (ApplicationContext db = new ApplicationContext()) // using para liberar recursos no fim, boas praticas
             {

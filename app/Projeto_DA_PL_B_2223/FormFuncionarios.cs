@@ -15,10 +15,23 @@ namespace Projeto_DA_PL_B_2223
         public FormFuncionarios()
         {
             InitializeComponent();
+            atualizarDadosAoEntrar();
         }
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
+        }
+
+        private void atualizarDadosAoEntrar()
+        {
+           using (var db = new ApplicationContext())
+            {
+                var funcionarios = db.Pessoas.ToList();
+                foreach (var funcionario in funcionarios) //correr os funcionarios para os adicionar à listBox 
+                {
+                        listBoxFuncionarios.Items.Add(funcionario); // Escrever o que está na toString do (class) Funcionário 
+                }
+            }
         }
 
         private void buttonGuardarFuncionario_Click(object sender, EventArgs e)
