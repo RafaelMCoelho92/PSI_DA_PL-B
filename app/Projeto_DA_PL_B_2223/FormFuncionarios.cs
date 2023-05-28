@@ -110,10 +110,18 @@ namespace Projeto_DA_PL_B_2223
         public void listBoxFuncionarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             int escolherFunc = listBoxFuncionarios.SelectedIndex;
-            if (escolherFunc == -1)
+            if (escolherFunc != -1)
             {
-                MessageBox.Show("Selecione um Funcionário!");
-                return;
+                using (var db = new ApplicationContext())
+                {
+                    Funcionario funcionarioSelecionado = (Funcionario)listBoxFuncionarios.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
+                    // mostrar na textBox os dados do funcionario selecionado                                                                                   
+                    textBoxNomeFuncionario.Text = funcionarioSelecionado.NomePessoa;
+                    textBoxMoradaFuncionario.Text = funcionarioSelecionado.MoradaPessoa;
+                    comboBoxFuncaoFuncionario.Text = funcionarioSelecionado.TipoFuncionario;
+                    textBoxSalarioFuncionario.Text = funcionarioSelecionado.SalarioFuncionario;                 
+                }
+
             }
 
             if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)

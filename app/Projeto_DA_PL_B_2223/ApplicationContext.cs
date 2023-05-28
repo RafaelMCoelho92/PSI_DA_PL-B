@@ -14,5 +14,6 @@ namespace Projeto_DA_PL_B_2223
         public DbSet<Pessoa> Pessoas { get; set; }
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Bilhete> Bilhetes { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; } 
     }
 }
