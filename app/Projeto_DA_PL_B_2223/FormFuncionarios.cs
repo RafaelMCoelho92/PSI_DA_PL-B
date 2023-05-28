@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,49 +34,64 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
-
-        private void buttonGuardarFuncionario_Click(object sender, EventArgs e)
+        public bool validarDadosFuncionario()
         {
-            
             // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
+            // retorna false caso nao cumpra qualquer condicao
+            // retorna true caso cumpra a todas
             string nomeFuncionario = textBoxNomeFuncionario.Text;
             if (nomeFuncionario.Length == 0)
             {
                 MessageBox.Show("O nome não pode ser vazio");
-                return;
+                return false;
             }
             string moradaFuncionario = textBoxMoradaFuncionario.Text;
             if (moradaFuncionario.Length == 0)
             {
                 MessageBox.Show("A morada não pode ser vazio");
-                return;
+                return false;
             }
-            
+
             double salarioFuncionario;
             if (!double.TryParse(textBoxSalarioFuncionario.Text, out salarioFuncionario))
             {
                 MessageBox.Show("O valor do salário deve ser numérico");
-                return;
+                return false;
             }
-            
-            
+
+
             string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
             if (tipoFuncionario.Length == 0)
             {
                 MessageBox.Show("É necessário atribuir uma função");
-                return;
+                return false;
             }
+            else
+            { 
+                return true; 
+            }
+        }
+        private void buttonGuardarFuncionario_Click(object sender, EventArgs e)
+        {
+            // vai ver se cumpre a todas as condicoes , caso nao cumpra qualquer condiçao vai saltar fora
+            if (!validarDadosFuncionario())
+            {   
+                return; 
+            }// caso cumpra vai continuar
+
+            //guarda os valores inseridos nas variaveis
+            string nomeFuncionario = textBoxNomeFuncionario.Text;
+            string moradaFuncionario = textBoxMoradaFuncionario.Text;
+            string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
+            double salarioFuncionario = double.Parse(textBoxSalarioFuncionario.Text);// faz a conversao de texto para double
 
             try
-            {
+            {   // manda para o construtor faz a instancia
                 Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario.ToString(), tipoFuncionario);
                 textBoxMoradaFuncionario.Text = funcionario.MoradaPessoa;
                 textBoxNomeFuncionario.Text = funcionario.NomePessoa;
                 textBoxSalarioFuncionario.Text = funcionario.SalarioFuncionario.ToString();
                 comboBoxFuncaoFuncionario.Text = funcionario.TipoFuncionario;
-
-                listBoxFuncionarios.Items.Add(funcionario);
-
             }
             catch (Exception)
             {   // caso haja algum erro
@@ -86,6 +102,7 @@ namespace Projeto_DA_PL_B_2223
             if (listBoxFuncionarios.SelectedIndex != -1) // se tiver um funcionario selecionado, altera os dados
             {
                 Funcionario funcionarioSelecionado = (Funcionario)listBoxFuncionarios.SelectedItem;
+                // altera dos dados do funcionario selecionado
                 funcionarioSelecionado.NomePessoa = textBoxNomeFuncionario.Text;
                 funcionarioSelecionado.MoradaPessoa = textBoxMoradaFuncionario.Text;
                 funcionarioSelecionado.TipoFuncionario = comboBoxFuncaoFuncionario.Text;
@@ -93,22 +110,25 @@ namespace Projeto_DA_PL_B_2223
                 // Atualizar a exibição do funcionário na ListBox
                 int editarfuncionario = listBoxFuncionarios.SelectedIndex;
                 listBoxFuncionarios.Items[editarfuncionario] = funcionarioSelecionado;
+
+                using (var db = new ApplicationContext())
+                {   //faz update do funcionario
+                    db.Pessoas.AddOrUpdate(funcionarioSelecionado);
+                    db.SaveChanges();
+                }
             }
             else // se não tiver, cria um novo
             {
                 Funcionario novofuncionario =  new Funcionario (textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);                                                                                  
                
-                listBoxFuncionarios.Items.Add (novofuncionario);
+               // listBoxFuncionarios.Items.Add (novofuncionario);
+                using (var db = new ApplicationContext())
+                {   // cria novo funcionario
+                    db.Pessoas.Add(novofuncionario);
+                    db.SaveChanges();
+                }
             }
 
-
-            // GUARDAR OS DADOS DOS FUNCIONARIOS NA BASE DE DADOS
-            using (var db = new ApplicationContext())
-            {
-                var novofuncionario = new Funcionario(textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);
-                db.Pessoas.Add(novofuncionario);
-                db.SaveChanges();
-            }
         }
 
         private void buttonApagarFuncionario_Click(object sender, EventArgs e)
