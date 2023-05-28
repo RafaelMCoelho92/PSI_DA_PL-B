@@ -181,7 +181,7 @@
             // 
             // textBoxNomeCinema
             // 
-            this.textBoxNomeCinema.Location = new System.Drawing.Point(123, 62);
+            this.textBoxNomeCinema.Location = new System.Drawing.Point(112, 56);
             this.textBoxNomeCinema.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNomeCinema.Name = "textBoxNomeCinema";
             this.textBoxNomeCinema.Size = new System.Drawing.Size(348, 31);

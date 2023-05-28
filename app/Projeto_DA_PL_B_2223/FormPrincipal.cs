@@ -85,9 +85,9 @@ namespace Projeto_DA_PL_B_2223
         // CHAMA A TAB DOS CINEMAS
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormCinema(this).getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            tabControlMenuPrincipal.TabPages.Clear(); // Limpa as tab que ja tem chamado
+            TabPage tab = new FormCinema(this).getPage(); // Vai buscar a tab ao form cinema
+            tabControlMenuPrincipal.TabPages.Add(tab); // mostra a tab que foi buscar no form principal
         }
 
         // CHAMA A TAB DAS SALAS
