@@ -176,18 +176,7 @@ namespace Projeto_DA_PL_B_2223
                 }
 
             }
-
-            /*  //////////////////////////////////// NAO PERCEBO PORQUE CRASHA QUANDO METEMOS A GRAVAR
-             * 
-             * if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
-            {      
-                FormPrincipal formPrincipal = new FormPrincipal();
-                // Exibir o formulário principal apos entrar com o funcionario
-                formPrincipal.setNomeFuncionario(funcionario.NomePessoa);
-                TabPage tab = new FormSessoesDoDia().getPage(); //não esta a dar para abrir a tab das sessoes do dia apos clicar no funcionario
-                //formPrincipal.Show();                          nem está a aparecer o nome do funcionario, tambem porque a label tem texto
-            }           */                                       //mas devia aparecer nova tab na mesma janela com o nome do funcionario no login
-        }                                                       //REVER!!!!!!!!!!!!!!!!!!  
+        }                                                      
 
         private void listBoxFuncionarios_DoubleClick(object sender, EventArgs e)
         {
@@ -198,17 +187,16 @@ namespace Projeto_DA_PL_B_2223
             {
                 // se n tiver funcionario selecionado mensagem de erro
                 MessageBox.Show("Selecione um Funcionário");
-                return;
-            }
-            // buscar o nome do funcionario selecionado
+                return; 
+            }//
+
+                // buscar o nome do funcionario selecionado
             if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
             {
                 var db = new ApplicationContext();
                 var nomefuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos mandar para o formprincipal
                 if (nomefuncionario != null) // so faz isso se tiver um funcionario
                 {
-                    // nao fazer a instancia mas sim garantir q estamos a usar a instancia correta do formprincipal que ja esta em exibição
-                    //Application.OpenForms["FormPrincipal"] é usado para acessar a instância correta do FormPrincipal
 
                     if (Application.OpenForms["FormPrincipal"] is FormPrincipal formPrincipal)
                     {
