@@ -25,14 +25,14 @@ namespace Projeto_DA_PL_B_2223
 
         private void atualizarDadosAoEntrar()
         {
-           using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext())
             {
-                var funcionarios = db.Pessoas.ToList();
+                var funcionarios = db.Funcionarios.ToList();
                 foreach (var funcionario in funcionarios) //correr os funcionarios para os adicionar à listBox 
                 {
-                        listBoxFuncionarios.Items.Add(funcionario); // Escrever o que está na toString do (class) Funcionário 
+                    listBoxFuncionarios.Items.Add(funcionario); // Escrever o que está na toString do (class) Funcionário 
                 }
-            }
+            }
         }
         public bool validarDadosFuncionario()
         {
@@ -67,16 +67,16 @@ namespace Projeto_DA_PL_B_2223
                 return false;
             }
             else
-            { 
-                return true; 
+            {
+                return true;
             }
         }
         private void buttonGuardarFuncionario_Click(object sender, EventArgs e)
         {
             // vai ver se cumpre a todas as condicoes , caso nao cumpra qualquer condiçao vai saltar fora
             if (!validarDadosFuncionario())
-            {   
-                return; 
+            {
+                return;
             }// caso cumpra vai continuar
 
             //guarda os valores inseridos nas variaveis
@@ -119,9 +119,9 @@ namespace Projeto_DA_PL_B_2223
             }
             else // se não tiver, cria um novo
             {
-                Funcionario novofuncionario =  new Funcionario (textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);                                                                                  
-               
-                listBoxFuncionarios.Items.Add (novofuncionario); // mostra na listbox antes de atualizar a db
+                Funcionario novofuncionario = new Funcionario(textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);
+
+                listBoxFuncionarios.Items.Add(novofuncionario); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
                 {   // cria novo funcionario
                     db.Pessoas.Add(novofuncionario);
@@ -140,15 +140,15 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Selecione um Funcionário");
                 return;
             }
-            
+
             if (listBoxFuncionarios.Items[apagarFunc] is Funcionario funcionario)
             {
                 //se tiver funcionario selecionado
                 // apaga da listbox
                 listBoxFuncionarios.Items.Remove(funcionario);
                 //apaga da base de dados
-                var db = new ApplicationContext(); 
-                var apagarfuncionario = db.Pessoas.Find (funcionario.Id); // buscar o id do funcionario q queremos apagar, se for pelo funcionario da barraca assim funciona
+                var db = new ApplicationContext();
+                var apagarfuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos apagar, se for pelo funcionario da barraca assim funciona
                 if (apagarfuncionario != null) // so faz isso se tiver um funcionario
                 {
                     db.Pessoas.Remove(apagarfuncionario); // remove funcionario pelo id
@@ -170,7 +170,7 @@ namespace Projeto_DA_PL_B_2223
                     textBoxNomeFuncionario.Text = funcionarioSelecionado.NomePessoa;
                     textBoxMoradaFuncionario.Text = funcionarioSelecionado.MoradaPessoa;
                     comboBoxFuncaoFuncionario.Text = funcionarioSelecionado.TipoFuncionario;
-                    textBoxSalarioFuncionario.Text = funcionarioSelecionado.SalarioFuncionario;                 
+                    textBoxSalarioFuncionario.Text = funcionarioSelecionado.SalarioFuncionario;
                 }
 
             }
@@ -186,5 +186,39 @@ namespace Projeto_DA_PL_B_2223
                 //formPrincipal.Show();                          nem está a aparecer o nome do funcionario, tambem porque a label tem texto
             }           */                                       //mas devia aparecer nova tab na mesma janela com o nome do funcionario no login
         }                                                       //REVER!!!!!!!!!!!!!!!!!!  
+
+        private void listBoxFuncionarios_DoubleClick(object sender, EventArgs e)
+        {
+            //verificar que foi selecionado algo
+            //caso tenha sido fazer o set no footer do menuprincipal
+            int escolherFunc = listBoxFuncionarios.SelectedIndex;
+            if (escolherFunc == -1)
+            {
+                // se n tiver funcionario selecionado mensagem de erro
+                MessageBox.Show("Selecione um Funcionário");
+                return; 
+            }
+                // buscar o nome do funcionario selecionado
+            if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
+                {
+                    var db = new ApplicationContext();
+                    var nomefuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos mandar para o formprincipal
+                    if (nomefuncionario != null) // so faz isso se tiver um funcionario
+                    {
+                    // nao fazer a instancia mas sim garantir q estamos a usar a instancia correta do formprincipal que ja esta em exibição
+                    //Application.OpenForms["FormPrincipal"] é usado para acessar a instância correta do FormPrincipal
+
+                    if (Application.OpenForms["FormPrincipal"] is FormPrincipal formPrincipal)
+                    {
+                        formPrincipal.setNomeFuncionario(nomefuncionario.Id);
+                    }
+                }
+                }
+                
+
+         }
+
+        }
     }
-}
+
+

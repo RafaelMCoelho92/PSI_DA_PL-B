@@ -137,9 +137,11 @@ namespace Projeto_DA_PL_B_2223
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O NOME DO FUNCIONARIO LOGADO
-        public void setNomeFuncionario(string nomePessoa)
+        public void setNomeFuncionario(int Id)
         {
-            toolStripStatusLabelNomeFuncionarioLogado.Text = nomePessoa;
+            var db = new ApplicationContext();
+            var funcionario = db.Funcionarios.Find(Id);
+            toolStripStatusLabelNomeFuncionarioLogado.Text = funcionario.NomePessoa;
         }
 
         private void toolStripStatusLabelNomeFuncionarioLogado_Click(object sender, EventArgs e)
