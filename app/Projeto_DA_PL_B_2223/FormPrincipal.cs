@@ -15,6 +15,7 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormPrincipal : Form
     {
+        Form formFuncionarios = new FormFuncionarios();
 
         public FormPrincipal()
         {
@@ -36,8 +37,7 @@ namespace Projeto_DA_PL_B_2223
             }
             while(toolStripStatusLabelNomeFuncionarioLogado.Text == "FAÇA LOGIN") // vai mostrar o form de funcionarios enquanto n escolher um funcionario para estar logado
             {
-                Form formFuncionarios = new FormFuncionarios();
-                formFuncionarios.ShowDialog();
+                formFuncionarios.ShowDialog(this);
             }
         }
 
