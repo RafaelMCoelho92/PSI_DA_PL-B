@@ -140,8 +140,8 @@ namespace Projeto_DA_PL_B_2223
         public void setNomeFuncionario(int Id)
         {
             var db = new ApplicationContext();
-            var funcionario = db.Funcionarios.Find(Id);
-            toolStripStatusLabelNomeFuncionarioLogado.Text = funcionario.NomePessoa;
+            var funcionario = db.Funcionarios.Find(Id); // procura o funcionario pelo id recebido
+            toolStripStatusLabelNomeFuncionarioLogado.Text = funcionario.NomePessoa; // po o nome na label
         }
 
         private void toolStripStatusLabelNomeFuncionarioLogado_Click(object sender, EventArgs e)

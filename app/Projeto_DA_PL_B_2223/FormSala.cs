@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,68 +16,27 @@ namespace Projeto_DA_PL_B_2223
         public FormSala()
         {
             InitializeComponent();
+            atualizarDadosAoEntrar();
         }
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
-        // ADICIONA UMA SALA NA LIST BOX
-        private void buttonAdicionarSala_Click(object sender, EventArgs e)
+        //metodo para atualizar os dados ao carregar o formulario da sala
+        private void atualizarDadosAoEntrar()
         {
-            string nomeSala = textBoxNomeSala.Text;
-            if (nomeSala.Length == 0)
-            {
-                MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                VerificaSalaExistente(nomeSala);
-            }
-
             using (var db = new ApplicationContext())
             {
-                var sala = new Sala(textBoxNomeSala.Text);
-                db.Salas.Add(sala);
-                db.SaveChanges();
-            }
-        }
-
-        // METODO PARA VERIFICAR SE JA EXISTE ALGUMA SALA NA LISTBOX DAS SALAS
-        private void VerificaSalaExistente(string nomeSala)
-        {
-            foreach (Sala salaExistente in listBoxSalas.Items)
-            {
-                if (salaExistente.nomeSala == nomeSala)
+                var salas = db.Salas.ToList();
+                foreach (var sala in salas) //correr as salas para os adicionar à listBox 
                 {
-                    MessageBox.Show("Não pode adicionar uma sala com um nome já utilizado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // NOME DA SALA JA EXISTE
-                }
+                    listBoxSalas.Items.Add(sala); // Escrever o que está na toString do (class) Sala 
+                }
             }
-            Sala sala = new Sala(nomeSala);
-            listBoxSalas.Items.Add(sala);
-            return; // NOME DA SALA NAO EXISTE
         }
-
-        // ALTERA AS FILAS E AS COLUNAS EM UMA SALA
-        private void buttonEditarFilasColunas_Click(object sender, EventArgs e)
+        // Valida os dados inseridos nas textbox
+        public bool validarDadosSalas()
         {
-            //RECEBE AS DUAS VARIAVEIS EM STRING
-            string fila = textBoxFilas.Text;
-            string coluna = textBoxColunas.Text;
-            //VALIDA QUE NENHUMA DELAS ESTA VAZIA
-            if (fila.Length == 0 || coluna.Length == 0)
-            {
-                MessageBox.Show("Não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            //VERIFICAR QUE ESTA SELECIONADA A SALA DA LISTBOX
-            int index_selecionado = listBoxSalas.SelectedIndex;
-            if (index_selecionado == -1)
-            {
-                MessageBox.Show("Selecione uma sala da lista!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             // VARIAVEIS PARA UTILIZAR NO PARSE
             double valorFila = 0;
             double valorColuna = 0;
@@ -84,19 +44,21 @@ namespace Projeto_DA_PL_B_2223
 
             try
             {   // FAZER O PARSE-> OU SEJA PASSAR DE STRING PARA DOUBLE
-                valorFila = double.Parse(fila);
-                valorColuna = double.Parse(coluna);
+                string filas = textBoxFilas.Text;
+                string colunas = textBoxColunas.Text;
+                valorFila = double.Parse(filas);
+                valorColuna = double.Parse(colunas);
                 // CASO VALOR SEJA MENOR OU IGUAL A ZERO-> MENSAGEM DE ERRO
                 if (valorFila <= 0 || valorColuna <= 0)
                 {
                     MessageBox.Show("As Filas e as Colunas tem de ser superior a 0 (zero)!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    return false;
                 }
                 // CASO VALOR SEJA MAIOR QUE 20 -> MENSAGEM DE ERRO
                 if (valorFila > 20 || valorColuna > 20)
                 {
                     MessageBox.Show("As Filas e as Colunas tem de ser inferior a 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    return false;
                 }
             }
             // CASO NAO SEJA NUMERO 
@@ -104,34 +66,88 @@ namespace Projeto_DA_PL_B_2223
             {
                 MessageBox.Show("Valor Invalido, insira um valor entre 1 e 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            try
+            string nomeSala = textBoxNomeSala.Text;
+            // se os n forem validos vai retornar false
+            if (nomeSala.Length == 0)
             {
-                // ADICIONADO O TOTAL DE LUGARES PARA DEPOIS APRESENTARMOS NUM ESQUEMA DE LUGARES A VERDE E VERMELHO
-                double totalLugares = valorFila * valorColuna;
-                Sala sala = listBoxSalas.Items[index_selecionado] as Sala; // CAST
-                sala.Alterar(valorFila, valorColuna, totalLugares); // VAI ALTERAR O VALOR DAS LINHAS E COLUNAS DA SALA
-                listBoxSalas.Items[index_selecionado] = sala; //Atualiza a listbox
+                MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
-
-            catch (Exception)
-            {   // caso haja algum erro
-                MessageBox.Show("Não é uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            double fila;
+            //VALIDA QUE AS FILAS NAO ESTAO COM LETRAS
+            if (!double.TryParse(textBoxFilas.Text, out fila))
+            {
+                MessageBox.Show("O numero de filas deve ser numérico");
+                return false;
             }
-
-
+            double coluna;
+            //VALIDA QUE AS COLUNAS NAO ESTA COM LETRAS
+            if (!double.TryParse(textBoxColunas.Text, out coluna))
+            {
+                MessageBox.Show("O numero de colunas deve ser numérico");
+                return false;
+            }
+            else // se for tudo valido retorna true
+            {
+                return true;
+            }
         }
 
-        // APAGA UMA SALA E AS FILAS E COLUNAS
-        private void buttonApagarSala_Click(object sender, EventArgs e)
+        // ADICIONA UMA SALA NA LIST BOX
+        private void buttonAdicionarSala_Click(object sender, EventArgs e)
         {
-            int salaSelecionada = listBoxSalas.SelectedIndex;
-            if (salaSelecionada == -1)
+            // chama a funcao para validar os dados
+            // vai ver se cumpre a todas as condicoes , caso nao cumpra qualquer condiçao vai saltar fora
+            if (!validarDadosSalas())
             {
-                MessageBox.Show("Selecione uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }// caso cumpra vai continuar
+
+            //guarda os valores inseridos nas variaveis
+            string nomeSala = textBoxNomeSala.Text;
+            string filas = textBoxFilas.Text;// faz a conversao de texto para double
+            string colunas = textBoxColunas.Text;// faz a conversao de texto para double
+            try
+            {
+
+                Sala sala = new Sala(nomeSala, filas, colunas);
+                textBoxNomeSala.Text = sala.nomeSala;
+                textBoxFilas.Text = sala.Fila.ToString();// neste leva o tostring pq esta a ser convertido para double
+                textBoxColunas.Text = sala.Coluna.ToString();
             }
-            Sala sala = listBoxSalas.Items[salaSelecionada] as Sala;
-            listBoxSalas.Items.Remove(sala);
+            catch
+            {
+                // caso haja algum erro
+                MessageBox.Show("Erro ao criar sala");
+            }
+            if (listBoxSalas.SelectedIndex != -1) // se tiver uma sala selecionada, altera os dados
+            {
+                Sala salaSelecionada = (Sala)listBoxSalas.SelectedItem;
+                // altera dos dados da sala selecionada
+                salaSelecionada.nomeSala = textBoxNomeSala.Text;
+                salaSelecionada.Fila = textBoxFilas.Text;
+                salaSelecionada.Coluna = textBoxColunas.Text;
+                // Atualizar a exibição do funcionário na ListBox
+                int editarsala = listBoxSalas.SelectedIndex;
+                listBoxSalas.Items[editarsala] = salaSelecionada;
+
+                using (var db = new ApplicationContext())
+                {   //faz update do funcionario
+                    db.Salas.AddOrUpdate(salaSelecionada);
+                    db.SaveChanges();
+                }
+            }
+            else // se não tiver, cria um novo
+            {
+                Sala novaSala = new Sala(textBoxNomeSala.Text, textBoxFilas.Text, textBoxColunas.Text);
+
+                listBoxSalas.Items.Add(novaSala); // mostra na listbox antes de atualizar a db
+                using (var db = new ApplicationContext())
+                {   // cria nova sala
+                    db.Salas.Add(novaSala);
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }

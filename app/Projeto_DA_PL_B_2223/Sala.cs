@@ -14,32 +14,26 @@ namespace Projeto_DA_PL_B_2223
         [Key]
         public int Id { get; set; }
         public string nomeSala { get; set; }
-        public double Fila { get; set; }
-        public double Coluna { get; set; }
-        public double Lugares { get; set; }
+        public string Fila { get; set; }
+        public string Coluna { get; set; }
 
         //Constructor
-        public Sala(string nomeSala)
+        
+        public Sala(string nomeSala, string fila, string coluna)
         {
             this.nomeSala = nomeSala;
+            this.Fila = fila;
+            this.Coluna = coluna;
         }
 
         public Sala()
         {
+            // Construtor vazio necessário para o Entity Framework
 
         }
 
 
-        // METODO ALTERAR PARA EDITAR O VALOR DAS FILAS E COLUNAS DE UMA SALA
-        public string Alterar(double valorfila, double valorcoluna, double totalLugares)
-        {
-            Fila = valorfila;
-            Coluna = valorcoluna;
-            Lugares = totalLugares;
-            string representacao = nomeSala + " Filas: " + Fila + " Colunas: " + Coluna + " Total Lugares: " + Lugares;
-            return representacao;
 
-        }
         // METODO PARA APAGAR UMA SALA
         public void RemoverSala(Sala sala)
         {
@@ -49,7 +43,7 @@ namespace Projeto_DA_PL_B_2223
         // OVERRIDE PARA DIZER COMO VAI ESCREVER NA LISTBOX
         public override string ToString()
         {
-            return nomeSala + " Filas: " + Fila + " Colunas: " + Coluna + " Total Lugares: " + Lugares; 
+            return nomeSala + " Filas: " + Fila + " Colunas: " + Coluna; 
         }
 
         
