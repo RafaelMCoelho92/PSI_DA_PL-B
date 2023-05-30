@@ -16,33 +16,15 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
+            atualizarListboxFilmesaoEntrar();
 
         }
+
         // METODO PARA CHAMAR NO FORM PRINCIPAL A PAGE DA TAB
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
-        //METODO PARA GUARDAR O FILME
-        private void buttonGuardarFilme_Click(object sender, EventArgs e)
-        {
-            string nomeFilme = textBoxNomeFilme.Text;
-            string categoriaFilme = comboBoxCategoriaFilme.Text;
-            string estadoFilme = comboBoxEstadoFilme.Text;
-            validarDadosInseridos(); // VALIDAR DADOS INSERIDOS
-            if (nomeFilme.Length > 0 && comboBoxCategoriaFilme.SelectedIndex>=0 && comboBoxEstadoFilme.SelectedIndex >=0)
-            {
-                atualizarListboxFilmes(nomeFilme, categoriaFilme, estadoFilme);
-            }
-
-        }
-        //METODO PARA ATUALIZAR A LISTBOX
-        public void atualizarListboxFilmes(string nomeFilme, string categoriaFilme, string estadoFilme)
-        {
-            Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
-            listBoxFilmes.Items.Add(filme);
-        }
-        //METODO PARA VALIDAR DADOS INSERIDOS
         public void validarDadosInseridos()
         {   // RECEBE VALORES DAS TEXTSBOX E VALIDA
             string nomeFilme = textBoxNomeFilme.Text;
@@ -63,17 +45,54 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(comboBoxCategoriaFilme.SelectedIndex <0)
+            if (comboBoxCategoriaFilme.SelectedIndex < 0)
             {
                 MessageBox.Show("Escolha uma categoria da lista!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(comboBoxEstadoFilme.SelectedIndex <0)
+            if (comboBoxEstadoFilme.SelectedIndex < 0)
             {
                 MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
         }
+        //METODO PARA GUARDAR O FILME
+        private void buttonGuardarFilme_Click(object sender, EventArgs e)
+        {
+            
+            string nomeFilme = textBoxNomeFilme.Text;
+            string categoriaFilme = comboBoxCategoriaFilme.Text;
+            string estadoFilme = comboBoxEstadoFilme.Text;
+            validarDadosInseridos(); // VALIDAR DADOS INSERIDOS
+            if (nomeFilme.Length > 0 && comboBoxCategoriaFilme.SelectedIndex>=0 && comboBoxEstadoFilme.SelectedIndex >=0)
+            {
+                atualizarListboxFilmesaoEntrar();
+            }
+
+            using (var db = new ApplicationContext())
+            {
+                var filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
+                db.Filmes.Add(filme);
+                db.SaveChanges();
+            }
+        }
+        //METODO PARA ATUALIZAR A LISTBOX
+        public void atualizarListboxFilmesaoEntrar() 
+        {
+            //Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
+            // listBoxFilmes.Items.Add(filme);
+
+            using (var db = new ApplicationContext())
+            {
+
+                var filmes = db.Filmes.ToList();
+                listBoxFilmes.DataSource = null;
+                listBoxFilmes.DataSource = filmes;                
+            }
+
+        }
+        //METODO PARA VALIDAR DADOS INSERIDOS
+        
         
     }
 }

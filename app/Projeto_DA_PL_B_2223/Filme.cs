@@ -23,6 +23,13 @@ namespace Projeto_DA_PL_B_2223
             this.estadoFilme = estadoFilme;
         }
 
+        public Filme() // construtor vazio para o entity framework 
+        {
+
+        }
+
+
+
         // OVERRIDE PARA DIZER O QUE VAI ESCREVER NA LISTBOX
         public override string ToString()
         {
