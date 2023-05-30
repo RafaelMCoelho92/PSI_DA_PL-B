@@ -121,7 +121,7 @@ namespace Projeto_DA_PL_B_2223
             {
                 Funcionario novofuncionario =  new Funcionario (textBoxNomeFuncionario.Text, textBoxMoradaFuncionario.Text, textBoxSalarioFuncionario.Text, comboBoxFuncaoFuncionario.Text);                                                                                  
                
-               // listBoxFuncionarios.Items.Add (novofuncionario);
+                listBoxFuncionarios.Items.Add (novofuncionario); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
                 {   // cria novo funcionario
                     db.Pessoas.Add(novofuncionario);
@@ -136,13 +136,24 @@ namespace Projeto_DA_PL_B_2223
             int apagarFunc = listBoxFuncionarios.SelectedIndex;
             if (apagarFunc == -1)
             {
+                // se n tiver funcionario selecionado mensagem de erro
                 MessageBox.Show("Selecione um Funcionário");
                 return;
             }
             
             if (listBoxFuncionarios.Items[apagarFunc] is Funcionario funcionario)
             {
+                //se tiver funcionario selecionado
+                // apaga da listbox
                 listBoxFuncionarios.Items.Remove(funcionario);
+                //apaga da base de dados
+                var db = new ApplicationContext(); 
+                var apagarfuncionario = db.Pessoas.Find (funcionario.Id); // buscar o id do funcionario q queremos apagar, se for pelo funcionario da barraca assim funciona
+                if (apagarfuncionario != null) // so faz isso se tiver um funcionario
+                {
+                    db.Pessoas.Remove(apagarfuncionario); // remove funcionario pelo id
+                    db.SaveChanges(); // guarda as alterações na base de dados
+                }
             }
         }
 
