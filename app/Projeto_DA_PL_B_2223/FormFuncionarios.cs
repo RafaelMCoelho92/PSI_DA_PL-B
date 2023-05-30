@@ -41,6 +41,7 @@ namespace Projeto_DA_PL_B_2223
                     listBoxFuncionarios.Items.Add(funcionario); // Escrever o que está na toString do (class) Funcionário 
                 }
             }
+
         }
         public bool validarDadosFuncionario()
         {
