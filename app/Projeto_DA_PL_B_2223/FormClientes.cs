@@ -12,11 +12,17 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormClientes : Form
     {
+        private FormPrincipal formPrincipal;
+
         public FormClientes()
         {
             InitializeComponent();
             this.CenterToScreen();
 
+        }
+        public FormClientes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
+        {
+            this.formPrincipal = formPrincipal;
         }
         public TabPage getPage()
         {
@@ -44,7 +50,7 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("É necessário um número fiscal");
                 return;
             }
-            
+
             VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
 
             // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS

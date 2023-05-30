@@ -12,11 +12,17 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormSessoes : Form
     {
+        private FormPrincipal formPrincipal;
+
         public FormSessoes()
         {
             InitializeComponent();
             this.CenterToScreen();
 
+        }
+        public FormSessoes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
+        {
+            this.formPrincipal = formPrincipal;
         }
         public TabPage getPage()
         {

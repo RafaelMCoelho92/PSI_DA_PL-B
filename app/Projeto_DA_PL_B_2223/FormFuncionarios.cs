@@ -13,12 +13,18 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormFuncionarios : Form
     {
+        private FormPrincipal formPrincipal;
         public FormFuncionarios()
         {
             InitializeComponent();
             this.CenterToScreen();
 
             atualizarDadosAoEntrar();
+        }
+
+        public FormFuncionarios(FormPrincipal formPrincipal) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
+        {
+            this.formPrincipal = formPrincipal;
         }
         public TabPage getPage()
         {
@@ -197,29 +203,14 @@ namespace Projeto_DA_PL_B_2223
                 var nomefuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos mandar para o formprincipal
                 if (nomefuncionario != null) // so faz isso se tiver um funcionario
                 {
-
-                    if (Application.OpenForms["FormPrincipal"] is FormPrincipal formPrincipal)
-                    {
-                        formPrincipal.setNomeFuncionario(nomefuncionario.Id);
-                    }
-
+                        this.formPrincipal.setNomeFuncionario(nomefuncionario.Id);
+                        this.Close();
                 }
             }
 
 
         }
 
-        private void buttonEntrar_Click(object sender, EventArgs e)
-        {
-            if (listBoxFuncionarios.SelectedIndex != -1)
-            {
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Escolha primeiro um funcionario com um duplo click!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
     }
 }
 
