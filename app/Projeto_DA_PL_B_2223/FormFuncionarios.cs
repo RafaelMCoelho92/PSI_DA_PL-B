@@ -198,15 +198,15 @@ namespace Projeto_DA_PL_B_2223
             {
                 // se n tiver funcionario selecionado mensagem de erro
                 MessageBox.Show("Selecione um Funcionário");
-                return; 
+                return;
             }
-                // buscar o nome do funcionario selecionado
+            // buscar o nome do funcionario selecionado
             if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
+            {
+                var db = new ApplicationContext();
+                var nomefuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos mandar para o formprincipal
+                if (nomefuncionario != null) // so faz isso se tiver um funcionario
                 {
-                    var db = new ApplicationContext();
-                    var nomefuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos mandar para o formprincipal
-                    if (nomefuncionario != null) // so faz isso se tiver um funcionario
-                    {
                     // nao fazer a instancia mas sim garantir q estamos a usar a instancia correta do formprincipal que ja esta em exibição
                     //Application.OpenForms["FormPrincipal"] é usado para acessar a instância correta do FormPrincipal
 
@@ -216,10 +216,10 @@ namespace Projeto_DA_PL_B_2223
                     }
 
                 }
-                }
-                
+            }
 
-         }
+
+        }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
@@ -233,6 +233,6 @@ namespace Projeto_DA_PL_B_2223
             }
         }
     }
-    }
+}
 
 
