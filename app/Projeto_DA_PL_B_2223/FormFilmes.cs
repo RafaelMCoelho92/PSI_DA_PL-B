@@ -25,6 +25,7 @@ namespace Projeto_DA_PL_B_2223
         {
             this.formPrincipal = formPrincipal;
         }
+
         // METODO PARA CHAMAR NO FORM PRINCIPAL A PAGE DA TAB
         public TabPage getPage()
         {
@@ -90,14 +91,30 @@ namespace Projeto_DA_PL_B_2223
             using (var db = new ApplicationContext())
             {
 
-                var filmes = db.Filmes.ToList();
+                var filmes = db.Filmes.ToList(); // é possivel fazer com foreach , mas preferivel fazer com .DataSource
                 listBoxFilmes.DataSource = null;
                 listBoxFilmes.DataSource = filmes;                
             }
 
         }
+
+        private void listBoxFilmes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int escolherFilme = listBoxFilmes.SelectedIndex;
+            if (escolherFilme != -1)
+            {
+                using (var db = new ApplicationContext())
+                {
+                    Filme filmeEscolhido = (Filme)listBoxFilmes.SelectedItem;
+
+                    textBoxNomeFilme.Text = filmeEscolhido.nomeFilme;
+                    comboBoxCategoriaFilme.Text = filmeEscolhido.categoriaFilme;
+                    comboBoxEstadoFilme.Text = filmeEscolhido.estadoFilme;
+                }
+            }
+        }
         //METODO PARA VALIDAR DADOS INSERIDOS
-        
-        
+
+
     }
 }
