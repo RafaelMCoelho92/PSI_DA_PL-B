@@ -126,6 +126,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sala.cs" />
+    <Compile Include="Sessao.cs" />
     <EmbeddedResource Include="FormAtendimento.resx">
       <DependentUpon>FormAtendimento.cs</DependentUpon>
     </EmbeddedResource>

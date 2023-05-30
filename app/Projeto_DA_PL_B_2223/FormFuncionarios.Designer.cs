@@ -1,4 +1,4 @@
-﻿namespace Projeto_DA_PL_B_2223
+namespace Projeto_DA_PL_B_2223
 {
     partial class FormFuncionarios
     {
@@ -66,6 +66,7 @@
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
             this.groupBoxFuncionario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxFuncionario.Size = new System.Drawing.Size(508, 435);
+
             this.groupBoxFuncionario.TabIndex = 4;
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "Funcionarios";
@@ -74,6 +75,7 @@
             // 
             this.textBoxSalarioFuncionario.Location = new System.Drawing.Point(124, 196);
             this.textBoxSalarioFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.textBoxSalarioFuncionario.Name = "textBoxSalarioFuncionario";
             this.textBoxSalarioFuncionario.Size = new System.Drawing.Size(336, 31);
             this.textBoxSalarioFuncionario.TabIndex = 3;
@@ -82,6 +84,7 @@
             // 
             this.buttonGuardarFuncionario.Location = new System.Drawing.Point(188, 290);
             this.buttonGuardarFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.buttonGuardarFuncionario.Name = "buttonGuardarFuncionario";
             this.buttonGuardarFuncionario.Size = new System.Drawing.Size(152, 62);
             this.buttonGuardarFuncionario.TabIndex = 4;
@@ -95,22 +98,27 @@
             this.comboBoxFuncaoFuncionario.Items.AddRange(new object[] {
             "Admin",
             "Funcionario"});
+
             this.comboBoxFuncaoFuncionario.Location = new System.Drawing.Point(124, 138);
             this.comboBoxFuncaoFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.comboBoxFuncaoFuncionario.Name = "comboBoxFuncaoFuncionario";
             this.comboBoxFuncaoFuncionario.Size = new System.Drawing.Size(336, 33);
             this.comboBoxFuncaoFuncionario.TabIndex = 2;
             // 
             // textBoxMoradaFuncionario
             // 
+
             this.textBoxMoradaFuncionario.Location = new System.Drawing.Point(124, 94);
             this.textBoxMoradaFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.textBoxMoradaFuncionario.Name = "textBoxMoradaFuncionario";
             this.textBoxMoradaFuncionario.Size = new System.Drawing.Size(336, 31);
             this.textBoxMoradaFuncionario.TabIndex = 1;
             // 
             // textBoxNomeFuncionario
             // 
+
             this.textBoxNomeFuncionario.Location = new System.Drawing.Point(124, 48);
             this.textBoxNomeFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNomeFuncionario.Name = "textBoxNomeFuncionario";
@@ -162,6 +170,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(22, 42);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1530, 642);
@@ -173,11 +182,13 @@
             this.tabPage1.Controls.Add(this.buttonApagarFuncionario);
             this.tabPage1.Controls.Add(this.groupBoxListaFuncionarios);
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
+
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Size = new System.Drawing.Size(1514, 595);
+
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Funcionarios";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -194,8 +205,10 @@
             // 
             // buttonApagarFuncionario
             // 
+
             this.buttonApagarFuncionario.Location = new System.Drawing.Point(362, 465);
             this.buttonApagarFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.buttonApagarFuncionario.Name = "buttonApagarFuncionario";
             this.buttonApagarFuncionario.Size = new System.Drawing.Size(152, 62);
             this.buttonApagarFuncionario.TabIndex = 5;
@@ -206,11 +219,13 @@
             // groupBoxListaFuncionarios
             // 
             this.groupBoxListaFuncionarios.Controls.Add(this.listBoxFuncionarios);
+
             this.groupBoxListaFuncionarios.Location = new System.Drawing.Point(532, 6);
             this.groupBoxListaFuncionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxListaFuncionarios.Name = "groupBoxListaFuncionarios";
             this.groupBoxListaFuncionarios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxListaFuncionarios.Size = new System.Drawing.Size(938, 521);
+
             this.groupBoxListaFuncionarios.TabIndex = 19;
             this.groupBoxListaFuncionarios.TabStop = false;
             this.groupBoxListaFuncionarios.Text = "Lista de Funcionarios";
@@ -218,9 +233,11 @@
             // listBoxFuncionarios
             // 
             this.listBoxFuncionarios.FormattingEnabled = true;
+
             this.listBoxFuncionarios.ItemHeight = 25;
             this.listBoxFuncionarios.Location = new System.Drawing.Point(6, 48);
             this.listBoxFuncionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.listBoxFuncionarios.Name = "listBoxFuncionarios";
             this.listBoxFuncionarios.Size = new System.Drawing.Size(890, 454);
             this.listBoxFuncionarios.TabIndex = 0;
@@ -231,9 +248,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(1370, 748);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
             this.Name = "FormFuncionarios";
             this.Text = "FormFuncionarios";
             this.groupBoxFuncionario.ResumeLayout(false);

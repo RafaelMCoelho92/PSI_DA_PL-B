@@ -18,6 +18,7 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
+            atualizarDadosAoEntrar();
 
         }
         public FormSessoes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -28,5 +29,35 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabControl1.TabPages[0];
         }
+
+        private void atualizarDadosAoEntrar()
+        {
+            using (var db = new ApplicationContext())
+            {
+                //correr as sessoes para os adicionar à listBox 
+                try
+                {
+                    var filmes = db.Filmes.ToList();
+                    listBoxFilmesSessoes.DataSource = null;
+                    listBoxFilmesSessoes.DataSource = filmes;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Não há filmes a adicionar à lista!");
+                    return;
+                }
+
+
+                var salas = db.Salas.ToList();
+                listBoxSalasSessoes.DataSource = null;
+                listBoxSalasSessoes.DataSource = salas;
+
+                var sessoes = db.Sessoes.ToList();
+                listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
+                listBoxSessoes.DataSource = sessoes;
+            }
+        }
+
+
     }
 }
