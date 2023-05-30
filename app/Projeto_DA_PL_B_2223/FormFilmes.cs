@@ -15,6 +15,8 @@ namespace Projeto_DA_PL_B_2223
         public FormFilmes()
         {
             InitializeComponent();
+            this.CenterToScreen();
+
         }
         // METODO PARA CHAMAR NO FORM PRINCIPAL A PAGE DA TAB
         public TabPage getPage()

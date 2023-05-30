@@ -16,6 +16,7 @@ namespace Projeto_DA_PL_B_2223
         public FormSala()
         {
             InitializeComponent();
+            this.CenterToScreen();
             atualizarDadosAoEntrar();
         }
         public TabPage getPage()

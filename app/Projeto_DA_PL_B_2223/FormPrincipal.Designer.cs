@@ -55,10 +55,9 @@
             // buttonClientes
             // 
             this.buttonClientes.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonClientes.Location = new System.Drawing.Point(1364, 200);
-            this.buttonClientes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonClientes.Location = new System.Drawing.Point(682, 104);
             this.buttonClientes.Name = "buttonClientes";
-            this.buttonClientes.Size = new System.Drawing.Size(190, 50);
+            this.buttonClientes.Size = new System.Drawing.Size(95, 26);
             this.buttonClientes.TabIndex = 5;
             this.buttonClientes.Text = "Clientes";
             this.buttonClientes.UseVisualStyleBackColor = false;
@@ -71,23 +70,20 @@
             this.labelNomeCinema.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelNomeCinema.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomeCinema.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelNomeCinema.Location = new System.Drawing.Point(644, 75);
-            this.labelNomeCinema.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.labelNomeCinema.Location = new System.Drawing.Point(322, 39);
             this.labelNomeCinema.Name = "labelNomeCinema";
-            this.labelNomeCinema.Size = new System.Drawing.Size(264, 53);
+            this.labelNomeCinema.Size = new System.Drawing.Size(141, 28);
             this.labelNomeCinema.TabIndex = 5;
             this.labelNomeCinema.Text = "CINE GEST";
             this.labelNomeCinema.Click += new System.EventHandler(this.labelNomeCinema_Click);
             // 
             // tabControlMenuPrincipal
             // 
-            this.tabControlMenuPrincipal.Location = new System.Drawing.Point(34, 262);
-            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControlMenuPrincipal.Location = new System.Drawing.Point(17, 136);
             this.tabControlMenuPrincipal.Name = "tabControlMenuPrincipal";
             this.tabControlMenuPrincipal.SelectedIndex = 0;
-            this.tabControlMenuPrincipal.Size = new System.Drawing.Size(1520, 706);
+            this.tabControlMenuPrincipal.Size = new System.Drawing.Size(760, 367);
             this.tabControlMenuPrincipal.TabIndex = 8;
-            this.tabControlMenuPrincipal.SelectedIndexChanged += new System.EventHandler(this.tabControlMenuPrincipal_SelectedIndexChanged);
             // 
             // statusStrip1
             // 
@@ -96,29 +92,29 @@
             this.toolStripStatusLabelHora,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabelNomeFuncionarioLogado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 937);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 448);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1572, 42);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 7, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(798, 22);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabelHora
             // 
             this.toolStripStatusLabelHora.Name = "toolStripStatusLabelHora";
-            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(102, 32);
+            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(49, 17);
             this.toolStripStatusLabelHora.Text = "00:00:00";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(259, 32);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(129, 17);
             this.toolStripStatusLabel1.Text = "Nome do Funcionario: ";
             // 
             // toolStripStatusLabelNomeFuncionarioLogado
             // 
             this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
-            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(145, 32);
+            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(74, 17);
             this.toolStripStatusLabelNomeFuncionarioLogado.Text = "FAÇA LOGIN";
             this.toolStripStatusLabelNomeFuncionarioLogado.Click += new System.EventHandler(this.toolStripStatusLabelNomeFuncionarioLogado_Click);
             // 
@@ -130,24 +126,23 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 50);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 26);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(121, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.definiçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1572, 40);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(798, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -161,56 +156,56 @@
             this.filmesToolStripMenuItem,
             this.sessãoDoDiaToolStripMenuItem});
             this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
-            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 36);
+            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(74, 22);
             this.definiçõesToolStripMenuItem.Text = "Definições";
             // 
             // cinemaToolStripMenuItem
             // 
             this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
-            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.cinemaToolStripMenuItem.Text = "Cinema";
             this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
             // 
             // salaToolStripMenuItem
             // 
             this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
-            this.salaToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.salaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.salaToolStripMenuItem.Text = "Salas";
             this.salaToolStripMenuItem.Click += new System.EventHandler(this.salasToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionários";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // sessoesToolStripMenuItem
             // 
             this.sessoesToolStripMenuItem.Name = "sessoesToolStripMenuItem";
-            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.sessoesToolStripMenuItem.Text = "Sessões";
             this.sessoesToolStripMenuItem.Click += new System.EventHandler(this.sessoesToolStripMenuItem_Click);
             // 
             // filmesToolStripMenuItem
             // 
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.filmesToolStripMenuItem.Text = "Filmes";
             this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
             // 
             // sessãoDoDiaToolStripMenuItem
             // 
             this.sessãoDoDiaToolStripMenuItem.Name = "sessãoDoDiaToolStripMenuItem";
-            this.sessãoDoDiaToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.sessãoDoDiaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.sessãoDoDiaToolStripMenuItem.Text = "Sessão do Dia";
             this.sessãoDoDiaToolStripMenuItem.Click += new System.EventHandler(this.sessãoDoDiaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1572, 979);
+            this.ClientSize = new System.Drawing.Size(798, 470);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -218,7 +213,6 @@
             this.Controls.Add(this.labelNomeCinema);
             this.Controls.Add(this.buttonClientes);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);

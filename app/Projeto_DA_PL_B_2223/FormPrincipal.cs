@@ -21,15 +21,6 @@ namespace Projeto_DA_PL_B_2223
             InitializeComponent();
             // FORM CENTRADO COM ECRA
             this.CenterToScreen();
-
-            {
-                FormFuncionarios formFuncionarios = new FormFuncionarios();
-                tabControlMenuPrincipal.TabPages.Clear();
-                TabPage tab = formFuncionarios.getPage();
-                tabControlMenuPrincipal.TabPages.Add(tab);
-            }
-
-
         }
 
         //FUNCAO QUE EXECUTA AO ABRIR O FORM
@@ -39,17 +30,15 @@ namespace Projeto_DA_PL_B_2223
             ApplicationContext context = new ApplicationContext();
 
             while (context.Cinemas.Count() == 0 ) // ENQUANTO A CONTAGEM DE CINEMAS FOR IGUAL A 0, VAI ABRIR O FORM DE CINEMA
-                
             {
                 FormCinema formCinema = new FormCinema(); // INSTANCIA DO FORM CINEMA
                 formCinema.ShowDialog();
             }
-        }
-
-        // TAB CONTROL
-        private void tabControlMenuPrincipal_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            while(toolStripStatusLabelNomeFuncionarioLogado.Text == "FAÇA LOGIN") // vai mostrar o form de funcionarios enquanto n escolher um funcionario para estar logado
+            {
+                Form formFuncionarios = new FormFuncionarios();
+                formFuncionarios.ShowDialog();
+            }
         }
 
         // MOSTRA A DATA E A HORA 
@@ -61,17 +50,15 @@ namespace Projeto_DA_PL_B_2223
         //CHAMA A TAB DOS CLIENTES
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormClientes().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formClientes = new FormClientes();
+            formClientes.ShowDialog();
         }
 
         // CHAMA A TAB DAS SESSOES DO DIA CLICANDO NA LABEL DO TITULO DO CINEMA
         private void labelNomeCinema_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSessoesDoDia().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formSessoesDia = new FormSessoesDoDia();
+            formSessoesDia.ShowDialog();
         }
 
         // CHAMA A TAB DOS FUNCIONARIOS
@@ -85,49 +72,43 @@ namespace Projeto_DA_PL_B_2223
         // CHAMA A TAB DOS CINEMAS
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear(); // Limpa as tab que ja tem chamado
-            TabPage tab = new FormCinema(this).getPage(); // Vai buscar a tab ao form cinema
-            tabControlMenuPrincipal.TabPages.Add(tab); // mostra a tab que foi buscar no form principal
+            Form formCinema = new FormCinema();
+            formCinema.ShowDialog();
         }
 
         // CHAMA A TAB DAS SALAS
         private void salasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSala().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formSala = new FormSala();
+            formSala.ShowDialog();
         }
 
         // CHAMA A TAB DOS FUNCIONAROS
         private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormFuncionarios().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formFuncionarios = new FormFuncionarios();
+            formFuncionarios.ShowDialog();
         }
 
         // CHAMA A TAB DAS SESSOES
         private void sessoesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSessoes().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formSessoes = new FormSessoes();
+            formSessoes.ShowDialog();
         }
 
         // CHAMA A TAB DOS FILMES
         private void filmesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormFilmes().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formFilmes = new FormFilmes();
+            formFilmes.ShowDialog();
         }
 
         // CHAMA A TAB DAS SESSOES DO DIA
         private void sessãoDoDiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormSessoesDoDia().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formSessoesDia = new FormSessoesDoDia();
+            formSessoesDia.ShowDialog();
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O TITULO DO CINEMA
@@ -146,9 +127,8 @@ namespace Projeto_DA_PL_B_2223
 
         private void toolStripStatusLabelNomeFuncionarioLogado_Click(object sender, EventArgs e)
         {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormFuncionarios().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
+            Form formFuncionarios = new FormFuncionarios();
+            formFuncionarios.ShowDialog();
         }
 
 

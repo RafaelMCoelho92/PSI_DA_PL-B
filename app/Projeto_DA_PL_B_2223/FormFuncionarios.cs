@@ -16,6 +16,8 @@ namespace Projeto_DA_PL_B_2223
         public FormFuncionarios()
         {
             InitializeComponent();
+            this.CenterToScreen();
+
             atualizarDadosAoEntrar();
         }
         public TabPage getPage()
@@ -219,7 +221,18 @@ namespace Projeto_DA_PL_B_2223
 
          }
 
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            if (listBoxFuncionarios.SelectedIndex != -1)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Escolha primeiro um funcionario com um duplo click!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+    }
     }
 
 

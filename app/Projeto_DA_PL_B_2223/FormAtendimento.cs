@@ -15,6 +15,8 @@ namespace Projeto_DA_PL_B_2223
         public FormAtendimento()
         {
             InitializeComponent();
+            this.CenterToScreen();
+
         }
     }
 }
