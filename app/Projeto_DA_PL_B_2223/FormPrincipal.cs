@@ -15,12 +15,26 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormPrincipal : Form
     {
-
+        Form formCinema; // nao fazer instancia mas sim mandar para o o construtor
+        Form formFuncionarios;
+        Form formClientes;
+        Form formSessoesDia;
+        Form formSala;
+        Form formSessoes;
+        Form formFilmes;
         public FormPrincipal()
         {
             InitializeComponent();
             // FORM CENTRADO COM ECRA
             this.CenterToScreen();
+            formFuncionarios = new FormFuncionarios(this);
+            formClientes = new FormClientes(this);
+            formSessoesDia = new FormSessoesDoDia(this);
+            formSala = new FormSala(this);
+            formSessoes = new FormSessoes(this);
+            formFilmes = new FormFilmes(this);
+            formCinema = new FormCinema(this);
+
         }
 
         //FUNCAO QUE EXECUTA AO ABRIR O FORM
@@ -31,12 +45,10 @@ namespace Projeto_DA_PL_B_2223
 
             while (context.Cinemas.Count() == 0 ) // ENQUANTO A CONTAGEM DE CINEMAS FOR IGUAL A 0, VAI ABRIR O FORM DE CINEMA
             {
-                FormCinema formCinema = new FormCinema(); // INSTANCIA DO FORM CINEMA
                 formCinema.ShowDialog();
             }
             while(toolStripStatusLabelNomeFuncionarioLogado.Text == "FAÇA LOGIN") // vai mostrar o form de funcionarios enquanto n escolher um funcionario para estar logado
             {
-                Form formFuncionarios = new FormFuncionarios();
                 formFuncionarios.ShowDialog();
             }
         }
@@ -50,15 +62,13 @@ namespace Projeto_DA_PL_B_2223
         //CHAMA A TAB DOS CLIENTES
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            Form formClientes = new FormClientes();
             formClientes.ShowDialog();
         }
 
         // CHAMA A TAB DAS SESSOES DO DIA CLICANDO NA LABEL DO TITULO DO CINEMA
         private void labelNomeCinema_Click(object sender, EventArgs e)
         {
-            Form formSessoesDia = new FormSessoesDoDia();
-            formSessoesDia.ShowDialog();
+            formSessoesDia.ShowDialog(this);
         }
 
         // CHAMA A TAB DOS FUNCIONARIOS
@@ -72,42 +82,36 @@ namespace Projeto_DA_PL_B_2223
         // CHAMA A TAB DOS CINEMAS
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formCinema = new FormCinema();
             formCinema.ShowDialog();
         }
 
         // CHAMA A TAB DAS SALAS
         private void salasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formSala = new FormSala();
             formSala.ShowDialog();
         }
 
         // CHAMA A TAB DOS FUNCIONAROS
         private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formFuncionarios = new FormFuncionarios();
             formFuncionarios.ShowDialog();
         }
 
         // CHAMA A TAB DAS SESSOES
         private void sessoesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formSessoes = new FormSessoes();
             formSessoes.ShowDialog();
         }
 
         // CHAMA A TAB DOS FILMES
         private void filmesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formFilmes = new FormFilmes();
             formFilmes.ShowDialog();
         }
 
         // CHAMA A TAB DAS SESSOES DO DIA
         private void sessãoDoDiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formSessoesDia = new FormSessoesDoDia();
             formSessoesDia.ShowDialog();
         }
 
@@ -127,7 +131,6 @@ namespace Projeto_DA_PL_B_2223
 
         private void toolStripStatusLabelNomeFuncionarioLogado_Click(object sender, EventArgs e)
         {
-            Form formFuncionarios = new FormFuncionarios();
             formFuncionarios.ShowDialog();
         }
 

@@ -13,11 +13,17 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormSala : Form
     {
+        private FormPrincipal formPrincipal;
+
         public FormSala()
         {
             InitializeComponent();
             this.CenterToScreen();
             atualizarDadosAoEntrar();
+        }
+        public FormSala(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
+        {
+            this.formPrincipal = formPrincipal;
         }
         public TabPage getPage()
         {

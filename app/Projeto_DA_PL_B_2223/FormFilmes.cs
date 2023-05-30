@@ -12,6 +12,8 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormFilmes : Form
     {
+        private FormPrincipal formPrincipal;
+
         public FormFilmes()
         {
             InitializeComponent();
@@ -19,7 +21,10 @@ namespace Projeto_DA_PL_B_2223
             atualizarListboxFilmesaoEntrar();
 
         }
-
+        public FormFilmes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
+        {
+            this.formPrincipal = formPrincipal;
+        }
         // METODO PARA CHAMAR NO FORM PRINCIPAL A PAGE DA TAB
         public TabPage getPage()
         {
