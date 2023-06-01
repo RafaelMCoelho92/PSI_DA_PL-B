@@ -32,6 +32,8 @@ namespace Projeto_DA_PL_B_2223
         }
         private void atualizarDadosAoEntrar()
         {
+            listBoxClientes.Items.Clear();
+
             using (var db = new ApplicationContext())
             {
                 var clientes = db.Pessoas.OfType<Cliente>();
@@ -84,7 +86,11 @@ namespace Projeto_DA_PL_B_2223
             }
 
            var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
-            if (listBoxClientes.SelectedIndex != -1 || verifica)
+            if (verifica == false)
+            {
+                return;
+            }
+            if (listBoxClientes.SelectedIndex != -1 )
             {
                 Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
                 // altera dos dados do cliente selecionado
@@ -160,6 +166,8 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges(); // guarda as alterações na base de dados
                 }
             }
+            atualizarDadosAoEntrar();
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
