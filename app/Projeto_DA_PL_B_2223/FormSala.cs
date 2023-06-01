@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -186,6 +186,16 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges(); // guarda as alterações na base de dados
                 }
             }
+        }
+
+        private void FormSala_Load(object sender, EventArgs e)
+        {
+            listBoxSalas.ClearSelected();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            listBoxSalas.ClearSelected();
         }
     }
 }

@@ -58,6 +58,30 @@ namespace Projeto_DA_PL_B_2223
             }
         }
 
+        public bool validarDadosSessoes()
+        {
+            int filmeSelecionado = listBoxFilmesSessoes.SelectedIndex;
+            if (filmeSelecionado == -1)
+            {
+                MessageBox.Show("Tem que selecionar um filme!");
+                return false;
+            }
 
+            int salaSelecionado = listBoxSalasSessoes.SelectedIndex;
+            if (salaSelecionado == -1)
+            {
+                MessageBox.Show("Tem que selecionar uma sala!");
+                return false;
+            }
+
+            DateTime horaSelecionado = dateTimePickerSessao.Value;
+            if (horaSelecionado == DateTime.MinValue )
+            {
+                MessageBox.Show("Tem que selecionar uma data!");
+                return false;
+            }
+
+            return true;
+        }
     }
 }
