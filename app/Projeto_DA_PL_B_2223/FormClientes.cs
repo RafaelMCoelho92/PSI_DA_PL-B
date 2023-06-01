@@ -144,12 +144,38 @@ namespace Projeto_DA_PL_B_2223
         private void tabPage1_Click(object sender, EventArgs e)
         {
             listBoxClientes.ClearSelected();
+            limparDadosInseridos();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
             listBoxClientes.ClearSelected();
+            limparDadosInseridos();
+        }
+        private void limparDadosInseridos()
+        {
+            textBoxNomeClientes.Clear();
+            textBoxMoradaClientes.Clear();
+            textBoxNumFiscClientes.Clear();
+        }
+
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int escolherCliente = listBoxClientes.SelectedIndex;
+            if (escolherCliente != -1)
+            {
+                using (var db = new ApplicationContext())
+                {
+                    Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
+                    // mostrar na textBox os dados do cliente selecionado                                                                                   
+                    textBoxNomeClientes.Text = clienteSelecionado.NomePessoa;
+                    textBoxMoradaClientes.Text = clienteSelecionado.MoradaPessoa;
+                    textBoxNumFiscClientes.Text = clienteSelecionado.NumFiscCliente;
+
+                }
+
+            }
         }
     }
 

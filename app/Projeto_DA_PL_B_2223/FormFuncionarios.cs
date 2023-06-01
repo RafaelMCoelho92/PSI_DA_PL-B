@@ -209,16 +209,27 @@ namespace Projeto_DA_PL_B_2223
 
 
         }
+        public void limparDadosInseridos()
+        {
+            textBoxNomeFuncionario.Clear();
+            textBoxMoradaFuncionario.Clear();
+            textBoxSalarioFuncionario.Clear();
+            comboBoxFuncaoFuncionario.Items.Clear();
+        }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
             listBoxFuncionarios.ClearSelected();
+            limparDadosInseridos();
+
         }
 
         private void FormFuncionarios_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
             listBoxFuncionarios.ClearSelected();
+            limparDadosInseridos();
+
         }
     }
 }

@@ -126,11 +126,12 @@
             // 
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.ItemHeight = 25;
-            this.listBoxClientes.Location = new System.Drawing.Point(516, 56);
+            this.listBoxClientes.Location = new System.Drawing.Point(520, 56);
             this.listBoxClientes.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(658, 354);
             this.listBoxClientes.TabIndex = 0;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // textBoxNumFiscClientes
             // 

@@ -40,6 +40,12 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+        private void limparDadosInseridos()
+        {
+            textBoxNomeSala.Clear();
+            textBoxFilas.Clear();
+            textBoxColunas.Clear();
+        }
         // Valida os dados inseridos nas textbox
         public bool validarDadosSalas()
         {
@@ -191,11 +197,31 @@ namespace Projeto_DA_PL_B_2223
         {
             this.CenterToScreen();
             listBoxSalas.ClearSelected();
+            limparDadosInseridos();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
             listBoxSalas.ClearSelected();
+            limparDadosInseridos();
+        }
+
+        private void listBoxSalas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int escolherSala = listBoxSalas.SelectedIndex;
+            if (escolherSala != -1)
+            {
+                using (var db = new ApplicationContext())
+                {
+                    Sala salaSelecionada = (Sala)listBoxSalas.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
+                    // mostrar na textBox os dados da sala selecionada                                                                                   
+                    textBoxNomeSala.Text = salaSelecionada.nomeSala;
+                    textBoxColunas.Text = salaSelecionada.Coluna;
+                    textBoxFilas.Text = salaSelecionada.Fila;
+
+                }
+
+            }
         }
     }
 }
