@@ -159,6 +159,7 @@ namespace Projeto_DA_PL_B_2223
             textBoxNomeClientes.Clear();
             textBoxMoradaClientes.Clear();
             textBoxNumFiscClientes.Clear();
+          
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,8 +179,64 @@ namespace Projeto_DA_PL_B_2223
 
             }
         }
+        public void setNifCliente(string nifCliente)
+        {
+            textBoxNumFiscClientes.Text = nifCliente;
+        }
 
+   
 
+        private void buttonPesquisarClientes_Click_1(object sender, EventArgs e)
+        {
+            {
+                // Obtém o valor da caixa de texto de pesquisa
+                string valorPesquisa = textBox_pesquisa.Text;
+
+                if (!string.IsNullOrEmpty(valorPesquisa))
+                {
+                    using (var db = new ApplicationContext())
+                    {
+                        // Realiza a consulta no banco de dados
+                        var nifCliente = db.Pessoas.OfType<Cliente>()
+                            .FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
+
+                        if (nifCliente != null)
+                        {
+                            listBoxClientes.Items.Clear();
+                            listBoxClientes.Items.Add(nifCliente);
+
+                            //Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
+                                                                                                // mostrar na textBox os dados do cliente selecionado                                                                                   
+                            if (listBoxClientes.SelectedItem is Cliente clienteSelecionado)
+                            {
+                                textBoxNomeClientes.Text = clienteSelecionado.NomePessoa;
+                                textBoxMoradaClientes.Text = clienteSelecionado.MoradaPessoa;
+                                textBoxNumFiscClientes.Text = clienteSelecionado.NumFiscCliente;
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cliente não encontrado");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Digite um valor de pesquisa");
+                }
+            }
+
+            /*Cliente cliente = new Cliente();
+           var db = new ApplicationContext();
+           var nifCliente = db.Pessoas.OfType<Cliente>().Where(p=>p.NumFiscCliente == textBox_pesquisa.Text).FirstOrDefault();
+           // buscar o id do funcionario q queremos mandar para o formprincipal
+           if (nifCliente != null) // so faz isso se tiver um funcionario
+           {
+               this.formPrincipal
+           }*/
+
+        }
     }
 
 }
