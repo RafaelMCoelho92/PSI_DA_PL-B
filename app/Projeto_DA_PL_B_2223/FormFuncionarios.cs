@@ -146,7 +146,7 @@ namespace Projeto_DA_PL_B_2223
             if (apagarFunc == -1)
             {
                 // se n tiver funcionario selecionado mensagem de erro
-                MessageBox.Show("Selecione um Funcionário");
+                MessageBox.Show("Selecione um Funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

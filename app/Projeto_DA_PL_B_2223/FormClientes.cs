@@ -116,5 +116,31 @@ namespace Projeto_DA_PL_B_2223
             listBoxClientes.Items.Add(cliente);
             return; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
+
+        private void buttonApagarClientes_Click(object sender, EventArgs e)
+        {
+            int apagarCliente = listBoxClientes.SelectedIndex;
+            if (apagarCliente == -1)
+            {
+                // se n tiver funcionario selecionado mensagem de erro
+                MessageBox.Show("Selecione um Cliente", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBoxClientes.Items[apagarCliente] is Cliente cliente)
+            {
+                //se tiver cliente selecionado
+                // apaga da listbox
+                listBoxClientes.Items.Remove(cliente);
+                //apaga da base de dados
+                var db = new ApplicationContext();
+                var apagarcliente = db.Pessoas.Find(cliente.Id); // buscar o id do cliente q queremos apagar
+                if (apagarcliente != null) // so faz isso se tiver um cliente
+                {
+                    db.Pessoas.Remove(apagarcliente); // remove cliente pelo id
+                    db.SaveChanges(); // guarda as alterações na base de dados
+                }
+            }
+        }
     }
 }
