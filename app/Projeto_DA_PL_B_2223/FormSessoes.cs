@@ -42,53 +42,15 @@ namespace Projeto_DA_PL_B_2223
                 listBoxSalasSessoes.DataSource = null;
                 listBoxSalasSessoes.DataSource = salas;
 
-                /*var sessoes = db.Sessoes.ToList();
-                listBoxSessoes.DataSource = null;
-                listBoxSessoes.DataSource = sessoes;*/
+                using (var bd = new ApplicationContext())
+                {
+                    var sessoes = bd.Sessoes.ToList();
+                    foreach (var sessao in sessoes) //correr os clientes para os adicionar à listBox 
+                    {
+                        listBoxSessoes.Items.Add(sessao);
+                    }
+                }
             }
-            /*
-            using (var db = new ApplicationContext())
-            {
-                // VAI BUSCAR À BASE DE DADOS TODOS OS FILMES GUARDADOS E APRESENTA-OS NA LISTBOX DOS FILMES
-                    
-                    var filmes = db.Filmes.ToList();
-                    listBoxFilmesSessoes.DataSource = null;
-                    listBoxFilmesSessoes.DataSource = filmes;
-
-                    var salas = db.Salas.ToList();
-                    listBoxSalasSessoes.DataSource = null;
-                    listBoxSalasSessoes.DataSource = salas;
-
-                    var sessoes = db.Sessoes.ToList();
-                    listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
-                    listBoxSessoes.DataSource = sessoes;
-                
-                /*catch (Exception)
-                {
-                    MessageBox.Show("Não há filmes a adicionar à lista!");
-                    return;
-                }
-                // VAI BUSCAR À BASE DE DADOS TODAS AS SALAS GUARDADAS E APRESENTA-AS NA LISTBOX DAS SALAS
-                try
-                {
-                    var salas = db.Salas.ToList();
-                    listBoxSalasSessoes.DataSource = null;
-                    listBoxSalasSessoes.DataSource = salas;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Não há salas a adicionar à lista!");
-                    return;
-                }
-                // VAI BUSCAR À BASE DE DADOS TODAS AS SESSÕES JÁ CRIADAS E APRESENTA-AS NA LISTBOX DAS SESSÕES
-                try
-                {
-                    var sessoes = db.Sessoes.ToList();
-                    listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
-                    listBoxSessoes.DataSource = sessoes;
-                }*/
-
-
         }
 
         // VALIDA SE OS INDEX ESTÃO SELECIONADOS
@@ -137,13 +99,25 @@ namespace Projeto_DA_PL_B_2223
             string filme = listBoxFilmesSessoes.SelectedIndex.ToString();
             string sala = listBoxSalasSessoes.SelectedIndex.ToString();
             validarDadosSessoes();
-            if (listBoxFilmesSessoes.SelectedIndex >= 0 && listBoxSalasSessoes.SelectedIndex >= 0)
+            if (listBoxFilmesSessoes.SelectedIndex > 0 && listBoxSalasSessoes.SelectedIndex > 0)
             {
                 atualizarDadosAoEntrar();
             }
 
             Sessao sessao = new Sessao(filme, sala);
             listBoxSessoes.Items.Add(sessao);
+            
+            using (var db = new ApplicationContext())
+            {
+                var sessoes = db.Sessoes.ToList();
+                foreach (var s in sessoes) //correr os clientes para os adicionar à listBox 
+                {
+                    listBoxSessoes.Items.Add(s);
+                    db.Sessoes.Add(sessao);
+                    db.SaveChanges();
+                }
+            }
+            atualizarDadosAoEntrar();
 
             /*
             
