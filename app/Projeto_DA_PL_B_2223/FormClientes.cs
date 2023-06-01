@@ -85,7 +85,7 @@ namespace Projeto_DA_PL_B_2223
             }
 
            var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
-            if (listBoxClientes.SelectedIndex != -1 && VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente))
+            if (listBoxClientes.SelectedIndex != -1 || verifica)
             {
                 Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
                 // altera dos dados do cliente selecionado
@@ -113,13 +113,7 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges();
                 }
             }
-            // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS
-            using (var db = new ApplicationContext())
-            {
-                var cliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text);
-                db.Pessoas.Add(cliente);
-                db.SaveChanges();
-            }
+
 
         }
 
@@ -141,7 +135,6 @@ namespace Projeto_DA_PL_B_2223
             textBoxMoradaClientes.Text = cliente.MoradaPessoa;
             textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
 
-            listBoxClientes.Items.Add(cliente);
             return true; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
         private void buttonApagarClientes_Click(object sender, EventArgs e)
