@@ -31,17 +31,39 @@ namespace Projeto_DA_PL_B_2223
         }
 
         private void atualizarDadosAoEntrar()
-        {            
+        {
+            using (var db = new ApplicationContext())
+            {
+                var filmes = db.Filmes.ToList();
+                listBoxFilmesSessoes.DataSource = null;
+                listBoxFilmesSessoes.DataSource = filmes;
+
+                var salas = db.Salas.ToList();
+                listBoxSalasSessoes.DataSource = null;
+                listBoxSalasSessoes.DataSource = salas;
+
+                /*var sessoes = db.Sessoes.ToList();
+                listBoxSessoes.DataSource = null;
+                listBoxSessoes.DataSource = sessoes;*/
+            }
+            /*
             using (var db = new ApplicationContext())
             {
                 // VAI BUSCAR À BASE DE DADOS TODOS OS FILMES GUARDADOS E APRESENTA-OS NA LISTBOX DOS FILMES
-                try
-                {
+                    
                     var filmes = db.Filmes.ToList();
                     listBoxFilmesSessoes.DataSource = null;
                     listBoxFilmesSessoes.DataSource = filmes;
-                }
-                catch (Exception)
+
+                    var salas = db.Salas.ToList();
+                    listBoxSalasSessoes.DataSource = null;
+                    listBoxSalasSessoes.DataSource = salas;
+
+                    var sessoes = db.Sessoes.ToList();
+                    listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
+                    listBoxSessoes.DataSource = sessoes;
+                
+                /*catch (Exception)
                 {
                     MessageBox.Show("Não há filmes a adicionar à lista!");
                     return;
@@ -64,13 +86,9 @@ namespace Projeto_DA_PL_B_2223
                     var sessoes = db.Sessoes.ToList();
                     listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
                     listBoxSessoes.DataSource = sessoes;
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Não há sessões a adicionar à lista!");
-                    return;
-                }
-            }
+                }*/
+
+
         }
 
         // VALIDA SE OS INDEX ESTÃO SELECIONADOS
@@ -123,13 +141,17 @@ namespace Projeto_DA_PL_B_2223
             {
                 atualizarDadosAoEntrar();
             }
-            using (var db = new ApplicationContext())
-            {
+
+            Sessao sessao = new Sessao(filme, sala);
+            listBoxSessoes.Items.Add(sessao);
+
+            /*
+            
                 Sessao sessao = new Sessao(filme, sala);
                 listBoxSessoes.Items.Add(sessao);
                 db.Sessoes.Add(sessao);
                 db.SaveChanges();
-            }
+            }*/
         }
     }
 }
