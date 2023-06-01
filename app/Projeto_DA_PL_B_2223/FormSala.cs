@@ -156,5 +156,16 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
+        private void FormSala_Load(object sender, EventArgs e)
+        {
+            listBoxSalas.ClearSelected();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            listBoxSalas.ClearSelected();
+        }
+
     }
 }
