@@ -29,6 +29,7 @@ namespace Projeto_DA_PL_B_2223
             return tabControl1.TabPages[0];
         }
 
+
         private void atualizarDadosAoEntrar()
         {
             using (var db = new ApplicationContext())
