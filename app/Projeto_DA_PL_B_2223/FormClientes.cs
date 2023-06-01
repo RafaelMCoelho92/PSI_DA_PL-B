@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -83,8 +84,35 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
+           var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
+            if (listBoxClientes.SelectedIndex != -1 && VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente))
+            {
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+                // altera dos dados do cliente selecionado
+                clienteSelecionado.NomePessoa = textBoxNomeClientes.Text;
+                clienteSelecionado.MoradaPessoa = textBoxMoradaClientes.Text;
+                clienteSelecionado.NumFiscCliente = textBoxNumFiscClientes.Text;
+                // Atualizar a exibição do funcionário na ListBox
+                int editarcliente = listBoxClientes.SelectedIndex;
+                listBoxClientes.Items[editarcliente] = clienteSelecionado;
 
+                using (var db = new ApplicationContext())
+                {   //faz update do funcionario
+                    db.Pessoas.AddOrUpdate(clienteSelecionado);
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                Cliente novocliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text) ;
+
+                listBoxClientes.Items.Add(novocliente); // mostra na listbox antes de atualizar a db
+                using (var db = new ApplicationContext())
+                {   // cria novo funcionario
+                    db.Pessoas.Add(novocliente);
+                    db.SaveChanges();
+                }
+            }
             // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS
             using (var db = new ApplicationContext())
             {
@@ -96,14 +124,14 @@ namespace Projeto_DA_PL_B_2223
         }
 
         // METODO PARA VERIFICAR SE JA EXISTE ALGUM CLIENTE NA LISTBOX DOS CLIENTES
-        private void VerificaClienteExistente(string nomeCliente, string moradaCliente, string numFiscCliente)
+        private bool VerificaClienteExistente(string nomeCliente, string moradaCliente, string numFiscCliente)
         {
             foreach (Cliente clienteExistente in listBoxClientes.Items)
             {
-                if (clienteExistente.NumFiscCliente == numFiscCliente)//  && listBoxClientes.SelectedIndex != -1 grava senao mensagem de erro
+                if (clienteExistente.NumFiscCliente == numFiscCliente && listBoxClientes.SelectedIndex == -1)//  && listBoxClientes.SelectedIndex != -1 grava senao mensagem de erro
                 {
                     MessageBox.Show("Não pode adicionar um cliente com um Numero Fiscal já utilizado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // NUMERO FISCAL DO CLIENTE JA EXISTE
+                    return false; // NUMERO FISCAL DO CLIENTE JA EXISTE
                 }
             }
 
@@ -114,7 +142,7 @@ namespace Projeto_DA_PL_B_2223
             textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
 
             listBoxClientes.Items.Add(cliente);
-            return; // NUMERO FISCAL DO CLIENTE NAO EXISTE
+            return true; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
         private void buttonApagarClientes_Click(object sender, EventArgs e)
         {
