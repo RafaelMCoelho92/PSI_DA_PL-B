@@ -31,10 +31,10 @@ namespace Projeto_DA_PL_B_2223
         }
 
         private void atualizarDadosAoEntrar()
-        {
+        {            
             using (var db = new ApplicationContext())
             {
-                //correr as sessoes para os adicionar à listBox 
+                // VAI BUSCAR À BASE DE DADOS TODOS OS FILMES GUARDADOS E APRESENTA-OS NA LISTBOX DOS FILMES
                 try
                 {
                     var filmes = db.Filmes.ToList();
@@ -46,18 +46,34 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Não há filmes a adicionar à lista!");
                     return;
                 }
-
-
-                var salas = db.Salas.ToList();
-                listBoxSalasSessoes.DataSource = null;
-                listBoxSalasSessoes.DataSource = salas;
-
-                var sessoes = db.Sessoes.ToList();
-                listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
-                listBoxSessoes.DataSource = sessoes;
+                // VAI BUSCAR À BASE DE DADOS TODAS AS SALAS GUARDADAS E APRESENTA-AS NA LISTBOX DAS SALAS
+                try
+                {
+                    var salas = db.Salas.ToList();
+                    listBoxSalasSessoes.DataSource = null;
+                    listBoxSalasSessoes.DataSource = salas;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Não há salas a adicionar à lista!");
+                    return;
+                }
+                // VAI BUSCAR À BASE DE DADOS TODAS AS SESSÕES JÁ CRIADAS E APRESENTA-AS NA LISTBOX DAS SESSÕES
+                try
+                {
+                    var sessoes = db.Sessoes.ToList();
+                    listBoxSessoes.DataSource = null; // Escrever o que está na toString do (class) Sessao 
+                    listBoxSessoes.DataSource = sessoes;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Não há sessões a adicionar à lista!");
+                    return;
+                }
             }
         }
 
+        // VALIDA SE OS INDEX ESTÃO SELECIONADOS
         public bool validarDadosSessoes()
         {
             int filmeSelecionado = listBoxFilmesSessoes.SelectedIndex;
@@ -74,14 +90,46 @@ namespace Projeto_DA_PL_B_2223
                 return false;
             }
 
-            DateTime horaSelecionado = dateTimePickerSessao.Value;
-            if (horaSelecionado == DateTime.MinValue )
+            /*DateTime horaSelecionado = dateTimePickerSessao.Value;
+            if (horaSelecionado != DateTime.MinValue )
             {
                 MessageBox.Show("Tem que selecionar uma data!");
                 return false;
-            }
+            }*/
 
             return true;
+        }
+
+        private void tabPage1_MouseClick(object sender, MouseEventArgs e)
+        {
+            listBoxFilmesSessoes.ClearSelected();
+            listBoxSalasSessoes.ClearSelected();
+            listBoxSessoes.ClearSelected();
+        }
+
+        private void FormSessoes_Load(object sender, EventArgs e)
+        {
+            listBoxFilmesSessoes.ClearSelected();
+            listBoxSalasSessoes.ClearSelected();
+            listBoxSessoes.ClearSelected();
+        }
+
+        private void buttonCriarSessoes_Click(object sender, EventArgs e)
+        {
+            string filme = listBoxFilmesSessoes.SelectedIndex.ToString();
+            string sala = listBoxSalasSessoes.SelectedIndex.ToString();
+            validarDadosSessoes();
+            if (listBoxFilmesSessoes.SelectedIndex >= 0 && listBoxSalasSessoes.SelectedIndex >= 0)
+            {
+                atualizarDadosAoEntrar();
+            }
+            using (var db = new ApplicationContext())
+            {
+                Sessao sessao = new Sessao(filme, sala);
+                listBoxSessoes.Items.Add(sessao);
+                db.Sessoes.Add(sessao);
+                db.SaveChanges();
+            }
         }
     }
 }
