@@ -103,7 +103,7 @@
             // 
             this.buttonGuardarFilme.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonGuardarFilme.Location = new System.Drawing.Point(64, 277);
-            this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGuardarFilme.Name = "buttonGuardarFilme";
             this.buttonGuardarFilme.Size = new System.Drawing.Size(332, 66);
             this.buttonGuardarFilme.TabIndex = 3;
@@ -168,6 +168,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Filmes";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // buttonApagarFilme
             // 

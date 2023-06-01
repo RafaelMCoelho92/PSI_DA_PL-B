@@ -17,8 +17,6 @@ namespace Projeto_DA_PL_B_2223
         public FormFuncionarios()
         {
             InitializeComponent();
-            this.CenterToScreen();
-
             atualizarDadosAoEntrar();
         }
 
@@ -183,7 +181,7 @@ namespace Projeto_DA_PL_B_2223
                 }
 
             }
-        }                                                      
+        }
 
         private void listBoxFuncionarios_DoubleClick(object sender, EventArgs e)
         {
@@ -212,6 +210,16 @@ namespace Projeto_DA_PL_B_2223
 
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            listBoxFuncionarios.ClearSelected();
+        }
+
+        private void FormFuncionarios_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            listBoxFuncionarios.ClearSelected();
+        }
     }
 }
 

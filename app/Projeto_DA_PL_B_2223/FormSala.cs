@@ -18,7 +18,6 @@ namespace Projeto_DA_PL_B_2223
         public FormSala()
         {
             InitializeComponent();
-            this.CenterToScreen();
             atualizarDadosAoEntrar();
         }
         public FormSala(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -190,6 +189,7 @@ namespace Projeto_DA_PL_B_2223
 
         private void FormSala_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             listBoxSalas.ClearSelected();
         }
 

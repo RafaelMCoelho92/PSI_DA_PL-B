@@ -17,7 +17,6 @@ namespace Projeto_DA_PL_B_2223
         public FormClientes()
         {
             InitializeComponent();
-            this.CenterToScreen();
             atualizarDadosAoEntrar();
 
         }
@@ -116,7 +115,6 @@ namespace Projeto_DA_PL_B_2223
             listBoxClientes.Items.Add(cliente);
             return; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
-
         private void buttonApagarClientes_Click(object sender, EventArgs e)
         {
             int apagarCliente = listBoxClientes.SelectedIndex;
@@ -142,5 +140,17 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            listBoxClientes.ClearSelected();
+        }
+
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            listBoxClientes.ClearSelected();
+        }
     }
+
 }
