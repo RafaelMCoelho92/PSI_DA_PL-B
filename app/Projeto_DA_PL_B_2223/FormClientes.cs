@@ -19,7 +19,7 @@ namespace Projeto_DA_PL_B_2223
         {
 
             InitializeComponent();
-            atualizarDadosAoEntrar();
+            //atualizarDadosAoEntrar();
 
         }
         public FormClientes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -40,7 +40,6 @@ namespace Projeto_DA_PL_B_2223
                     listBoxClientes.Items.Add(cliente); 
                 }
             }
-
         }
         private void buttonGuardarClientes_Click(object sender, EventArgs e)
         {
@@ -167,6 +166,7 @@ namespace Projeto_DA_PL_B_2223
         {
             listBoxClientes.ClearSelected();
             limparDadosInseridos();
+            atualizarDadosAoEntrar();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
@@ -174,6 +174,7 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
             listBoxClientes.ClearSelected();
             limparDadosInseridos();
+            atualizarDadosAoEntrar();
         }
         private void limparDadosInseridos()
         {
@@ -247,15 +248,6 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Digite um valor de pesquisa");
                 }
             }
-
-            /*Cliente cliente = new Cliente();
-           var db = new ApplicationContext();
-           var nifCliente = db.Pessoas.OfType<Cliente>().Where(p=>p.NumFiscCliente == textBox_pesquisa.Text).FirstOrDefault();
-           // buscar o id do funcionario q queremos mandar para o formprincipal
-           if (nifCliente != null) // so faz isso se tiver um funcionario
-           {
-               this.formPrincipal
-           }*/
 
         }
     }
