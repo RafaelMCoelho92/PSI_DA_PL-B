@@ -30,17 +30,17 @@
         {
             this.tabControlClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
             this.buttonPesquisarClientes = new System.Windows.Forms.Button();
-            this.buttonApagarClientes = new System.Windows.Forms.Button();
+            this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
             this.buttonGuardarClientes = new System.Windows.Forms.Button();
-            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.textBoxNumFiscClientes = new System.Windows.Forms.TextBox();
             this.textBoxMoradaClientes = new System.Windows.Forms.TextBox();
             this.textBoxNomeClientes = new System.Windows.Forms.TextBox();
             this.labelNumeroFiscalClientes = new System.Windows.Forms.Label();
             this.labelMoradaClientes = new System.Windows.Forms.Label();
             this.labelNomesClientes = new System.Windows.Forms.Label();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.buttonApagarClientes = new System.Windows.Forms.Button();
             this.tabControlClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxFuncionario.SuspendLayout();
@@ -53,7 +53,7 @@
             this.tabControlClientes.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlClientes.Name = "tabControlClientes";
             this.tabControlClientes.SelectedIndex = 0;
-            this.tabControlClientes.Size = new System.Drawing.Size(1209, 495);
+            this.tabControlClientes.Size = new System.Drawing.Size(1694, 523);
             this.tabControlClientes.TabIndex = 6;
             // 
             // tabPage1
@@ -66,11 +66,21 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1193, 448);
+            this.tabPage1.Size = new System.Drawing.Size(1678, 476);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // buttonPesquisarClientes
+            // 
+            this.buttonPesquisarClientes.Location = new System.Drawing.Point(962, 8);
+            this.buttonPesquisarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonPesquisarClientes.Name = "buttonPesquisarClientes";
+            this.buttonPesquisarClientes.Size = new System.Drawing.Size(220, 38);
+            this.buttonPesquisarClientes.TabIndex = 25;
+            this.buttonPesquisarClientes.Text = "PESQUISAR";
+            this.buttonPesquisarClientes.UseVisualStyleBackColor = true;
             // 
             // groupBoxFuncionario
             // 
@@ -90,30 +100,9 @@
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "Clientes";
             // 
-            // buttonPesquisarClientes
-            // 
-            this.buttonPesquisarClientes.Location = new System.Drawing.Point(958, 8);
-            this.buttonPesquisarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonPesquisarClientes.Name = "buttonPesquisarClientes";
-            this.buttonPesquisarClientes.Size = new System.Drawing.Size(220, 38);
-            this.buttonPesquisarClientes.TabIndex = 25;
-            this.buttonPesquisarClientes.Text = "PESQUISAR";
-            this.buttonPesquisarClientes.UseVisualStyleBackColor = true;
-            // 
-            // buttonApagarClientes
-            // 
-            this.buttonApagarClientes.Location = new System.Drawing.Point(304, 361);
-            this.buttonApagarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.buttonApagarClientes.Name = "buttonApagarClientes";
-            this.buttonApagarClientes.Size = new System.Drawing.Size(160, 38);
-            this.buttonApagarClientes.TabIndex = 24;
-            this.buttonApagarClientes.Text = "APAGAR";
-            this.buttonApagarClientes.UseVisualStyleBackColor = true;
-            this.buttonApagarClientes.Click += new System.EventHandler(this.buttonApagarClientes_Click);
-            // 
             // buttonGuardarClientes
             // 
-            this.buttonGuardarClientes.Location = new System.Drawing.Point(308, 191);
+            this.buttonGuardarClientes.Location = new System.Drawing.Point(317, 185);
             this.buttonGuardarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonGuardarClientes.Name = "buttonGuardarClientes";
             this.buttonGuardarClientes.Size = new System.Drawing.Size(152, 41);
@@ -121,17 +110,6 @@
             this.buttonGuardarClientes.Text = "Guardar";
             this.buttonGuardarClientes.UseVisualStyleBackColor = true;
             this.buttonGuardarClientes.Click += new System.EventHandler(this.buttonGuardarClientes_Click);
-            // 
-            // listBoxClientes
-            // 
-            this.listBoxClientes.FormattingEnabled = true;
-            this.listBoxClientes.ItemHeight = 25;
-            this.listBoxClientes.Location = new System.Drawing.Point(520, 56);
-            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(4);
-            this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(658, 354);
-            this.listBoxClientes.TabIndex = 0;
-            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // textBoxNumFiscClientes
             // 
@@ -187,11 +165,33 @@
             this.labelNomesClientes.TabIndex = 0;
             this.labelNomesClientes.Text = "Nome:";
             // 
+            // listBoxClientes
+            // 
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.ItemHeight = 25;
+            this.listBoxClientes.Location = new System.Drawing.Point(520, 56);
+            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(1150, 354);
+            this.listBoxClientes.TabIndex = 0;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
+            // 
+            // buttonApagarClientes
+            // 
+            this.buttonApagarClientes.Location = new System.Drawing.Point(520, 428);
+            this.buttonApagarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonApagarClientes.Name = "buttonApagarClientes";
+            this.buttonApagarClientes.Size = new System.Drawing.Size(160, 38);
+            this.buttonApagarClientes.TabIndex = 24;
+            this.buttonApagarClientes.Text = "APAGAR";
+            this.buttonApagarClientes.UseVisualStyleBackColor = true;
+            this.buttonApagarClientes.Click += new System.EventHandler(this.buttonApagarClientes_Click);
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 549);
+            this.ClientSize = new System.Drawing.Size(2072, 549);
             this.Controls.Add(this.tabControlClientes);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormClientes";

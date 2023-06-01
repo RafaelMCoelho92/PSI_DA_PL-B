@@ -24,7 +24,7 @@ namespace Projeto_DA_PL_B_2223
         }
         public override string ToString()
         {
-            return "NOME: " + NomePessoa + "  MORADA: " + MoradaPessoa + " NIF: " + NumFiscCliente;
+            return "NOME: " + NomePessoa + "  MORADA: " + MoradaPessoa + " NIF: " + NumFiscCliente + " Nº Total de Bilhetes Adquiridos: "+ "Valor Total de Bilhetes Adquiridos: ";
         }
 
     }

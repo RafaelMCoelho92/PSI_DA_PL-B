@@ -46,19 +46,19 @@ namespace Projeto_DA_PL_B_2223
             string nomeCliente = textBoxNomeClientes.Text;
             if (nomeCliente.Length == 0)
             {
-                MessageBox.Show("O nome não pode ser vazio");
+                MessageBox.Show("O nome não pode ser vazio", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string moradaCliente = textBoxMoradaClientes.Text;
             if (moradaCliente.Length == 0)
             {
-                MessageBox.Show("A morada não pode ser vazia");
+                MessageBox.Show("A morada não pode ser vazia", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string numFiscCliente = textBoxNumFiscClientes.Text;
             if (numFiscCliente.Length == 0)
             {
-                MessageBox.Show("É necessário um número fiscal");
+                MessageBox.Show("É necessário um número fiscal", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -73,13 +73,13 @@ namespace Projeto_DA_PL_B_2223
                 // VERIFICA CASO O NUMERO NAO SEJA COMPREENDIDO ENTRE OS VALORES INSERIDOS - MOSTRA O ERRO
                 if (contribuinte < 100000000 || contribuinte >= 700000000)
                 {
-                    MessageBox.Show("O número fiscal a inserir deve ser válido");
+                    MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Apenas devem constar números neste campo");
+                MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
@@ -99,7 +99,7 @@ namespace Projeto_DA_PL_B_2223
         {
             foreach (Cliente clienteExistente in listBoxClientes.Items)
             {
-                if (clienteExistente.NumFiscCliente == numFiscCliente)
+                if (clienteExistente.NumFiscCliente == numFiscCliente)//  && listBoxClientes.SelectedIndex != -1 grava senao mensagem de erro
                 {
                     MessageBox.Show("Não pode adicionar um cliente com um Numero Fiscal já utilizado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return; // NUMERO FISCAL DO CLIENTE JA EXISTE
@@ -177,6 +177,8 @@ namespace Projeto_DA_PL_B_2223
 
             }
         }
+
+
     }
 
 }
