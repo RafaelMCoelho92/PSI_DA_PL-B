@@ -19,7 +19,7 @@ namespace Projeto_DA_PL_B_2223
         {
 
             InitializeComponent();
-            atualizarDadosAoEntrar();
+            //atualizarDadosAoEntrar();
 
         }
         public FormClientes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -32,6 +32,8 @@ namespace Projeto_DA_PL_B_2223
         }
         private void atualizarDadosAoEntrar()
         {
+            listBoxClientes.Items.Clear();
+
             using (var db = new ApplicationContext())
             {
                 var clientes = db.Pessoas.OfType<Cliente>();
@@ -40,7 +42,6 @@ namespace Projeto_DA_PL_B_2223
                     listBoxClientes.Items.Add(cliente); 
                 }
             }
-
         }
         private void buttonGuardarClientes_Click(object sender, EventArgs e)
         {
@@ -85,7 +86,11 @@ namespace Projeto_DA_PL_B_2223
             }
 
            var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
-            if (listBoxClientes.SelectedIndex != -1 && VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente))
+            if (verifica == false)
+            {
+                return;
+            }
+            if (listBoxClientes.SelectedIndex != -1 )
             {
                 Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
                 // altera dos dados do cliente selecionado
@@ -113,13 +118,7 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges();
                 }
             }
-            // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS
-            using (var db = new ApplicationContext())
-            {
-                var cliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text);
-                db.Pessoas.Add(cliente);
-                db.SaveChanges();
-            }
+
 
         }
 
@@ -141,7 +140,6 @@ namespace Projeto_DA_PL_B_2223
             textBoxMoradaClientes.Text = cliente.MoradaPessoa;
             textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
 
-            listBoxClientes.Items.Add(cliente);
             return true; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
         private void buttonApagarClientes_Click(object sender, EventArgs e)
@@ -168,12 +166,15 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges(); // guarda as alterações na base de dados
                 }
             }
+            atualizarDadosAoEntrar();
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
             listBoxClientes.ClearSelected();
             limparDadosInseridos();
+            atualizarDadosAoEntrar();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
@@ -181,6 +182,7 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
             listBoxClientes.ClearSelected();
             limparDadosInseridos();
+            atualizarDadosAoEntrar();
         }
         private void limparDadosInseridos()
         {
@@ -254,15 +256,6 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Digite um valor de pesquisa");
                 }
             }
-
-            /*Cliente cliente = new Cliente();
-           var db = new ApplicationContext();
-           var nifCliente = db.Pessoas.OfType<Cliente>().Where(p=>p.NumFiscCliente == textBox_pesquisa.Text).FirstOrDefault();
-           // buscar o id do funcionario q queremos mandar para o formprincipal
-           if (nifCliente != null) // so faz isso se tiver um funcionario
-           {
-               this.formPrincipal
-           }*/
 
         }
     }
