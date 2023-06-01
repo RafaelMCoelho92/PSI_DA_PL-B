@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +18,6 @@ namespace Projeto_DA_PL_B_2223
         public FormSala()
         {
             InitializeComponent();
-            this.CenterToScreen();
             atualizarDadosAoEntrar();
         }
         public FormSala(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -41,6 +40,12 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+        private void limparDadosInseridos()
+        {
+            textBoxNomeSala.Clear();
+            textBoxFilas.Clear();
+            textBoxColunas.Clear();
+        }
         // Valida os dados inseridos nas textbox
         public bool validarDadosSalas()
         {
@@ -48,7 +53,18 @@ namespace Projeto_DA_PL_B_2223
             double valorFila = 0;
             double valorColuna = 0;
 
-
+            if (textBoxNomeSala.Text == "" || textBoxFilas.Text == "" || textBoxColunas.Text == "") //assim escusa de entrar no resto das validações sem ter tudo preenchido
+            {
+                MessageBox.Show("Insira todos os dados!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            string nomeSala = textBoxNomeSala.Text;
+            // se os n forem validos vai retornar false
+            if (nomeSala.Length == 0)
+            {
+                MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             try
             {   // FAZER O PARSE-> OU SEJA PASSAR DE STRING PARA DOUBLE
                 string filas = textBoxFilas.Text;
@@ -72,12 +88,6 @@ namespace Projeto_DA_PL_B_2223
             catch (Exception)
             {
                 MessageBox.Show("Valor Invalido, insira um valor entre 1 e 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            string nomeSala = textBoxNomeSala.Text;
-            // se os n forem validos vai retornar false
-            if (nomeSala.Length == 0)
-            {
-                MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             double fila;
@@ -157,15 +167,61 @@ namespace Projeto_DA_PL_B_2223
             }
         }
 
+        private void buttonApagarSala_Click(object sender, EventArgs e)
+        {
+            int apagarSala = listBoxSalas.SelectedIndex;
+            if (apagarSala == -1)
+            {
+                // se n tiver sala selecionada mensagem de erro
+                MessageBox.Show("Selecione uma Sala", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBoxSalas.Items[apagarSala] is Sala sala)
+            {
+                //se tiver sala selecionada
+                // apaga da listbox
+                listBoxSalas.Items.Remove(sala);
+                //apaga da base de dados
+                var db = new ApplicationContext();
+                var apagarsala = db.Salas.Find(sala.Id); // buscar o id da sala q queremos apagar
+                if (apagarsala != null) // so faz isso se tiver uma sala
+                {
+                    db.Salas.Remove(apagarsala); // remove sala pelo id
+                    db.SaveChanges(); // guarda as alterações na base de dados
+                }
+            }
+        }
+
         private void FormSala_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             listBoxSalas.ClearSelected();
+            limparDadosInseridos();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
             listBoxSalas.ClearSelected();
+            limparDadosInseridos();
         }
 
+        private void listBoxSalas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int escolherSala = listBoxSalas.SelectedIndex;
+            if (escolherSala != -1)
+            {
+                using (var db = new ApplicationContext())
+                {
+                    Sala salaSelecionada = (Sala)listBoxSalas.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
+                    // mostrar na textBox os dados da sala selecionada                                                                                   
+                    textBoxNomeSala.Text = salaSelecionada.nomeSala;
+                    textBoxColunas.Text = salaSelecionada.Coluna;
+                    textBoxFilas.Text = salaSelecionada.Fila;
+
+                }
+
+            }
+        }
     }
 }

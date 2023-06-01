@@ -59,12 +59,6 @@ namespace Projeto_DA_PL_B_2223
             this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("G"); // F, U, ou G (senao apaga o G e ver as opcoes)
         }
 
-        //CHAMA A TAB DOS CLIENTES
-        private void buttonClientes_Click(object sender, EventArgs e)
-        {
-            formClientes.ShowDialog();
-        }
-
         // CHAMA A TAB DAS SESSOES DO DIA CLICANDO NA LABEL DO TITULO DO CINEMA
         private void labelNomeCinema_Click(object sender, EventArgs e)
         {
@@ -133,7 +127,10 @@ namespace Projeto_DA_PL_B_2223
         {
             formFuncionarios.ShowDialog();
         }
-
-
+        //CHAMA O FORM DOS CLIENTES
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formClientes.ShowDialog();
+        }
     }
 }

@@ -62,29 +62,26 @@ namespace Projeto_DA_PL_B_2223
             this.groupBoxFuncionario.Controls.Add(this.label10);
             this.groupBoxFuncionario.Controls.Add(this.label11);
             this.groupBoxFuncionario.Location = new System.Drawing.Point(6, 6);
-            this.groupBoxFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxFuncionario.Name = "groupBoxFuncionario";
-            this.groupBoxFuncionario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxFuncionario.Size = new System.Drawing.Size(508, 435);
-
+            this.groupBoxFuncionario.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxFuncionario.Size = new System.Drawing.Size(454, 331);
             this.groupBoxFuncionario.TabIndex = 4;
             this.groupBoxFuncionario.TabStop = false;
             this.groupBoxFuncionario.Text = "Funcionarios";
             // 
             // textBoxSalarioFuncionario
             // 
-            this.textBoxSalarioFuncionario.Location = new System.Drawing.Point(124, 196);
-            this.textBoxSalarioFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.textBoxSalarioFuncionario.Location = new System.Drawing.Point(107, 196);
+            this.textBoxSalarioFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSalarioFuncionario.Name = "textBoxSalarioFuncionario";
             this.textBoxSalarioFuncionario.Size = new System.Drawing.Size(336, 31);
             this.textBoxSalarioFuncionario.TabIndex = 3;
             // 
             // buttonGuardarFuncionario
             // 
-            this.buttonGuardarFuncionario.Location = new System.Drawing.Point(188, 290);
-            this.buttonGuardarFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.buttonGuardarFuncionario.Location = new System.Drawing.Point(141, 260);
+            this.buttonGuardarFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGuardarFuncionario.Name = "buttonGuardarFuncionario";
             this.buttonGuardarFuncionario.Size = new System.Drawing.Size(152, 62);
             this.buttonGuardarFuncionario.TabIndex = 4;
@@ -98,29 +95,25 @@ namespace Projeto_DA_PL_B_2223
             this.comboBoxFuncaoFuncionario.Items.AddRange(new object[] {
             "Admin",
             "Funcionario"});
-
-            this.comboBoxFuncaoFuncionario.Location = new System.Drawing.Point(124, 138);
-            this.comboBoxFuncaoFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.comboBoxFuncaoFuncionario.Location = new System.Drawing.Point(107, 140);
+            this.comboBoxFuncaoFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxFuncaoFuncionario.Name = "comboBoxFuncaoFuncionario";
             this.comboBoxFuncaoFuncionario.Size = new System.Drawing.Size(336, 33);
             this.comboBoxFuncaoFuncionario.TabIndex = 2;
+            this.comboBoxFuncaoFuncionario.Text = "Funcionario";
             // 
             // textBoxMoradaFuncionario
             // 
-
-            this.textBoxMoradaFuncionario.Location = new System.Drawing.Point(124, 94);
-            this.textBoxMoradaFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.textBoxMoradaFuncionario.Location = new System.Drawing.Point(107, 94);
+            this.textBoxMoradaFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMoradaFuncionario.Name = "textBoxMoradaFuncionario";
             this.textBoxMoradaFuncionario.Size = new System.Drawing.Size(336, 31);
             this.textBoxMoradaFuncionario.TabIndex = 1;
             // 
             // textBoxNomeFuncionario
             // 
-
-            this.textBoxNomeFuncionario.Location = new System.Drawing.Point(124, 48);
-            this.textBoxNomeFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNomeFuncionario.Location = new System.Drawing.Point(107, 48);
+            this.textBoxNomeFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNomeFuncionario.Name = "textBoxNomeFuncionario";
             this.textBoxNomeFuncionario.Size = new System.Drawing.Size(336, 31);
             this.textBoxNomeFuncionario.TabIndex = 0;
@@ -128,7 +121,7 @@ namespace Projeto_DA_PL_B_2223
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 202);
+            this.label8.Location = new System.Drawing.Point(3, 202);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 25);
@@ -138,7 +131,7 @@ namespace Projeto_DA_PL_B_2223
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 148);
+            this.label9.Location = new System.Drawing.Point(3, 148);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 25);
@@ -148,7 +141,7 @@ namespace Projeto_DA_PL_B_2223
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(20, 98);
+            this.label10.Location = new System.Drawing.Point(3, 98);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 25);
@@ -158,7 +151,7 @@ namespace Projeto_DA_PL_B_2223
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 48);
+            this.label11.Location = new System.Drawing.Point(3, 48);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 25);
@@ -168,9 +161,8 @@ namespace Projeto_DA_PL_B_2223
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(22, 42);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.tabControl1.Location = new System.Drawing.Point(2, 13);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1530, 642);
@@ -182,21 +174,20 @@ namespace Projeto_DA_PL_B_2223
             this.tabPage1.Controls.Add(this.buttonApagarFuncionario);
             this.tabPage1.Controls.Add(this.groupBoxListaFuncionarios);
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
-
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1514, 595);
-
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Funcionarios";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button_entrar
             // 
             this.button_entrar.Location = new System.Drawing.Point(1522, 656);
-            this.button_entrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button_entrar.Margin = new System.Windows.Forms.Padding(6);
             this.button_entrar.Name = "button_entrar";
             this.button_entrar.Size = new System.Drawing.Size(320, 56);
             this.button_entrar.TabIndex = 20;
@@ -205,10 +196,8 @@ namespace Projeto_DA_PL_B_2223
             // 
             // buttonApagarFuncionario
             // 
-
-            this.buttonApagarFuncionario.Location = new System.Drawing.Point(362, 465);
-            this.buttonApagarFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.buttonApagarFuncionario.Location = new System.Drawing.Point(362, 446);
+            this.buttonApagarFuncionario.Margin = new System.Windows.Forms.Padding(4);
             this.buttonApagarFuncionario.Name = "buttonApagarFuncionario";
             this.buttonApagarFuncionario.Size = new System.Drawing.Size(152, 62);
             this.buttonApagarFuncionario.TabIndex = 5;
@@ -219,13 +208,11 @@ namespace Projeto_DA_PL_B_2223
             // groupBoxListaFuncionarios
             // 
             this.groupBoxListaFuncionarios.Controls.Add(this.listBoxFuncionarios);
-
             this.groupBoxListaFuncionarios.Location = new System.Drawing.Point(532, 6);
-            this.groupBoxListaFuncionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxListaFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxListaFuncionarios.Name = "groupBoxListaFuncionarios";
-            this.groupBoxListaFuncionarios.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxListaFuncionarios.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxListaFuncionarios.Size = new System.Drawing.Size(938, 521);
-
             this.groupBoxListaFuncionarios.TabIndex = 19;
             this.groupBoxListaFuncionarios.TabStop = false;
             this.groupBoxListaFuncionarios.Text = "Lista de Funcionarios";
@@ -233,11 +220,9 @@ namespace Projeto_DA_PL_B_2223
             // listBoxFuncionarios
             // 
             this.listBoxFuncionarios.FormattingEnabled = true;
-
             this.listBoxFuncionarios.ItemHeight = 25;
             this.listBoxFuncionarios.Location = new System.Drawing.Point(6, 48);
-            this.listBoxFuncionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.listBoxFuncionarios.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxFuncionarios.Name = "listBoxFuncionarios";
             this.listBoxFuncionarios.Size = new System.Drawing.Size(890, 454);
             this.listBoxFuncionarios.TabIndex = 0;
@@ -248,13 +233,12 @@ namespace Projeto_DA_PL_B_2223
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(1370, 748);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFuncionarios";
             this.Text = "FormFuncionarios";
+            this.Load += new System.EventHandler(this.FormFuncionarios_Load);
             this.groupBoxFuncionario.ResumeLayout(false);
             this.groupBoxFuncionario.PerformLayout();
             this.tabControl1.ResumeLayout(false);

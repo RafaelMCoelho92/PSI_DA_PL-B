@@ -38,6 +38,7 @@
             this.textBoxNomeFilme = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonApagarFilme = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +49,10 @@
             this.comboBoxEstadoFilme.Items.AddRange(new object[] {
             "Desativado",
             "Ativado"});
-            this.comboBoxEstadoFilme.Location = new System.Drawing.Point(149, 113);
-            this.comboBoxEstadoFilme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxEstadoFilme.Location = new System.Drawing.Point(224, 177);
+            this.comboBoxEstadoFilme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.comboBoxEstadoFilme.Name = "comboBoxEstadoFilme";
-            this.comboBoxEstadoFilme.Size = new System.Drawing.Size(117, 24);
+            this.comboBoxEstadoFilme.Size = new System.Drawing.Size(174, 33);
             this.comboBoxEstadoFilme.TabIndex = 2;
             this.comboBoxEstadoFilme.Text = "Desativado";
             // 
@@ -71,39 +72,40 @@
             "Aventura",
             "Fantasia",
             "Animação"});
-            this.comboBoxCategoriaFilme.Location = new System.Drawing.Point(149, 68);
-            this.comboBoxCategoriaFilme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxCategoriaFilme.Location = new System.Drawing.Point(224, 106);
+            this.comboBoxCategoriaFilme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.comboBoxCategoriaFilme.Name = "comboBoxCategoriaFilme";
-            this.comboBoxCategoriaFilme.Size = new System.Drawing.Size(117, 24);
+            this.comboBoxCategoriaFilme.Size = new System.Drawing.Size(174, 33);
             this.comboBoxCategoriaFilme.TabIndex = 1;
             // 
             // listBoxFilmes
             // 
             this.listBoxFilmes.FormattingEnabled = true;
-            this.listBoxFilmes.ItemHeight = 16;
-            this.listBoxFilmes.Location = new System.Drawing.Point(293, 5);
-            this.listBoxFilmes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBoxFilmes.ItemHeight = 25;
+            this.listBoxFilmes.Location = new System.Drawing.Point(440, 8);
+            this.listBoxFilmes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.listBoxFilmes.Name = "listBoxFilmes";
-            this.listBoxFilmes.Size = new System.Drawing.Size(597, 356);
+            this.listBoxFilmes.Size = new System.Drawing.Size(894, 554);
             this.listBoxFilmes.TabIndex = 16;
             this.listBoxFilmes.SelectedIndexChanged += new System.EventHandler(this.listBoxFilmes_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 121);
+            this.label1.Location = new System.Drawing.Point(18, 189);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 15;
             this.label1.Text = "ESTADO";
             // 
             // buttonGuardarFilme
             // 
             this.buttonGuardarFilme.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonGuardarFilme.Location = new System.Drawing.Point(43, 177);
-            this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonGuardarFilme.Location = new System.Drawing.Point(64, 277);
+            this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGuardarFilme.Name = "buttonGuardarFilme";
-            this.buttonGuardarFilme.Size = new System.Drawing.Size(221, 42);
+            this.buttonGuardarFilme.Size = new System.Drawing.Size(332, 66);
             this.buttonGuardarFilme.TabIndex = 3;
             this.buttonGuardarFilme.Text = "GUARDAR";
             this.buttonGuardarFilme.UseVisualStyleBackColor = false;
@@ -112,41 +114,44 @@
             // labelCategoria
             // 
             this.labelCategoria.AutoSize = true;
-            this.labelCategoria.Location = new System.Drawing.Point(12, 70);
+            this.labelCategoria.Location = new System.Drawing.Point(18, 109);
+            this.labelCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCategoria.Name = "labelCategoria";
-            this.labelCategoria.Size = new System.Drawing.Size(85, 16);
+            this.labelCategoria.Size = new System.Drawing.Size(134, 25);
             this.labelCategoria.TabIndex = 14;
             this.labelCategoria.Text = "CATEGORIA";
             // 
             // labelFilme
             // 
             this.labelFilme.AutoSize = true;
-            this.labelFilme.Location = new System.Drawing.Point(12, 23);
+            this.labelFilme.Location = new System.Drawing.Point(18, 36);
+            this.labelFilme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFilme.Name = "labelFilme";
-            this.labelFilme.Size = new System.Drawing.Size(45, 16);
+            this.labelFilme.Size = new System.Drawing.Size(74, 25);
             this.labelFilme.TabIndex = 13;
             this.labelFilme.Text = "FILME";
             // 
             // textBoxNomeFilme
             // 
-            this.textBoxNomeFilme.Location = new System.Drawing.Point(128, 21);
-            this.textBoxNomeFilme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxNomeFilme.Location = new System.Drawing.Point(192, 33);
+            this.textBoxNomeFilme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.textBoxNomeFilme.Name = "textBoxNomeFilme";
-            this.textBoxNomeFilme.Size = new System.Drawing.Size(139, 22);
+            this.textBoxNomeFilme.Size = new System.Drawing.Size(206, 31);
             this.textBoxNomeFilme.TabIndex = 0;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(8, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(908, 402);
+            this.tabControl1.Size = new System.Drawing.Size(1362, 628);
             this.tabControl1.TabIndex = 21;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonApagarFilme);
             this.tabPage1.Controls.Add(this.labelFilme);
             this.tabPage1.Controls.Add(this.listBoxFilmes);
             this.tabPage1.Controls.Add(this.buttonGuardarFilme);
@@ -155,22 +160,33 @@
             this.tabPage1.Controls.Add(this.labelCategoria);
             this.tabPage1.Controls.Add(this.comboBoxCategoriaFilme);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(900, 373);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1346, 581);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Filmes";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // buttonApagarFilme
+            // 
+            this.buttonApagarFilme.Location = new System.Drawing.Point(264, 487);
+            this.buttonApagarFilme.Name = "buttonApagarFilme";
+            this.buttonApagarFilme.Size = new System.Drawing.Size(153, 62);
+            this.buttonApagarFilme.TabIndex = 17;
+            this.buttonApagarFilme.Text = "Apagar";
+            this.buttonApagarFilme.UseVisualStyleBackColor = true;
+            this.buttonApagarFilme.Click += new System.EventHandler(this.buttonApagarFilme_Click);
             // 
             // FormFilmes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 450);
+            this.ClientSize = new System.Drawing.Size(1466, 703);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "FormFilmes";
             this.Text = "FormFilmes";
             this.tabControl1.ResumeLayout(false);
@@ -192,5 +208,6 @@
         private System.Windows.Forms.TextBox textBoxNomeFilme;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button buttonApagarFilme;
     }
 }
