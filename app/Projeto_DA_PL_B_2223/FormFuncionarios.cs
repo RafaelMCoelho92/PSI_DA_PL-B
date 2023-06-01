@@ -38,7 +38,7 @@ namespace Projeto_DA_PL_B_2223
                 var funcionarios = db.Pessoas.OfType<Funcionario>();
                 foreach (var funcionario in funcionarios) //correr os funcionarios para os adicionar à listBox 
                 {
-                    listBoxFuncionarios.Items.Add(funcionario); // Escrever o que está na toString do (class) Funcionário 
+                    listBoxFuncionarios.Items.Add(funcionario); 
                 }
             }
 

@@ -18,6 +18,7 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
+            atualizarDadosAoEntrar();
 
         }
         public FormClientes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -28,7 +29,18 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabPage1;
         }
+        private void atualizarDadosAoEntrar()
+        {
+            using (var db = new ApplicationContext())
+            {
+                var clientes = db.Pessoas.OfType<Cliente>();
+                foreach (var cliente in clientes) //correr os clientes para os adicionar à listBox 
+                {
+                    listBoxClientes.Items.Add(cliente); 
+                }
+            }
 
+        }
         private void buttonGuardarClientes_Click(object sender, EventArgs e)
         {
             // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
