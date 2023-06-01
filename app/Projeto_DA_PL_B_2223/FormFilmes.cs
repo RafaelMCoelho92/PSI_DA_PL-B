@@ -113,8 +113,39 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
-        //METODO PARA VALIDAR DADOS INSERIDOS
 
+        private void buttonApagarFilme_Click(object sender, EventArgs e)
+        {
+            {
+                int apagarFilme = listBoxFilmes.SelectedIndex;
+                if (apagarFilme == -1)
+                {
+                    // se n tiver filme selecionado mensagem de erro
+                    MessageBox.Show("Selecione um Filme", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                if (listBoxFilmes.Items[apagarFilme] is Filme filme)
+                {
+                    //se tiver filme selecionado
+                    // atualiza a listbox com a funcao abaixo
+                    atualizarListboxFilmesaoEntrar();
+                    //apaga da base de dados
+                    var db = new ApplicationContext();
+                    var apagarfilme = db.Filmes.Find(filme.Id); // buscar o id do filme q queremos apagar
+                    if (apagarfilme != null) // so faz isso se tiver um filme
+                    {
+                        db.Filmes.Remove(apagarfilme); // remove filme pelo id
+                        db.SaveChanges(); // guarda as alterações na base de dados
+                    }
+                }
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            listBoxFilmes.ClearSelected();
+
+        }
     }
 }

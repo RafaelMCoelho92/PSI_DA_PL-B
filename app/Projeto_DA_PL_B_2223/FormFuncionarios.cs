@@ -17,8 +17,6 @@ namespace Projeto_DA_PL_B_2223
         public FormFuncionarios()
         {
             InitializeComponent();
-            this.CenterToScreen();
-
             atualizarDadosAoEntrar();
         }
 
@@ -38,7 +36,7 @@ namespace Projeto_DA_PL_B_2223
                 var funcionarios = db.Pessoas.OfType<Funcionario>();
                 foreach (var funcionario in funcionarios) //correr os funcionarios para os adicionar à listBox 
                 {
-                    listBoxFuncionarios.Items.Add(funcionario); // Escrever o que está na toString do (class) Funcionário 
+                    listBoxFuncionarios.Items.Add(funcionario); 
                 }
             }
 
@@ -146,7 +144,7 @@ namespace Projeto_DA_PL_B_2223
             if (apagarFunc == -1)
             {
                 // se n tiver funcionario selecionado mensagem de erro
-                MessageBox.Show("Selecione um Funcionário");
+                MessageBox.Show("Selecione um Funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -183,7 +181,7 @@ namespace Projeto_DA_PL_B_2223
                 }
 
             }
-        }                                                      
+        }
 
         private void listBoxFuncionarios_DoubleClick(object sender, EventArgs e)
         {
@@ -211,7 +209,28 @@ namespace Projeto_DA_PL_B_2223
 
 
         }
+        public void limparDadosInseridos()
+        {
+            textBoxNomeFuncionario.Clear();
+            textBoxMoradaFuncionario.Clear();
+            textBoxSalarioFuncionario.Clear();
+            comboBoxFuncaoFuncionario.Items.Clear();
+        }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            listBoxFuncionarios.ClearSelected();
+            limparDadosInseridos();
+
+        }
+
+        private void FormFuncionarios_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            listBoxFuncionarios.ClearSelected();
+            limparDadosInseridos();
+
+        }
     }
 }
 
