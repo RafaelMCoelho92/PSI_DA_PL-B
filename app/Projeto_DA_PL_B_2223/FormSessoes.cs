@@ -18,7 +18,6 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
-            atualizarDadosAoEntrar();
 
         }
         public FormSessoes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -92,6 +91,8 @@ namespace Projeto_DA_PL_B_2223
             listBoxFilmesSessoes.ClearSelected();
             listBoxSalasSessoes.ClearSelected();
             listBoxSessoes.ClearSelected();
+            atualizarDadosAoEntrar();
+
         }
 
         private void buttonCriarSessoes_Click(object sender, EventArgs e)
