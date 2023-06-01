@@ -22,6 +22,8 @@ namespace Projeto_DA_PL_B_2223
         Form formSala;
         Form formSessoes;
         Form formFilmes;
+
+
         public FormPrincipal()
         {
             InitializeComponent();
