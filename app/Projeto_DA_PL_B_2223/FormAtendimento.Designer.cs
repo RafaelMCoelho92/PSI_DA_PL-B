@@ -55,11 +55,11 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(-3, 10);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(-4, 12);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(607, 347);
+            this.tabControl1.Size = new System.Drawing.Size(809, 427);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -67,31 +67,31 @@
             this.tabPage1.Controls.Add(this.buttonVoltarAtend);
             this.tabPage1.Controls.Add(this.buttonCriarBilheteAtend);
             this.tabPage1.Controls.Add(this.groupBoxInserirSalas);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(599, 321);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(801, 398);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Atendimento";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // buttonVoltarAtend
             // 
-            this.buttonVoltarAtend.Location = new System.Drawing.Point(23, 287);
-            this.buttonVoltarAtend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonVoltarAtend.Location = new System.Drawing.Point(31, 353);
+            this.buttonVoltarAtend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonVoltarAtend.Name = "buttonVoltarAtend";
-            this.buttonVoltarAtend.Size = new System.Drawing.Size(81, 20);
+            this.buttonVoltarAtend.Size = new System.Drawing.Size(108, 25);
             this.buttonVoltarAtend.TabIndex = 12;
             this.buttonVoltarAtend.Text = "Voltar";
             this.buttonVoltarAtend.UseVisualStyleBackColor = true;
             // 
             // buttonCriarBilheteAtend
             // 
-            this.buttonCriarBilheteAtend.Location = new System.Drawing.Point(446, 273);
-            this.buttonCriarBilheteAtend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCriarBilheteAtend.Location = new System.Drawing.Point(595, 336);
+            this.buttonCriarBilheteAtend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCriarBilheteAtend.Name = "buttonCriarBilheteAtend";
-            this.buttonCriarBilheteAtend.Size = new System.Drawing.Size(132, 34);
+            this.buttonCriarBilheteAtend.Size = new System.Drawing.Size(176, 42);
             this.buttonCriarBilheteAtend.TabIndex = 9;
             this.buttonCriarBilheteAtend.Text = "Criar Bilhete";
             this.buttonCriarBilheteAtend.UseVisualStyleBackColor = true;
@@ -112,11 +112,11 @@
             this.groupBoxInserirSalas.Controls.Add(this.label_numero_fiscal);
             this.groupBoxInserirSalas.Controls.Add(this.label_cliente_anónimo);
             this.groupBoxInserirSalas.Controls.Add(this.label7);
-            this.groupBoxInserirSalas.Location = new System.Drawing.Point(3, 15);
-            this.groupBoxInserirSalas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxInserirSalas.Location = new System.Drawing.Point(4, 18);
+            this.groupBoxInserirSalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxInserirSalas.Name = "groupBoxInserirSalas";
-            this.groupBoxInserirSalas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxInserirSalas.Size = new System.Drawing.Size(574, 244);
+            this.groupBoxInserirSalas.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxInserirSalas.Size = new System.Drawing.Size(765, 300);
             this.groupBoxInserirSalas.TabIndex = 10;
             this.groupBoxInserirSalas.TabStop = false;
             this.groupBoxInserirSalas.Text = "Sala de Sessão ";
@@ -124,142 +124,142 @@
             // label_sala_atendimento
             // 
             this.label_sala_atendimento.AutoSize = true;
-            this.label_sala_atendimento.Location = new System.Drawing.Point(378, 20);
-            this.label_sala_atendimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_sala_atendimento.Location = new System.Drawing.Point(504, 25);
             this.label_sala_atendimento.Name = "label_sala_atendimento";
-            this.label_sala_atendimento.Size = new System.Drawing.Size(28, 13);
+            this.label_sala_atendimento.Size = new System.Drawing.Size(35, 16);
             this.label_sala_atendimento.TabIndex = 1;
             this.label_sala_atendimento.Text = "Sala";
             // 
             // listBoxLugSelecionado
             // 
             this.listBoxLugSelecionado.FormattingEnabled = true;
-            this.listBoxLugSelecionado.Location = new System.Drawing.Point(314, 179);
-            this.listBoxLugSelecionado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxLugSelecionado.ItemHeight = 16;
+            this.listBoxLugSelecionado.Location = new System.Drawing.Point(419, 220);
+            this.listBoxLugSelecionado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxLugSelecionado.Name = "listBoxLugSelecionado";
-            this.listBoxLugSelecionado.Size = new System.Drawing.Size(242, 56);
+            this.listBoxLugSelecionado.Size = new System.Drawing.Size(321, 68);
             this.listBoxLugSelecionado.TabIndex = 3;
             // 
             // listBoxSalaAtendimento_lugares
             // 
             this.listBoxSalaAtendimento_lugares.FormattingEnabled = true;
-            this.listBoxSalaAtendimento_lugares.Location = new System.Drawing.Point(409, 20);
-            this.listBoxSalaAtendimento_lugares.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxSalaAtendimento_lugares.ItemHeight = 16;
+            this.listBoxSalaAtendimento_lugares.Location = new System.Drawing.Point(545, 25);
+            this.listBoxSalaAtendimento_lugares.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxSalaAtendimento_lugares.Name = "listBoxSalaAtendimento_lugares";
-            this.listBoxSalaAtendimento_lugares.Size = new System.Drawing.Size(78, 17);
+            this.listBoxSalaAtendimento_lugares.Size = new System.Drawing.Size(103, 20);
             this.listBoxSalaAtendimento_lugares.TabIndex = 2;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(157, 54);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.comboBox2.Location = new System.Drawing.Point(209, 66);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(107, 21);
+            this.comboBox2.Size = new System.Drawing.Size(141, 24);
             this.comboBox2.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(152, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 16;
             this.label1.Text = "Cliente:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 20);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.comboBox1.Location = new System.Drawing.Point(155, 25);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 21);
+            this.comboBox1.Size = new System.Drawing.Size(195, 24);
             this.comboBox1.TabIndex = 15;
             // 
             // listBoxSalaSessãoAtend
             // 
             this.listBoxSalaSessãoAtend.FormattingEnabled = true;
-            this.listBoxSalaSessãoAtend.Location = new System.Drawing.Point(314, 46);
-            this.listBoxSalaSessãoAtend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxSalaSessãoAtend.ItemHeight = 16;
+            this.listBoxSalaSessãoAtend.Location = new System.Drawing.Point(419, 57);
+            this.listBoxSalaSessãoAtend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBoxSalaSessãoAtend.Name = "listBoxSalaSessãoAtend";
-            this.listBoxSalaSessãoAtend.Size = new System.Drawing.Size(242, 121);
+            this.listBoxSalaSessãoAtend.Size = new System.Drawing.Size(321, 148);
             this.listBoxSalaSessãoAtend.TabIndex = 0;
             // 
             // listBoxMorada
             // 
             this.listBoxMorada.FormattingEnabled = true;
-            this.listBoxMorada.Location = new System.Drawing.Point(143, 180);
-            this.listBoxMorada.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxMorada.ItemHeight = 16;
+            this.listBoxMorada.Location = new System.Drawing.Point(191, 222);
+            this.listBoxMorada.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxMorada.Name = "listBoxMorada";
-            this.listBoxMorada.Size = new System.Drawing.Size(120, 30);
+            this.listBoxMorada.Size = new System.Drawing.Size(159, 36);
             this.listBoxMorada.TabIndex = 14;
             // 
             // listBoxNumeroFiscal
             // 
             this.listBoxNumeroFiscal.FormattingEnabled = true;
-            this.listBoxNumeroFiscal.Location = new System.Drawing.Point(143, 146);
-            this.listBoxNumeroFiscal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxNumeroFiscal.ItemHeight = 16;
+            this.listBoxNumeroFiscal.Location = new System.Drawing.Point(191, 180);
+            this.listBoxNumeroFiscal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxNumeroFiscal.Name = "listBoxNumeroFiscal";
-            this.listBoxNumeroFiscal.Size = new System.Drawing.Size(120, 30);
+            this.listBoxNumeroFiscal.Size = new System.Drawing.Size(159, 36);
             this.listBoxNumeroFiscal.TabIndex = 13;
             // 
             // listBoxNomeAnonimo
             // 
             this.listBoxNomeAnonimo.FormattingEnabled = true;
-            this.listBoxNomeAnonimo.Location = new System.Drawing.Point(143, 112);
-            this.listBoxNomeAnonimo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxNomeAnonimo.ItemHeight = 16;
+            this.listBoxNomeAnonimo.Location = new System.Drawing.Point(191, 138);
+            this.listBoxNomeAnonimo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxNomeAnonimo.Name = "listBoxNomeAnonimo";
-            this.listBoxNomeAnonimo.Size = new System.Drawing.Size(120, 30);
+            this.listBoxNomeAnonimo.Size = new System.Drawing.Size(159, 36);
             this.listBoxNomeAnonimo.TabIndex = 12;
             // 
             // label_morada_atend
             // 
             this.label_morada_atend.AutoSize = true;
-            this.label_morada_atend.Location = new System.Drawing.Point(18, 179);
-            this.label_morada_atend.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_morada_atend.Location = new System.Drawing.Point(24, 220);
             this.label_morada_atend.Name = "label_morada_atend";
-            this.label_morada_atend.Size = new System.Drawing.Size(43, 13);
+            this.label_morada_atend.Size = new System.Drawing.Size(54, 16);
             this.label_morada_atend.TabIndex = 11;
             this.label_morada_atend.Text = "Morada";
             // 
             // label_numero_fiscal
             // 
             this.label_numero_fiscal.AutoSize = true;
-            this.label_numero_fiscal.Location = new System.Drawing.Point(18, 146);
-            this.label_numero_fiscal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_numero_fiscal.Location = new System.Drawing.Point(24, 180);
             this.label_numero_fiscal.Name = "label_numero_fiscal";
-            this.label_numero_fiscal.Size = new System.Drawing.Size(74, 13);
+            this.label_numero_fiscal.Size = new System.Drawing.Size(94, 16);
             this.label_numero_fiscal.TabIndex = 10;
             this.label_numero_fiscal.Text = "Numero Fiscal";
             // 
             // label_cliente_anónimo
             // 
             this.label_cliente_anónimo.AutoSize = true;
-            this.label_cliente_anónimo.Location = new System.Drawing.Point(18, 112);
-            this.label_cliente_anónimo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_cliente_anónimo.Location = new System.Drawing.Point(24, 138);
             this.label_cliente_anónimo.Name = "label_cliente_anónimo";
-            this.label_cliente_anónimo.Size = new System.Drawing.Size(114, 13);
+            this.label_cliente_anónimo.Size = new System.Drawing.Size(144, 16);
             this.label_cliente_anónimo.TabIndex = 9;
             this.label_cliente_anónimo.Text = "Nome Cliente Anónimo";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 20);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(77, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(57, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Sessão:";
             // 
             // FormAtendimento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(839, 462);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAtendimento";
             this.Text = "FormAtendimento";
             this.tabControl1.ResumeLayout(false);

@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 351);
+            this.ClientSize = new System.Drawing.Size(1179, 352);
             this.Controls.Add(this.tabControlClientes);
             this.Name = "FormClientes";
             this.Text = "FormClientes";
