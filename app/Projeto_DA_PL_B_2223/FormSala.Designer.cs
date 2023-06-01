@@ -30,15 +30,15 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBoxFilas = new System.Windows.Forms.TextBox();
             this.buttonApagarSala = new System.Windows.Forms.Button();
             this.groupBoxListaSalas = new System.Windows.Forms.GroupBox();
             this.listBoxSalas = new System.Windows.Forms.ListBox();
             this.groupBoxInserirSalas = new System.Windows.Forms.GroupBox();
+            this.textBoxFilas = new System.Windows.Forms.TextBox();
             this.textBoxNomeSala = new System.Windows.Forms.TextBox();
+            this.textBoxColunas = new System.Windows.Forms.TextBox();
             this.buttonAdicionarSala = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxColunas = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -69,14 +69,6 @@
             this.tabPage1.Text = "Sala";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBoxFilas
-            // 
-            this.textBoxFilas.Location = new System.Drawing.Point(196, 96);
-            this.textBoxFilas.MaxLength = 2;
-            this.textBoxFilas.Name = "textBoxFilas";
-            this.textBoxFilas.Size = new System.Drawing.Size(153, 31);
-            this.textBoxFilas.TabIndex = 3;
-            // 
             // buttonApagarSala
             // 
             this.buttonApagarSala.Location = new System.Drawing.Point(425, 342);
@@ -85,6 +77,7 @@
             this.buttonApagarSala.TabIndex = 6;
             this.buttonApagarSala.Text = "Apagar Sala";
             this.buttonApagarSala.UseVisualStyleBackColor = true;
+            this.buttonApagarSala.Click += new System.EventHandler(this.buttonApagarSala_Click);
             // 
             // groupBoxListaSalas
             // 
@@ -121,12 +114,28 @@
             this.groupBoxInserirSalas.TabStop = false;
             this.groupBoxInserirSalas.Text = "Configurar Sala";
             // 
+            // textBoxFilas
+            // 
+            this.textBoxFilas.Location = new System.Drawing.Point(196, 96);
+            this.textBoxFilas.MaxLength = 2;
+            this.textBoxFilas.Name = "textBoxFilas";
+            this.textBoxFilas.Size = new System.Drawing.Size(153, 31);
+            this.textBoxFilas.TabIndex = 3;
+            // 
             // textBoxNomeSala
             // 
             this.textBoxNomeSala.Location = new System.Drawing.Point(196, 43);
             this.textBoxNomeSala.Name = "textBoxNomeSala";
             this.textBoxNomeSala.Size = new System.Drawing.Size(349, 31);
             this.textBoxNomeSala.TabIndex = 1;
+            // 
+            // textBoxColunas
+            // 
+            this.textBoxColunas.Location = new System.Drawing.Point(196, 148);
+            this.textBoxColunas.MaxLength = 2;
+            this.textBoxColunas.Name = "textBoxColunas";
+            this.textBoxColunas.Size = new System.Drawing.Size(153, 31);
+            this.textBoxColunas.TabIndex = 4;
             // 
             // buttonAdicionarSala
             // 
@@ -146,14 +155,6 @@
             this.label7.Size = new System.Drawing.Size(153, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome da Sala:";
-            // 
-            // textBoxColunas
-            // 
-            this.textBoxColunas.Location = new System.Drawing.Point(196, 148);
-            this.textBoxColunas.MaxLength = 2;
-            this.textBoxColunas.Name = "textBoxColunas";
-            this.textBoxColunas.Size = new System.Drawing.Size(153, 31);
-            this.textBoxColunas.TabIndex = 4;
             // 
             // label5
             // 

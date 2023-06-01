@@ -156,5 +156,31 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
+        private void buttonApagarSala_Click(object sender, EventArgs e)
+        {
+            int apagarSala = listBoxSalas.SelectedIndex;
+            if (apagarSala == -1)
+            {
+                // se n tiver sala selecionada mensagem de erro
+                MessageBox.Show("Selecione uma Sala", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBoxSalas.Items[apagarSala] is Sala sala)
+            {
+                //se tiver sala selecionada
+                // apaga da listbox
+                listBoxSalas.Items.Remove(sala);
+                //apaga da base de dados
+                var db = new ApplicationContext();
+                var apagarsala = db.Salas.Find(sala.Id); // buscar o id da sala q queremos apagar
+                if (apagarsala != null) // so faz isso se tiver uma sala
+                {
+                    db.Salas.Remove(apagarsala); // remove sala pelo id
+                    db.SaveChanges(); // guarda as alterações na base de dados
+                }
+            }
+        }
     }
 }
