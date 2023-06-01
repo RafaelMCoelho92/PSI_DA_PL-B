@@ -63,16 +63,6 @@ namespace Projeto_DA_PL_B_2223
                 return;
             }
 
-            VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
-
-            // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS
-            using (var db = new ApplicationContext())
-            {
-                var cliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text);
-                db.Pessoas.Add(cliente);
-                db.SaveChanges();
-            }
-
             // VARIAVEL PARA FAZER O PARSE
             double contribuinte = 0;
 
@@ -92,6 +82,17 @@ namespace Projeto_DA_PL_B_2223
             {
                 MessageBox.Show("Apenas devem constar números neste campo");
             }
+
+            VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
+
+            // GUARDAR OS DADOS DOS CLIENTES NA BASE DE DADOS
+            using (var db = new ApplicationContext())
+            {
+                var cliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text);
+                db.Pessoas.Add(cliente);
+                db.SaveChanges();
+            }
+
         }
 
         // METODO PARA VERIFICAR SE JA EXISTE ALGUM CLIENTE NA LISTBOX DOS CLIENTES
