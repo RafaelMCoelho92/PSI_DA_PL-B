@@ -143,5 +143,11 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Registe primeiro um cinema", "Aviso", MessageBoxButtons.OK , MessageBoxIcon.Warning );
             }
         }
+
+        private void FormCinema_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+
+        }
     }
 }

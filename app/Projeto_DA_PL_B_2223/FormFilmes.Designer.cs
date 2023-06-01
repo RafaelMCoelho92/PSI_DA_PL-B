@@ -189,6 +189,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "FormFilmes";
             this.Text = "FormFilmes";
+            this.Load += new System.EventHandler(this.FormFilmes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -218,6 +218,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCinema";
             this.Text = "FormCinema";
+            this.Load += new System.EventHandler(this.FormCinema_Load);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxMostrarCinema.ResumeLayout(false);
             this.groupBoxMostrarCinema.PerformLayout();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,6 @@ namespace Projeto_DA_PL_B_2223
         public FormFilmes()
         {
             InitializeComponent();
-            this.CenterToScreen();
             atualizarListboxFilmesaoEntrar();
 
         }
@@ -31,35 +31,39 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabControl1.TabPages[0];
         }
-        public void validarDadosInseridos()
+        public bool validarDadosInseridos()
         {   // RECEBE VALORES DAS TEXTSBOX E VALIDA
             string nomeFilme = textBoxNomeFilme.Text;
             if (nomeFilme.Length == 0)
             {
                 MessageBox.Show("Insira o nome do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             if (categoriaFilme.Length == 0)
             {
                 MessageBox.Show("Escolha uma categoria do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
             string estadoFilme = comboBoxEstadoFilme.Text;
             if (estadoFilme.Length == 0)
             {
                 MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
             if (comboBoxCategoriaFilme.SelectedIndex < 0)
             {
                 MessageBox.Show("Escolha uma categoria da lista!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
             }
             if (comboBoxEstadoFilme.SelectedIndex < 0)
             {
                 MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
         //METODO PARA GUARDAR O FILME
@@ -69,17 +73,48 @@ namespace Projeto_DA_PL_B_2223
             string nomeFilme = textBoxNomeFilme.Text;
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             string estadoFilme = comboBoxEstadoFilme.Text;
-            validarDadosInseridos(); // VALIDAR DADOS INSERIDOS
-            if (nomeFilme.Length > 0 && comboBoxCategoriaFilme.SelectedIndex>=0 && comboBoxEstadoFilme.SelectedIndex >=0)
+            if (!validarDadosInseridos())
             {
-                atualizarListboxFilmesaoEntrar();
+                return;
+            } 
+            try
+            {   // manda para o construtor faz a instancia
+                Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
+                textBoxNomeFilme.Text = filme.nomeFilme;
+                comboBoxCategoriaFilme.Text = filme.categoriaFilme;
+                comboBoxEstadoFilme.Text = filme.estadoFilme;
             }
-
-            using (var db = new ApplicationContext())
+            catch (Exception)
+            {   // caso haja algum erro
+                MessageBox.Show("Erro ao criar o filme");
+            }
+            if (listBoxFilmes.SelectedIndex != -1) // se tiver um funcionario selecionado, altera os dados
             {
-                var filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
-                db.Filmes.Add(filme);
-                db.SaveChanges();
+                Filme filmeSelecionado = (Filme)listBoxFilmes.SelectedItem;
+                // altera dos dados do filme selecionado
+                filmeSelecionado.nomeFilme = textBoxNomeFilme.Text;
+                filmeSelecionado.categoriaFilme = comboBoxCategoriaFilme.Text;
+                filmeSelecionado.estadoFilme = comboBoxEstadoFilme.Text;
+                // Atualizar a exibição dos filmes na ListBox
+                int editarFilme = listBoxFilmes.SelectedIndex;
+                listBoxFilmes.Items[editarFilme] = filmeSelecionado;
+
+                using (var db = new ApplicationContext())
+                {   //faz update do funcionario
+                    db.Filmes.AddOrUpdate(filmeSelecionado);
+                    db.SaveChanges();
+                }
+            }
+            else // se não tiver, cria um novo
+            {
+                Filme novofilme = new Filme(textBoxNomeFilme.Text,comboBoxCategoriaFilme.Text, comboBoxEstadoFilme.Text);
+
+                listBoxFilmes.Items.Add(novofilme); // mostra na listbox antes de atualizar a db
+                using (var db = new ApplicationContext())
+                {   // cria novo filme
+                    db.Filmes.Add(novofilme);
+                    db.SaveChanges();
+                }
             }
         }
         //METODO PARA ATUALIZAR A LISTBOX
@@ -87,13 +122,13 @@ namespace Projeto_DA_PL_B_2223
         {
             //Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
             // listBoxFilmes.Items.Add(filme);
-
             using (var db = new ApplicationContext())
             {
-
-                var filmes = db.Filmes.ToList(); // é possivel fazer com foreach , mas preferivel fazer com .DataSource
-                listBoxFilmes.DataSource = null;
-                listBoxFilmes.DataSource = filmes;                
+                var filmes = db.Filmes;
+                foreach (var filme in filmes) //correr os funcionarios para os adicionar à listBox 
+                {
+                    listBoxFilmes.Items.Add(filme);
+                }
             }
 
         }
@@ -127,10 +162,7 @@ namespace Projeto_DA_PL_B_2223
 
                 if (listBoxFilmes.Items[apagarFilme] is Filme filme)
                 {
-                    //se tiver filme selecionado
-                    // atualiza a listbox com a funcao abaixo
-                    atualizarListboxFilmesaoEntrar();
-                    //apaga da base de dados
+                    listBoxFilmes.Items.Remove(filme);
                     var db = new ApplicationContext();
                     var apagarfilme = db.Filmes.Find(filme.Id); // buscar o id do filme q queremos apagar
                     if (apagarfilme != null) // so faz isso se tiver um filme
@@ -145,7 +177,21 @@ namespace Projeto_DA_PL_B_2223
         private void tabPage1_Click(object sender, EventArgs e)
         {
             listBoxFilmes.ClearSelected();
+            limparDadosInseridos();
 
+        }
+
+        private void FormFilmes_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            listBoxFilmes.ClearSelected();
+            limparDadosInseridos();
+
+
+        }
+        public void limparDadosInseridos()
+        {
+            textBoxNomeFilme.Clear();
         }
     }
 }

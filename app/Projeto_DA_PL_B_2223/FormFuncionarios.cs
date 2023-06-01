@@ -215,7 +215,6 @@ namespace Projeto_DA_PL_B_2223
             textBoxNomeFuncionario.Clear();
             textBoxMoradaFuncionario.Clear();
             textBoxSalarioFuncionario.Clear();
-            comboBoxFuncaoFuncionario.Items.Clear();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
