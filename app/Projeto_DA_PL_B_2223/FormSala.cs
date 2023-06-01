@@ -48,7 +48,18 @@ namespace Projeto_DA_PL_B_2223
             double valorFila = 0;
             double valorColuna = 0;
 
-
+            if (textBoxNomeSala.Text == "" || textBoxFilas.Text == "" || textBoxColunas.Text == "") //assim escusa de entrar no resto das validações sem ter tudo preenchido
+            {
+                MessageBox.Show("Insira todos os dados!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            string nomeSala = textBoxNomeSala.Text;
+            // se os n forem validos vai retornar false
+            if (nomeSala.Length == 0)
+            {
+                MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             try
             {   // FAZER O PARSE-> OU SEJA PASSAR DE STRING PARA DOUBLE
                 string filas = textBoxFilas.Text;
@@ -72,12 +83,6 @@ namespace Projeto_DA_PL_B_2223
             catch (Exception)
             {
                 MessageBox.Show("Valor Invalido, insira um valor entre 1 e 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            string nomeSala = textBoxNomeSala.Text;
-            // se os n forem validos vai retornar false
-            if (nomeSala.Length == 0)
-            {
-                MessageBox.Show("O nome da sala não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             double fila;
