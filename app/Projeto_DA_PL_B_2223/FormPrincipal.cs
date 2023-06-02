@@ -53,7 +53,25 @@ namespace Projeto_DA_PL_B_2223
             {
                 formFuncionarios.ShowDialog();
             }
+            atualizarDadosAoEntrar();
         }
+        private void atualizarDadosAoEntrar()
+        {
+            using (var db = new ApplicationContext())
+            {
+                
+                using (var bd = new ApplicationContext())
+                {
+                    var sessoes = bd.Sessoes.ToList();
+                    foreach (var sessao in sessoes) //correr os clientes para os adicionar à listBox 
+                    {
+                        listBox_mostrar_sessoes_dia.Items.Add(sessao);
+                    }
+                }
+            }
+        }
+
+      
 
         // MOSTRA A DATA E A HORA 
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
@@ -134,5 +152,22 @@ namespace Projeto_DA_PL_B_2223
         {
             formClientes.ShowDialog();
         }
+
+        /*private void listBox_mostrar_sessoes_dia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox_mostrar_sessoes_dia.Items.Clear();
+            if (listBox_mostrar_sessoes_dia.SelectedIndex != -1)
+            {
+                using (var bd = new ApplicationContext())
+                {
+                    var sessoesPrincipal = bd.Sessoes.ToList();
+                    foreach (var sess in sessoesPrincipal)
+                    {
+                        listBox_mostrar_sessoes_dia.Items.Add(sess);
+                    }
+                }
+            }
+
+        }*/
     }
 }

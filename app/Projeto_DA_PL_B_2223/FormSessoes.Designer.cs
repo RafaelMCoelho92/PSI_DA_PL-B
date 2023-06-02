@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button_apagar_sessoes = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelPrecoSessoes = new System.Windows.Forms.Label();
             this.textBoxPrecoSessoes = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.labelDataSessoes = new System.Windows.Forms.Label();
             this.labelEscolherSalaSessoes = new System.Windows.Forms.Label();
             this.labelEscolherFilmesSessoes = new System.Windows.Forms.Label();
-            this.button_apagar_sessoes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,17 @@
             this.tabPage1.Text = "Sessões";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabPage1_MouseClick);
+            // 
+            // button_apagar_sessoes
+            // 
+            this.button_apagar_sessoes.Location = new System.Drawing.Point(710, 452);
+            this.button_apagar_sessoes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_apagar_sessoes.Name = "button_apagar_sessoes";
+            this.button_apagar_sessoes.Size = new System.Drawing.Size(157, 36);
+            this.button_apagar_sessoes.TabIndex = 19;
+            this.button_apagar_sessoes.Text = "APAGAR";
+            this.button_apagar_sessoes.UseVisualStyleBackColor = true;
+            this.button_apagar_sessoes.Click += new System.EventHandler(this.button_apagar_sessoes_click);
             // 
             // label2
             // 
@@ -220,17 +231,6 @@
             this.labelEscolherFilmesSessoes.Size = new System.Drawing.Size(99, 16);
             this.labelEscolherFilmesSessoes.TabIndex = 0;
             this.labelEscolherFilmesSessoes.Text = "Escolher Filme:";
-            // 
-            // button_apagar_sessoes
-            // 
-            this.button_apagar_sessoes.Location = new System.Drawing.Point(710, 452);
-            this.button_apagar_sessoes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_apagar_sessoes.Name = "button_apagar_sessoes";
-            this.button_apagar_sessoes.Size = new System.Drawing.Size(157, 36);
-            this.button_apagar_sessoes.TabIndex = 19;
-            this.button_apagar_sessoes.Text = "APAGAR";
-            this.button_apagar_sessoes.UseVisualStyleBackColor = true;
-            this.button_apagar_sessoes.Click += new System.EventHandler(this.button_apagar_sessoes_click);
             // 
             // FormSessoes
             // 

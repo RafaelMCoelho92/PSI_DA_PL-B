@@ -124,7 +124,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1064, 26);
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 30);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,6 +199,7 @@
             this.listBox_mostrar_sessoes_dia.Name = "listBox_mostrar_sessoes_dia";
             this.listBox_mostrar_sessoes_dia.Size = new System.Drawing.Size(959, 292);
             this.listBox_mostrar_sessoes_dia.TabIndex = 12;
+            //this.listBox_mostrar_sessoes_dia.SelectedIndexChanged += new System.EventHandler(this.listBox_mostrar_sessoes_dia_SelectedIndexChanged);
             // 
             // dateTimePickerSessoesDoDia
             // 
