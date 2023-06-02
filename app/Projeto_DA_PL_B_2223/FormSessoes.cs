@@ -107,14 +107,13 @@ namespace Projeto_DA_PL_B_2223
             listBoxSessoes.Items.Clear();
             listBoxSessoes.ClearSelected();
             atualizarDadosAoEntrar();
-
         }
 
         private void buttonCriarSessoes_Click(object sender, EventArgs e)
         {
             validarDadosSessoes();
             // ESTAVA A CRIAR A INSTANCIA NA MESMA, APÓS CRIAR SESSAO SEM NENHUM ITEM SELECIONADO E DAVA CRASH COM ESTE IF NÃO DÁ
-            if (listBoxFilmesSessoes.SelectedIndex > 0 && listBoxSalasSessoes.SelectedIndex > 0)
+            if (listBoxFilmesSessoes.SelectedIndex > -1 && listBoxSalasSessoes.SelectedIndex > -1)
             {
                 string valorPreco = textBoxPrecoSessoes.Text.ToString();
                 double preco = double.Parse(valorPreco);

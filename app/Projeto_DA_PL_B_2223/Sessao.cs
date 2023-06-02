@@ -42,7 +42,7 @@ namespace Projeto_DA_PL_B_2223
 
         public override string ToString()
         {
-            return $"Filme: {Filme}, Sala: {Sala}, Preço: {Preco} , Dia: {Data} , Hora: {Hora} ";
+            return $"Filme: {Filme}, Sala: {Sala}, Preço: {Preco} , Dia: {Data.ToString("dd/MM/yyyy")} , Hora: {Hora.ToString("HH:mm")} ";
         }
     }
 }
