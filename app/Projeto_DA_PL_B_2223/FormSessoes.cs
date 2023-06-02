@@ -86,8 +86,11 @@ namespace Projeto_DA_PL_B_2223
 
         private void FormSessoes_Load(object sender, EventArgs e)
         {
+            listBoxFilmesSessoes.Items.Clear();
             listBoxFilmesSessoes.ClearSelected();
+            listBoxSalasSessoes.Items.Clear();
             listBoxSalasSessoes.ClearSelected();
+            listBoxSessoes.Items.Clear();
             listBoxSessoes.ClearSelected();
             atualizarDadosAoEntrar();
 
