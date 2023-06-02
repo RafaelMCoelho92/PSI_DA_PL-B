@@ -47,11 +47,11 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(1, 3);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Location = new System.Drawing.Point(2, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(849, 443);
+            this.tabControl1.Size = new System.Drawing.Size(1698, 852);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -66,11 +66,11 @@
             this.tabPage1.Controls.Add(this.labelDataHoraSessoes);
             this.tabPage1.Controls.Add(this.labelEscolherSalaSessoes);
             this.tabPage1.Controls.Add(this.labelEscolherFilmesSessoes);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(841, 417);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(1682, 805);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sessões";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -79,45 +79,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(591, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1182, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.Size = new System.Drawing.Size(181, 25);
             this.label1.TabIndex = 13;
             this.label1.Text = "Sessões Criadas:";
             // 
             // listBoxFilmesSessoes
             // 
             this.listBoxFilmesSessoes.FormattingEnabled = true;
-            this.listBoxFilmesSessoes.Location = new System.Drawing.Point(6, 31);
-            this.listBoxFilmesSessoes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxFilmesSessoes.ItemHeight = 25;
+            this.listBoxFilmesSessoes.Location = new System.Drawing.Point(12, 60);
+            this.listBoxFilmesSessoes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.listBoxFilmesSessoes.Name = "listBoxFilmesSessoes";
-            this.listBoxFilmesSessoes.Size = new System.Drawing.Size(330, 173);
+            this.listBoxFilmesSessoes.Size = new System.Drawing.Size(656, 329);
             this.listBoxFilmesSessoes.TabIndex = 12;
+            this.listBoxFilmesSessoes.SelectedIndexChanged += new System.EventHandler(this.listBoxFilmesSessoes_SelectedIndexChanged);
             // 
             // listBoxSalasSessoes
             // 
             this.listBoxSalasSessoes.FormattingEnabled = true;
-            this.listBoxSalasSessoes.Location = new System.Drawing.Point(6, 234);
-            this.listBoxSalasSessoes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxSalasSessoes.ItemHeight = 25;
+            this.listBoxSalasSessoes.Location = new System.Drawing.Point(12, 450);
+            this.listBoxSalasSessoes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.listBoxSalasSessoes.Name = "listBoxSalasSessoes";
-            this.listBoxSalasSessoes.Size = new System.Drawing.Size(330, 173);
+            this.listBoxSalasSessoes.Size = new System.Drawing.Size(656, 329);
             this.listBoxSalasSessoes.TabIndex = 11;
             // 
             // dateTimePickerSessao
             // 
-            this.dateTimePickerSessao.Location = new System.Drawing.Point(383, 31);
-            this.dateTimePickerSessao.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dateTimePickerSessao.Location = new System.Drawing.Point(766, 60);
+            this.dateTimePickerSessao.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.dateTimePickerSessao.Name = "dateTimePickerSessao";
-            this.dateTimePickerSessao.Size = new System.Drawing.Size(156, 20);
+            this.dateTimePickerSessao.Size = new System.Drawing.Size(308, 31);
             this.dateTimePickerSessao.TabIndex = 10;
             // 
             // buttonCriarSessoes
             // 
-            this.buttonCriarSessoes.Location = new System.Drawing.Point(694, 379);
-            this.buttonCriarSessoes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonCriarSessoes.Location = new System.Drawing.Point(1388, 729);
+            this.buttonCriarSessoes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonCriarSessoes.Name = "buttonCriarSessoes";
-            this.buttonCriarSessoes.Size = new System.Drawing.Size(143, 29);
+            this.buttonCriarSessoes.Size = new System.Drawing.Size(286, 56);
             this.buttonCriarSessoes.TabIndex = 7;
             this.buttonCriarSessoes.Text = "Criar Sessão";
             this.buttonCriarSessoes.UseVisualStyleBackColor = true;
@@ -126,18 +129,19 @@
             // listBoxSessoes
             // 
             this.listBoxSessoes.FormattingEnabled = true;
-            this.listBoxSessoes.Location = new System.Drawing.Point(585, 31);
-            this.listBoxSessoes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBoxSessoes.ItemHeight = 25;
+            this.listBoxSessoes.Location = new System.Drawing.Point(1170, 60);
+            this.listBoxSessoes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.listBoxSessoes.Name = "listBoxSessoes";
-            this.listBoxSessoes.Size = new System.Drawing.Size(252, 342);
+            this.listBoxSessoes.Size = new System.Drawing.Size(500, 654);
             this.listBoxSessoes.TabIndex = 6;
             // 
             // buttonVerificarDispSessoes
             // 
-            this.buttonVerificarDispSessoes.Location = new System.Drawing.Point(194, 204);
-            this.buttonVerificarDispSessoes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonVerificarDispSessoes.Location = new System.Drawing.Point(388, 392);
+            this.buttonVerificarDispSessoes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonVerificarDispSessoes.Name = "buttonVerificarDispSessoes";
-            this.buttonVerificarDispSessoes.Size = new System.Drawing.Size(143, 29);
+            this.buttonVerificarDispSessoes.Size = new System.Drawing.Size(286, 56);
             this.buttonVerificarDispSessoes.TabIndex = 5;
             this.buttonVerificarDispSessoes.Text = "Verificar Disponibilidade";
             this.buttonVerificarDispSessoes.UseVisualStyleBackColor = true;
@@ -145,40 +149,40 @@
             // labelDataHoraSessoes
             // 
             this.labelDataHoraSessoes.AutoSize = true;
-            this.labelDataHoraSessoes.Location = new System.Drawing.Point(388, 15);
-            this.labelDataHoraSessoes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDataHoraSessoes.Location = new System.Drawing.Point(776, 29);
+            this.labelDataHoraSessoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataHoraSessoes.Name = "labelDataHoraSessoes";
-            this.labelDataHoraSessoes.Size = new System.Drawing.Size(61, 13);
+            this.labelDataHoraSessoes.Size = new System.Drawing.Size(115, 25);
             this.labelDataHoraSessoes.TabIndex = 2;
             this.labelDataHoraSessoes.Text = "Data/Hora:";
             // 
             // labelEscolherSalaSessoes
             // 
             this.labelEscolherSalaSessoes.AutoSize = true;
-            this.labelEscolherSalaSessoes.Location = new System.Drawing.Point(12, 218);
-            this.labelEscolherSalaSessoes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEscolherSalaSessoes.Location = new System.Drawing.Point(24, 419);
+            this.labelEscolherSalaSessoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEscolherSalaSessoes.Name = "labelEscolherSalaSessoes";
-            this.labelEscolherSalaSessoes.Size = new System.Drawing.Size(75, 13);
+            this.labelEscolherSalaSessoes.Size = new System.Drawing.Size(151, 25);
             this.labelEscolherSalaSessoes.TabIndex = 1;
             this.labelEscolherSalaSessoes.Text = "Escolher Sala:";
             // 
             // labelEscolherFilmesSessoes
             // 
             this.labelEscolherFilmesSessoes.AutoSize = true;
-            this.labelEscolherFilmesSessoes.Location = new System.Drawing.Point(11, 15);
-            this.labelEscolherFilmesSessoes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEscolherFilmesSessoes.Location = new System.Drawing.Point(22, 29);
+            this.labelEscolherFilmesSessoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEscolherFilmesSessoes.Name = "labelEscolherFilmesSessoes";
-            this.labelEscolherFilmesSessoes.Size = new System.Drawing.Size(78, 13);
+            this.labelEscolherFilmesSessoes.Size = new System.Drawing.Size(160, 25);
             this.labelEscolherFilmesSessoes.TabIndex = 0;
             this.labelEscolherFilmesSessoes.Text = "Escolher Filme:";
             // 
             // FormSessoes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 457);
+            this.ClientSize = new System.Drawing.Size(1764, 879);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSessoes";
             this.Text = "FormSessoes";
             this.Load += new System.EventHandler(this.FormSessoes_Load);

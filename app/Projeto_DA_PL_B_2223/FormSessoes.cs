@@ -34,13 +34,10 @@ namespace Projeto_DA_PL_B_2223
             using (var db = new ApplicationContext())
             {
                 var filmes = db.Filmes.Where(f => f.estadoFilme == "Ativado").ToList(); // mostra so os filmes que tem o estado Ativado,
-                listBoxFilmesSessoes.DataSource = null;
-                listBoxFilmesSessoes.DataSource = filmes;
-
-                var salas = db.Salas.ToList();
-                listBoxSalasSessoes.DataSource = null;
-                listBoxSalasSessoes.DataSource = salas;
-
+                foreach (var filme in filmes) //correr os filmes que estao ativados para os adicionar à listBox 
+                {
+                    listBoxFilmesSessoes.Items.Add(filme);
+                }
                 using (var bd = new ApplicationContext())
                 {
                     var sessoes = bd.Sessoes.ToList();
@@ -84,6 +81,7 @@ namespace Projeto_DA_PL_B_2223
             listBoxFilmesSessoes.ClearSelected();
             listBoxSalasSessoes.ClearSelected();
             listBoxSessoes.ClearSelected();
+            listBoxSalasSessoes.Items.Clear();
         }
 
         private void FormSessoes_Load(object sender, EventArgs e)
@@ -127,6 +125,22 @@ namespace Projeto_DA_PL_B_2223
                 db.Sessoes.Add(sessao);
                 db.SaveChanges();
             }*/
+        }
+
+        private void listBoxFilmesSessoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxSalasSessoes.Items.Clear();
+            if (listBoxFilmesSessoes.SelectedIndex != -1)
+            {
+                using (var bd = new ApplicationContext())
+                {
+                    var salas = bd.Salas.ToList();
+                    foreach (var sala in salas) //correr as salas para os adicionar à listBox 
+                    {
+                        listBoxSalasSessoes.Items.Add(sala);
+                    }
+                }
+            }
         }
     }
 }
