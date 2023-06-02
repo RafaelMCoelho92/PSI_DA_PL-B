@@ -16,8 +16,8 @@ namespace Projeto_DA_PL_B_2223
         public string Filme { get; set; }
         public string Sala { get; set; }
         public double Preco { get; set; }
-        public DateTime Data { get; set; }
-        public DateTime Hora { get; set; }
+        public string Data { get; set; }
+        public string Hora { get; set; }
         public List<Filme> Filmes { get; set; }
         public List<Sala> Salas { get; set; }
         public List<Sessao> Sessoes { get; set; }
@@ -27,7 +27,7 @@ namespace Projeto_DA_PL_B_2223
 
         }
 
-        public Sessao(string filme, string sala, double preco, DateTime data, DateTime hora)
+        public Sessao(string filme, string sala, double preco, string data, string hora)
         {
             Filme = filme;
             Sala = sala;
@@ -42,7 +42,7 @@ namespace Projeto_DA_PL_B_2223
 
         public override string ToString()
         {
-            return $"Filme: {Filme}, Sala: {Sala}, Preço: {Preco} , Dia: {Data.ToString("dd/MM/yyyy")} , Hora: {Hora.ToString("HH:mm")} ";
+            return $"Filme: {Filme} Sala: {Sala} Preço: {Preco}  Dia: {Data}  Hora: {Hora} ";
         }
     }
 }
