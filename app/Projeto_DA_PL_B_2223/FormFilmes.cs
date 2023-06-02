@@ -132,6 +132,13 @@ namespace Projeto_DA_PL_B_2223
             }
 
         }
+        public void preencherComboBoxCategorias()
+        {
+            Categoria categoria = new Categoria();// instancia da classe categoria
+            string[] categorias = categoria.Categorias;// vamos buscar o array que ja esta definido
+            comboBoxCategoriaFilme.Items.AddRange(categorias);// vamos por essa lista na combobox
+            comboBoxCategoriaFilme.SelectedIndex = 0; // vamos por logo uma opcao selecionada
+        }
 
         private void listBoxFilmes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -186,6 +193,7 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
             listBoxFilmes.ClearSelected();
             limparDadosInseridos();
+            preencherComboBoxCategorias();
 
 
         }

@@ -15,5 +15,6 @@ namespace Projeto_DA_PL_B_2223
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Bilhete> Bilhetes { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }
