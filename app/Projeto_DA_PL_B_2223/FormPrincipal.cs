@@ -157,7 +157,7 @@ namespace Projeto_DA_PL_B_2223
         private void dateTimePicker_formPrincipal()
         {
 
-            using (var bd = new ApplicationContext())
+           /* using (var bd = new ApplicationContext())
             {
                 DateTime dataSelecionada = dateTimePickerSessoesFormPrinc.Value.Date;
                 var sessoes = bd.Sessoes.Where(sessao => sessao.Data == dataSelecionada).ToList(); // esta linha fui procurar ao chatgpt, não estou a ver outra forma
@@ -168,7 +168,7 @@ namespace Projeto_DA_PL_B_2223
                         listBox_mostrar_sessoes_dia.Items.Add(sessao);
                     }
                 
-            }
+            }*/
         }
     }
 }

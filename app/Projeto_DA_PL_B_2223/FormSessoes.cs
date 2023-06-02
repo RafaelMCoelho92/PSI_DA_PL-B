@@ -121,8 +121,8 @@ namespace Projeto_DA_PL_B_2223
                 string valorPreco = textBoxPrecoSessoes.Text.ToString();
                 double preco = double.Parse(valorPreco);
                 
-                DateTime data = dateTimePickerDataSessao.Value;
-                DateTime hora = dateTimePickerHoraSessao.Value;
+                string data = dateTimePickerDataSessao.Value.ToString("dd/MM/yyyy");
+                string hora = dateTimePickerHoraSessao.Value.ToString("HH:mm");
 
                 Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
                 Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
