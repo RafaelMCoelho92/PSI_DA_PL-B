@@ -16,9 +16,10 @@ namespace Projeto_DA_PL_B_2223
         public string nomeSala { get; set; }
         public string Fila { get; set; }
         public string Coluna { get; set; }
+        public double Lugares { get; set; }
 
         //Constructor
-        
+
         public Sala(string nomeSala, string fila, string coluna)
         {
             this.nomeSala = nomeSala;
@@ -43,9 +44,14 @@ namespace Projeto_DA_PL_B_2223
         // OVERRIDE PARA DIZER COMO VAI ESCREVER NA LISTBOX
         public override string ToString()
         {
-            return nomeSala + " Filas: " + Fila + " Colunas: " + Coluna; 
+            return nomeSala + " Filas: " + Fila + " Colunas: " + Coluna;
         }
 
-        
+        public int CalcularTotalLugares()
+        {
+            int filas = int.Parse(Fila);
+            int colunas = int.Parse(Coluna);
+            return filas * colunas;
+        }
     }
 }
