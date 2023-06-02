@@ -44,7 +44,7 @@
             this.labelDataSessoes = new System.Windows.Forms.Label();
             this.labelEscolherSalaSessoes = new System.Windows.Forms.Label();
             this.labelEscolherFilmesSessoes = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_apagar_sessoes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.button_apagar_sessoes);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.labelPrecoSessoes);
             this.tabPage1.Controls.Add(this.textBoxPrecoSessoes);
@@ -221,16 +221,16 @@
             this.labelEscolherFilmesSessoes.TabIndex = 0;
             this.labelEscolherFilmesSessoes.Text = "Escolher Filme:";
             // 
-            // button1
+            // button_apagar_sessoes
             // 
-            this.button1.Location = new System.Drawing.Point(710, 452);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 36);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "APAGAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_apagar_sessoes.Location = new System.Drawing.Point(710, 452);
+            this.button_apagar_sessoes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_apagar_sessoes.Name = "button_apagar_sessoes";
+            this.button_apagar_sessoes.Size = new System.Drawing.Size(157, 36);
+            this.button_apagar_sessoes.TabIndex = 19;
+            this.button_apagar_sessoes.Text = "APAGAR";
+            this.button_apagar_sessoes.UseVisualStyleBackColor = true;
+            this.button_apagar_sessoes.Click += new System.EventHandler(this.button_apagar_sessoes_click);
             // 
             // FormSessoes
             // 
@@ -266,6 +266,6 @@
         private System.Windows.Forms.TextBox textBoxPrecoSessoes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelPrecoSessoes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_apagar_sessoes;
     }
 }
