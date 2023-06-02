@@ -36,6 +36,8 @@ namespace Projeto_DA_PL_B_2223
             formSessoes = new FormSessoes(this);
             formFilmes = new FormFilmes(this);
             formCinema = new FormCinema(this);
+            dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
+
 
         }
 
@@ -58,6 +60,7 @@ namespace Projeto_DA_PL_B_2223
         }
         private void atualizarDadosAoEntrar()
         {
+            listBox_mostrar_sessoes_dia.Items.Clear();
                 using (var bd = new ApplicationContext())
                 {
                     var sessoes = bd.Sessoes.ToList();
@@ -157,9 +160,9 @@ namespace Projeto_DA_PL_B_2223
         private void dateTimePicker_formPrincipal()
         {
 
-           /* using (var bd = new ApplicationContext())
+            using (var bd = new ApplicationContext())
             {
-                DateTime dataSelecionada = dateTimePickerSessoesFormPrinc.Value.Date;
+                string dataSelecionada = dateTimePickerSessoesFormPrinc.Value.ToString("dd/MM/yyyy");
                 var sessoes = bd.Sessoes.Where(sessao => sessao.Data == dataSelecionada).ToList(); // esta linha fui procurar ao chatgpt, não estou a ver outra forma
 
                 listBox_mostrar_sessoes_dia.Items.Clear();
@@ -168,7 +171,7 @@ namespace Projeto_DA_PL_B_2223
                         listBox_mostrar_sessoes_dia.Items.Add(sessao);
                     }
                 
-            }*/
+            }
         }
     }
 }
