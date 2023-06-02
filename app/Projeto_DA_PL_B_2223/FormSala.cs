@@ -126,7 +126,6 @@ namespace Projeto_DA_PL_B_2223
             string colunas = textBoxColunas.Text;// faz a conversao de texto para double
             try
             {
-
                 Sala sala = new Sala(nomeSala, filas, colunas);
                 textBoxNomeSala.Text = sala.nomeSala;
                 textBoxFilas.Text = sala.Fila.ToString();// neste leva o tostring pq esta a ser convertido para double
