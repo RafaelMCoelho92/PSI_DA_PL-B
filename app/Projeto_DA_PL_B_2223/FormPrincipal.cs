@@ -54,7 +54,7 @@ namespace Projeto_DA_PL_B_2223
                 formFuncionarios.ShowDialog();
             }
             atualizarDadosAoEntrar();
-            dateTimePicker_formPrincipal();
+           // dateTimePicker_formPrincipal();
         }
         private void atualizarDadosAoEntrar()
         {
