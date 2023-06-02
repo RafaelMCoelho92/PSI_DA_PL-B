@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="Bilhete.cs" />
+    <Compile Include="Categoria.cs" />
     <Compile Include="Cinema.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Filme.cs" />

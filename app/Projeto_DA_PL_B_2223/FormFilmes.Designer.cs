@@ -59,19 +59,6 @@
             // comboBoxCategoriaFilme
             // 
             this.comboBoxCategoriaFilme.FormattingEnabled = true;
-            this.comboBoxCategoriaFilme.Items.AddRange(new object[] {
-            "Comédia",
-            "Sci-Fi",
-            "Terror",
-            "Romance",
-            "Acção",
-            "Thriller",
-            "Drama",
-            "Mistério",
-            "Crime",
-            "Aventura",
-            "Fantasia",
-            "Animação"});
             this.comboBoxCategoriaFilme.Location = new System.Drawing.Point(224, 106);
             this.comboBoxCategoriaFilme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.comboBoxCategoriaFilme.Name = "comboBoxCategoriaFilme";
