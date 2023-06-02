@@ -18,7 +18,6 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
-            atualizarDadosAoEntrar();
 
         }
         public FormSessoes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
@@ -34,14 +33,11 @@ namespace Projeto_DA_PL_B_2223
         {
             using (var db = new ApplicationContext())
             {
-                var filmes = db.Filmes.ToList();
-                listBoxFilmesSessoes.DataSource = null;
-                listBoxFilmesSessoes.DataSource = filmes;
-
-                var salas = db.Salas.ToList();
-                listBoxSalasSessoes.DataSource = null;
-                listBoxSalasSessoes.DataSource = salas;
-
+                var filmes = db.Filmes.Where(f => f.estadoFilme == "Ativado").ToList(); // mostra so os filmes que tem o estado Ativado,
+                foreach (var filme in filmes) //correr os filmes que estao ativados para os adicionar à listBox 
+                {
+                    listBoxFilmesSessoes.Items.Add(filme);
+                }
                 using (var bd = new ApplicationContext())
                 {
                     var sessoes = bd.Sessoes.ToList();
@@ -70,10 +66,24 @@ namespace Projeto_DA_PL_B_2223
                 return false;
             }
 
-            /*DateTime horaSelecionado = dateTimePickerSessao.Value;
-            if (horaSelecionado != DateTime.MinValue )
+            string precoInserido = textBoxPrecoSessoes.Text;
+            if(precoInserido == null)
+            {
+                MessageBox.Show("Tem que inserir um preço para a sessão!");
+                return false;
+            }
+            
+          /*DateTime dataSelecionada = dateTimePickerDataSessao.Value;
+            if (dataSelecionada != DateTime.MinValue )
             {
                 MessageBox.Show("Tem que selecionar uma data!");
+                return false;
+            }
+            
+            DateTime horaSelecionada = dateTimePickerHoraSessao.Value;
+             if (horaSelecionada != DateTime.MinValue )
+            {
+                MessageBox.Show("Tem que selecionar uma hora!");
                 return false;
             }*/
 
@@ -85,6 +95,7 @@ namespace Projeto_DA_PL_B_2223
             listBoxFilmesSessoes.ClearSelected();
             listBoxSalasSessoes.ClearSelected();
             listBoxSessoes.ClearSelected();
+            listBoxSalasSessoes.Items.Clear();
         }
 
         private void FormSessoes_Load(object sender, EventArgs e)
@@ -92,40 +103,56 @@ namespace Projeto_DA_PL_B_2223
             listBoxFilmesSessoes.ClearSelected();
             listBoxSalasSessoes.ClearSelected();
             listBoxSessoes.ClearSelected();
+            atualizarDadosAoEntrar();
+
         }
 
         private void buttonCriarSessoes_Click(object sender, EventArgs e)
         {
-            string filme = listBoxFilmesSessoes.SelectedIndex.ToString();
-            string sala = listBoxSalasSessoes.SelectedIndex.ToString();
             validarDadosSessoes();
+            // ESTAVA A CRIAR A INSTANCIA NA MESMA, APÓS CRIAR SESSAO SEM NENHUM ITEM SELECIONADO E DAVA CRASH COM ESTE IF NÃO DÁ
             if (listBoxFilmesSessoes.SelectedIndex > 0 && listBoxSalasSessoes.SelectedIndex > 0)
             {
-                atualizarDadosAoEntrar();
-            }
+                string valorPreco = textBoxPrecoSessoes.Text.ToString();
+                double preco = double.Parse(valorPreco);
 
-            Sessao sessao = new Sessao(filme, sala);
-            listBoxSessoes.Items.Add(sessao);
-            
-            using (var db = new ApplicationContext())
-            {
-                var sessoes = db.Sessoes.ToList();
-                foreach (var s in sessoes) //correr os clientes para os adicionar à listBox 
+                DateTime data = dateTimePickerDataSessao.Value;
+                DateTime hora = dateTimePickerHoraSessao.Value;
+
+                Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
+                Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
+
+                Sessao sessao = new Sessao(filmeSelecionado.nomeFilme, salaSelecionada.nomeSala, preco, data, hora);
+                listBoxSessoes.Items.Add(sessao);
+
+                using (var db = new ApplicationContext())
                 {
-                    listBoxSessoes.Items.Add(s);
-                    db.Sessoes.Add(sessao);
-                    db.SaveChanges();
+                    var sessoes = db.Sessoes.ToList();
+                    foreach (var s in sessoes) //correr os clientes para os adicionar à listBox 
+                    {
+                        listBoxSessoes.Items.Add(s);
+                        db.Sessoes.Add(sessao);
+                        db.SaveChanges();
+                    }
                 }
             }
-            atualizarDadosAoEntrar();
+            //atualizarDadosAoEntrar();
+        }
 
-            /*
-            
-                Sessao sessao = new Sessao(filme, sala);
-                listBoxSessoes.Items.Add(sessao);
-                db.Sessoes.Add(sessao);
-                db.SaveChanges();
-            }*/
+        private void listBoxFilmesSessoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxSalasSessoes.Items.Clear();
+            if (listBoxFilmesSessoes.SelectedIndex != -1)
+            {
+                using (var bd = new ApplicationContext())
+                {
+                    var salas = bd.Salas.ToList();
+                    foreach (var sala in salas) //correr as salas para os adicionar à listBox 
+                    {
+                        listBoxSalasSessoes.Items.Add(sala);
+                    }
+                }
+            }
         }
     }
 }
