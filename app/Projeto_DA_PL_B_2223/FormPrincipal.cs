@@ -54,12 +54,10 @@ namespace Projeto_DA_PL_B_2223
                 formFuncionarios.ShowDialog();
             }
             atualizarDadosAoEntrar();
+            dateTimePicker_formPrincipal();
         }
         private void atualizarDadosAoEntrar()
         {
-            using (var db = new ApplicationContext())
-            {
-                
                 using (var bd = new ApplicationContext())
                 {
                     var sessoes = bd.Sessoes.ToList();
@@ -68,10 +66,13 @@ namespace Projeto_DA_PL_B_2223
                         listBox_mostrar_sessoes_dia.Items.Add(sessao);
                     }
                 }
-            }
         }
 
-      
+        private void dateTimePickerSessoesFormPrinc_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker_formPrincipal(); // estou a chamar mas em tentativa erro 
+        }
+
 
         // MOSTRA A DATA E A HORA 
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
@@ -153,21 +154,21 @@ namespace Projeto_DA_PL_B_2223
             formClientes.ShowDialog();
         }
 
-        /*private void listBox_mostrar_sessoes_dia_SelectedIndexChanged(object sender, EventArgs e)
+        private void dateTimePicker_formPrincipal()
         {
-            listBox_mostrar_sessoes_dia.Items.Clear();
-            if (listBox_mostrar_sessoes_dia.SelectedIndex != -1)
-            {
-                using (var bd = new ApplicationContext())
-                {
-                    var sessoesPrincipal = bd.Sessoes.ToList();
-                    foreach (var sess in sessoesPrincipal)
-                    {
-                        listBox_mostrar_sessoes_dia.Items.Add(sess);
-                    }
-                }
-            }
 
-        }*/
+            using (var bd = new ApplicationContext())
+            {
+                DateTime dataSelecionada = dateTimePickerSessoesFormPrinc.Value.Date;
+                var sessoes = bd.Sessoes.Where(sessao => sessao.Data == dataSelecionada).ToList(); // esta linha fui procurar ao chatgpt, não estou a ver outra forma
+
+                listBox_mostrar_sessoes_dia.Items.Clear();
+                    foreach (var sessao in sessoes)
+                    {
+                        listBox_mostrar_sessoes_dia.Items.Add(sessao);
+                    }
+                
+            }
+        }
     }
 }

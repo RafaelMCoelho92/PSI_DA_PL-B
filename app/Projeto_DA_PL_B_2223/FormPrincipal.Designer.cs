@@ -47,7 +47,7 @@
             this.sessãoDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_mostrar_sessoes_dia = new System.Windows.Forms.ListBox();
-            this.dateTimePickerSessoesDoDia = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerSessoesFormPrinc = new System.Windows.Forms.DateTimePicker();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -124,7 +124,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1064, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 26);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,24 +199,24 @@
             this.listBox_mostrar_sessoes_dia.Name = "listBox_mostrar_sessoes_dia";
             this.listBox_mostrar_sessoes_dia.Size = new System.Drawing.Size(959, 292);
             this.listBox_mostrar_sessoes_dia.TabIndex = 12;
-            //this.listBox_mostrar_sessoes_dia.SelectedIndexChanged += new System.EventHandler(this.listBox_mostrar_sessoes_dia_SelectedIndexChanged);
             // 
-            // dateTimePickerSessoesDoDia
+            // dateTimePickerSessoesFormPrinc
             // 
-            this.dateTimePickerSessoesDoDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSessoesDoDia.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerSessoesDoDia.Location = new System.Drawing.Point(411, 87);
-            this.dateTimePickerSessoesDoDia.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePickerSessoesDoDia.Name = "dateTimePickerSessoesDoDia";
-            this.dateTimePickerSessoesDoDia.Size = new System.Drawing.Size(215, 23);
-            this.dateTimePickerSessoesDoDia.TabIndex = 13;
+            this.dateTimePickerSessoesFormPrinc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSessoesFormPrinc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerSessoesFormPrinc.Location = new System.Drawing.Point(411, 87);
+            this.dateTimePickerSessoesFormPrinc.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerSessoesFormPrinc.Name = "dateTimePickerSessoesFormPrinc";
+            this.dateTimePickerSessoesFormPrinc.Size = new System.Drawing.Size(215, 23);
+            this.dateTimePickerSessoesFormPrinc.TabIndex = 13;
+            this.dateTimePickerSessoesFormPrinc.ValueChanged += new System.EventHandler(this.dateTimePickerSessoesFormPrinc_ValueChanged);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 579);
-            this.Controls.Add(this.dateTimePickerSessoesDoDia);
+            this.Controls.Add(this.dateTimePickerSessoesFormPrinc);
             this.Controls.Add(this.listBox_mostrar_sessoes_dia);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
@@ -255,7 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem sessãoDoDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox_mostrar_sessoes_dia;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSessoesDoDia;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSessoesFormPrinc;
     }
 }
 
