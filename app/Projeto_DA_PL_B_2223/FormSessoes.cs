@@ -116,6 +116,7 @@ namespace Projeto_DA_PL_B_2223
             // ESTAVA A CRIAR A INSTANCIA NA MESMA, APÓS CRIAR SESSAO SEM NENHUM ITEM SELECIONADO E DAVA CRASH COM ESTE IF NÃO DÁ
             if (listBoxFilmesSessoes.SelectedIndex > -1 && listBoxSalasSessoes.SelectedIndex > -1)
             {
+               
                 string valorPreco = textBoxPrecoSessoes.Text.ToString();
                 double preco = double.Parse(valorPreco);
                 
@@ -131,13 +132,10 @@ namespace Projeto_DA_PL_B_2223
                 using (var db = new ApplicationContext())
                 {
                     var sessoes = db.Sessoes.ToList();
-                    foreach (var s in sessoes) //correr os clientes para os adicionar à listBox 
-                    {
-                        listBoxSessoes.Items.Add(s);
-                        db.Sessoes.Add(sessao);
-                        db.SaveChanges();
-                    }
+                    db.Sessoes.Add(sessao); // Adiciona a nova sessão ao contexto do banco de dados
+                    db.SaveChanges(); // Salva as alterações no banco de dados
                 }
+
             }
         }
 
