@@ -13,37 +13,36 @@ namespace Projeto_DA_PL_B_2223
     {
         [Key]
         public int Id { get; set; }
+        public string Filme { get; }
+        public string Sala { get; }
+        public double Preco { get; }
+        public DateTime Data { get; }
+        public DateTime Hora { get; }
         public List<Filme> Filmes { get; }
         public List<Sala> Salas { get; }
         public List<Sessao> Sessoes { get; }
-        public double Preco { get; set; }
-        public DateTime DataHora { get; set; }
-        public string Filme { get; set; }
-        public string Sala { get; set; }
-
+        
         public Sessao()
         { 
 
         }
 
-        public Sessao(double preco, DateTime datahora)
+        public Sessao(string filme, string sala, double preco, DateTime data, DateTime hora)
         {
+            Filme = filme;
+            Sala = sala;
             Preco = preco;
-            DataHora = datahora;
+            Data = data;
+            Hora = hora;
             Filmes = new List<Filme>(); 
             Salas = new List<Sala>();
             Sessoes = new List<Sessao>();
         }
 
-        public Sessao(string filme, string sala)
-        {
-            Filme = filme;
-            Sala = sala;
-        }
 
         public override string ToString()
         {
-            return $"Filme: {Filme}, Sala: {Sala}";
+            return $"Filme: {Filme}, Sala: {Sala}, Preço: {Preco} , Dia: {Data} , Hora: {Hora} ";
         }
     }
 }
