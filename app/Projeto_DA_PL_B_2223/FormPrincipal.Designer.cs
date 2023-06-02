@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.labelNomeCinema = new System.Windows.Forms.Label();
-            this.tabControlMenuPrincipal = new System.Windows.Forms.TabControl();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,6 +46,8 @@
             this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sessãoDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox_mostrar_sessoes_dia = new System.Windows.Forms.ListBox();
+            this.dateTimePickerSessoesDoDia = new System.Windows.Forms.DateTimePicker();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -66,15 +67,6 @@
             this.labelNomeCinema.TabIndex = 5;
             this.labelNomeCinema.Text = "CINE GEST";
             this.labelNomeCinema.Click += new System.EventHandler(this.labelNomeCinema_Click);
-            // 
-            // tabControlMenuPrincipal
-            // 
-            this.tabControlMenuPrincipal.Location = new System.Drawing.Point(23, 168);
-            this.tabControlMenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabControlMenuPrincipal.Name = "tabControlMenuPrincipal";
-            this.tabControlMenuPrincipal.SelectedIndex = 0;
-            this.tabControlMenuPrincipal.Size = new System.Drawing.Size(1003, 333);
-            this.tabControlMenuPrincipal.TabIndex = 8;
             // 
             // statusStrip1
             // 
@@ -199,18 +191,38 @@
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
+            // listBox_mostrar_sessoes_dia
+            // 
+            this.listBox_mostrar_sessoes_dia.FormattingEnabled = true;
+            this.listBox_mostrar_sessoes_dia.ItemHeight = 16;
+            this.listBox_mostrar_sessoes_dia.Location = new System.Drawing.Point(44, 117);
+            this.listBox_mostrar_sessoes_dia.Name = "listBox_mostrar_sessoes_dia";
+            this.listBox_mostrar_sessoes_dia.Size = new System.Drawing.Size(959, 292);
+            this.listBox_mostrar_sessoes_dia.TabIndex = 12;
+            // 
+            // dateTimePickerSessoesDoDia
+            // 
+            this.dateTimePickerSessoesDoDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSessoesDoDia.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimePickerSessoesDoDia.Location = new System.Drawing.Point(411, 87);
+            this.dateTimePickerSessoesDoDia.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerSessoesDoDia.Name = "dateTimePickerSessoesDoDia";
+            this.dateTimePickerSessoesDoDia.Size = new System.Drawing.Size(215, 23);
+            this.dateTimePickerSessoesDoDia.TabIndex = 13;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 579);
+            this.Controls.Add(this.dateTimePickerSessoesDoDia);
+            this.Controls.Add(this.listBox_mostrar_sessoes_dia);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.tabControlMenuPrincipal);
             this.Controls.Add(this.labelNomeCinema);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
@@ -225,7 +237,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TabControl tabControlMenuPrincipal;
         public System.Windows.Forms.Label labelNomeCinema;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
@@ -242,6 +253,8 @@
         private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sessãoDoDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBox_mostrar_sessoes_dia;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSessoesDoDia;
     }
 }
 

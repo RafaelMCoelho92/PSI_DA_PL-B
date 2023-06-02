@@ -154,5 +154,32 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int apagarSessao = listBoxSessoes.SelectedIndex;
+            if (apagarSessao == -1)
+            {
+                // se n tiver sala selecionada mensagem de erro
+                MessageBox.Show("Selecione uma Sessão", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBoxSessoes.Items[apagarSessao] is Sessao sessao)
+            {
+                //se tiver sala selecionada
+                // apaga da listbox
+                listBoxSessoes.Items.Remove(sessao);
+                //apaga da base de dados
+                var db = new ApplicationContext();
+                var sessaoApagar = db.Sessoes.Find(sessao.Id); // buscar o id da sala q queremos apagar
+                if (sessaoApagar != null) // so faz isso se tiver uma sala
+                {
+                    db.Sessoes.Remove(sessaoApagar); // remove sala pelo id
+                    db.SaveChanges(); // guarda as alterações na base de dados
+                }
+            }
+       
+    }
     }
 }

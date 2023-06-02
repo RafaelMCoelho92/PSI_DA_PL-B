@@ -68,12 +68,12 @@ namespace Projeto_DA_PL_B_2223
         }
 
         // CHAMA A TAB DOS FUNCIONARIOS
-        private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
+        /*private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
         {
             tabControlMenuPrincipal.TabPages.Clear();
             TabPage tab = new FormLogin().getPage();
             tabControlMenuPrincipal.TabPages.Add(tab);
-        }
+        }*/
 
         // CHAMA A TAB DOS CINEMAS
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
