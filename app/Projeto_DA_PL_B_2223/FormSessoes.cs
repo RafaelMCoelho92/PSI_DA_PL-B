@@ -19,6 +19,7 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
+            dateTimePickerDataSessao.MinDate = DateTime.Now;
 
         }
         public FormSessoes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
