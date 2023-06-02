@@ -13,14 +13,14 @@ namespace Projeto_DA_PL_B_2223
     {
         [Key]
         public int Id { get; set; }
-        public string Filme { get; }
-        public string Sala { get; }
-        public double Preco { get; }
-        public DateTime Data { get; }
-        public DateTime Hora { get; }
-        public List<Filme> Filmes { get; }
-        public List<Sala> Salas { get; }
-        public List<Sessao> Sessoes { get; }
+        public string Filme { get; set; }
+        public string Sala { get; set; }
+        public double Preco { get; set; }
+        public DateTime Data { get; set; }
+        public DateTime Hora { get; set; }
+        public List<Filme> Filmes { get; set; }
+        public List<Sala> Salas { get; set; }
+        public List<Sessao> Sessoes { get; set; }
         
         public Sessao()
         { 
