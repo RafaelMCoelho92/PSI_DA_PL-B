@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -67,25 +68,25 @@ namespace Projeto_DA_PL_B_2223
             }
 
             string precoInserido = textBoxPrecoSessoes.Text;
-            if(precoInserido == null)
+            if (precoInserido == null)
             {
                 MessageBox.Show("Tem que inserir um preço para a sessão!");
                 return false;
             }
-            
-          /*DateTime dataSelecionada = dateTimePickerDataSessao.Value;
-            if (dataSelecionada != DateTime.MinValue )
-            {
-                MessageBox.Show("Tem que selecionar uma data!");
-                return false;
-            }
-            
-            DateTime horaSelecionada = dateTimePickerHoraSessao.Value;
-             if (horaSelecionada != DateTime.MinValue )
-            {
-                MessageBox.Show("Tem que selecionar uma hora!");
-                return false;
-            }*/
+
+            /*DateTime dataSelecionada = dateTimePickerDataSessao.Value;
+                if (dataSelecionada != DateTime.MinValue )
+                {
+                    MessageBox.Show("Tem que selecionar uma data!");
+                    return false;
+                }
+
+                DateTime horaSelecionada = dateTimePickerHoraSessao.Value;
+                 if (horaSelecionada != DateTime.MinValue )
+                {
+                    MessageBox.Show("Tem que selecionar uma hora!");
+                    return false;
+                }*/
 
             return true;
         }
@@ -117,7 +118,7 @@ namespace Projeto_DA_PL_B_2223
             {
                 string valorPreco = textBoxPrecoSessoes.Text.ToString();
                 double preco = double.Parse(valorPreco);
-
+                
                 DateTime data = dateTimePickerDataSessao.Value;
                 DateTime hora = dateTimePickerHoraSessao.Value;
 
@@ -138,7 +139,6 @@ namespace Projeto_DA_PL_B_2223
                     }
                 }
             }
-            //atualizarDadosAoEntrar();
         }
 
         private void listBoxFilmesSessoes_SelectedIndexChanged(object sender, EventArgs e)
