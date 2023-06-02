@@ -33,7 +33,7 @@ namespace Projeto_DA_PL_B_2223
         {
             using (var db = new ApplicationContext())
             {
-                var filmes = db.Filmes.ToList();
+                var filmes = db.Filmes.Where(f => f.estadoFilme == "Ativado").ToList(); // mostra so os filmes que tem o estado Ativado,
                 listBoxFilmesSessoes.DataSource = null;
                 listBoxFilmesSessoes.DataSource = filmes;
 
