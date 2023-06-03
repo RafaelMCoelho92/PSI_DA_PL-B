@@ -63,7 +63,7 @@ namespace Projeto_DA_PL_B_2223
                 for (int j = 0; j < colunas; j++)
                 {
                     Button button = new LugarButton(i, j);
-                    button.Size = new Size(50, 30);
+                    button.Size = new Size(50, 25);
                     button.Text = (char)(i + 65) + "" + (j + 1);
                     button.BackColor =  Color.Green;
                     button.ForeColor = Color.Black;
