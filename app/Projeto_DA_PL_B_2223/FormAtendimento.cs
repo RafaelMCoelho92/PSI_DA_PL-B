@@ -82,7 +82,40 @@ namespace Projeto_DA_PL_B_2223
 
         private void radioButton_cliente_CheckedChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        public void buttonPesquisarNif_Click(object sender, EventArgs e)
+        {
+            {
+                // Obtém o valor da caixa de texto de pesquisa
+                string valorPesquisa = textBox_pesquisa.Text;
+
+                if (!string.IsNullOrEmpty(valorPesquisa))
+                {
+                    using (var db = new ApplicationContext())
+                    {
+                        // Realiza a consulta no banco de dados
+                        var nifCliente = db.Pessoas.OfType<Cliente>()
+                            .FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
+
+                        if (nifCliente != null)
+                        {
+                            textBox_nomeAtend.Text = nifCliente.NomePessoa;
+                            textBox_moradaAtend.Text = nifCliente.MoradaPessoa;
+                            textBox_nifAtend.Text = nifCliente.NumFiscCliente; 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cliente não encontrado");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Digite um valor de pesquisa");
+                }
+            }
         }
     }
 }

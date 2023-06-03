@@ -33,14 +33,18 @@
             this.radioButton_cliente = new System.Windows.Forms.RadioButton();
             this.radioButton_anonimo = new System.Windows.Forms.RadioButton();
             this.radioButton_novoCliente = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_nifAtend = new System.Windows.Forms.TextBox();
             this.labelNumeroFiscalClientes = new System.Windows.Forms.Label();
             this.labelMoradaClientes = new System.Windows.Forms.Label();
             this.labelNomesClientes = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_nomeAtend = new System.Windows.Forms.TextBox();
+            this.textBox_moradaAtend = new System.Windows.Forms.TextBox();
             this.buttonPesquisarNif = new System.Windows.Forms.Button();
             this.textBox_pesquisa = new System.Windows.Forms.TextBox();
+            this.listBox_lugaresSelecionados = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_valorBilhete = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tableLayoutPanelEscolherLugar
@@ -99,12 +103,12 @@
             this.radioButton_novoCliente.Text = "NOVO CLIENTE";
             this.radioButton_novoCliente.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBox_nifAtend
             // 
-            this.textBox2.Location = new System.Drawing.Point(913, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(320, 22);
-            this.textBox2.TabIndex = 6;
+            this.textBox_nifAtend.Location = new System.Drawing.Point(913, 230);
+            this.textBox_nifAtend.Name = "textBox_nifAtend";
+            this.textBox_nifAtend.Size = new System.Drawing.Size(320, 22);
+            this.textBox_nifAtend.TabIndex = 6;
             // 
             // labelNumeroFiscalClientes
             // 
@@ -133,19 +137,19 @@
             this.labelNomesClientes.TabIndex = 8;
             this.labelNomesClientes.Text = "Nome:";
             // 
-            // textBox1
+            // textBox_nomeAtend
             // 
-            this.textBox1.Location = new System.Drawing.Point(914, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 22);
-            this.textBox1.TabIndex = 11;
+            this.textBox_nomeAtend.Location = new System.Drawing.Point(914, 132);
+            this.textBox_nomeAtend.Name = "textBox_nomeAtend";
+            this.textBox_nomeAtend.Size = new System.Drawing.Size(320, 22);
+            this.textBox_nomeAtend.TabIndex = 11;
             // 
-            // textBox3
+            // textBox_moradaAtend
             // 
-            this.textBox3.Location = new System.Drawing.Point(913, 182);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(320, 22);
-            this.textBox3.TabIndex = 12;
+            this.textBox_moradaAtend.Location = new System.Drawing.Point(913, 182);
+            this.textBox_moradaAtend.Name = "textBox_moradaAtend";
+            this.textBox_moradaAtend.Size = new System.Drawing.Size(320, 22);
+            this.textBox_moradaAtend.TabIndex = 12;
             // 
             // buttonPesquisarNif
             // 
@@ -156,6 +160,7 @@
             this.buttonPesquisarNif.TabIndex = 26;
             this.buttonPesquisarNif.Text = "PESQUISAR NIF";
             this.buttonPesquisarNif.UseVisualStyleBackColor = true;
+            this.buttonPesquisarNif.Click += new System.EventHandler(this.buttonPesquisarNif_Click);
             // 
             // textBox_pesquisa
             // 
@@ -165,19 +170,57 @@
             this.textBox_pesquisa.Size = new System.Drawing.Size(147, 22);
             this.textBox_pesquisa.TabIndex = 27;
             // 
+            // listBox_lugaresSelecionados
+            // 
+            this.listBox_lugaresSelecionados.FormattingEnabled = true;
+            this.listBox_lugaresSelecionados.ItemHeight = 16;
+            this.listBox_lugaresSelecionados.Location = new System.Drawing.Point(815, 308);
+            this.listBox_lugaresSelecionados.Name = "listBox_lugaresSelecionados";
+            this.listBox_lugaresSelecionados.Size = new System.Drawing.Size(406, 84);
+            this.listBox_lugaresSelecionados.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(947, 406);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Valor Total";
+            // 
+            // textBox_valorBilhete
+            // 
+            this.textBox_valorBilhete.Location = new System.Drawing.Point(1026, 404);
+            this.textBox_valorBilhete.Name = "textBox_valorBilhete";
+            this.textBox_valorBilhete.Size = new System.Drawing.Size(71, 22);
+            this.textBox_valorBilhete.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1103, 407);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 16);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "€";
+            // 
             // FormAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 561);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox_valorBilhete);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listBox_lugaresSelecionados);
             this.Controls.Add(this.textBox_pesquisa);
             this.Controls.Add(this.buttonPesquisarNif);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_moradaAtend);
+            this.Controls.Add(this.textBox_nomeAtend);
             this.Controls.Add(this.labelNumeroFiscalClientes);
             this.Controls.Add(this.labelMoradaClientes);
             this.Controls.Add(this.labelNomesClientes);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox_nifAtend);
             this.Controls.Add(this.radioButton_novoCliente);
             this.Controls.Add(this.radioButton_anonimo);
             this.Controls.Add(this.radioButton_cliente);
@@ -198,13 +241,17 @@
         private System.Windows.Forms.RadioButton radioButton_cliente;
         private System.Windows.Forms.RadioButton radioButton_anonimo;
         private System.Windows.Forms.RadioButton radioButton_novoCliente;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_nifAtend;
         private System.Windows.Forms.Label labelNumeroFiscalClientes;
         private System.Windows.Forms.Label labelMoradaClientes;
         private System.Windows.Forms.Label labelNomesClientes;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_nomeAtend;
+        private System.Windows.Forms.TextBox textBox_moradaAtend;
         private System.Windows.Forms.Button buttonPesquisarNif;
         private System.Windows.Forms.TextBox textBox_pesquisa;
+        private System.Windows.Forms.ListBox listBox_lugaresSelecionados;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_valorBilhete;
+        private System.Windows.Forms.Label label2;
     }
 }
