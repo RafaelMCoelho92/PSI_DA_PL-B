@@ -206,9 +206,9 @@ namespace Projeto_DA_PL_B_2223
                 var db = new ApplicationContext();
                 var idsessao = db.Sessoes.Find(sessao.Id); // buscar o id da sessao q queremos mandar para o formatendimento
                 if (idsessao != null) // so faz isso se uma sessao
-                {
-                     this.formAtendimento.Show(this);
-                    //this.formAtendimento.setConfigSala(idsessao.Id);
+                {   int idSessao = idsessao.Id;
+                    this.formAtendimento.setConfigSala(idSessao);
+                    this.formAtendimento.ShowDialog(this);
 
                 }
             }

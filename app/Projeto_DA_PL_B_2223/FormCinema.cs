@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -119,10 +120,12 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
-                if (!email.Contains("@"))
+                string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+
+                if (email == string.Empty || !Regex.IsMatch(email, vefifyemail))
                 {
-                    MessageBox.Show("O email tem de conter formato de email válido - (@) ", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+                        MessageBox.Show("Email inválido, insira um email no fomato correto: mail@valido.com", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
                 }
                 else
                 {

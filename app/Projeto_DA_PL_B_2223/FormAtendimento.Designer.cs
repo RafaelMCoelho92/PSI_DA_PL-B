@@ -34,7 +34,7 @@
             // tableLayoutPanelEscolherLugar
             // 
             this.tableLayoutPanelEscolherLugar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelEscolherLugar.ColumnCount = 4;
+            this.tableLayoutPanelEscolherLugar.ColumnCount = 10;
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -46,9 +46,9 @@
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(22, 66);
             this.tableLayoutPanelEscolherLugar.Name = "tableLayoutPanelEscolherLugar";
-            this.tableLayoutPanelEscolherLugar.RowCount = 6;
+            this.tableLayoutPanelEscolherLugar.RowCount = 10;
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -62,14 +62,14 @@
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelEscolherLugar.Size = new System.Drawing.Size(790, 399);
+            this.tableLayoutPanelEscolherLugar.Size = new System.Drawing.Size(734, 458);
             this.tableLayoutPanelEscolherLugar.TabIndex = 0;
             // 
             // FormAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 722);
+            this.ClientSize = new System.Drawing.Size(1889, 876);
             this.Controls.Add(this.tableLayoutPanelEscolherLugar);
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "FormAtendimento";

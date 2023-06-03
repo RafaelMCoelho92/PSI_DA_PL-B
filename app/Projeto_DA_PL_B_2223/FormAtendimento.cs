@@ -18,21 +18,18 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             this.CenterToScreen();
-            setConfigSala(1);
+
 
         }
 
-        public FormAtendimento(FormPrincipal formPrincipal)
+        public FormAtendimento(FormPrincipal formPrincipal) : this()
         {
             this.formPrincipal = formPrincipal;
+            
         }
 
-        /* public FormAtendimento(FormPrincipal formPrincipal) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
-{
-    this.formPrincipal = formPrincipal;
-}*/
 
-
+        
         public int getFilas(int Id)
         {
             var db = new ApplicationContext();
@@ -68,7 +65,7 @@ namespace Projeto_DA_PL_B_2223
                     Button button = new LugarButton(i, j);
                     button.Size = new Size(50, 30);
                     button.Text = (char)(i + 65) + "" + (j + 1);
-                    button.BackColor = i % 2 == 0 ? Color.Red : Color.Green;
+                    button.BackColor =  Color.Green;
                     button.ForeColor = Color.Black;
                     //button.Image = Properties.Resources.chair5381;
                     button.Click += LugarClicked;
@@ -80,7 +77,7 @@ namespace Projeto_DA_PL_B_2223
         private void LugarClicked(Object sender, EventArgs e)
         {
             LugarButton button = (LugarButton)sender;
-            MessageBox.Show("X: " + button.X + " Y: " + button.Y);
+            MessageBox.Show("Fila: " + button.X + " Coluna: " + button.Y + " Selecionada.");
         }
     }
 }
