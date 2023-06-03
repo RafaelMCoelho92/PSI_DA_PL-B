@@ -73,16 +73,18 @@ namespace Projeto_DA_PL_B_2223
             string nomeFilme = textBoxNomeFilme.Text;
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             string estadoFilme = comboBoxEstadoFilme.Text;
+            string hora = dateTimePickerDuracao.Text;
             if (!validarDadosInseridos())
             {
                 return;
             } 
             try
             {   // manda para o construtor faz a instancia
-                Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme);
+                Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme, hora);
                 textBoxNomeFilme.Text = filme.nomeFilme;
                 comboBoxCategoriaFilme.Text = filme.categoriaFilme;
                 comboBoxEstadoFilme.Text = filme.estadoFilme;
+                dateTimePickerDuracao.Text = filme.Duracao;
             }
             catch (Exception)
             {   // caso haja algum erro
@@ -95,6 +97,7 @@ namespace Projeto_DA_PL_B_2223
                 filmeSelecionado.nomeFilme = textBoxNomeFilme.Text;
                 filmeSelecionado.categoriaFilme = comboBoxCategoriaFilme.Text;
                 filmeSelecionado.estadoFilme = comboBoxEstadoFilme.Text;
+                filmeSelecionado.Duracao = dateTimePickerDuracao.Text;
                 // Atualizar a exibição dos filmes na ListBox
                 int editarFilme = listBoxFilmes.SelectedIndex;
                 listBoxFilmes.Items[editarFilme] = filmeSelecionado;
@@ -107,7 +110,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else // se não tiver, cria um novo
             {
-                Filme novofilme = new Filme(textBoxNomeFilme.Text,comboBoxCategoriaFilme.Text, comboBoxEstadoFilme.Text);
+                Filme novofilme = new Filme(textBoxNomeFilme.Text,comboBoxCategoriaFilme.Text, comboBoxEstadoFilme.Text, dateTimePickerDuracao.Text);
 
                 listBoxFilmes.Items.Add(novofilme); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
@@ -152,6 +155,7 @@ namespace Projeto_DA_PL_B_2223
                     textBoxNomeFilme.Text = filmeEscolhido.nomeFilme;
                     comboBoxCategoriaFilme.Text = filmeEscolhido.categoriaFilme;
                     comboBoxEstadoFilme.Text = filmeEscolhido.estadoFilme;
+                    dateTimePickerDuracao.Text = filmeEscolhido.Duracao;
                 }
             }
         }
