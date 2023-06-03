@@ -47,7 +47,8 @@ namespace Projeto_DA_PL_B_2223
             var filme = nomefilme.nomeFilme;
             var nomesala = db.Salas.Find(idSala);
             var sala = nomesala.nomeSala;
-            return $"Filme: {filme} | Sala: {sala} | Preço: {Preco} € | Dia: {Data}  | Hora: {Hora} ";
+            
+            return $"Filme: {filme} | Sala: {sala} | Preço: {Preco} € | Dia: {Data}  | Hora: {Hora}  | Duração:  {nomefilme.Duracao}";
         }
     }
 }

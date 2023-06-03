@@ -84,8 +84,6 @@ namespace Projeto_DA_PL_B_2223
         {
             dateTimePicker_formPrincipal(); // estou a chamar mas em tentativa erro 
         }
-
-
         // MOSTRA A DATA E A HORA 
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
         {
@@ -179,7 +177,6 @@ namespace Projeto_DA_PL_B_2223
                     {
                         listBox_mostrar_sessoes_dia.Items.Add(sessao);
                     }
-                
             }
         }
 
