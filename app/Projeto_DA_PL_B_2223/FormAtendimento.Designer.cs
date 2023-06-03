@@ -68,6 +68,7 @@
             this.button_criarBilhete.TabIndex = 1;
             this.button_criarBilhete.Text = "CRIAR BILHETE";
             this.button_criarBilhete.UseVisualStyleBackColor = true;
+            this.button_criarBilhete.Click += new System.EventHandler(this.button_criarBilhete_Click);
             // 
             // radioButton_cliente
             // 

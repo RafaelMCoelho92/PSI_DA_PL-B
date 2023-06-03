@@ -141,5 +141,19 @@ namespace Projeto_DA_PL_B_2223
             textBox_moradaAtend.Clear();
             textBox_nifAtend.Clear();
         }
+
+        private void button_criarBilhete_Click(object sender, EventArgs e)
+        {
+            if (listBox_lugaresSelecionados.Items.Count > 0)
+            {
+
+            }
+
+            else
+            {
+                MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete");
+            }
+
+        }
     }
 }
