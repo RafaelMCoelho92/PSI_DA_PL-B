@@ -20,6 +20,7 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
 
 
+
         }
 
         public FormAtendimento(FormPrincipal formPrincipal) : this()
@@ -80,13 +81,10 @@ namespace Projeto_DA_PL_B_2223
             MessageBox.Show("Fila: " + button.X + " Coluna: " + button.Y + " Selecionada.");
         }
 
-        private void radioButton_cliente_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         public void buttonPesquisarNif_Click(object sender, EventArgs e)
         {
+            // Verifica se o radiobutton "radioButton_cliente" está selecionado
+            if (radioButton_cliente.Checked)
             {
                 // Obtém o valor da caixa de texto de pesquisa
                 string valorPesquisa = textBox_pesquisa.Text;
@@ -100,10 +98,10 @@ namespace Projeto_DA_PL_B_2223
                             .FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
 
                         if (nifCliente != null)
-                        {
+                        {   //coloca o que está na base de dados nas textBoxs
                             textBox_nomeAtend.Text = nifCliente.NomePessoa;
                             textBox_moradaAtend.Text = nifCliente.MoradaPessoa;
-                            textBox_nifAtend.Text = nifCliente.NumFiscCliente; 
+                            textBox_nifAtend.Text = nifCliente.NumFiscCliente;
                         }
                         else
                         {
@@ -116,6 +114,32 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Digite um valor de pesquisa");
                 }
             }
+            else
+            {
+                MessageBox.Show("Campo válido apenas para Clientes já registados");
+            }
+        }
+
+        private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            // vai reencaminhar para o formulario de clientes para registar novo
+            FormClientes formClientes = new FormClientes();
+            formClientes.ShowDialog();
+
+            // vai limpar os dados ao trocar de butão de seleção
+            textBox_pesquisa.Clear();
+            textBox_nomeAtend.Clear();
+            textBox_moradaAtend.Clear();
+            textBox_nifAtend.Clear();
+        }
+
+        private void radioButton_anonimo_CheckedChanged(object sender, EventArgs e)
+        {
+            // vai limpar os dados ao trocar de butão de seleção
+            textBox_pesquisa.Clear();
+            textBox_nomeAtend.Clear();
+            textBox_moradaAtend.Clear();
+            textBox_nifAtend.Clear();
         }
     }
 }

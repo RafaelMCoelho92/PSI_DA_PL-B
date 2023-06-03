@@ -79,7 +79,6 @@
             this.radioButton_cliente.TabStop = true;
             this.radioButton_cliente.Text = "CLIENTE ";
             this.radioButton_cliente.UseVisualStyleBackColor = true;
-            this.radioButton_cliente.CheckedChanged += new System.EventHandler(this.radioButton_cliente_CheckedChanged);
             // 
             // radioButton_anonimo
             // 
@@ -91,6 +90,7 @@
             this.radioButton_anonimo.TabStop = true;
             this.radioButton_anonimo.Text = "ANÓNIMO";
             this.radioButton_anonimo.UseVisualStyleBackColor = true;
+            this.radioButton_anonimo.CheckedChanged += new System.EventHandler(this.radioButton_anonimo_CheckedChanged);
             // 
             // radioButton_novoCliente
             // 
@@ -102,11 +102,13 @@
             this.radioButton_novoCliente.TabStop = true;
             this.radioButton_novoCliente.Text = "NOVO CLIENTE";
             this.radioButton_novoCliente.UseVisualStyleBackColor = true;
+            this.radioButton_novoCliente.CheckedChanged += new System.EventHandler(this.radioButton_novoCliente_CheckedChanged);
             // 
             // textBox_nifAtend
             // 
             this.textBox_nifAtend.Location = new System.Drawing.Point(913, 230);
             this.textBox_nifAtend.Name = "textBox_nifAtend";
+            this.textBox_nifAtend.ReadOnly = true;
             this.textBox_nifAtend.Size = new System.Drawing.Size(320, 22);
             this.textBox_nifAtend.TabIndex = 6;
             // 
@@ -141,6 +143,7 @@
             // 
             this.textBox_nomeAtend.Location = new System.Drawing.Point(914, 132);
             this.textBox_nomeAtend.Name = "textBox_nomeAtend";
+            this.textBox_nomeAtend.ReadOnly = true;
             this.textBox_nomeAtend.Size = new System.Drawing.Size(320, 22);
             this.textBox_nomeAtend.TabIndex = 11;
             // 
@@ -148,6 +151,7 @@
             // 
             this.textBox_moradaAtend.Location = new System.Drawing.Point(913, 182);
             this.textBox_moradaAtend.Name = "textBox_moradaAtend";
+            this.textBox_moradaAtend.ReadOnly = true;
             this.textBox_moradaAtend.Size = new System.Drawing.Size(320, 22);
             this.textBox_moradaAtend.TabIndex = 12;
             // 
