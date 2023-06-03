@@ -17,6 +17,15 @@ namespace Projeto_DA_PL_B_2223
             InitializeComponent();
             this.CenterToScreen();
 
+            int filas = 2; // é o que vier do formprincipal
+            int colunas = 2; // igual ao de cima
+            tableLayoutPanelEscolherLugar.SuspendLayout();
+            tableLayoutPanelEscolherLugar.Controls.Clear();
+
+            tableLayoutPanelEscolherLugar.RowCount = filas;
+            tableLayoutPanelEscolherLugar.ColumnCount = colunas;
+
+            tableLayoutPanelEscolherLugar.ResumeLayout();
         }
     }
 }

@@ -13,8 +13,8 @@ namespace Projeto_DA_PL_B_2223
     {
         [Key]
         public int Id { get; set; }
-        public string Filme { get; set; }
-        public string Sala { get; set; }
+        public int idFilme { get; set; }
+        public int idSala { get; set; }
         public double Preco { get; set; }
         public string Data { get; set; }
         public string Hora { get; set; }
@@ -27,10 +27,10 @@ namespace Projeto_DA_PL_B_2223
 
         }
 
-        public Sessao(string filme, string sala, double preco, string data, string hora)
+        public Sessao(int idfilme, int idsala, double preco, string data, string hora)
         {
-            Filme = filme;
-            Sala = sala;
+            idFilme = idfilme;
+            idSala = idsala;
             Preco = preco;
             Data = data;
             Hora = hora;
@@ -42,7 +42,12 @@ namespace Projeto_DA_PL_B_2223
 
         public override string ToString()
         {
-            return $"Filme: {Filme} Sala: {Sala} Preço: {Preco}  Dia: {Data}  Hora: {Hora} ";
+            var db = new ApplicationContext();
+            var nomefilme = db.Filmes.Find(idFilme);
+            var filme = nomefilme.nomeFilme;
+            var nomesala = db.Salas.Find(idSala);
+            var sala = nomesala.nomeSala;
+            return $"Filme: {filme} | Sala: {sala} | Preço: {Preco} € | Dia: {Data}  | Hora: {Hora} ";
         }
     }
 }

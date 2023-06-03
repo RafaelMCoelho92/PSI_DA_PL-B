@@ -127,7 +127,7 @@ namespace Projeto_DA_PL_B_2223
                 Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
                 Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
 
-                Sessao sessao = new Sessao(filmeSelecionado.nomeFilme, salaSelecionada.nomeSala, preco, data, hora);
+                Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id , preco, data, hora);
                 listBoxSessoes.Items.Add(sessao);
 
                 using (var db = new ApplicationContext())
