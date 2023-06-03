@@ -34,7 +34,11 @@
             // tableLayoutPanelEscolherLugar
             // 
             this.tableLayoutPanelEscolherLugar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanelEscolherLugar.ColumnCount = 10;
+            this.tableLayoutPanelEscolherLugar.ColumnCount = 4;
+            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -42,13 +46,22 @@
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(152, 136);
+            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanelEscolherLugar.Name = "tableLayoutPanelEscolherLugar";
-            this.tableLayoutPanelEscolherLugar.RowCount = 1;
+            this.tableLayoutPanelEscolherLugar.RowCount = 6;
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelEscolherLugar.Size = new System.Drawing.Size(790, 399);
             this.tableLayoutPanelEscolherLugar.TabIndex = 0;
             // 

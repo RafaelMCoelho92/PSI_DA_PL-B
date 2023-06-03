@@ -12,20 +12,75 @@ namespace Projeto_DA_PL_B_2223
 {
     public partial class FormAtendimento : Form
     {
+        private FormPrincipal formPrincipal;
+
         public FormAtendimento()
         {
             InitializeComponent();
             this.CenterToScreen();
+            setConfigSala(1);
 
-            int filas = 2; // é o que vier do formprincipal
-            int colunas = 2; // igual ao de cima
+        }
+
+        public FormAtendimento(FormPrincipal formPrincipal)
+        {
+            this.formPrincipal = formPrincipal;
+        }
+
+        /* public FormAtendimento(FormPrincipal formPrincipal) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
+{
+    this.formPrincipal = formPrincipal;
+}*/
+
+
+        public int getFilas(int Id)
+        {
+            var db = new ApplicationContext();
+            var sessao = db.Sessoes.Find(Id); // procura a sessao pelo id recebido
+            int idsala  = sessao.idSala ;  // ve qual o id da sala
+            var filascolunas = db.Salas.Find(idsala); // vai buscar os dados da sala
+            int filas = int.Parse(filascolunas.Fila); // faz o parse pra int da string com o valor das filas
+            return filas;
+        }
+        public int getColunas(int Id)
+        {
+            var db = new ApplicationContext();
+            var sessao = db.Sessoes.Find(Id); // procura a sessao pelo id recebido
+            int idsala = sessao.idSala; // ve qual o id da sala
+            var filascolunas = db.Salas.Find(idsala); // vai buscar os dados da sala
+            int colunas = int.Parse(filascolunas.Coluna);// faz o parse pra int da string com valor das colunas
+            return colunas;
+        }
+        public void setConfigSala(int id)
+        {
+            int filas = getFilas(id);
+            int colunas = getColunas(id);
             tableLayoutPanelEscolherLugar.SuspendLayout();
-            tableLayoutPanelEscolherLugar.Controls.Clear();
 
+            tableLayoutPanelEscolherLugar.Controls.Clear();
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
 
+            for (int i = 0; i < filas; i++)
+            {
+                for (int j = 0; j < colunas; j++)
+                {
+                    Button button = new LugarButton(i, j);
+                    button.Size = new Size(50, 30);
+                    button.Text = (char)(i + 65) + "" + (j + 1);
+                    button.BackColor = i % 2 == 0 ? Color.Red : Color.Green;
+                    button.ForeColor = Color.Black;
+                    //button.Image = Properties.Resources.chair5381;
+                    button.Click += LugarClicked;
+                    tableLayoutPanelEscolherLugar.Controls.Add(button, j, i);
+                }
+            }
             tableLayoutPanelEscolherLugar.ResumeLayout();
+        }
+        private void LugarClicked(Object sender, EventArgs e)
+        {
+            LugarButton button = (LugarButton)sender;
+            MessageBox.Show("X: " + button.X + " Y: " + button.Y);
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization; // foi para por data e hora
-
-
+using System.Drawing.Text;
 
 namespace Projeto_DA_PL_B_2223
 {
+
     public partial class FormPrincipal : Form
     {
         Form formCinema; // nao fazer instancia mas sim mandar para o o construtor
@@ -22,7 +22,9 @@ namespace Projeto_DA_PL_B_2223
         Form formSala;
         Form formSessoes;
         Form formFilmes;
+       // Form formAtendimento;
 
+        private FormAtendimento formAtendimento;
 
         public FormPrincipal()
         {
@@ -36,10 +38,14 @@ namespace Projeto_DA_PL_B_2223
             formSessoes = new FormSessoes(this);
             formFilmes = new FormFilmes(this);
             formCinema = new FormCinema(this);
+            formAtendimento = new FormAtendimento(this);
             dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
-
-
         }
+        public FormPrincipal(FormAtendimento formAtendimento) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
+        {
+            this.formAtendimento = formAtendimento;
+        }
+
 
         //FUNCAO QUE EXECUTA AO ABRIR O FORM
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -180,6 +186,32 @@ namespace Projeto_DA_PL_B_2223
         private void FormPrincipal_Activated(object sender, EventArgs e)
         {
             atualizarDadosAoEntrar();
+        }
+
+        private void listBox_mostrar_sessoes_dia_DoubleClick(object sender, EventArgs e)
+        {
+            //verificar que foi selecionado algo
+            //caso tenha sido fazer o set das cadeiras da sala no form atendimento
+            int escolherSessao = listBox_mostrar_sessoes_dia.SelectedIndex;
+            if (escolherSessao == -1)
+            {
+                // se n tiver sessão selecionada mensagem de erro
+                MessageBox.Show("Selecione uma Sessão", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }//
+
+            // buscar a sessao selecionada
+            if (listBox_mostrar_sessoes_dia.Items[escolherSessao] is Sessao sessao)
+            {
+                var db = new ApplicationContext();
+                var idsessao = db.Sessoes.Find(sessao.Id); // buscar o id da sessao q queremos mandar para o formatendimento
+                if (idsessao != null) // so faz isso se uma sessao
+                {
+                     this.formAtendimento.Show(this);
+                    //this.formAtendimento.setConfigSala(idsessao.Id);
+
+                }
+            }
         }
     }
 }

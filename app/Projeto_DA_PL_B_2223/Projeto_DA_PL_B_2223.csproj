@@ -123,6 +123,9 @@
       <DependentUpon>FormSessoesDoDia.cs</DependentUpon>
     </Compile>
     <Compile Include="Funcionario.cs" />
+    <Compile Include="LugarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
