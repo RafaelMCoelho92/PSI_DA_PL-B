@@ -79,5 +79,10 @@ namespace Projeto_DA_PL_B_2223
             LugarButton button = (LugarButton)sender;
             MessageBox.Show("Fila: " + button.X + " Coluna: " + button.Y + " Selecionada.");
         }
+
+        private void radioButton_cliente_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
