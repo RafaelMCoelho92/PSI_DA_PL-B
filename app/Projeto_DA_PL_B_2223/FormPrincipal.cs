@@ -66,7 +66,10 @@ namespace Projeto_DA_PL_B_2223
                     var sessoes = bd.Sessoes.ToList();
                     foreach (var sessao in sessoes) //correr os clientes para os adicionar à listBox 
                     {
+                    if (sessao.Data == dateTimePickerSessoesFormPrinc.Value.ToString("dd/MM/yyyy"))
+                    {
                         listBox_mostrar_sessoes_dia.Items.Add(sessao);
+                    }
                     }
                 }
         }
@@ -172,6 +175,11 @@ namespace Projeto_DA_PL_B_2223
                     }
                 
             }
+        }
+
+        private void FormPrincipal_Activated(object sender, EventArgs e)
+        {
+            atualizarDadosAoEntrar();
         }
     }
 }

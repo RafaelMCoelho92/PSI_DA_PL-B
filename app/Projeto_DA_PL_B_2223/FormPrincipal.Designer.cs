@@ -125,7 +125,6 @@
             this.definiçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1596, 40);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
@@ -208,7 +207,7 @@
             this.dateTimePickerSessoesFormPrinc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerSessoesFormPrinc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePickerSessoesFormPrinc.Location = new System.Drawing.Point(616, 136);
-            this.dateTimePickerSessoesFormPrinc.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePickerSessoesFormPrinc.Margin = new System.Windows.Forms.Padding(6);
             this.dateTimePickerSessoesFormPrinc.MinDate = new System.DateTime(2023, 6, 3, 0, 0, 0, 0);
             this.dateTimePickerSessoesFormPrinc.Name = "dateTimePickerSessoesFormPrinc";
             this.dateTimePickerSessoesFormPrinc.Size = new System.Drawing.Size(320, 32);
@@ -227,9 +226,10 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labelNomeCinema);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
+            this.Activated += new System.EventHandler(this.FormPrincipal_Activated);
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
