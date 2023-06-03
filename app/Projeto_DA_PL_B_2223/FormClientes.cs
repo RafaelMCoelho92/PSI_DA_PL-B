@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Projeto_DA_PL_B_2223
 {
@@ -265,7 +266,7 @@ namespace Projeto_DA_PL_B_2223
             {
                 var db = new ApplicationContext();
                 Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-                string mensagem = $"Valor total: {clienteSelecionado.valorTotal} Total de Bilhetes: {clienteSelecionado.totalBilhetes}";
+                string mensagem = $"Valor total: {clienteSelecionado.valorTotal}€ | Total de Bilhetes: {clienteSelecionado.totalBilhetes}";
                 MessageBox.Show(mensagem, "Mais Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else

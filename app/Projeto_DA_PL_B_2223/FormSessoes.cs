@@ -117,25 +117,38 @@ namespace Projeto_DA_PL_B_2223
             // ESTAVA A CRIAR A INSTANCIA NA MESMA, APÓS CRIAR SESSAO SEM NENHUM ITEM SELECIONADO E DAVA CRASH COM ESTE IF NÃO DÁ
             if (listBoxFilmesSessoes.SelectedIndex > -1 && listBoxSalasSessoes.SelectedIndex > -1)
             {
-               
+               // se for vazio mensagem de erro 
                 string valorPreco = textBoxPrecoSessoes.Text.ToString();
-                double preco = double.Parse(valorPreco);
-                
-                string data = dateTimePickerDataSessao.Value.ToString("dd/MM/yyyy");
-                string hora = dateTimePickerHoraSessao.Value.ToString("HH:mm");
-
-                Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
-                Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
-
-                Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id , preco, data, hora);
-                listBoxSessoes.Items.Add(sessao);
-
-                using (var db = new ApplicationContext())
+                if (valorPreco == "")
                 {
-                    var sessoes = db.Sessoes.ToList();
-                    db.Sessoes.Add(sessao); // Adiciona a nova sessão ao contexto do banco de dados
-                    db.SaveChanges(); // Salva as alterações no banco de dados
+                    MessageBox.Show("Digite o Preço do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+                try
+                {
+                    double preco = double.Parse(valorPreco);
+                    string data = dateTimePickerDataSessao.Value.ToString("dd/MM/yyyy");
+                    string hora = dateTimePickerHoraSessao.Value.ToString("HH:mm");
+
+                    Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
+                    Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
+
+                    Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id, preco, data, hora);
+                    listBoxSessoes.Items.Add(sessao);
+
+                    using (var db = new ApplicationContext())
+                    {
+                        var sessoes = db.Sessoes.ToList();
+                        db.Sessoes.Add(sessao); // Adiciona a nova sessão ao contexto do banco de dados
+                        db.SaveChanges(); // Salva as alterações no banco de dados
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                
 
             }
         }
