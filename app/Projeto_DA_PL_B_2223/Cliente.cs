@@ -13,10 +13,14 @@ namespace Projeto_DA_PL_B_2223
         [Key]
 
         public string NumFiscCliente { get; set; }
+        public int totalBilhetes { get; set; }
+        public double valorTotal { get; set; }
 
         public Cliente(string nomePessoa, string moradaPessoa, string numFiscCliente):base(nomePessoa, moradaPessoa)
         {
             NumFiscCliente = numFiscCliente;
+            totalBilhetes = 0;
+            valorTotal = 0;
         }
         public Cliente()
         {
@@ -24,7 +28,7 @@ namespace Projeto_DA_PL_B_2223
         }
         public override string ToString()
         {
-            return "NOME: " + NomePessoa + "  MORADA: " + MoradaPessoa + " NIF: " + NumFiscCliente + " Nº Total de Bilhetes Adquiridos: "+ "Valor Total de Bilhetes Adquiridos: ";
+            return "NOME: " + NomePessoa + " |  MORADA: " + MoradaPessoa + " | NIF: " + NumFiscCliente;
         }
 
     }

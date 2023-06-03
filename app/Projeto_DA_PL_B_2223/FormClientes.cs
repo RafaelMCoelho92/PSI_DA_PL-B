@@ -258,6 +258,21 @@ namespace Projeto_DA_PL_B_2223
             }
 
         }
+
+        private void buttonMaisInfo_Click(object sender, EventArgs e)
+        {
+            if(listBoxClientes.SelectedIndex != -1)
+            {
+                var db = new ApplicationContext();
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+                string mensagem = $"Valor total: {clienteSelecionado.valorTotal} Total de Bilhetes: {clienteSelecionado.totalBilhetes}";
+                MessageBox.Show(mensagem, "Mais Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Escolha um cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 
 }

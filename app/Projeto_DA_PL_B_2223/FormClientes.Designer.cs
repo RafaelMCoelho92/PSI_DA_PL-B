@@ -30,6 +30,7 @@ namespace Projeto_DA_PL_B_2223
         {
             this.tabControlClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonMaisInfo = new System.Windows.Forms.Button();
             this.textBox_pesquisa = new System.Windows.Forms.TextBox();
             this.buttonPesquisarClientes = new System.Windows.Forms.Button();
             this.groupBoxFuncionario = new System.Windows.Forms.GroupBox();
@@ -59,6 +60,7 @@ namespace Projeto_DA_PL_B_2223
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonMaisInfo);
             this.tabPage1.Controls.Add(this.textBox_pesquisa);
             this.tabPage1.Controls.Add(this.buttonPesquisarClientes);
             this.tabPage1.Controls.Add(this.groupBoxFuncionario);
@@ -74,9 +76,20 @@ namespace Projeto_DA_PL_B_2223
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // buttonMaisInfo
+            // 
+            this.buttonMaisInfo.Location = new System.Drawing.Point(1278, 11);
+            this.buttonMaisInfo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.buttonMaisInfo.Name = "buttonMaisInfo";
+            this.buttonMaisInfo.Size = new System.Drawing.Size(160, 38);
+            this.buttonMaisInfo.TabIndex = 26;
+            this.buttonMaisInfo.Text = "+ Info";
+            this.buttonMaisInfo.UseVisualStyleBackColor = true;
+            this.buttonMaisInfo.Click += new System.EventHandler(this.buttonMaisInfo_Click);
+            // 
             // textBox_pesquisa
             // 
-            this.textBox_pesquisa.Location = new System.Drawing.Point(1191, 11);
+            this.textBox_pesquisa.Location = new System.Drawing.Point(749, 14);
             this.textBox_pesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_pesquisa.MaxLength = 9;
             this.textBox_pesquisa.Name = "textBox_pesquisa";
@@ -85,7 +98,7 @@ namespace Projeto_DA_PL_B_2223
             // 
             // buttonPesquisarClientes
             // 
-            this.buttonPesquisarClientes.Location = new System.Drawing.Point(962, 8);
+            this.buttonPesquisarClientes.Location = new System.Drawing.Point(520, 11);
             this.buttonPesquisarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonPesquisarClientes.Name = "buttonPesquisarClientes";
             this.buttonPesquisarClientes.Size = new System.Drawing.Size(220, 38);
@@ -191,7 +204,7 @@ namespace Projeto_DA_PL_B_2223
             // 
             // buttonApagarClientes
             // 
-            this.buttonApagarClientes.Location = new System.Drawing.Point(520, 428);
+            this.buttonApagarClientes.Location = new System.Drawing.Point(1110, 11);
             this.buttonApagarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonApagarClientes.Name = "buttonApagarClientes";
             this.buttonApagarClientes.Size = new System.Drawing.Size(160, 38);
@@ -235,5 +248,6 @@ namespace Projeto_DA_PL_B_2223
         private System.Windows.Forms.Label labelMoradaClientes;
         private System.Windows.Forms.Label labelNomesClientes;
         private System.Windows.Forms.TextBox textBox_pesquisa;
+        private System.Windows.Forms.Button buttonMaisInfo;
     }
 }
