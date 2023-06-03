@@ -52,19 +52,19 @@
             this.tableLayoutPanelEscolherLugar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelEscolherLugar.ColumnCount = 1;
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(24, 22);
-            this.tableLayoutPanelEscolherLugar.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(36, 34);
             this.tableLayoutPanelEscolherLugar.Name = "tableLayoutPanelEscolherLugar";
             this.tableLayoutPanelEscolherLugar.RowCount = 1;
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelEscolherLugar.Size = new System.Drawing.Size(729, 512);
+            this.tableLayoutPanelEscolherLugar.Size = new System.Drawing.Size(1094, 800);
             this.tableLayoutPanelEscolherLugar.TabIndex = 0;
             // 
             // button_criarBilhete
             // 
-            this.button_criarBilhete.Location = new System.Drawing.Point(1082, 491);
+            this.button_criarBilhete.Location = new System.Drawing.Point(1623, 767);
+            this.button_criarBilhete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_criarBilhete.Name = "button_criarBilhete";
-            this.button_criarBilhete.Size = new System.Drawing.Size(152, 43);
+            this.button_criarBilhete.Size = new System.Drawing.Size(228, 67);
             this.button_criarBilhete.TabIndex = 1;
             this.button_criarBilhete.Text = "CRIAR BILHETE";
             this.button_criarBilhete.UseVisualStyleBackColor = true;
@@ -73,20 +73,23 @@
             // radioButton_cliente
             // 
             this.radioButton_cliente.AutoSize = true;
-            this.radioButton_cliente.Location = new System.Drawing.Point(807, 43);
+            this.radioButton_cliente.Location = new System.Drawing.Point(1210, 67);
+            this.radioButton_cliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButton_cliente.Name = "radioButton_cliente";
-            this.radioButton_cliente.Size = new System.Drawing.Size(87, 20);
+            this.radioButton_cliente.Size = new System.Drawing.Size(137, 29);
             this.radioButton_cliente.TabIndex = 2;
             this.radioButton_cliente.TabStop = true;
             this.radioButton_cliente.Text = "CLIENTE ";
             this.radioButton_cliente.UseVisualStyleBackColor = true;
+            this.radioButton_cliente.CheckedChanged += new System.EventHandler(this.radioButton_cliente_CheckedChanged);
             // 
             // radioButton_anonimo
             // 
             this.radioButton_anonimo.AutoSize = true;
-            this.radioButton_anonimo.Location = new System.Drawing.Point(1103, 43);
+            this.radioButton_anonimo.Location = new System.Drawing.Point(1654, 67);
+            this.radioButton_anonimo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButton_anonimo.Name = "radioButton_anonimo";
-            this.radioButton_anonimo.Size = new System.Drawing.Size(91, 20);
+            this.radioButton_anonimo.Size = new System.Drawing.Size(142, 29);
             this.radioButton_anonimo.TabIndex = 3;
             this.radioButton_anonimo.TabStop = true;
             this.radioButton_anonimo.Text = "ANÓNIMO";
@@ -96,9 +99,10 @@
             // radioButton_novoCliente
             // 
             this.radioButton_novoCliente.AutoSize = true;
-            this.radioButton_novoCliente.Location = new System.Drawing.Point(934, 43);
+            this.radioButton_novoCliente.Location = new System.Drawing.Point(1401, 67);
+            this.radioButton_novoCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButton_novoCliente.Name = "radioButton_novoCliente";
-            this.radioButton_novoCliente.Size = new System.Drawing.Size(126, 20);
+            this.radioButton_novoCliente.Size = new System.Drawing.Size(198, 29);
             this.radioButton_novoCliente.TabIndex = 4;
             this.radioButton_novoCliente.TabStop = true;
             this.radioButton_novoCliente.Text = "NOVO CLIENTE";
@@ -107,113 +111,126 @@
             // 
             // textBox_nifAtend
             // 
-            this.textBox_nifAtend.Location = new System.Drawing.Point(913, 230);
+            this.textBox_nifAtend.Location = new System.Drawing.Point(1370, 359);
+            this.textBox_nifAtend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_nifAtend.Name = "textBox_nifAtend";
             this.textBox_nifAtend.ReadOnly = true;
-            this.textBox_nifAtend.Size = new System.Drawing.Size(320, 22);
+            this.textBox_nifAtend.Size = new System.Drawing.Size(478, 31);
             this.textBox_nifAtend.TabIndex = 6;
             // 
             // labelNumeroFiscalClientes
             // 
             this.labelNumeroFiscalClientes.AutoSize = true;
-            this.labelNumeroFiscalClientes.Location = new System.Drawing.Point(804, 233);
+            this.labelNumeroFiscalClientes.Location = new System.Drawing.Point(1206, 364);
+            this.labelNumeroFiscalClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumeroFiscalClientes.Name = "labelNumeroFiscalClientes";
-            this.labelNumeroFiscalClientes.Size = new System.Drawing.Size(94, 16);
+            this.labelNumeroFiscalClientes.Size = new System.Drawing.Size(150, 25);
             this.labelNumeroFiscalClientes.TabIndex = 10;
             this.labelNumeroFiscalClientes.Text = "Numero Fiscal";
             // 
             // labelMoradaClientes
             // 
             this.labelMoradaClientes.AutoSize = true;
-            this.labelMoradaClientes.Location = new System.Drawing.Point(841, 185);
+            this.labelMoradaClientes.Location = new System.Drawing.Point(1262, 289);
+            this.labelMoradaClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMoradaClientes.Name = "labelMoradaClientes";
-            this.labelMoradaClientes.Size = new System.Drawing.Size(57, 16);
+            this.labelMoradaClientes.Size = new System.Drawing.Size(91, 25);
             this.labelMoradaClientes.TabIndex = 9;
             this.labelMoradaClientes.Text = "Morada:";
             // 
             // labelNomesClientes
             // 
             this.labelNomesClientes.AutoSize = true;
-            this.labelNomesClientes.Location = new System.Drawing.Point(851, 138);
+            this.labelNomesClientes.Location = new System.Drawing.Point(1276, 216);
+            this.labelNomesClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNomesClientes.Name = "labelNomesClientes";
-            this.labelNomesClientes.Size = new System.Drawing.Size(47, 16);
+            this.labelNomesClientes.Size = new System.Drawing.Size(74, 25);
             this.labelNomesClientes.TabIndex = 8;
             this.labelNomesClientes.Text = "Nome:";
             // 
             // textBox_nomeAtend
             // 
-            this.textBox_nomeAtend.Location = new System.Drawing.Point(914, 132);
+            this.textBox_nomeAtend.Location = new System.Drawing.Point(1371, 206);
+            this.textBox_nomeAtend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_nomeAtend.Name = "textBox_nomeAtend";
             this.textBox_nomeAtend.ReadOnly = true;
-            this.textBox_nomeAtend.Size = new System.Drawing.Size(320, 22);
+            this.textBox_nomeAtend.Size = new System.Drawing.Size(478, 31);
             this.textBox_nomeAtend.TabIndex = 11;
             // 
             // textBox_moradaAtend
             // 
-            this.textBox_moradaAtend.Location = new System.Drawing.Point(913, 182);
+            this.textBox_moradaAtend.Location = new System.Drawing.Point(1370, 284);
+            this.textBox_moradaAtend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_moradaAtend.Name = "textBox_moradaAtend";
             this.textBox_moradaAtend.ReadOnly = true;
-            this.textBox_moradaAtend.Size = new System.Drawing.Size(320, 22);
+            this.textBox_moradaAtend.Size = new System.Drawing.Size(478, 31);
             this.textBox_moradaAtend.TabIndex = 12;
             // 
             // buttonPesquisarNif
             // 
-            this.buttonPesquisarNif.Location = new System.Drawing.Point(950, 89);
-            this.buttonPesquisarNif.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonPesquisarNif.Location = new System.Drawing.Point(1631, 141);
+            this.buttonPesquisarNif.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonPesquisarNif.Name = "buttonPesquisarNif";
-            this.buttonPesquisarNif.Size = new System.Drawing.Size(147, 24);
+            this.buttonPesquisarNif.Size = new System.Drawing.Size(220, 38);
             this.buttonPesquisarNif.TabIndex = 26;
             this.buttonPesquisarNif.Text = "PESQUISAR NIF";
             this.buttonPesquisarNif.UseVisualStyleBackColor = true;
+            this.buttonPesquisarNif.Visible = false;
             this.buttonPesquisarNif.Click += new System.EventHandler(this.buttonPesquisarNif_Click);
             // 
             // textBox_pesquisa
             // 
-            this.textBox_pesquisa.Location = new System.Drawing.Point(1103, 89);
+            this.textBox_pesquisa.Location = new System.Drawing.Point(1405, 145);
+            this.textBox_pesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_pesquisa.MaxLength = 9;
             this.textBox_pesquisa.Name = "textBox_pesquisa";
-            this.textBox_pesquisa.Size = new System.Drawing.Size(147, 22);
+            this.textBox_pesquisa.Size = new System.Drawing.Size(218, 31);
             this.textBox_pesquisa.TabIndex = 27;
+            this.textBox_pesquisa.Visible = false;
             // 
             // listBox_lugaresSelecionados
             // 
             this.listBox_lugaresSelecionados.FormattingEnabled = true;
-            this.listBox_lugaresSelecionados.ItemHeight = 16;
-            this.listBox_lugaresSelecionados.Location = new System.Drawing.Point(815, 308);
+            this.listBox_lugaresSelecionados.ItemHeight = 25;
+            this.listBox_lugaresSelecionados.Location = new System.Drawing.Point(1222, 481);
+            this.listBox_lugaresSelecionados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox_lugaresSelecionados.Name = "listBox_lugaresSelecionados";
-            this.listBox_lugaresSelecionados.Size = new System.Drawing.Size(406, 84);
+            this.listBox_lugaresSelecionados.Size = new System.Drawing.Size(607, 129);
             this.listBox_lugaresSelecionados.TabIndex = 28;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(947, 406);
+            this.label1.Location = new System.Drawing.Point(1420, 634);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(116, 25);
             this.label1.TabIndex = 29;
             this.label1.Text = "Valor Total";
             // 
             // textBox_valorBilhete
             // 
-            this.textBox_valorBilhete.Location = new System.Drawing.Point(1026, 404);
+            this.textBox_valorBilhete.Location = new System.Drawing.Point(1539, 631);
+            this.textBox_valorBilhete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_valorBilhete.Name = "textBox_valorBilhete";
-            this.textBox_valorBilhete.Size = new System.Drawing.Size(71, 22);
+            this.textBox_valorBilhete.Size = new System.Drawing.Size(104, 31);
             this.textBox_valorBilhete.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1103, 407);
+            this.label2.Location = new System.Drawing.Point(1654, 636);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 16);
+            this.label2.Size = new System.Drawing.Size(24, 25);
             this.label2.TabIndex = 31;
             this.label2.Text = "€";
             // 
             // FormAtendimento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 561);
+            this.ClientSize = new System.Drawing.Size(1888, 877);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_valorBilhete);
             this.Controls.Add(this.label1);
@@ -231,7 +248,7 @@
             this.Controls.Add(this.radioButton_cliente);
             this.Controls.Add(this.button_criarBilhete);
             this.Controls.Add(this.tableLayoutPanelEscolherLugar);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "FormAtendimento";
             this.Text = "FormAtendimento";
             this.ResumeLayout(false);

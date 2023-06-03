@@ -119,27 +119,44 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Campo válido apenas para Clientes já registados");
             }
         }
-
-        private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
+        private void limparTextBoxes()
         {
-            // vai reencaminhar para o formulario de clientes para registar novo
-            FormClientes formClientes = new FormClientes();
-            formClientes.ShowDialog();
-
-            // vai limpar os dados ao trocar de butão de seleção
             textBox_pesquisa.Clear();
             textBox_nomeAtend.Clear();
             textBox_moradaAtend.Clear();
             textBox_nifAtend.Clear();
         }
+        private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            // vai limpar os dados ao trocar de butão de seleção
+            if (radioButton_novoCliente.Checked == true)
+            {
+                limparTextBoxes();
+                textBox_nomeAtend.ReadOnly = false;
+                textBox_moradaAtend.ReadOnly = false;
+                textBox_nifAtend.ReadOnly = false;
+            }
+            else
+            {
+                limparTextBoxes();
+                textBox_nomeAtend.ReadOnly = true;
+                textBox_moradaAtend.ReadOnly = true;
+                textBox_nifAtend.ReadOnly = true;
+            }
+        }
 
         private void radioButton_anonimo_CheckedChanged(object sender, EventArgs e)
         {
             // vai limpar os dados ao trocar de butão de seleção
-            textBox_pesquisa.Clear();
-            textBox_nomeAtend.Clear();
-            textBox_moradaAtend.Clear();
-            textBox_nifAtend.Clear();
+            if (radioButton_anonimo.Checked == true)
+            {
+                limparTextBoxes();
+                textBox_nomeAtend.Text = "Anonimo";
+            }
+            else
+            {
+                limparTextBoxes();
+            }
         }
 
         private void button_criarBilhete_Click(object sender, EventArgs e)
@@ -154,6 +171,22 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete");
             }
 
+        }
+
+        private void radioButton_cliente_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_cliente.Checked == true)
+            {
+                limparTextBoxes();
+                buttonPesquisarNif.Visible = true;
+                textBox_pesquisa.Visible = true;
+            }
+            else
+            {
+                limparTextBoxes();
+                buttonPesquisarNif.Visible = false;
+                textBox_pesquisa.Visible = false;
+            }
         }
     }
 }
