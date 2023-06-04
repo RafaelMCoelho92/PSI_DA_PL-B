@@ -38,9 +38,9 @@
             this.textBoxNomeFilme = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.buttonApagarFilme = new System.Windows.Forms.Button();
-            this.labelDuracao = new System.Windows.Forms.Label();
             this.dateTimePickerDuracao = new System.Windows.Forms.DateTimePicker();
+            this.labelDuracao = new System.Windows.Forms.Label();
+            this.buttonApagarFilme = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -161,15 +161,16 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // buttonApagarFilme
+            // dateTimePickerDuracao
             // 
-            this.buttonApagarFilme.Location = new System.Drawing.Point(264, 487);
-            this.buttonApagarFilme.Name = "buttonApagarFilme";
-            this.buttonApagarFilme.Size = new System.Drawing.Size(153, 62);
-            this.buttonApagarFilme.TabIndex = 17;
-            this.buttonApagarFilme.Text = "Apagar";
-            this.buttonApagarFilme.UseVisualStyleBackColor = true;
-            this.buttonApagarFilme.Click += new System.EventHandler(this.buttonApagarFilme_Click);
+            this.dateTimePickerDuracao.CustomFormat = "HH:mm";
+            this.dateTimePickerDuracao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDuracao.Location = new System.Drawing.Point(224, 245);
+            this.dateTimePickerDuracao.Name = "dateTimePickerDuracao";
+            this.dateTimePickerDuracao.ShowUpDown = true;
+            this.dateTimePickerDuracao.Size = new System.Drawing.Size(174, 31);
+            this.dateTimePickerDuracao.TabIndex = 19;
+            this.dateTimePickerDuracao.Value = new System.DateTime(2023, 6, 4, 0, 0, 0, 0);
             // 
             // labelDuracao
             // 
@@ -181,15 +182,15 @@
             this.labelDuracao.TabIndex = 18;
             this.labelDuracao.Text = "DURAÇÃO";
             // 
-            // dateTimePickerDuracao
+            // buttonApagarFilme
             // 
-            this.dateTimePickerDuracao.CustomFormat = "HH:mm";
-            this.dateTimePickerDuracao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDuracao.Location = new System.Drawing.Point(224, 245);
-            this.dateTimePickerDuracao.Name = "dateTimePickerDuracao";
-            this.dateTimePickerDuracao.ShowUpDown = true;
-            this.dateTimePickerDuracao.Size = new System.Drawing.Size(174, 31);
-            this.dateTimePickerDuracao.TabIndex = 19;
+            this.buttonApagarFilme.Location = new System.Drawing.Point(264, 487);
+            this.buttonApagarFilme.Name = "buttonApagarFilme";
+            this.buttonApagarFilme.Size = new System.Drawing.Size(153, 62);
+            this.buttonApagarFilme.TabIndex = 17;
+            this.buttonApagarFilme.Text = "Apagar";
+            this.buttonApagarFilme.UseVisualStyleBackColor = true;
+            this.buttonApagarFilme.Click += new System.EventHandler(this.buttonApagarFilme_Click);
             // 
             // FormFilmes
             // 

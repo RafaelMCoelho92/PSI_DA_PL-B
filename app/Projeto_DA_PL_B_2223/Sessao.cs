@@ -17,7 +17,7 @@ namespace Projeto_DA_PL_B_2223
         public int idSala { get; set; }
         public double Preco { get; set; }
         public string Data { get; set; }
-        public string Hora { get; set; }
+        public TimeSpan Hora { get; set; }
         public List<Filme> Filmes { get; set; }
         public List<Sala> Salas { get; set; }
         public List<Sessao> Sessoes { get; set; }
@@ -27,7 +27,7 @@ namespace Projeto_DA_PL_B_2223
 
         }
 
-        public Sessao(int idfilme, int idsala, double preco, string data, string hora)
+        public Sessao(int idfilme, int idsala, double preco, string data, TimeSpan hora)
         {
             idFilme = idfilme;
             idSala = idsala;

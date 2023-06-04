@@ -15,9 +15,9 @@ namespace Projeto_DA_PL_B_2223
         public string nomeFilme { get; set; }
         public string categoriaFilme { get; set; }
         public string estadoFilme { get; set; }
-        public string Duracao { get; set; }
+        public TimeSpan Duracao { get; set; }
 
-        public Filme(string nomeFilme, string categoriaFilme, string estadoFilme, string hora)
+        public Filme(string nomeFilme, string categoriaFilme, string estadoFilme, TimeSpan hora)
         {
             this.nomeFilme = nomeFilme;
             this.categoriaFilme = categoriaFilme;
@@ -36,7 +36,7 @@ namespace Projeto_DA_PL_B_2223
         // OVERRIDE PARA DIZER O QUE VAI ESCREVER NA LISTBOX
         public override string ToString()
         {
-            return "Nome do Filme: " + nomeFilme + " Categoria: " + categoriaFilme + " Estado: " + estadoFilme + " Hora: " + Duracao;
+            return "Nome do Filme: " + nomeFilme + " Categoria: " + categoriaFilme + " Estado: " + estadoFilme + " Duração: " + Duracao;
         }
     }
 }
