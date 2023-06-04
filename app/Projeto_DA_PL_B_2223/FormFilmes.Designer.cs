@@ -166,6 +166,8 @@
             this.dateTimePickerDuracao.CustomFormat = "HH:mm";
             this.dateTimePickerDuracao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDuracao.Location = new System.Drawing.Point(224, 245);
+            this.dateTimePickerDuracao.MaxDate = new System.DateTime(2023, 6, 4, 4, 0, 0, 0);
+            this.dateTimePickerDuracao.MinDate = new System.DateTime(2023, 6, 4, 0, 0, 0, 0);
             this.dateTimePickerDuracao.Name = "dateTimePickerDuracao";
             this.dateTimePickerDuracao.ShowUpDown = true;
             this.dateTimePickerDuracao.Size = new System.Drawing.Size(174, 31);

@@ -120,7 +120,7 @@
             // textBoxPrecoSessoes
             // 
             this.textBoxPrecoSessoes.Location = new System.Drawing.Point(1440, 214);
-            this.textBoxPrecoSessoes.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPrecoSessoes.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPrecoSessoes.Name = "textBoxPrecoSessoes";
             this.textBoxPrecoSessoes.Size = new System.Drawing.Size(196, 31);
             this.textBoxPrecoSessoes.TabIndex = 16;
@@ -131,12 +131,13 @@
             this.dateTimePickerHoraSessao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHoraSessao.Location = new System.Drawing.Point(1440, 131);
             this.dateTimePickerHoraSessao.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.dateTimePickerHoraSessao.MinDate = new System.DateTime(2023, 6, 3, 0, 0, 0, 0);
+            this.dateTimePickerHoraSessao.MaxDate = new System.DateTime(2023, 6, 4, 22, 0, 0, 0);
+            this.dateTimePickerHoraSessao.MinDate = new System.DateTime(2023, 6, 4, 10, 0, 0, 0);
             this.dateTimePickerHoraSessao.Name = "dateTimePickerHoraSessao";
             this.dateTimePickerHoraSessao.ShowUpDown = true;
             this.dateTimePickerHoraSessao.Size = new System.Drawing.Size(214, 31);
             this.dateTimePickerHoraSessao.TabIndex = 15;
-            this.dateTimePickerHoraSessao.Value = new System.DateTime(2023, 6, 3, 0, 0, 0, 0);
+            this.dateTimePickerHoraSessao.Value = new System.DateTime(2023, 6, 4, 10, 0, 0, 0);
             // 
             // labelHoraSessoes
             // 
