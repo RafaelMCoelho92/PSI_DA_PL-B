@@ -78,7 +78,17 @@ namespace Projeto_DA_PL_B_2223
         private void LugarClicked(Object sender, EventArgs e)
         {
             LugarButton button = (LugarButton)sender;
-            MessageBox.Show("Fila: " + button.X + " Coluna: " + button.Y + " Selecionada.");
+            //MessageBox.Show("Fila: " + button.X + " Coluna: " + button.Y + " Selecionada."); NAO APAGAR PODE SER UTIL
+            if (button.BackColor == Color.Green)
+            {
+                button.BackColor = Color.Red;
+                listBox_lugaresSelecionados.Items.Add(button.Text);
+            }
+            else if (button.BackColor == Color.Red)
+            {
+                button.BackColor = Color.Green;
+                listBox_lugaresSelecionados.Items.Remove(button.Text);
+            }
         }
 
         public void buttonPesquisarNif_Click(object sender, EventArgs e)
