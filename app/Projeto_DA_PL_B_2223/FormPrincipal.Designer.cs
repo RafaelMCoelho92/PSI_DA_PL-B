@@ -125,7 +125,7 @@
             this.definiçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1596, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1596, 40);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,7 +140,7 @@
             this.sessãoDoDiaToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
-            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 40);
+            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 36);
             this.definiçõesToolStripMenuItem.Text = "Definições";
             // 
             // cinemaToolStripMenuItem

@@ -13,12 +13,11 @@ namespace Projeto_DA_PL_B_2223
     public partial class FormAtendimento : Form
     {
         private FormPrincipal formPrincipal;
-
+        public int idsessao;
         public FormAtendimento()
         {
             InitializeComponent();
             this.CenterToScreen();
-
 
 
         }
@@ -58,6 +57,8 @@ namespace Projeto_DA_PL_B_2223
             tableLayoutPanelEscolherLugar.Controls.Clear();
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
+            idsessao = id;
+            
 
             for (int i = 0; i < filas; i++)
             {
@@ -78,16 +79,27 @@ namespace Projeto_DA_PL_B_2223
         private void LugarClicked(Object sender, EventArgs e)
         {
             LugarButton button = (LugarButton)sender;
+            var db = new ApplicationContext();
             //MessageBox.Show("Fila: " + button.X + " Coluna: " + button.Y + " Selecionada."); NAO APAGAR PODE SER UTIL
             if (button.BackColor == Color.Green)
             {
                 button.BackColor = Color.Red;
                 listBox_lugaresSelecionados.Items.Add(button.Text);
+                double valor= double.Parse(textBox_valorBilhete.Text);
+                var sessao = db.Sessoes.Find(idsessao);
+                valor += sessao.Preco;
+               textBox_valorBilhete.Text =  valor.ToString();
             }
             else if (button.BackColor == Color.Red)
             {
                 button.BackColor = Color.Green;
                 listBox_lugaresSelecionados.Items.Remove(button.Text);
+                double valor = double.Parse(textBox_valorBilhete.Text);
+                var sessao = db.Sessoes.Find(idsessao);
+                valor -= sessao.Preco;
+                textBox_valorBilhete.Text = valor.ToString();
+
+
             }
         }
 

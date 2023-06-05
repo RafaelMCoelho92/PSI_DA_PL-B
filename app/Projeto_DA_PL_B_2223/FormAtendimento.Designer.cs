@@ -195,6 +195,7 @@
             this.listBox_lugaresSelecionados.Location = new System.Drawing.Point(1222, 481);
             this.listBox_lugaresSelecionados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox_lugaresSelecionados.Name = "listBox_lugaresSelecionados";
+            this.listBox_lugaresSelecionados.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBox_lugaresSelecionados.Size = new System.Drawing.Size(607, 129);
             this.listBox_lugaresSelecionados.TabIndex = 28;
             // 
@@ -213,8 +214,10 @@
             this.textBox_valorBilhete.Location = new System.Drawing.Point(1539, 631);
             this.textBox_valorBilhete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_valorBilhete.Name = "textBox_valorBilhete";
+            this.textBox_valorBilhete.ReadOnly = true;
             this.textBox_valorBilhete.Size = new System.Drawing.Size(104, 31);
             this.textBox_valorBilhete.TabIndex = 30;
+            this.textBox_valorBilhete.Text = "00,00";
             // 
             // label2
             // 
