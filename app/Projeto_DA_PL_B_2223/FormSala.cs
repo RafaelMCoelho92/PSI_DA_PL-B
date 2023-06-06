@@ -78,7 +78,7 @@ namespace Projeto_DA_PL_B_2223
                     return false;
                 }
                 // CASO VALOR SEJA MAIOR QUE 20 -> MENSAGEM DE ERRO
-                if (valorFila > 20 || valorColuna > 20)
+                if (valorFila > 10 || valorColuna > 10)
                 {
                     MessageBox.Show("As Filas e as Colunas tem de ser inferior a 20!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
