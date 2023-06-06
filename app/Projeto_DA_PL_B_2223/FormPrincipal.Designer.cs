@@ -44,7 +44,6 @@
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sessoesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sessãoDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_mostrar_sessoes_dia = new System.Windows.Forms.ListBox();
             this.dateTimePickerSessoesFormPrinc = new System.Windows.Forms.DateTimePicker();
@@ -66,7 +65,6 @@
             this.labelNomeCinema.Size = new System.Drawing.Size(264, 53);
             this.labelNomeCinema.TabIndex = 5;
             this.labelNomeCinema.Text = "CINE GEST";
-            this.labelNomeCinema.Click += new System.EventHandler(this.labelNomeCinema_Click);
             // 
             // statusStrip1
             // 
@@ -137,7 +135,6 @@
             this.funcionarioToolStripMenuItem,
             this.sessoesToolStripMenuItem,
             this.filmesToolStripMenuItem,
-            this.sessãoDoDiaToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
             this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 36);
@@ -146,49 +143,42 @@
             // cinemaToolStripMenuItem
             // 
             this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
-            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.cinemaToolStripMenuItem.Text = "Cinema";
             this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
             // 
             // salaToolStripMenuItem
             // 
             this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
-            this.salaToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.salaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.salaToolStripMenuItem.Text = "Salas";
             this.salaToolStripMenuItem.Click += new System.EventHandler(this.salasToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.funcionarioToolStripMenuItem.Text = "Funcionários";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // sessoesToolStripMenuItem
             // 
             this.sessoesToolStripMenuItem.Name = "sessoesToolStripMenuItem";
-            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.sessoesToolStripMenuItem.Text = "Sessões";
             this.sessoesToolStripMenuItem.Click += new System.EventHandler(this.sessoesToolStripMenuItem_Click);
             // 
             // filmesToolStripMenuItem
             // 
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.filmesToolStripMenuItem.Text = "Filmes";
             this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
-            // 
-            // sessãoDoDiaToolStripMenuItem
-            // 
-            this.sessãoDoDiaToolStripMenuItem.Name = "sessãoDoDiaToolStripMenuItem";
-            this.sessãoDoDiaToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
-            this.sessãoDoDiaToolStripMenuItem.Text = "Sessão do Dia";
-            this.sessãoDoDiaToolStripMenuItem.Click += new System.EventHandler(this.sessãoDoDiaToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(296, 44);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -257,7 +247,6 @@
         private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sessoesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filmesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sessãoDoDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox_mostrar_sessoes_dia;
         private System.Windows.Forms.DateTimePicker dateTimePickerSessoesFormPrinc;
