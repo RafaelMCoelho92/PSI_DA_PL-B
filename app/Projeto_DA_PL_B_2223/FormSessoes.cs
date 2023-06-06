@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -114,10 +115,13 @@ namespace Projeto_DA_PL_B_2223
         private void buttonCriarSessoes_Click(object sender, EventArgs e)
         {
             validarDadosSessoes();
+
+
+
             // ESTAVA A CRIAR A INSTANCIA NA MESMA, APÓS CRIAR SESSAO SEM NENHUM ITEM SELECIONADO E DAVA CRASH COM ESTE IF NÃO DÁ
             if (listBoxFilmesSessoes.SelectedIndex > -1 && listBoxSalasSessoes.SelectedIndex > -1)
             {
-               // se for vazio mensagem de erro 
+                // se for vazio mensagem de erro 
                 string valorPreco = textBoxPrecoSessoes.Text.ToString();
                 if (valorPreco == "")
                 {
@@ -128,19 +132,31 @@ namespace Projeto_DA_PL_B_2223
                 {
                     double preco = double.Parse(valorPreco);
                     string data = dateTimePickerDataSessao.Value.ToString("dd/MM/yyyy");
-                    TimeSpan hora = TimeSpan.Parse(dateTimePickerHoraSessao.Value.ToString("HH:mm"));
+                    TimeSpan horaInicial = TimeSpan.Parse(dateTimePickerHoraSessao.Value.ToString("HH:mm"));
 
                     Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
                     Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
 
-                    Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id, preco, data, hora);
-                    listBoxSessoes.Items.Add(sessao);
+                    Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id, preco, data, horaInicial);
+                    var db = new ApplicationContext();
+                    TimeSpan horaFim = horaInicial.Add(filmeSelecionado.Duracao);
 
-                    using (var db = new ApplicationContext())
+                    TimeSpan horaDBfim = sessao.Hora.Add(filmeSelecionado.Duracao);
+
+                    bool existeSessao = db.Sessoes.Any(s => s.Data == sessao.Data && s.idSala == salaSelecionada.Id && !(s.Hora <= horaFim || horaInicial >= (s.Hora + s.Filmes[0].Duracao )));
+                    
+
+                    if (existeSessao)
                     {
-                        var sessoes = db.Sessoes.ToList();
-                        db.Sessoes.Add(sessao); // Adiciona a nova sessão ao contexto do banco de dados
-                        db.SaveChanges(); // Salva as alterações no banco de dados
+                        MessageBox.Show("Existe sessão!");
+                        
+                    }
+                    else
+                    {
+                            listBoxSessoes.Items.Add(sessao);
+                            var sessoes = db.Sessoes.ToList();
+                            db.Sessoes.Add(sessao); // Adiciona a nova sessão ao contexto do banco de dados
+                            db.SaveChanges(); // Salva as alterações no banco de dados
                     }
                 }
                 catch (FormatException)
@@ -148,7 +164,7 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                
+
 
             }
         }
@@ -193,7 +209,7 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges(); // guarda as alterações na base de dados
                 }
             }
-       
-    }
+
+        }
     }
 }
