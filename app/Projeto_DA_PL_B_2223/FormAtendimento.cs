@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,16 +27,16 @@ namespace Projeto_DA_PL_B_2223
         public FormAtendimento(FormPrincipal formPrincipal) : this()
         {
             this.formPrincipal = formPrincipal;
-            
+
         }
 
 
-        
+
         public int getFilas(int Id)
         {
             var db = new ApplicationContext();
             var sessao = db.Sessoes.Find(Id); // procura a sessao pelo id recebido
-            int idsala  = sessao.idSala ;  // ve qual o id da sala
+            int idsala = sessao.idSala;  // ve qual o id da sala
             var filascolunas = db.Salas.Find(idsala); // vai buscar os dados da sala
             int filas = int.Parse(filascolunas.Fila); // faz o parse pra int da string com o valor das filas
             return filas;
@@ -59,7 +60,7 @@ namespace Projeto_DA_PL_B_2223
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
             idsessao = id;
-            
+
 
             for (int i = 0; i < filas; i++)
             {
@@ -68,7 +69,7 @@ namespace Projeto_DA_PL_B_2223
                     Button button = new LugarButton(i, j);
                     button.Size = new Size(50, 25);
                     button.Text = (char)(i + 65) + "" + (j + 1);
-                    button.BackColor =  Color.Green;
+                    button.BackColor = Color.Green;
                     button.ForeColor = Color.Black;
                     //button.Image = Properties.Resources.chair5381;
                     button.Click += LugarClicked;
@@ -86,10 +87,10 @@ namespace Projeto_DA_PL_B_2223
             {
                 button.BackColor = Color.Red;
                 listBox_lugaresSelecionados.Items.Add(button.Text);
-                double valor= double.Parse(textBox_valorBilhete.Text);
+                double valor = double.Parse(textBox_valorBilhete.Text);
                 var sessao = db.Sessoes.Find(idsessao);
                 valor += sessao.Preco;
-               textBox_valorBilhete.Text =  valor.ToString();
+                textBox_valorBilhete.Text = valor.ToString();
             }
             else if (button.BackColor == Color.Red)
             {
@@ -175,6 +176,8 @@ namespace Projeto_DA_PL_B_2223
             {
                 limparTextBoxes();
                 textBox_nomeAtend.Text = "Anonimo";
+                textBox_moradaAtend.Text = "Anonimo";
+                textBox_nifAtend.Text = "999999999";
             }
             else
             {
@@ -184,28 +187,107 @@ namespace Projeto_DA_PL_B_2223
 
         private void button_criarBilhete_Click(object sender, EventArgs e)
         {
-            if (listBox_lugaresSelecionados.Items.Count > 0 )
+            if (listBox_lugaresSelecionados.Items.Count > 0)
             {
-                if(radioButton_anonimo.Checked == false && radioButton_cliente.Checked == false && radioButton_novoCliente.Checked == false)
+                if (radioButton_anonimo.Checked == false && radioButton_cliente.Checked == false && radioButton_novoCliente.Checked == false)
                 {
                     MessageBox.Show("Selecione o tipo de cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+
                 else
                 {
-                   if(radioButton_novoCliente.Checked == true)
+                    if (radioButton_cliente.Checked == true)
                     {
+                        if (textBox_nomeAtend.Text == "" || textBox_moradaAtend.Text == "" || textBox_nifAtend.Text == "")
+                        {
+                            MessageBox.Show("Pesquise por um cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        else
+                        {   // REVER PARA PESQUISAR E ATUALIZAR OS BILHETES COMPRADOS E O VALOR TOTAL
 
+                            /*var db = new ApplicationContext();
+                            double nif = double.Parse(textBox_nifAtend.Text);
+                            Cliente cliente = (Cliente)textBox_nifAtend.Text; //db.Pessoas.OfType<Cliente>();
+
+                           var atualizarCliente = db.Pessoas.Find(cliente.NumFiscCliente);
+
+                            cliente.totalBilhetes += listBox_lugaresSelecionados.Items.Count;
+                            cliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
+                            db.Pessoas.AddOrUpdate(cliente);
+                            db.SaveChanges();*/
+                        }
                     }
-                   else if(radioButton_cliente.Checked == true)
-                    {
 
+                    else if (radioButton_novoCliente.Checked == true)
+                    {
+                        if (textBox_nomeAtend.Text == "")
+                        {
+                            MessageBox.Show("Insira o nome do novo cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        else if (textBox_moradaAtend.Text == "")
+                        {
+                            MessageBox.Show("Insira a morada do novo cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        else if (textBox_nifAtend.Text != "")
+                        {
+                            try
+                            {
+                                string nifNovoCliente = textBox_nifAtend.Text;
+                                double contribuinte = 0;
+                                // FAZ O PARSE DE STRING PARA DOUBLE - APENAS PERMITE A INSERÇÃO DE NUMEROS
+                                contribuinte = double.Parse(nifNovoCliente);
+
+                                if (contribuinte < 100000000 || contribuinte >= 700000000)
+                                {
+                                    MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+
+                                else
+                                {
+                                    var db = new ApplicationContext();
+                                    Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text);
+                                    bool existeCliente = db.Pessoas.OfType<Cliente>().Any(p => p.NumFiscCliente == novocliente.NumFiscCliente);
+                                    if (existeCliente)
+                                    {
+                                        MessageBox.Show("Cliente com numero fiscal ja existente!");
+                                        return;
+                                    }
+
+
+                                    // Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text);
+                                    // using (var db = new ApplicationContext())
+                                    novocliente.totalBilhetes += listBox_lugaresSelecionados.Items.Count;
+                                    novocliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
+                                    db.Pessoas.Add(novocliente);
+                                    db.SaveChanges();
+
+                                    MessageBox.Show("Cliente criado com sucesso!");
+                                }
+                            }
+                            catch (FormatException)
+                            {
+                                MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insira o numero fiscal do novo cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
-                   else if(radioButton_anonimo.Checked == true)
-                    {
 
+                    else if (radioButton_anonimo.Checked == true)
+                    {
+                        if (textBox_nomeAtend.Text != "Anonimo" || textBox_moradaAtend.Text != "Anonimo" || textBox_nifAtend.Text != "999999999")
+                        {
+                            MessageBox.Show("Nao insira dados para a compra do bilhete!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
-
             }
 
             else
