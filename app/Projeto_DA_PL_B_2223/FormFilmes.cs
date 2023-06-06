@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
@@ -147,7 +148,12 @@ namespace Projeto_DA_PL_B_2223
                     textBoxNomeFilme.Text = filmeEscolhido.nomeFilme;
                     comboBoxCategoriaFilme.Text = filmeEscolhido.categoriaFilme;
                     comboBoxEstadoFilme.Text = filmeEscolhido.estadoFilme;
-                   // dateTimePickerDuracao.Value = filmeEscolhido.Duracao;
+
+                    // ESTAS TRÊS LINHAS SEGUINTES APRESENTAM O VALOR DA DURAÇÃO DO FILME NA LISTBOX DO SELECTEDINDEX
+                    DateTime new_date = dateTimePickerDuracao.MinDate.AddHours(filmeEscolhido.Duracao.Hours);
+                    new_date = new_date.AddMinutes(filmeEscolhido.Duracao.Minutes);
+                    dateTimePickerDuracao.Value = new_date;
+
                 }
             }
         }
