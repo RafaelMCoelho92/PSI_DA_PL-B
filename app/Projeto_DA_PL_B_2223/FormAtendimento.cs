@@ -192,7 +192,18 @@ namespace Projeto_DA_PL_B_2223
                 }
                 else
                 {
-                   
+                   if(radioButton_novoCliente.Checked == true)
+                    {
+
+                    }
+                   else if(radioButton_cliente.Checked == true)
+                    {
+
+                    }
+                   else if(radioButton_anonimo.Checked == true)
+                    {
+
+                    }
                 }
 
             }
