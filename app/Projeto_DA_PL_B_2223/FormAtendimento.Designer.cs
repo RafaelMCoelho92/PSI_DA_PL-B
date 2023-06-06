@@ -217,7 +217,7 @@
             this.textBox_valorBilhete.ReadOnly = true;
             this.textBox_valorBilhete.Size = new System.Drawing.Size(104, 31);
             this.textBox_valorBilhete.TabIndex = 30;
-            this.textBox_valorBilhete.Text = "00,00";
+            this.textBox_valorBilhete.Text = "0";
             // 
             // label2
             // 

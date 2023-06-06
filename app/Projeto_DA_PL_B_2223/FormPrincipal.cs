@@ -18,7 +18,6 @@ namespace Projeto_DA_PL_B_2223
         Form formCinema; // nao fazer instancia mas sim mandar para o o construtor
         Form formFuncionarios;
         Form formClientes;
-        Form formSessoesDia;
         Form formSala;
         Form formSessoes;
         Form formFilmes;
@@ -33,7 +32,6 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
             formFuncionarios = new FormFuncionarios(this);
             formClientes = new FormClientes(this);
-            formSessoesDia = new FormSessoesDoDia(this);
             formSala = new FormSala(this);
             formSessoes = new FormSessoes(this);
             formFilmes = new FormFilmes(this);
@@ -90,11 +88,7 @@ namespace Projeto_DA_PL_B_2223
             this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("G"); // F, U, ou G (senao apaga o G e ver as opcoes)
         }
 
-        // CHAMA A TAB DAS SESSOES DO DIA CLICANDO NA LABEL DO TITULO DO CINEMA
-        private void labelNomeCinema_Click(object sender, EventArgs e)
-        {
-            formSessoesDia.ShowDialog(this);
-        }
+
 
         // CHAMA A TAB DOS FUNCIONARIOS
         /*private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
@@ -132,12 +126,6 @@ namespace Projeto_DA_PL_B_2223
         private void filmesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formFilmes.ShowDialog();
-        }
-
-        // CHAMA A TAB DAS SESSOES DO DIA
-        private void sessãoDoDiaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formSessoesDia.ShowDialog();
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O TITULO DO CINEMA

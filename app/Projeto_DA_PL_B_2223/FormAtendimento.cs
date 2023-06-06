@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Projeto_DA_PL_B_2223
 {
@@ -183,8 +184,27 @@ namespace Projeto_DA_PL_B_2223
 
         private void button_criarBilhete_Click(object sender, EventArgs e)
         {
-            if (listBox_lugaresSelecionados.Items.Count > 0)
+            if (listBox_lugaresSelecionados.Items.Count > 0 )
             {
+                if(radioButton_anonimo.Checked == false && radioButton_cliente.Checked == false && radioButton_novoCliente.Checked == false)
+                {
+                    MessageBox.Show("Selecione o tipo de cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                   if(radioButton_novoCliente.Checked == true)
+                    {
+
+                    }
+                   else if(radioButton_cliente.Checked == true)
+                    {
+
+                    }
+                   else if(radioButton_anonimo.Checked == true)
+                    {
+
+                    }
+                }
 
             }
 
