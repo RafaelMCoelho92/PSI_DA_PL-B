@@ -207,19 +207,35 @@ namespace Projeto_DA_PL_B_2223
                         else
                         {   // REVER PARA PESQUISAR E ATUALIZAR OS BILHETES COMPRADOS E O VALOR TOTAL
 
-                            /*var db = new ApplicationContext();
-                            double nif = double.Parse(textBox_nifAtend.Text);
-                            Cliente cliente = (Cliente)textBox_nifAtend.Text; //db.Pessoas.OfType<Cliente>();
+                            string valorPesquisa = textBox_pesquisa.Text;
 
-                           var atualizarCliente = db.Pessoas.Find(cliente.NumFiscCliente);
+                            if (!string.IsNullOrEmpty(valorPesquisa))
+                            {
+                                using (var db = new ApplicationContext())
+                                {
+                                    // Realiza a consulta no banco de dados
+                                    var nifCliente = db.Pessoas.OfType<Cliente>().FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
+                                    if (nifCliente == null)
+                                    {
+                                        MessageBox.Show("Cliente não encontrado");
+                                    }
+                                    else
+                                    {
+                                        nifCliente.totalBilhetes += listBox_lugaresSelecionados.Items.Count;
+                                        nifCliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
+                                        db.Pessoas.AddOrUpdate(nifCliente);
+                                        db.SaveChanges();
+                                    }
+                                    /*double nif = double.Parse(textBox_pesquisa.Text);
+                                    Cliente cliente = Cliente(textBox_pesquisa.Text); //db.Pessoas.OfType<Cliente>();
+                                    var atualizarCliente = db.Pessoas.Find(cliente.NumFiscCliente);*/
 
-                            cliente.totalBilhetes += listBox_lugaresSelecionados.Items.Count;
-                            cliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
-                            db.Pessoas.AddOrUpdate(cliente);
-                            db.SaveChanges();*/
+
+
+                                }
+                            }
                         }
                     }
-
                     else if (radioButton_novoCliente.Checked == true)
                     {
                         if (textBox_nomeAtend.Text == "")
