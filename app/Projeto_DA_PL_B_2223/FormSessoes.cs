@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Migrations;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
@@ -139,12 +141,29 @@ namespace Projeto_DA_PL_B_2223
 
                     Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id, preco, data, horaInicial);
                     var db = new ApplicationContext();
-                    TimeSpan horaFim = horaInicial.Add(filmeSelecionado.Duracao);
 
-                    TimeSpan horaDBfim = sessao.Hora.Add(filmeSelecionado.Duracao);
+                    TimeSpan duracaoFilme = db.Filmes.Single(f => f.Id == filmeSelecionado.Id).Duracao; // Obtém a duração do filme selecionado a partir da base de dados
 
-                    bool existeSessao = db.Sessoes.Any(s => s.Data == sessao.Data && s.idSala == salaSelecionada.Id && !(s.Hora <= horaFim || horaInicial >= (s.Hora + s.Filmes[0].Duracao )));
-                    
+                    TimeSpan duracaoExtra = TimeSpan.FromMinutes(30); // 30 minutos extras
+                    TimeSpan duracaoTotal = duracaoFilme.Add(duracaoExtra); // duração total da sessão (filme + 30 minutos)
+                    TimeSpan horaFim = horaInicial.Add(duracaoTotal); // horário de término da sessão
+
+                    bool existeSessao = db.Sessoes.Any(s => s.Data == sessao.Data && s.idSala == salaSelecionada.Id &&
+                        ((s.Hora <= horaInicial && DbFunctions.AddSeconds(s.Hora, (int)duracaoTotal.TotalSeconds) > horaInicial) ||
+                        (s.Hora >= horaInicial && s.Hora < horaFim)));
+
+                    ////////////////////////////////////////////////////// completei esta informação com o chat mas vou tentar explicar
+                        // db.Sessoes.Any(...): O método Any verifica se existe algum elemento na coleção 
+                        // s => ...O parâmetro s representa cada sessão na coleção
+                        // esta tinha feito em aula s.Data == sessao.Data && s.idSala == salaSelecionada.Id: Verifica se a sessão atual tem a mesma data e sala que a sessão existente
+                        //s.Hora >= horaInicial && s.Hora < horaFim: Verifica se a sessão existente começa depois do início da nova sessão (s.Hora >= horaInicial)
+                                //e termina antes do horário de término da nova sessão (s.Hora < horaFim
+
+                    if (existeSessao)
+                    {
+                        MessageBox.Show("A sala já está ocupada nesse horário.");
+                        return;
+                    }
 
                     if (existeSessao)
                     {
