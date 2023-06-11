@@ -18,6 +18,9 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             atualizarDadosAoEntrar();
+            this.BackgroundImage = Image.FromFile(@"C:\Users\PC\Desktop\Topicos TS\TS---Project\TS - Project\Cliente\imagem.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         public FormFuncionarios(FormPrincipal formPrincipal) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal

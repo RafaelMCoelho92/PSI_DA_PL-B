@@ -38,6 +38,10 @@ namespace Projeto_DA_PL_B_2223
             formCinema = new FormCinema(this);
             formAtendimento = new FormAtendimento(this);
             dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
+
+            this.BackgroundImage = Image.FromFile(@"C:\Users\PC\Desktop\Topicos TS\TS---Project\TS - Project\Cliente\imagem.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         public FormPrincipal(FormAtendimento formAtendimento) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
         {
