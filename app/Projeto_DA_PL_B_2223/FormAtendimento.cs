@@ -266,7 +266,7 @@ namespace Projeto_DA_PL_B_2223
                                 else
                                 {
                                     var db = new ApplicationContext();
-                                    Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text);
+                                    Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text, totalbilhetes:0, valortotal:0);//add bilhete e total a 0 para passar para o construtor da classe
                                     bool existeCliente = db.Pessoas.OfType<Cliente>().Any(p => p.NumFiscCliente == novocliente.NumFiscCliente);
                                     if (existeCliente)
                                     {
