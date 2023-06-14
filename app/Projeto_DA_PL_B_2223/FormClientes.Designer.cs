@@ -82,27 +82,27 @@ namespace Projeto_DA_PL_B_2223
             this.buttonMaisInfo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonMaisInfo.Name = "buttonMaisInfo";
             this.buttonMaisInfo.Size = new System.Drawing.Size(160, 38);
-            this.buttonMaisInfo.TabIndex = 26;
+            this.buttonMaisInfo.TabIndex = 8;
             this.buttonMaisInfo.Text = "+ Info";
             this.buttonMaisInfo.UseVisualStyleBackColor = true;
             this.buttonMaisInfo.Click += new System.EventHandler(this.buttonMaisInfo_Click);
             // 
             // textBox_pesquisa
             // 
-            this.textBox_pesquisa.Location = new System.Drawing.Point(749, 14);
+            this.textBox_pesquisa.Location = new System.Drawing.Point(520, 11);
             this.textBox_pesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_pesquisa.MaxLength = 9;
             this.textBox_pesquisa.Name = "textBox_pesquisa";
             this.textBox_pesquisa.Size = new System.Drawing.Size(336, 31);
-            this.textBox_pesquisa.TabIndex = 24;
+            this.textBox_pesquisa.TabIndex = 5;
             // 
             // buttonPesquisarClientes
             // 
-            this.buttonPesquisarClientes.Location = new System.Drawing.Point(520, 11);
+            this.buttonPesquisarClientes.Location = new System.Drawing.Point(864, 11);
             this.buttonPesquisarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonPesquisarClientes.Name = "buttonPesquisarClientes";
             this.buttonPesquisarClientes.Size = new System.Drawing.Size(220, 38);
-            this.buttonPesquisarClientes.TabIndex = 25;
+            this.buttonPesquisarClientes.TabIndex = 6;
             this.buttonPesquisarClientes.Text = "PESQUISAR";
             this.buttonPesquisarClientes.UseVisualStyleBackColor = true;
             this.buttonPesquisarClientes.Click += new System.EventHandler(this.buttonPesquisarClientes_Click_1);
@@ -131,7 +131,7 @@ namespace Projeto_DA_PL_B_2223
             this.buttonGuardarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonGuardarClientes.Name = "buttonGuardarClientes";
             this.buttonGuardarClientes.Size = new System.Drawing.Size(152, 41);
-            this.buttonGuardarClientes.TabIndex = 23;
+            this.buttonGuardarClientes.TabIndex = 4;
             this.buttonGuardarClientes.Text = "Guardar";
             this.buttonGuardarClientes.UseVisualStyleBackColor = true;
             this.buttonGuardarClientes.Click += new System.EventHandler(this.buttonGuardarClientes_Click);
@@ -143,7 +143,7 @@ namespace Projeto_DA_PL_B_2223
             this.textBoxNumFiscClientes.MaxLength = 9;
             this.textBoxNumFiscClientes.Name = "textBoxNumFiscClientes";
             this.textBoxNumFiscClientes.Size = new System.Drawing.Size(296, 31);
-            this.textBoxNumFiscClientes.TabIndex = 9;
+            this.textBoxNumFiscClientes.TabIndex = 3;
             // 
             // textBoxMoradaClientes
             // 
@@ -151,7 +151,7 @@ namespace Projeto_DA_PL_B_2223
             this.textBoxMoradaClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxMoradaClientes.Name = "textBoxMoradaClientes";
             this.textBoxMoradaClientes.Size = new System.Drawing.Size(336, 31);
-            this.textBoxMoradaClientes.TabIndex = 5;
+            this.textBoxMoradaClientes.TabIndex = 2;
             // 
             // textBoxNomeClientes
             // 
@@ -159,7 +159,7 @@ namespace Projeto_DA_PL_B_2223
             this.textBoxNomeClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNomeClientes.Name = "textBoxNomeClientes";
             this.textBoxNomeClientes.Size = new System.Drawing.Size(336, 31);
-            this.textBoxNomeClientes.TabIndex = 4;
+            this.textBoxNomeClientes.TabIndex = 1;
             // 
             // labelNumeroFiscalClientes
             // 
@@ -199,7 +199,7 @@ namespace Projeto_DA_PL_B_2223
             this.listBoxClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(1150, 354);
-            this.listBoxClientes.TabIndex = 0;
+            this.listBoxClientes.TabIndex = 9;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // buttonApagarClientes
@@ -208,7 +208,7 @@ namespace Projeto_DA_PL_B_2223
             this.buttonApagarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonApagarClientes.Name = "buttonApagarClientes";
             this.buttonApagarClientes.Size = new System.Drawing.Size(160, 38);
-            this.buttonApagarClientes.TabIndex = 24;
+            this.buttonApagarClientes.TabIndex = 7;
             this.buttonApagarClientes.Text = "APAGAR";
             this.buttonApagarClientes.UseVisualStyleBackColor = true;
             this.buttonApagarClientes.Click += new System.EventHandler(this.buttonApagarClientes_Click);
