@@ -25,6 +25,7 @@ namespace Projeto_DA_PL_B_2223
             this.nomeSala = nomeSala;
             this.Fila = fila;
             this.Coluna = coluna;
+            this.Lugares = CalcularTotalLugares();
         }
 
         public Sala()
@@ -44,7 +45,7 @@ namespace Projeto_DA_PL_B_2223
         // OVERRIDE PARA DIZER COMO VAI ESCREVER NA LISTBOX
         public override string ToString()
         {
-            return nomeSala + " Filas: " + Fila + " Colunas: " + Coluna;
+            return nomeSala + " --> Filas: " + Fila + " / Colunas: " + Coluna + " --> Total Lugares: " + CalcularTotalLugares();
         }
 
         public int CalcularTotalLugares()
