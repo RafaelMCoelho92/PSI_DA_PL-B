@@ -62,6 +62,11 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Escolha o estado do filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (dateTimePickerDuracao.Value.TimeOfDay == TimeSpan.Zero)
+            {
+                MessageBox.Show("Insira uma duração para o filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             else
             {
                 return true;
@@ -198,12 +203,10 @@ namespace Projeto_DA_PL_B_2223
             preencherComboBoxCategorias();
             comboBoxEstadoFilme.Text = "Desativado";
 
-
         }
         public void limparDadosInseridos()
         {
             textBoxNomeFilme.Clear();
-
         }
     }
 }

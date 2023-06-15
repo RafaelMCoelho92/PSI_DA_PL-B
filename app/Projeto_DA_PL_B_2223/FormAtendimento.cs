@@ -64,7 +64,9 @@ namespace Projeto_DA_PL_B_2223
             limparTextBoxes();
             limparRadioButton();
             listBox_lugaresSelecionados.Items.Clear();
-            
+            double zero = 0;
+            textBox_valorBilhete.Text = zero.ToString();
+
 
         }
         public string getNomeSala(int Id)
@@ -177,8 +179,7 @@ namespace Projeto_DA_PL_B_2223
             textBox_nomeAtend.Clear();
             textBox_moradaAtend.Clear();
             textBox_nifAtend.Clear();
-            double zero = 0;
-            textBox_valorBilhete.Text = zero.ToString();
+
         }
         private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
         {
@@ -255,6 +256,7 @@ namespace Projeto_DA_PL_B_2223
                                         nifCliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                         db.Pessoas.AddOrUpdate(nifCliente);
                                         db.SaveChanges();
+                                        limparSelecao();
                                     }
                                     /*double nif = double.Parse(textBox_pesquisa.Text);
                                     Cliente cliente = Cliente(textBox_pesquisa.Text); //db.Pessoas.OfType<Cliente>();
@@ -311,6 +313,7 @@ namespace Projeto_DA_PL_B_2223
                                     novocliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                     db.Pessoas.Add(novocliente);
                                     db.SaveChanges();
+                                    limparSelecao();
 
                                     MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
