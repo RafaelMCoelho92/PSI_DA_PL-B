@@ -202,11 +202,11 @@ namespace Projeto_DA_PL_B_2223
             limparDadosInseridos();
             preencherComboBoxCategorias();
             comboBoxEstadoFilme.Text = "Desativado";
-
         }
         public void limparDadosInseridos()
         {
             textBoxNomeFilme.Clear();
+            dateTimePickerDuracao.Value = dateTimePickerDuracao.Value.Date.AddHours(0).AddMinutes(0);
         }
     }
 }
