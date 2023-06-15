@@ -50,20 +50,20 @@ namespace Projeto_DA_PL_B_2223
             string nomeFuncionario = textBoxNomeFuncionario.Text;
             if (nomeFuncionario.Length == 0)
             {
-                MessageBox.Show("O nome não pode ser vazio");
+                MessageBox.Show("O nome não pode ser vazio", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             string moradaFuncionario = textBoxMoradaFuncionario.Text;
             if (moradaFuncionario.Length == 0)
             {
-                MessageBox.Show("A morada não pode ser vazio");
+                MessageBox.Show("A morada não pode ser vazio", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             double salarioFuncionario;
             if (!double.TryParse(textBoxSalarioFuncionario.Text, out salarioFuncionario))
             {
-                MessageBox.Show("O valor do salário deve ser numérico");
+                MessageBox.Show("O valor do salário deve ser numérico", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -71,7 +71,7 @@ namespace Projeto_DA_PL_B_2223
             string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
             if (tipoFuncionario.Length == 0)
             {
-                MessageBox.Show("É necessário atribuir uma função");
+                MessageBox.Show("É necessário atribuir uma função", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else
@@ -103,7 +103,7 @@ namespace Projeto_DA_PL_B_2223
             }
             catch (Exception)
             {   // caso haja algum erro
-                MessageBox.Show("Erro ao criar funcionário");
+                MessageBox.Show("Erro ao criar funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
@@ -192,7 +192,7 @@ namespace Projeto_DA_PL_B_2223
             if (escolherFunc == -1)
             {
                 // se n tiver funcionario selecionado mensagem de erro
-                MessageBox.Show("Selecione um Funcionário");
+                MessageBox.Show("Selecione um Funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }//
 

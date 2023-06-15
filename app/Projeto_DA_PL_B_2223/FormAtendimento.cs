@@ -139,18 +139,18 @@ namespace Projeto_DA_PL_B_2223
                         }
                         else
                         {
-                            MessageBox.Show("Cliente não encontrado");
+                            MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite um valor de pesquisa");
+                    MessageBox.Show("Digite um valor de pesquisa", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Campo válido apenas para Clientes já registados");
+                MessageBox.Show("Campo válido apenas para Clientes já registados", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void limparTextBoxes()
@@ -227,7 +227,7 @@ namespace Projeto_DA_PL_B_2223
                                     var nifCliente = db.Pessoas.OfType<Cliente>().FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
                                     if (nifCliente == null)
                                     {
-                                        MessageBox.Show("Cliente não encontrado");
+                                        MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }
                                     else
                                     {
@@ -280,7 +280,7 @@ namespace Projeto_DA_PL_B_2223
                                     bool existeCliente = db.Pessoas.OfType<Cliente>().Any(p => p.NumFiscCliente == novocliente.NumFiscCliente);
                                     if (existeCliente)
                                     {
-                                        MessageBox.Show("Cliente com numero fiscal ja existente!");
+                                        MessageBox.Show("Cliente com numero fiscal ja existente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
 
@@ -292,7 +292,7 @@ namespace Projeto_DA_PL_B_2223
                                     db.Pessoas.Add(novocliente);
                                     db.SaveChanges();
 
-                                    MessageBox.Show("Cliente criado com sucesso!");
+                                    MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             catch (FormatException)
@@ -318,7 +318,7 @@ namespace Projeto_DA_PL_B_2223
 
             else
             {
-                MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete");
+                MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

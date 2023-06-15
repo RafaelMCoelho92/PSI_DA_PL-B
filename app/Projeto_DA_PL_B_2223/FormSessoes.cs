@@ -60,21 +60,21 @@ namespace Projeto_DA_PL_B_2223
             int filmeSelecionado = listBoxFilmesSessoes.SelectedIndex;
             if (filmeSelecionado == -1)
             {
-                MessageBox.Show("Tem que selecionar um filme!");
+                MessageBox.Show("Tem que selecionar um filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             int salaSelecionado = listBoxSalasSessoes.SelectedIndex;
             if (salaSelecionado == -1)
             {
-                MessageBox.Show("Tem que selecionar uma sala!");
+                MessageBox.Show("Tem que selecionar uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             string precoInserido = textBoxPrecoSessoes.Text;
             if (precoInserido == null)
             {
-                MessageBox.Show("Tem que inserir um preço para a sessão!");
+                MessageBox.Show("Tem que inserir um preço para a sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -161,13 +161,13 @@ namespace Projeto_DA_PL_B_2223
 
                     if (existeSessao)
                     {
-                        MessageBox.Show("A sala já está ocupada nesse horário.");
+                        MessageBox.Show("A sala já está ocupada nesse horário.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
                     if (existeSessao)
                     {
-                        MessageBox.Show("Existe sessão!");
+                        MessageBox.Show("Existe sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         
                     }
                     else
