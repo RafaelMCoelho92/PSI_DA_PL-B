@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_valorBilhete = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelNomeSala = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tableLayoutPanelEscolherLugar
@@ -52,7 +53,7 @@
             this.tableLayoutPanelEscolherLugar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelEscolherLugar.ColumnCount = 1;
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(36, 34);
+            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(40, 116);
             this.tableLayoutPanelEscolherLugar.Name = "tableLayoutPanelEscolherLugar";
             this.tableLayoutPanelEscolherLugar.RowCount = 1;
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -229,11 +230,20 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "€";
             // 
+            // labelNomeSala
+            // 
+            this.labelNomeSala.AutoSize = true;
+            this.labelNomeSala.Location = new System.Drawing.Point(222, 70);
+            this.labelNomeSala.Name = "labelNomeSala";
+            this.labelNomeSala.Size = new System.Drawing.Size(0, 25);
+            this.labelNomeSala.TabIndex = 32;
+            // 
             // FormAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1888, 877);
+            this.Controls.Add(this.labelNomeSala);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_valorBilhete);
             this.Controls.Add(this.label1);
@@ -278,5 +288,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_valorBilhete;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelNomeSala;
     }
 }

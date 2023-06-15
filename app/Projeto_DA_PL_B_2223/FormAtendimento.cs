@@ -50,15 +50,25 @@ namespace Projeto_DA_PL_B_2223
             int colunas = int.Parse(filascolunas.Coluna);// faz o parse pra int da string com valor das colunas
             return colunas;
         }
+        public string getNomeSala(int Id)
+        {
+            var db = new ApplicationContext();
+            var sala = db.Salas.Find(Id);
+            string nomeSala = "Nome da Sala: " + sala.nomeSala;
+
+            return nomeSala;
+        }
         public void setConfigSala(int id)
         {
             int filas = getFilas(id);
             int colunas = getColunas(id);
+            string nomeSala = getNomeSala(id);
             tableLayoutPanelEscolherLugar.SuspendLayout();
 
             tableLayoutPanelEscolherLugar.Controls.Clear();
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
+            labelNomeSala.Text = nomeSala;
             idsessao = id;
 
 

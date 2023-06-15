@@ -33,6 +33,8 @@
             this.labelNomeCinema = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelNomeCinema = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelNomeFuncionarioLogado = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerFormPrincipal = new System.Windows.Forms.Timer(this.components);
@@ -47,8 +49,6 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_mostrar_sessoes_dia = new System.Windows.Forms.ListBox();
             this.dateTimePickerSessoesFormPrinc = new System.Windows.Forms.DateTimePicker();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelNomeCinema = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -90,6 +90,18 @@
             this.toolStripStatusLabelHora.Size = new System.Drawing.Size(102, 32);
             this.toolStripStatusLabelHora.Text = "00:00:00";
             // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(203, 32);
+            this.toolStripStatusLabel2.Text = "Nome do Cinema";
+            // 
+            // toolStripStatusLabelNomeCinema
+            // 
+            this.toolStripStatusLabelNomeCinema.Name = "toolStripStatusLabelNomeCinema";
+            this.toolStripStatusLabelNomeCinema.Size = new System.Drawing.Size(237, 32);
+            this.toolStripStatusLabelNomeCinema.Text = "toolStripStatusLabel3";
+            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
@@ -127,7 +139,7 @@
             this.definiçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1596, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1596, 40);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -141,7 +153,7 @@
             this.filmesToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
-            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 44);
+            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 36);
             this.definiçõesToolStripMenuItem.Text = "Definições";
             // 
             // cinemaToolStripMenuItem
@@ -208,18 +220,6 @@
             this.dateTimePickerSessoesFormPrinc.Size = new System.Drawing.Size(320, 32);
             this.dateTimePickerSessoesFormPrinc.TabIndex = 13;
             this.dateTimePickerSessoesFormPrinc.ValueChanged += new System.EventHandler(this.dateTimePickerSessoesFormPrinc_ValueChanged);
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(203, 32);
-            this.toolStripStatusLabel2.Text = "Nome do Cinema";
-            // 
-            // toolStripStatusLabelNomeCinema
-            // 
-            this.toolStripStatusLabelNomeCinema.Name = "toolStripStatusLabelNomeCinema";
-            this.toolStripStatusLabelNomeCinema.Size = new System.Drawing.Size(237, 32);
-            this.toolStripStatusLabelNomeCinema.Text = "toolStripStatusLabel3";
             // 
             // FormPrincipal
             // 
