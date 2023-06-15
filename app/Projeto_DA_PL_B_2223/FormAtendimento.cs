@@ -50,6 +50,20 @@ namespace Projeto_DA_PL_B_2223
             int colunas = int.Parse(filascolunas.Coluna);// faz o parse pra int da string com valor das colunas
             return colunas;
         }
+        public void limparRadioButton()
+        {
+            radioButton_anonimo.Checked = false ;
+            radioButton_cliente.Checked = false;
+            radioButton_novoCliente.Checked = false;
+        }
+        public void limparSelecao()
+        {
+            limparTextBoxes();
+            limparRadioButton();
+            listBox_lugaresSelecionados.Items.Clear();
+            
+
+        }
         public string getNomeSala(int Id)
         {
             var db = new ApplicationContext();
@@ -58,13 +72,14 @@ namespace Projeto_DA_PL_B_2223
 
             return nomeSala;
         }
+
         public void setConfigSala(int id)
         {
             int filas = getFilas(id);
             int colunas = getColunas(id);
             string nomeSala = getNomeSala(id);
             tableLayoutPanelEscolherLugar.SuspendLayout();
-
+            limparSelecao();
             tableLayoutPanelEscolherLugar.Controls.Clear();
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
@@ -159,6 +174,8 @@ namespace Projeto_DA_PL_B_2223
             textBox_nomeAtend.Clear();
             textBox_moradaAtend.Clear();
             textBox_nifAtend.Clear();
+            double zero = 0;
+            textBox_valorBilhete.Text = zero.ToString();
         }
         private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
         {
