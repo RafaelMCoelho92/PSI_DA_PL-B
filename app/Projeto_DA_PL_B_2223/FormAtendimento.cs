@@ -19,12 +19,6 @@ namespace Projeto_DA_PL_B_2223
         public FormAtendimento()
         {
             InitializeComponent();
-            this.BackgroundImage = Image.FromFile(@"C:\Users\PC\Desktop\Topicos TS\TS---Project\TS - Project\Cliente\imagem.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.CenterToScreen();
-
-
         }
 
         public FormAtendimento(FormPrincipal formPrincipal) : this()

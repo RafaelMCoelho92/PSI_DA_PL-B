@@ -134,8 +134,16 @@ namespace Projeto_DA_PL_B_2223
         {
             var db = new ApplicationContext();
             var cinema = db.Cinemas.Find(Id); // procura o cinema pelo id recebido
+            if(cinema == null)
+            {
+                return;
+            }
+            else
+            {
             toolStripStatusLabelNomeCinema.Text = cinema.NomeCinema; // po o nome na label
             labelNomeCinema.Text = cinema.NomeCinema;
+            }
+            
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O NOME DO FUNCIONARIO LOGADO
