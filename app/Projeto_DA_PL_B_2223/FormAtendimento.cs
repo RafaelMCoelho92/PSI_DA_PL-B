@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,6 @@ namespace Projeto_DA_PL_B_2223
             listBox_lugaresSelecionados.Items.Clear();
             double zero = 0;
             textBox_valorBilhete.Text = zero.ToString();
-
 
         }
         public string getNomeSala(int Id)
@@ -124,8 +124,10 @@ namespace Projeto_DA_PL_B_2223
                 var sessao = db.Sessoes.Find(idsessao);
                 valor -= sessao.Preco;
                 textBox_valorBilhete.Text = valor.ToString();
-
-
+            }
+            else if (button.BackColor == Color.Gray)
+            {
+                MessageBox.Show("Lugar já comprado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -173,7 +175,6 @@ namespace Projeto_DA_PL_B_2223
             textBox_nomeAtend.Clear();
             textBox_moradaAtend.Clear();
             textBox_nifAtend.Clear();
-
         }
         private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
         {
@@ -250,6 +251,17 @@ namespace Projeto_DA_PL_B_2223
                                         nifCliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                         db.Pessoas.AddOrUpdate(nifCliente);
                                         db.SaveChanges();
+                                        foreach (Control control in tableLayoutPanelEscolherLugar.Controls)
+                                        {
+                                            if (control is LugarButton button)
+                                            {
+                                                // Verificar se o texto do botão está na ListBox
+                                                if (listBox_lugaresSelecionados.Items.Contains(button.Text))
+                                                {
+                                                    button.BackColor = Color.Gray; // Alterar cor para cinza
+                                                }
+                                            }
+                                        }
                                         limparSelecao();
                                     }
                                     /*double nif = double.Parse(textBox_pesquisa.Text);
@@ -307,7 +319,6 @@ namespace Projeto_DA_PL_B_2223
                                     novocliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                     db.Pessoas.Add(novocliente);
                                     db.SaveChanges();
-                                    limparSelecao();
 
                                     MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
