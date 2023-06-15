@@ -50,11 +50,11 @@ namespace Projeto_DA_PL_B_2223
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(6, 6);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(606, 347);
+            this.tabControl1.Size = new System.Drawing.Size(1212, 667);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -62,11 +62,11 @@ namespace Projeto_DA_PL_B_2223
             this.tabPage1.Controls.Add(this.buttonApagarSala);
             this.tabPage1.Controls.Add(this.groupBoxListaSalas);
             this.tabPage1.Controls.Add(this.groupBoxInserirSalas);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(598, 321);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1196, 620);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sala";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -74,11 +74,11 @@ namespace Projeto_DA_PL_B_2223
             // 
             // buttonApagarSala
             // 
-            this.buttonApagarSala.Location = new System.Drawing.Point(212, 178);
-            this.buttonApagarSala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonApagarSala.Location = new System.Drawing.Point(424, 342);
+            this.buttonApagarSala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonApagarSala.Name = "buttonApagarSala";
-            this.buttonApagarSala.Size = new System.Drawing.Size(76, 32);
-            this.buttonApagarSala.TabIndex = 6;
+            this.buttonApagarSala.Size = new System.Drawing.Size(152, 62);
+            this.buttonApagarSala.TabIndex = 5;
             this.buttonApagarSala.Text = "Apagar Sala";
             this.buttonApagarSala.UseVisualStyleBackColor = true;
             this.buttonApagarSala.Click += new System.EventHandler(this.buttonApagarSala_Click);
@@ -86,11 +86,11 @@ namespace Projeto_DA_PL_B_2223
             // groupBoxListaSalas
             // 
             this.groupBoxListaSalas.Controls.Add(this.listBoxSalas);
-            this.groupBoxListaSalas.Location = new System.Drawing.Point(302, 15);
-            this.groupBoxListaSalas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxListaSalas.Location = new System.Drawing.Point(604, 29);
+            this.groupBoxListaSalas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxListaSalas.Name = "groupBoxListaSalas";
-            this.groupBoxListaSalas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxListaSalas.Size = new System.Drawing.Size(286, 262);
+            this.groupBoxListaSalas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxListaSalas.Size = new System.Drawing.Size(572, 504);
             this.groupBoxListaSalas.TabIndex = 8;
             this.groupBoxListaSalas.TabStop = false;
             this.groupBoxListaSalas.Text = "Lista de Salas";
@@ -98,11 +98,12 @@ namespace Projeto_DA_PL_B_2223
             // listBoxSalas
             // 
             this.listBoxSalas.FormattingEnabled = true;
-            this.listBoxSalas.Location = new System.Drawing.Point(3, 16);
-            this.listBoxSalas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxSalas.ItemHeight = 25;
+            this.listBoxSalas.Location = new System.Drawing.Point(6, 31);
+            this.listBoxSalas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxSalas.Name = "listBoxSalas";
-            this.listBoxSalas.Size = new System.Drawing.Size(276, 238);
-            this.listBoxSalas.TabIndex = 9;
+            this.listBoxSalas.Size = new System.Drawing.Size(548, 454);
+            this.listBoxSalas.TabIndex = 6;
             this.listBoxSalas.SelectedIndexChanged += new System.EventHandler(this.listBoxSalas_SelectedIndexChanged);
             // 
             // groupBoxInserirSalas
@@ -114,48 +115,48 @@ namespace Projeto_DA_PL_B_2223
             this.groupBoxInserirSalas.Controls.Add(this.label7);
             this.groupBoxInserirSalas.Controls.Add(this.label5);
             this.groupBoxInserirSalas.Controls.Add(this.label4);
-            this.groupBoxInserirSalas.Location = new System.Drawing.Point(3, 15);
-            this.groupBoxInserirSalas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxInserirSalas.Location = new System.Drawing.Point(6, 29);
+            this.groupBoxInserirSalas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxInserirSalas.Name = "groupBoxInserirSalas";
-            this.groupBoxInserirSalas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxInserirSalas.Size = new System.Drawing.Size(286, 152);
+            this.groupBoxInserirSalas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxInserirSalas.Size = new System.Drawing.Size(572, 292);
             this.groupBoxInserirSalas.TabIndex = 0;
             this.groupBoxInserirSalas.TabStop = false;
             this.groupBoxInserirSalas.Text = "Configurar Sala";
             // 
             // textBoxFilas
             // 
-            this.textBoxFilas.Location = new System.Drawing.Point(98, 50);
-            this.textBoxFilas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFilas.Location = new System.Drawing.Point(196, 96);
+            this.textBoxFilas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxFilas.MaxLength = 2;
             this.textBoxFilas.Name = "textBoxFilas";
-            this.textBoxFilas.Size = new System.Drawing.Size(78, 20);
-            this.textBoxFilas.TabIndex = 3;
+            this.textBoxFilas.Size = new System.Drawing.Size(152, 31);
+            this.textBoxFilas.TabIndex = 2;
             // 
             // textBoxNomeSala
             // 
-            this.textBoxNomeSala.Location = new System.Drawing.Point(98, 22);
-            this.textBoxNomeSala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNomeSala.Location = new System.Drawing.Point(196, 42);
+            this.textBoxNomeSala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNomeSala.Name = "textBoxNomeSala";
-            this.textBoxNomeSala.Size = new System.Drawing.Size(176, 20);
+            this.textBoxNomeSala.Size = new System.Drawing.Size(348, 31);
             this.textBoxNomeSala.TabIndex = 1;
             // 
             // textBoxColunas
             // 
-            this.textBoxColunas.Location = new System.Drawing.Point(98, 77);
-            this.textBoxColunas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxColunas.Location = new System.Drawing.Point(196, 148);
+            this.textBoxColunas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxColunas.MaxLength = 2;
             this.textBoxColunas.Name = "textBoxColunas";
-            this.textBoxColunas.Size = new System.Drawing.Size(78, 20);
-            this.textBoxColunas.TabIndex = 4;
+            this.textBoxColunas.Size = new System.Drawing.Size(152, 31);
+            this.textBoxColunas.TabIndex = 3;
             // 
             // buttonAdicionarSala
             // 
-            this.buttonAdicionarSala.Location = new System.Drawing.Point(98, 102);
-            this.buttonAdicionarSala.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdicionarSala.Location = new System.Drawing.Point(196, 196);
+            this.buttonAdicionarSala.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAdicionarSala.Name = "buttonAdicionarSala";
-            this.buttonAdicionarSala.Size = new System.Drawing.Size(76, 32);
-            this.buttonAdicionarSala.TabIndex = 2;
+            this.buttonAdicionarSala.Size = new System.Drawing.Size(152, 62);
+            this.buttonAdicionarSala.TabIndex = 4;
             this.buttonAdicionarSala.Text = "Adicionar";
             this.buttonAdicionarSala.UseVisualStyleBackColor = true;
             this.buttonAdicionarSala.Click += new System.EventHandler(this.buttonAdicionarSala_Click);
@@ -163,40 +164,40 @@ namespace Projeto_DA_PL_B_2223
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 25);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(20, 48);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 13);
+            this.label7.Size = new System.Drawing.Size(153, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nome da Sala:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 51);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(74, 98);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(99, 25);
             this.label5.TabIndex = 2;
             this.label5.Text = "N.º Filas:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 80);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(48, 154);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(126, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "N.º Colunas";
             // 
             // FormSala
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 360);
+            this.ClientSize = new System.Drawing.Size(1236, 692);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormSala";
             this.Text = "FormSala";
             this.Load += new System.EventHandler(this.FormSala_Load);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,10 +38,7 @@ namespace Projeto_DA_PL_B_2223
             formCinema = new FormCinema(this);
             formAtendimento = new FormAtendimento(this);
             dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
-
-            this.BackgroundImage = Image.FromFile(@"C:\Users\PC\Desktop\Topicos TS\TS---Project\TS - Project\Cliente\imagem.png");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            setNomeCinema(1);
         }
         public FormPrincipal(FormAtendimento formAtendimento) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
         {
@@ -133,9 +130,12 @@ namespace Projeto_DA_PL_B_2223
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O TITULO DO CINEMA
-        public void setNomeCinema(string nomeCinema)
+        public void setNomeCinema(int Id)
         {
-            labelNomeCinema.Text = nomeCinema;
+            var db = new ApplicationContext();
+            var cinema = db.Cinemas.Find(Id); // procura o cinema pelo id recebido
+            toolStripStatusLabelNomeCinema.Text = cinema.NomeCinema; // po o nome na label
+            labelNomeCinema.Text = cinema.NomeCinema;
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O NOME DO FUNCIONARIO LOGADO
@@ -202,7 +202,6 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
-
 
     }
 }

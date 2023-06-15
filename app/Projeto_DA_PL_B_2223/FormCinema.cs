@@ -92,6 +92,7 @@ namespace Projeto_DA_PL_B_2223
             labelNomeCinema.Text = cinema.NomeCinema;
             labelMoradaCinema.Text = cinema.MoradaCinema;
             labelEmailCinema.Text = cinema.EmailCinema;
+
         }
 
         //VALIDA OS DADOS INSERIDOS 
@@ -139,6 +140,8 @@ namespace Projeto_DA_PL_B_2223
             ApplicationContext context = new ApplicationContext();
             if (context.Cinemas.Any())
             {
+                int id = 1;
+                this.formPrincipal.setNomeCinema(id);
                 this.Close();
             }
             else
@@ -152,5 +155,7 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
 
         }
+
+
     }
 }

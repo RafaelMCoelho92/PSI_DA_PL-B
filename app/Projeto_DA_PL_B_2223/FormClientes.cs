@@ -110,7 +110,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else
             {
-                Cliente novocliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text) ;
+                Cliente novocliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text, totalbilhetes:0, valortotal:0);
 
                 listBoxClientes.Items.Add(novocliente); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
@@ -136,7 +136,7 @@ namespace Projeto_DA_PL_B_2223
             }
 
             // INSTANCIADO O OBJ CLIENTE E ENVIA PARA A LISTA DE CLIENTES
-            Cliente cliente = new Cliente(nomeCliente, moradaCliente, numFiscCliente);
+            Cliente cliente = new Cliente(nomeCliente, moradaCliente, numFiscCliente, totalbilhetes:0, valortotal:0);
             textBoxNomeClientes.Text = cliente.NomePessoa;
             textBoxMoradaClientes.Text = cliente.MoradaPessoa;
             textBoxNumFiscClientes.Text = cliente.NumFiscCliente;
@@ -248,13 +248,13 @@ namespace Projeto_DA_PL_B_2223
                         }
                         else
                         {
-                            MessageBox.Show("Cliente não encontrado");
+                            MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite um valor de pesquisa");
+                    MessageBox.Show("Digite um valor de pesquisa", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 

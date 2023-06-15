@@ -94,14 +94,14 @@ namespace Projeto_DA_PL_B_2223
             //VALIDA QUE AS FILAS NAO ESTAO COM LETRAS
             if (!double.TryParse(textBoxFilas.Text, out fila))
             {
-                MessageBox.Show("O numero de filas deve ser numérico");
+                MessageBox.Show("O numero de filas deve ser numérico", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             double coluna;
             //VALIDA QUE AS COLUNAS NAO ESTA COM LETRAS
             if (!double.TryParse(textBoxColunas.Text, out coluna))
             {
-                MessageBox.Show("O numero de colunas deve ser numérico");
+                MessageBox.Show("O numero de colunas deve ser numérico", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else // se for tudo valido retorna true
@@ -134,7 +134,7 @@ namespace Projeto_DA_PL_B_2223
             catch
             {
                 // caso haja algum erro
-                MessageBox.Show("Erro ao criar sala");
+                MessageBox.Show("Erro ao criar sala", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (listBoxSalas.SelectedIndex != -1) // se tiver uma sala selecionada, altera os dados
             {

@@ -53,15 +53,25 @@ namespace Projeto_DA_PL_B_2223
             int colunas = int.Parse(filascolunas.Coluna);// faz o parse pra int da string com valor das colunas
             return colunas;
         }
+        public string getNomeSala(int Id)
+        {
+            var db = new ApplicationContext();
+            var sala = db.Salas.Find(Id);
+            string nomeSala = "Nome da Sala: " + sala.nomeSala;
+
+            return nomeSala;
+        }
         public void setConfigSala(int id)
         {
             int filas = getFilas(id);
             int colunas = getColunas(id);
+            string nomeSala = getNomeSala(id);
             tableLayoutPanelEscolherLugar.SuspendLayout();
 
             tableLayoutPanelEscolherLugar.Controls.Clear();
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
+            labelNomeSala.Text = nomeSala;
             idsessao = id;
 
 
@@ -132,18 +142,18 @@ namespace Projeto_DA_PL_B_2223
                         }
                         else
                         {
-                            MessageBox.Show("Cliente não encontrado");
+                            MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite um valor de pesquisa");
+                    MessageBox.Show("Digite um valor de pesquisa", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Campo válido apenas para Clientes já registados");
+                MessageBox.Show("Campo válido apenas para Clientes já registados", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void limparTextBoxes()
@@ -220,7 +230,7 @@ namespace Projeto_DA_PL_B_2223
                                     var nifCliente = db.Pessoas.OfType<Cliente>().FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
                                     if (nifCliente == null)
                                     {
-                                        MessageBox.Show("Cliente não encontrado");
+                                        MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }
                                     else
                                     {
@@ -269,11 +279,11 @@ namespace Projeto_DA_PL_B_2223
                                 else
                                 {
                                     var db = new ApplicationContext();
-                                    Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text);
+                                    Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text, totalbilhetes:0, valortotal:0);//add bilhete e total a 0 para passar para o construtor da classe
                                     bool existeCliente = db.Pessoas.OfType<Cliente>().Any(p => p.NumFiscCliente == novocliente.NumFiscCliente);
                                     if (existeCliente)
                                     {
-                                        MessageBox.Show("Cliente com numero fiscal ja existente!");
+                                        MessageBox.Show("Cliente com numero fiscal ja existente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
 
@@ -285,7 +295,7 @@ namespace Projeto_DA_PL_B_2223
                                     db.Pessoas.Add(novocliente);
                                     db.SaveChanges();
 
-                                    MessageBox.Show("Cliente criado com sucesso!");
+                                    MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             catch (FormatException)
@@ -311,7 +321,7 @@ namespace Projeto_DA_PL_B_2223
 
             else
             {
-                MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete");
+                MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_valorBilhete = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelNomeSala = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tableLayoutPanelEscolherLugar
@@ -52,7 +53,7 @@
             this.tableLayoutPanelEscolherLugar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelEscolherLugar.ColumnCount = 1;
             this.tableLayoutPanelEscolherLugar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(36, 34);
+            this.tableLayoutPanelEscolherLugar.Location = new System.Drawing.Point(40, 116);
             this.tableLayoutPanelEscolherLugar.Name = "tableLayoutPanelEscolherLugar";
             this.tableLayoutPanelEscolherLugar.RowCount = 1;
             this.tableLayoutPanelEscolherLugar.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -65,7 +66,7 @@
             this.button_criarBilhete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_criarBilhete.Name = "button_criarBilhete";
             this.button_criarBilhete.Size = new System.Drawing.Size(228, 67);
-            this.button_criarBilhete.TabIndex = 1;
+            this.button_criarBilhete.TabIndex = 9;
             this.button_criarBilhete.Text = "CRIAR BILHETE";
             this.button_criarBilhete.UseVisualStyleBackColor = true;
             this.button_criarBilhete.Click += new System.EventHandler(this.button_criarBilhete_Click);
@@ -77,7 +78,7 @@
             this.radioButton_cliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButton_cliente.Name = "radioButton_cliente";
             this.radioButton_cliente.Size = new System.Drawing.Size(137, 29);
-            this.radioButton_cliente.TabIndex = 2;
+            this.radioButton_cliente.TabIndex = 1;
             this.radioButton_cliente.TabStop = true;
             this.radioButton_cliente.Text = "CLIENTE ";
             this.radioButton_cliente.UseVisualStyleBackColor = true;
@@ -103,7 +104,7 @@
             this.radioButton_novoCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioButton_novoCliente.Name = "radioButton_novoCliente";
             this.radioButton_novoCliente.Size = new System.Drawing.Size(198, 29);
-            this.radioButton_novoCliente.TabIndex = 4;
+            this.radioButton_novoCliente.TabIndex = 2;
             this.radioButton_novoCliente.TabStop = true;
             this.radioButton_novoCliente.Text = "NOVO CLIENTE";
             this.radioButton_novoCliente.UseVisualStyleBackColor = true;
@@ -116,7 +117,7 @@
             this.textBox_nifAtend.Name = "textBox_nifAtend";
             this.textBox_nifAtend.ReadOnly = true;
             this.textBox_nifAtend.Size = new System.Drawing.Size(478, 31);
-            this.textBox_nifAtend.TabIndex = 6;
+            this.textBox_nifAtend.TabIndex = 8;
             // 
             // labelNumeroFiscalClientes
             // 
@@ -155,7 +156,7 @@
             this.textBox_nomeAtend.Name = "textBox_nomeAtend";
             this.textBox_nomeAtend.ReadOnly = true;
             this.textBox_nomeAtend.Size = new System.Drawing.Size(478, 31);
-            this.textBox_nomeAtend.TabIndex = 11;
+            this.textBox_nomeAtend.TabIndex = 6;
             // 
             // textBox_moradaAtend
             // 
@@ -164,7 +165,7 @@
             this.textBox_moradaAtend.Name = "textBox_moradaAtend";
             this.textBox_moradaAtend.ReadOnly = true;
             this.textBox_moradaAtend.Size = new System.Drawing.Size(478, 31);
-            this.textBox_moradaAtend.TabIndex = 12;
+            this.textBox_moradaAtend.TabIndex = 7;
             // 
             // buttonPesquisarNif
             // 
@@ -172,7 +173,7 @@
             this.buttonPesquisarNif.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonPesquisarNif.Name = "buttonPesquisarNif";
             this.buttonPesquisarNif.Size = new System.Drawing.Size(220, 38);
-            this.buttonPesquisarNif.TabIndex = 26;
+            this.buttonPesquisarNif.TabIndex = 5;
             this.buttonPesquisarNif.Text = "PESQUISAR NIF";
             this.buttonPesquisarNif.UseVisualStyleBackColor = true;
             this.buttonPesquisarNif.Visible = false;
@@ -185,7 +186,7 @@
             this.textBox_pesquisa.MaxLength = 9;
             this.textBox_pesquisa.Name = "textBox_pesquisa";
             this.textBox_pesquisa.Size = new System.Drawing.Size(218, 31);
-            this.textBox_pesquisa.TabIndex = 27;
+            this.textBox_pesquisa.TabIndex = 4;
             this.textBox_pesquisa.Visible = false;
             // 
             // listBox_lugaresSelecionados
@@ -197,7 +198,7 @@
             this.listBox_lugaresSelecionados.Name = "listBox_lugaresSelecionados";
             this.listBox_lugaresSelecionados.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBox_lugaresSelecionados.Size = new System.Drawing.Size(607, 129);
-            this.listBox_lugaresSelecionados.TabIndex = 28;
+            this.listBox_lugaresSelecionados.TabIndex = 20;
             // 
             // label1
             // 
@@ -229,11 +230,20 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "€";
             // 
+            // labelNomeSala
+            // 
+            this.labelNomeSala.AutoSize = true;
+            this.labelNomeSala.Location = new System.Drawing.Point(222, 70);
+            this.labelNomeSala.Name = "labelNomeSala";
+            this.labelNomeSala.Size = new System.Drawing.Size(0, 25);
+            this.labelNomeSala.TabIndex = 32;
+            // 
             // FormAtendimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1888, 877);
+            this.Controls.Add(this.labelNomeSala);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_valorBilhete);
             this.Controls.Add(this.label1);
@@ -278,5 +288,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_valorBilhete;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelNomeSala;
     }
 }

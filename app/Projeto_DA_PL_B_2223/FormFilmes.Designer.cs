@@ -75,7 +75,7 @@
             this.listBoxFilmes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.listBoxFilmes.Name = "listBoxFilmes";
             this.listBoxFilmes.Size = new System.Drawing.Size(894, 554);
-            this.listBoxFilmes.TabIndex = 16;
+            this.listBoxFilmes.TabIndex = 6;
             this.listBoxFilmes.SelectedIndexChanged += new System.EventHandler(this.listBoxFilmes_SelectedIndexChanged);
             // 
             // label1
@@ -95,7 +95,7 @@
             this.buttonGuardarFilme.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGuardarFilme.Name = "buttonGuardarFilme";
             this.buttonGuardarFilme.Size = new System.Drawing.Size(332, 66);
-            this.buttonGuardarFilme.TabIndex = 3;
+            this.buttonGuardarFilme.TabIndex = 4;
             this.buttonGuardarFilme.Text = "GUARDAR";
             this.buttonGuardarFilme.UseVisualStyleBackColor = false;
             this.buttonGuardarFilme.Click += new System.EventHandler(this.buttonGuardarFilme_Click);
@@ -171,7 +171,7 @@
             this.dateTimePickerDuracao.Name = "dateTimePickerDuracao";
             this.dateTimePickerDuracao.ShowUpDown = true;
             this.dateTimePickerDuracao.Size = new System.Drawing.Size(174, 31);
-            this.dateTimePickerDuracao.TabIndex = 19;
+            this.dateTimePickerDuracao.TabIndex = 3;
             this.dateTimePickerDuracao.Value = new System.DateTime(2023, 6, 4, 0, 0, 0, 0);
             // 
             // labelDuracao
@@ -189,7 +189,7 @@
             this.buttonApagarFilme.Location = new System.Drawing.Point(264, 487);
             this.buttonApagarFilme.Name = "buttonApagarFilme";
             this.buttonApagarFilme.Size = new System.Drawing.Size(153, 62);
-            this.buttonApagarFilme.TabIndex = 17;
+            this.buttonApagarFilme.TabIndex = 5;
             this.buttonApagarFilme.Text = "Apagar";
             this.buttonApagarFilme.UseVisualStyleBackColor = true;
             this.buttonApagarFilme.Click += new System.EventHandler(this.buttonApagarFilme_Click);

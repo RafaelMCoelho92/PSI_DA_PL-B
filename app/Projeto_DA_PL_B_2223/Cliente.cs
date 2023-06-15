@@ -16,11 +16,11 @@ namespace Projeto_DA_PL_B_2223
         public int totalBilhetes { get; set; }
         public double valorTotal { get; set; }
 
-        public Cliente(string nomePessoa, string moradaPessoa, string numFiscCliente):base(nomePessoa, moradaPessoa)
+        public Cliente(string nomePessoa, string moradaPessoa, string numFiscCliente, int totalbilhetes, double valortotal):base(nomePessoa, moradaPessoa)
         {
             NumFiscCliente = numFiscCliente;
-            totalBilhetes = 0;
-            valorTotal = 0;
+            totalBilhetes = totalbilhetes;
+            valorTotal = valortotal;
         }
         public Cliente()
         {
