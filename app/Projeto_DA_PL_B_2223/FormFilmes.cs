@@ -196,12 +196,14 @@ namespace Projeto_DA_PL_B_2223
             listBoxFilmes.ClearSelected();
             limparDadosInseridos();
             preencherComboBoxCategorias();
+            comboBoxEstadoFilme.Text = "Desativado";
 
 
         }
         public void limparDadosInseridos()
         {
             textBoxNomeFilme.Clear();
+
         }
     }
 }
