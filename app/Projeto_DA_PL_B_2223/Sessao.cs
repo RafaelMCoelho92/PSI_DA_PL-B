@@ -18,9 +18,6 @@ namespace Projeto_DA_PL_B_2223
         public double Preco { get; set; }
         public string Data { get; set; }
         public TimeSpan Hora { get; set; }
-        public List<Filme> Filmes { get; set; }
-        public List<Sala> Salas { get; set; }
-        public List<Sessao> Sessoes { get; set; }
         
         public Sessao()
         { 
@@ -34,9 +31,6 @@ namespace Projeto_DA_PL_B_2223
             Preco = preco;
             Data = data;
             Hora = hora;
-            Filmes = new List<Filme>(); 
-            Salas = new List<Sala>();
-            Sessoes = new List<Sessao>();
         }
 
 

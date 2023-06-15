@@ -17,29 +17,23 @@ namespace Projeto_DA_PL_B_2223
         public string Fila { get; set; }
         public string Coluna { get; set; }
         public double Lugares { get; set; }
+        public int Id_Cinema { get; set; }
 
         //Constructor
 
-        public Sala(string nomeSala, string fila, string coluna)
+        public Sala(string nomeSala, string fila, string coluna, int id_Cinema)
         {
             this.nomeSala = nomeSala;
             this.Fila = fila;
             this.Coluna = coluna;
             this.Lugares = CalcularTotalLugares();
+            this.Id_Cinema = id_Cinema;
         }
 
         public Sala()
         {
             // Construtor vazio necessário para o Entity Framework
 
-        }
-
-
-
-        // METODO PARA APAGAR UMA SALA
-        public void RemoverSala(Sala sala)
-        {
-            // APAGAR 
         }
 
         // OVERRIDE PARA DIZER COMO VAI ESCREVER NA LISTBOX

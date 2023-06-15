@@ -124,9 +124,10 @@ namespace Projeto_DA_PL_B_2223
             string nomeSala = textBoxNomeSala.Text;
             string filas = textBoxFilas.Text;// faz a conversao de texto para double
             string colunas = textBoxColunas.Text;// faz a conversao de texto para double
+  
             try
             {
-                Sala sala = new Sala(nomeSala, filas, colunas);
+                Sala sala = new Sala(nomeSala, filas, colunas, 1);
                 textBoxNomeSala.Text = sala.nomeSala;
                 textBoxFilas.Text = sala.Fila.ToString();// neste leva o tostring pq esta a ser convertido para double
                 textBoxColunas.Text = sala.Coluna.ToString();
@@ -155,7 +156,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else // se não tiver, cria um novo
             {
-                Sala novaSala = new Sala(textBoxNomeSala.Text, textBoxFilas.Text, textBoxColunas.Text);
+                Sala novaSala = new Sala(textBoxNomeSala.Text, textBoxFilas.Text, textBoxColunas.Text, 1);
 
                 listBoxSalas.Items.Add(novaSala); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
@@ -222,5 +223,6 @@ namespace Projeto_DA_PL_B_2223
 
             }
         }
+
     }
 }
