@@ -17,7 +17,7 @@ namespace Projeto_DA_PL_B_2223
         //public Filme filmeBilhete { get; } -------> FILME e SALA vao estar na SESSAO
         public Cliente clienteBilhete { get; set; }
         //public Sala salaBilhete { get; }
-        public Funcionario funcionarioBilhete { get; }
+        public Funcionario funcionarioBilhete { get; set;}
         //public Sessao sessaoBilhete { get; }
 
         //CRIADA ESTA VARIAVEL ESTATICA PARA SER INCREMENTADA SEMPRE QUE UM OBJ BILHETE SEJA CRIADO

@@ -20,12 +20,12 @@ namespace Projeto_DA_PL_B_2223
         public FormAtendimento()
         {
             InitializeComponent();
+
         }
 
         public FormAtendimento(FormPrincipal formPrincipal) : this()
         {
             this.formPrincipal = formPrincipal;
-
         }
 
 
@@ -98,6 +98,7 @@ namespace Projeto_DA_PL_B_2223
                     //button.Image = Properties.Resources.chair5381;
                     button.Click += LugarClicked;
                     tableLayoutPanelEscolherLugar.Controls.Add(button, j, i);
+
                 }
             }
             tableLayoutPanelEscolherLugar.ResumeLayout();
@@ -210,7 +211,20 @@ namespace Projeto_DA_PL_B_2223
                 limparTextBoxes();
             }
         }
-
+        private void cadeira_gray()
+        {
+            foreach (Control control in tableLayoutPanelEscolherLugar.Controls)
+            {
+                if (control is LugarButton button) //
+                {
+                    // Verificar se o texto do botão está na ListBox
+                    if (listBox_lugaresSelecionados.Items.Contains(button.Text))
+                    {
+                        button.BackColor = Color.Gray; // Alterar cor para cinza
+                    }
+                }
+            }
+        }
         private void button_criarBilhete_Click(object sender, EventArgs e)
         {
             if (listBox_lugaresSelecionados.Items.Count > 0)
@@ -251,17 +265,7 @@ namespace Projeto_DA_PL_B_2223
                                         nifCliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                         db.Pessoas.AddOrUpdate(nifCliente);
                                         db.SaveChanges();
-                                        foreach (Control control in tableLayoutPanelEscolherLugar.Controls)
-                                        {
-                                            if (control is LugarButton button)
-                                            {
-                                                // Verificar se o texto do botão está na ListBox
-                                                if (listBox_lugaresSelecionados.Items.Contains(button.Text))
-                                                {
-                                                    button.BackColor = Color.Gray; // Alterar cor para cinza
-                                                }
-                                            }
-                                        }
+                                        cadeira_gray();
                                         limparSelecao();
                                     }
                                     /*double nif = double.Parse(textBox_pesquisa.Text);
@@ -319,7 +323,7 @@ namespace Projeto_DA_PL_B_2223
                                     novocliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                     db.Pessoas.Add(novocliente);
                                     db.SaveChanges();
-
+                                    cadeira_gray();
                                     MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
