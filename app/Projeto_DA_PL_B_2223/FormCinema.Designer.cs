@@ -44,6 +44,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.buttonEntrar = new System.Windows.Forms.Button();
+            this.labelIdCinema = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.groupBoxMostrarCinema.SuspendLayout();
             this.groupBoxEditarCinema.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // groupBoxMostrarCinema
             // 
+            this.groupBoxMostrarCinema.Controls.Add(this.labelIdCinema);
             this.groupBoxMostrarCinema.Controls.Add(this.labelEmailCinema);
             this.groupBoxMostrarCinema.Controls.Add(this.labelMoradaCinema);
             this.groupBoxMostrarCinema.Controls.Add(this.labelNomeCinema);
@@ -208,6 +210,15 @@
             this.buttonEntrar.UseVisualStyleBackColor = true;
             this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
+            // labelIdCinema
+            // 
+            this.labelIdCinema.AutoSize = true;
+            this.labelIdCinema.Location = new System.Drawing.Point(264, 144);
+            this.labelIdCinema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelIdCinema.Name = "labelIdCinema";
+            this.labelIdCinema.Size = new System.Drawing.Size(0, 25);
+            this.labelIdCinema.TabIndex = 3;
+            // 
             // FormCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -246,5 +257,6 @@
         private System.Windows.Forms.Label labelNomeCinema;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button buttonEntrar;
+        private System.Windows.Forms.Label labelIdCinema;
     }
 }

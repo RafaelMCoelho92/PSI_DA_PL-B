@@ -47,6 +47,8 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_mostrar_sessoes_dia = new System.Windows.Forms.ListBox();
             this.dateTimePickerSessoesFormPrinc = new System.Windows.Forms.DateTimePicker();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelNomeCinema = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -71,6 +73,8 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelHora,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabelNomeCinema,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabelNomeFuncionarioLogado});
             this.statusStrip1.Location = new System.Drawing.Point(0, 863);
@@ -123,7 +127,7 @@
             this.definiçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1596, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1596, 48);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,48 +141,48 @@
             this.filmesToolStripMenuItem,
             this.clientesToolStripMenuItem});
             this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
-            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 36);
+            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(146, 44);
             this.definiçõesToolStripMenuItem.Text = "Definições";
             // 
             // cinemaToolStripMenuItem
             // 
             this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
-            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(282, 44);
             this.cinemaToolStripMenuItem.Text = "Cinema";
             this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
             // 
             // salaToolStripMenuItem
             // 
             this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
-            this.salaToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.salaToolStripMenuItem.Size = new System.Drawing.Size(282, 44);
             this.salaToolStripMenuItem.Text = "Salas";
             this.salaToolStripMenuItem.Click += new System.EventHandler(this.salasToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(282, 44);
             this.funcionarioToolStripMenuItem.Text = "Funcionários";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // sessoesToolStripMenuItem
             // 
             this.sessoesToolStripMenuItem.Name = "sessoesToolStripMenuItem";
-            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(282, 44);
             this.sessoesToolStripMenuItem.Text = "Sessões";
             this.sessoesToolStripMenuItem.Click += new System.EventHandler(this.sessoesToolStripMenuItem_Click);
             // 
             // filmesToolStripMenuItem
             // 
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(282, 44);
             this.filmesToolStripMenuItem.Text = "Filmes";
             this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(282, 44);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -204,6 +208,18 @@
             this.dateTimePickerSessoesFormPrinc.Size = new System.Drawing.Size(320, 32);
             this.dateTimePickerSessoesFormPrinc.TabIndex = 13;
             this.dateTimePickerSessoesFormPrinc.ValueChanged += new System.EventHandler(this.dateTimePickerSessoesFormPrinc_ValueChanged);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(203, 32);
+            this.toolStripStatusLabel2.Text = "Nome do Cinema";
+            // 
+            // toolStripStatusLabelNomeCinema
+            // 
+            this.toolStripStatusLabelNomeCinema.Name = "toolStripStatusLabelNomeCinema";
+            this.toolStripStatusLabelNomeCinema.Size = new System.Drawing.Size(237, 32);
+            this.toolStripStatusLabelNomeCinema.Text = "toolStripStatusLabel3";
             // 
             // FormPrincipal
             // 
@@ -250,6 +266,8 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox_mostrar_sessoes_dia;
         private System.Windows.Forms.DateTimePicker dateTimePickerSessoesFormPrinc;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNomeCinema;
     }
 }
 
