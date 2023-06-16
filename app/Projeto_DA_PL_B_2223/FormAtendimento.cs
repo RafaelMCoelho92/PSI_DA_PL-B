@@ -23,7 +23,6 @@ namespace Projeto_DA_PL_B_2223
         public FormAtendimento()
         {
             InitializeComponent();
-
         }
 
         public FormAtendimento(FormPrincipal formPrincipal) : this()
@@ -326,8 +325,8 @@ namespace Projeto_DA_PL_B_2223
                                             string estadoBilhete = "Por utilizar!";
                                             Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, nifCliente.Id, idsessao, idfuncionario);
                                             db.Bilhetes.Add(novoBilhete);
-                                            db.SaveChanges();  
-
+                                            db.SaveChanges();
+                                            exportarBilhete(novoBilhete);
                                         }
                                         MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         limparSelecao();
@@ -389,9 +388,7 @@ namespace Projeto_DA_PL_B_2223
                                         db.SaveChanges();
                                         exportarBilhete(novoBilhete);
                                     }
-                                    MessageBox.Show("Cliente criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    limparSelecao();
+                                    MessageBox.Show("Cliente e bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
                             catch (FormatException)
@@ -426,7 +423,7 @@ namespace Projeto_DA_PL_B_2223
                             Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, clienteanonimo.Id, idsessao, idfuncionario);
                             db.Bilhetes.Add(novoBilhete);
                             db.SaveChanges();
-
+                            exportarBilhete(novoBilhete);
                         }
                         MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limparSelecao();
