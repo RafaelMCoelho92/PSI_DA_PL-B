@@ -17,6 +17,7 @@ namespace Projeto_DA_PL_B_2223
     {
         private FormPrincipal formPrincipal;
         public int idsessao;
+        public int idfuncionario;
         public FormAtendimento()
         {
             InitializeComponent();
@@ -72,18 +73,19 @@ namespace Projeto_DA_PL_B_2223
             return nomeSala;
         }
 
-        public void setConfigSala(int id) // id da sessao
+        public void setConfigSala(int idSessao, int idFuncionario ) // id da sessao
         {
-            int filas = getFilas(id);
-            int colunas = getColunas(id);
-            string nomeSala = getNomeSala(id);
+            int filas = getFilas(idSessao);
+            int colunas = getColunas(idSessao);
+            string nomeSala = getNomeSala(idSessao);
             tableLayoutPanelEscolherLugar.SuspendLayout();
             limparSelecao();
             tableLayoutPanelEscolherLugar.Controls.Clear();
             tableLayoutPanelEscolherLugar.RowCount = filas;
             tableLayoutPanelEscolherLugar.ColumnCount = colunas;
             labelNomeSala.Text = nomeSala;
-            idsessao = id;
+            idsessao = idSessao;
+            idfuncionario = idFuncionario;
 
 
             for (int i = 0; i < filas; i++)
@@ -266,11 +268,18 @@ namespace Projeto_DA_PL_B_2223
                                         db.Pessoas.AddOrUpdate(nifCliente);
                                         db.SaveChanges();
                                         cadeira_gray();
+                                        foreach (var item in listBox_lugaresSelecionados.Items)
+                                        {
+                                            string lugar = item.ToString();
+                                            string estadoBilhete = "Por utilizar!";
+                                            Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, nifCliente.Id, idsessao, idfuncionario);
+                                            db.Bilhetes.Add(novoBilhete);
+                                            db.SaveChanges();  
+
+                                        }
                                         limparSelecao();
                                     }
-                                    /*double nif = double.Parse(textBox_pesquisa.Text);
-                                    Cliente cliente = Cliente(textBox_pesquisa.Text); //db.Pessoas.OfType<Cliente>();
-                                    var atualizarCliente = db.Pessoas.Find(cliente.NumFiscCliente);*/
+
 
 
 
@@ -324,6 +333,16 @@ namespace Projeto_DA_PL_B_2223
                                     db.Pessoas.Add(novocliente);
                                     db.SaveChanges();
                                     cadeira_gray();
+                                    foreach (var item in listBox_lugaresSelecionados.Items)
+                                    {
+                                        string lugar = item.ToString();
+                                        string estadoBilhete = "Por utilizar!";
+                                        Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, novocliente.Id, idsessao, idfuncionario);
+                                        db.Bilhetes.Add(novoBilhete);
+                                        db.SaveChanges();
+
+                                    }
+                                    limparSelecao();
                                     MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }

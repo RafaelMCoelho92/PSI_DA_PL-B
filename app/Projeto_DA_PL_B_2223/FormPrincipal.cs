@@ -89,16 +89,6 @@ namespace Projeto_DA_PL_B_2223
             this.toolStripStatusLabelHora.Text = DateTime.Now.ToString("G"); // F, U, ou G (senao apaga o G e ver as opcoes)
         }
 
-
-
-        // CHAMA A TAB DOS FUNCIONARIOS
-        /*private void buttonaAlterarFuncionario_Click(object sender, EventArgs e)
-        {
-            tabControlMenuPrincipal.TabPages.Clear();
-            TabPage tab = new FormLogin().getPage();
-            tabControlMenuPrincipal.TabPages.Add(tab);
-        }*/
-
         // CHAMA A TAB DOS CINEMAS
         private void cinemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -184,6 +174,14 @@ namespace Projeto_DA_PL_B_2223
         {
             atualizarDadosAoEntrar();
         }
+        private int getIdFuncionario()
+        {
+            string nomeFuncionario = toolStripStatusLabelNomeFuncionarioLogado.Text;
+            var db = new ApplicationContext();
+            var funcionario = db.Pessoas.OfType<Funcionario>().FirstOrDefault(f => f.NomePessoa == nomeFuncionario );
+            int idFuncionario = funcionario.Id;
+            return idFuncionario;
+        }
 
         private void listBox_mostrar_sessoes_dia_DoubleClick(object sender, EventArgs e)
         {
@@ -204,7 +202,8 @@ namespace Projeto_DA_PL_B_2223
                 var idsessao = db.Sessoes.Find(sessao.Id); // buscar o id da sessao q queremos mandar para o formatendimento
                 if (idsessao != null) // so faz isso se uma sessao
                 {   int idSessao = idsessao.Id;
-                    this.formAtendimento.setConfigSala(idSessao);
+                    int idFuncionario = getIdFuncionario();
+                    this.formAtendimento.setConfigSala(idSessao, idFuncionario);
                     this.formAtendimento.ShowDialog(this);
 
                 }

@@ -12,7 +12,7 @@ namespace Projeto_DA_PL_B_2223
     {
         [Key]
         public int idBilhete { get; set; }
-        public double lugarBilhete { get; set; }
+        public string lugarBilhete { get; set; }
         public string estadoBilhete { get; set; }
         //public Filme filmeBilhete { get; } -------> FILME e SALA vao estar na SESSAO
         public int idCliente { get; set; }
@@ -24,7 +24,7 @@ namespace Projeto_DA_PL_B_2223
         //CRIADA ESTA VARIAVEL ESTATICA PARA SER INCREMENTADA SEMPRE QUE UM OBJ BILHETE SEJA CRIADO
         private static int contadorBilhete = 0;
 
-        public Bilhete( double lugarBilhete, string estadoBilhete, int idCliente, int idSessao, int idFuncionario)
+        public Bilhete( string lugarBilhete, string estadoBilhete, int idCliente, int idSessao, int idFuncionario)
         {
             this.lugarBilhete = lugarBilhete;
             this.estadoBilhete = estadoBilhete;
