@@ -114,6 +114,7 @@
             // 
             this.textBox_nifAtend.Location = new System.Drawing.Point(1370, 359);
             this.textBox_nifAtend.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox_nifAtend.MaxLength = 9;
             this.textBox_nifAtend.Name = "textBox_nifAtend";
             this.textBox_nifAtend.ReadOnly = true;
             this.textBox_nifAtend.Size = new System.Drawing.Size(478, 31);

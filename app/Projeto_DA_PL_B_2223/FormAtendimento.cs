@@ -72,7 +72,7 @@ namespace Projeto_DA_PL_B_2223
             return nomeSala;
         }
 
-        public void setConfigSala(int id)
+        public void setConfigSala(int id) // id da sessao
         {
             int filas = getFilas(id);
             int colunas = getColunas(id);
