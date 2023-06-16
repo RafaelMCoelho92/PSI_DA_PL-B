@@ -14,6 +14,7 @@ namespace Projeto_DA_PL_B_2223
     public partial class FormFuncionarios : Form
     {
         private FormPrincipal formPrincipal;
+
         public FormFuncionarios()
         {
             InitializeComponent();
@@ -24,11 +25,11 @@ namespace Projeto_DA_PL_B_2223
         {
             this.formPrincipal = formPrincipal;
         }
+
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
-
 
         private void atualizarDadosAoEntrar()
         {
@@ -37,11 +38,11 @@ namespace Projeto_DA_PL_B_2223
                 var funcionarios = db.Pessoas.OfType<Funcionario>();
                 foreach (var funcionario in funcionarios) //correr os funcionarios para os adicionar à listBox 
                 {
-                    listBoxFuncionarios.Items.Add(funcionario); 
-                }
+                    listBoxFuncionarios.Items.Add(funcionario);
+                }
             }
-
         }
+
         public bool validarDadosFuncionario()
         {
             // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
@@ -50,28 +51,25 @@ namespace Projeto_DA_PL_B_2223
             string nomeFuncionario = textBoxNomeFuncionario.Text;
             if (nomeFuncionario.Length == 0)
             {
-                MessageBox.Show("O nome não pode ser vazio", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O campo 'nome' não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             string moradaFuncionario = textBoxMoradaFuncionario.Text;
             if (moradaFuncionario.Length == 0)
             {
-                MessageBox.Show("A morada não pode ser vazio", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O campo 'morada' não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             double salarioFuncionario;
             if (!double.TryParse(textBoxSalarioFuncionario.Text, out salarioFuncionario))
             {
-                MessageBox.Show("O valor do salário deve ser numérico", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O valor do salário deve ser numérico!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-
             string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
             if (tipoFuncionario.Length == 0)
             {
-                MessageBox.Show("É necessário atribuir uma função", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("É necessário atribuir uma função!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else
@@ -79,20 +77,20 @@ namespace Projeto_DA_PL_B_2223
                 return true;
             }
         }
+
         private void buttonGuardarFuncionario_Click(object sender, EventArgs e)
         {
             // vai ver se cumpre a todas as condicoes , caso nao cumpra qualquer condiçao vai saltar fora
             if (!validarDadosFuncionario())
-            {
+            {// caso cumpra vai continuar
                 return;
-            }// caso cumpra vai continuar
+            }
 
             //guarda os valores inseridos nas variaveis
             string nomeFuncionario = textBoxNomeFuncionario.Text;
             string moradaFuncionario = textBoxMoradaFuncionario.Text;
             string tipoFuncionario = comboBoxFuncaoFuncionario.Text;
             double salarioFuncionario = double.Parse(textBoxSalarioFuncionario.Text);// faz a conversao de texto para double
-
             try
             {   // manda para o construtor faz a instancia
                 Funcionario funcionario = new Funcionario(nomeFuncionario, moradaFuncionario, salarioFuncionario.ToString(), tipoFuncionario);
@@ -103,9 +101,8 @@ namespace Projeto_DA_PL_B_2223
             }
             catch (Exception)
             {   // caso haja algum erro
-                MessageBox.Show("Erro ao criar funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Erro ao criar funcionário!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
             if (listBoxFuncionarios.SelectedIndex != -1) // se tiver um funcionario selecionado, altera os dados
             {
@@ -136,7 +133,6 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges();
                 }
             }
-
         }
 
         private void buttonApagarFuncionario_Click(object sender, EventArgs e)
@@ -145,7 +141,7 @@ namespace Projeto_DA_PL_B_2223
             if (apagarFunc == -1)
             {
                 // se n tiver funcionario selecionado mensagem de erro
-                MessageBox.Show("Selecione um Funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um Funcionário!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -180,7 +176,6 @@ namespace Projeto_DA_PL_B_2223
                     comboBoxFuncaoFuncionario.Text = funcionarioSelecionado.TipoFuncionario;
                     textBoxSalarioFuncionario.Text = funcionarioSelecionado.SalarioFuncionario;
                 }
-
             }
         }
 
@@ -192,24 +187,23 @@ namespace Projeto_DA_PL_B_2223
             if (escolherFunc == -1)
             {
                 // se n tiver funcionario selecionado mensagem de erro
-                MessageBox.Show("Selecione um Funcionário", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
-            }//
+                MessageBox.Show("Selecione um Funcionário!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                // buscar o nome do funcionario selecionado
+            // buscar o nome do funcionario selecionado
             if (listBoxFuncionarios.Items[escolherFunc] is Funcionario funcionario)
             {
                 var db = new ApplicationContext();
                 var nomefuncionario = db.Pessoas.Find(funcionario.Id); // buscar o id do funcionario q queremos mandar para o formprincipal
                 if (nomefuncionario != null) // so faz isso se tiver um funcionario
                 {
-                        this.formPrincipal.setNomeFuncionario(nomefuncionario.Id);
-                        this.Close();
+                    this.formPrincipal.setNomeFuncionario(nomefuncionario.Id);
+                    this.Close();
                 }
             }
-
-
         }
+
         public void limparDadosInseridos()
         {
             textBoxNomeFuncionario.Clear();
@@ -221,7 +215,6 @@ namespace Projeto_DA_PL_B_2223
         {
             listBoxFuncionarios.ClearSelected();
             limparDadosInseridos();
-
         }
 
         private void FormFuncionarios_Load(object sender, EventArgs e)
@@ -229,9 +222,6 @@ namespace Projeto_DA_PL_B_2223
             this.CenterToScreen();
             listBoxFuncionarios.ClearSelected();
             limparDadosInseridos();
-
         }
     }
 }
-
-

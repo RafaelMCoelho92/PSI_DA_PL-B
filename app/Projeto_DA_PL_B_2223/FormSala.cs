@@ -20,14 +20,17 @@ namespace Projeto_DA_PL_B_2223
             InitializeComponent();
             atualizarDadosAoEntrar();
         }
+
         public FormSala(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
         {
             this.formPrincipal = formPrincipal;
         }
+
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
+
         //metodo para atualizar os dados ao carregar o formulario da sala
         private void atualizarDadosAoEntrar()
         {
@@ -40,12 +43,14 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
         private void limparDadosInseridos()
         {
             textBoxNomeSala.Clear();
             textBoxFilas.Clear();
             textBoxColunas.Clear();
         }
+
         // Valida os dados inseridos nas textbox
         public bool validarDadosSalas()
         {
@@ -74,34 +79,34 @@ namespace Projeto_DA_PL_B_2223
                 // CASO VALOR SEJA MENOR OU IGUAL A ZERO-> MENSAGEM DE ERRO
                 if (valorFila <= 0 || valorColuna <= 0)
                 {
-                    MessageBox.Show("As Filas e as Colunas tem de ser superior a 0 (zero)!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("As filas e as colunas tem de ser superior a 0 (zero)!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 // CASO VALOR SEJA MAIOR QUE 20 -> MENSAGEM DE ERRO
                 if (valorFila > 10 || valorColuna > 10)
                 {
-                    MessageBox.Show("As Filas e as Colunas tem de ser inferior a 10!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("As filas e as colunas tem de ser inferior a 10!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
             // CASO NAO SEJA NUMERO 
             catch (Exception)
             {
-                MessageBox.Show("Valor Invalido, insira um valor entre 1 e 10!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Valor inválido, insira um valor entre 1 e 10!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             double fila;
             //VALIDA QUE AS FILAS NAO ESTAO COM LETRAS
             if (!double.TryParse(textBoxFilas.Text, out fila))
             {
-                MessageBox.Show("O numero de filas deve ser numérico", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O número de filas deve ser numérico!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             double coluna;
             //VALIDA QUE AS COLUNAS NAO ESTA COM LETRAS
             if (!double.TryParse(textBoxColunas.Text, out coluna))
             {
-                MessageBox.Show("O numero de colunas deve ser numérico", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O número de colunas deve ser numérico!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else // se for tudo valido retorna true
@@ -119,12 +124,10 @@ namespace Projeto_DA_PL_B_2223
             {
                 return;
             }// caso cumpra vai continuar
-
-            //guarda os valores inseridos nas variaveis
+            // guarda os valores inseridos nas variaveis
             string nomeSala = textBoxNomeSala.Text;
             string filas = textBoxFilas.Text;// faz a conversao de texto para double
             string colunas = textBoxColunas.Text;// faz a conversao de texto para double
-  
             try
             {
                 Sala sala = new Sala(nomeSala, filas, colunas, 1);
@@ -135,7 +138,7 @@ namespace Projeto_DA_PL_B_2223
             catch
             {
                 // caso haja algum erro
-                MessageBox.Show("Erro ao criar sala", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Erro ao criar sala!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (listBoxSalas.SelectedIndex != -1) // se tiver uma sala selecionada, altera os dados
             {
@@ -173,7 +176,7 @@ namespace Projeto_DA_PL_B_2223
             if (apagarSala == -1)
             {
                 // se n tiver sala selecionada mensagem de erro
-                MessageBox.Show("Selecione uma Sala", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -218,11 +221,8 @@ namespace Projeto_DA_PL_B_2223
                     textBoxNomeSala.Text = salaSelecionada.nomeSala;
                     textBoxColunas.Text = salaSelecionada.Coluna;
                     textBoxFilas.Text = salaSelecionada.Fila;
-
                 }
-
             }
         }
-
     }
 }

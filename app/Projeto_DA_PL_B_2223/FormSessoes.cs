@@ -22,12 +22,13 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             dateTimePickerDataSessao.MinDate = DateTime.Now; // seleciona data de hoje pra frente
-
         }
+
         public FormSessoes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
         {
             this.formPrincipal = formPrincipal;
         }
+
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
@@ -62,35 +63,18 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Tem que selecionar um filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             int salaSelecionado = listBoxSalasSessoes.SelectedIndex;
             if (salaSelecionado == -1)
             {
                 MessageBox.Show("Tem que selecionar uma sala!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             string precoInserido = textBoxPrecoSessoes.Text;
             if (precoInserido == null)
             {
                 MessageBox.Show("Tem que inserir um preço para a sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-            /*DateTime dataSelecionada = dateTimePickerDataSessao.Value;
-                if (dataSelecionada != DateTime.MinValue )
-                {
-                    MessageBox.Show("Tem que selecionar uma data!");
-                    return false;
-                }
-
-                DateTime horaSelecionada = dateTimePickerHoraSessao.Value;
-                 if (horaSelecionada != DateTime.MinValue )
-                {
-                    MessageBox.Show("Tem que selecionar uma hora!");
-                    return false;
-                }*/
-
             return true;
         }
 
@@ -121,8 +105,6 @@ namespace Projeto_DA_PL_B_2223
         {
             validarDadosSessoes();
 
-
-
             // ESTAVA A CRIAR A INSTANCIA NA MESMA, APÓS CRIAR SESSAO SEM NENHUM ITEM SELECIONADO E DAVA CRASH COM ESTE IF NÃO DÁ
             if (listBoxFilmesSessoes.SelectedIndex > -1 && listBoxSalasSessoes.SelectedIndex > -1)
             {
@@ -143,7 +125,6 @@ namespace Projeto_DA_PL_B_2223
 
                     if (dataHoraSelecionada > dataHoraAtual)
                     {
-
                         Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
                         Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
 
@@ -159,7 +140,6 @@ namespace Projeto_DA_PL_B_2223
                         bool existeSessao = db.Sessoes.Any(s => s.Data == sessao.Data && s.idSala == salaSelecionada.Id &&
                             ((s.Hora <= horaInicial && DbFunctions.AddSeconds(s.Hora, (int)duracaoTotal.TotalSeconds) > horaInicial) ||
                             (s.Hora >= horaInicial && s.Hora < horaFim)));
-
 
                         ////////////////////////////////////////////////////// completei esta informação com o chat mas vou tentar explicar
                         // db.Sessoes.Any(...): O método Any verifica se existe algum elemento na coleção 
@@ -190,9 +170,6 @@ namespace Projeto_DA_PL_B_2223
                 {
                     MessageBox.Show("Apenas devem constar números neste campo!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-
-
             }
         }
 
@@ -221,7 +198,6 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Selecione uma Sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             if (listBoxSessoes.Items[apagarSessao] is Sessao sessao)
             {
                 //se tiver sessao selecionada
@@ -236,7 +212,6 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges(); // guarda as alterações na base de dados
                 }
             }
-
         }
     }
 }

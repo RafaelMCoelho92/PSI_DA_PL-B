@@ -44,11 +44,11 @@ namespace Projeto_DA_PL_B_2223
             dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
             setNomeCinema(1);
         }
+
         public FormPrincipal(FormAtendimento formAtendimento) : this() // recebemos no construtor deste form o form principal e podemos utilizar os metodos do principal
         {
             this.formAtendimento = formAtendimento;
         }
-
 
         //FUNCAO QUE EXECUTA AO ABRIR O FORM
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -56,37 +56,39 @@ namespace Projeto_DA_PL_B_2223
             // PRA VER NA BASE DE DADOS
             ApplicationContext context = new ApplicationContext();
 
-            while (context.Cinemas.Count() == 0 ) // ENQUANTO A CONTAGEM DE CINEMAS FOR IGUAL A 0, VAI ABRIR O FORM DE CINEMA
+            while (context.Cinemas.Count() == 0) // ENQUANTO A CONTAGEM DE CINEMAS FOR IGUAL A 0, VAI ABRIR O FORM DE CINEMA
             {
                 formCinema.ShowDialog();
             }
-            while(toolStripStatusLabelNomeFuncionarioLogado.Text == "FAÇA LOGIN") // vai mostrar o form de funcionarios enquanto n escolher um funcionario para estar logado
+            while (toolStripStatusLabelNomeFuncionarioLogado.Text == "FAÇA LOGIN") // vai mostrar o form de funcionarios enquanto n escolher um funcionario para estar logado
             {
                 formFuncionarios.ShowDialog();
             }
             atualizarDadosAoEntrar();
-           // dateTimePicker_formPrincipal();
+            // dateTimePicker_formPrincipal();
         }
+
         private void atualizarDadosAoEntrar()
         {
             listBox_mostrar_sessoes_dia.Items.Clear();
-                using (var bd = new ApplicationContext())
+            using (var bd = new ApplicationContext())
+            {
+                var sessoes = bd.Sessoes.ToList();
+                foreach (var sessao in sessoes) //correr os clientes para os adicionar à listBox 
                 {
-                    var sessoes = bd.Sessoes.ToList();
-                    foreach (var sessao in sessoes) //correr os clientes para os adicionar à listBox 
-                    {
                     if (sessao.Data == dateTimePickerSessoesFormPrinc.Value.ToString("dd/MM/yyyy"))
                     {
                         listBox_mostrar_sessoes_dia.Items.Add(sessao);
                     }
-                    }
                 }
+            }
         }
 
         private void dateTimePickerSessoesFormPrinc_ValueChanged(object sender, EventArgs e)
         {
             dateTimePicker_formPrincipal(); // estou a chamar mas em tentativa erro 
         }
+
         // MOSTRA A DATA E A HORA 
         private void timerFormPrincipal_Tick(object sender, EventArgs e)
         {
@@ -128,16 +130,15 @@ namespace Projeto_DA_PL_B_2223
         {
             var db = new ApplicationContext();
             var cinema = db.Cinemas.Find(Id); // procura o cinema pelo id recebido
-            if(cinema == null)
+            if (cinema == null)
             {
                 return;
             }
             else
             {
-            toolStripStatusLabelNomeCinema.Text = cinema.NomeCinema; // po o nome na label
-            labelNomeCinema.Text = cinema.NomeCinema;
+                toolStripStatusLabelNomeCinema.Text = cinema.NomeCinema; // po o nome na label
+                labelNomeCinema.Text = cinema.NomeCinema;
             }
-            
         }
 
         // MÉTODO PARA ATUALIZAR A LABEL COM O NOME DO FUNCIONARIO LOGADO
@@ -152,16 +153,19 @@ namespace Projeto_DA_PL_B_2223
         {
             formFuncionarios.ShowDialog();
         }
+
         //CHAMA O FORM DOS CLIENTES
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formClientes.ShowDialog();
         }
+
         //CHAMA O FORM DOS BILHETES
         private void bilhetesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formEstadoBilhete.ShowDialog();
         }
+
         //CHAMA O FORM DAS CATEGORIAS
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -170,17 +174,15 @@ namespace Projeto_DA_PL_B_2223
 
         private void dateTimePicker_formPrincipal()
         {
-
             using (var bd = new ApplicationContext())
             {
                 string dataSelecionada = dateTimePickerSessoesFormPrinc.Value.ToString("dd/MM/yyyy");
                 var sessoes = bd.Sessoes.Where(sessao => sessao.Data == dataSelecionada).ToList(); // esta linha fui procurar ao chatgpt, não estou a ver outra forma
-
                 listBox_mostrar_sessoes_dia.Items.Clear();
-                    foreach (var sessao in sessoes)
-                    {
-                        listBox_mostrar_sessoes_dia.Items.Add(sessao);
-                    }
+                foreach (var sessao in sessoes)
+                {
+                    listBox_mostrar_sessoes_dia.Items.Add(sessao);
+                }
             }
         }
 
@@ -188,11 +190,12 @@ namespace Projeto_DA_PL_B_2223
         {
             atualizarDadosAoEntrar();
         }
+
         private int getIdFuncionario()
         {
             string nomeFuncionario = toolStripStatusLabelNomeFuncionarioLogado.Text;
             var db = new ApplicationContext();
-            var funcionario = db.Pessoas.OfType<Funcionario>().FirstOrDefault(f => f.NomePessoa == nomeFuncionario );
+            var funcionario = db.Pessoas.OfType<Funcionario>().FirstOrDefault(f => f.NomePessoa == nomeFuncionario);
             int idFuncionario = funcionario.Id;
             return idFuncionario;
         }
@@ -205,9 +208,9 @@ namespace Projeto_DA_PL_B_2223
             if (escolherSessao == -1)
             {
                 // se n tiver sessão selecionada mensagem de erro
-                MessageBox.Show("Selecione uma Sessão", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione uma Sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }//
+            }
 
             // buscar a sessao selecionada
             if (listBox_mostrar_sessoes_dia.Items[escolherSessao] is Sessao sessao)
@@ -215,11 +218,11 @@ namespace Projeto_DA_PL_B_2223
                 var db = new ApplicationContext();
                 var idsessao = db.Sessoes.Find(sessao.Id); // buscar o id da sessao q queremos mandar para o formatendimento
                 if (idsessao != null) // so faz isso se uma sessao
-                {   int idSessao = idsessao.Id;
+                {
+                    int idSessao = idsessao.Id;
                     int idFuncionario = getIdFuncionario();
                     this.formAtendimento.setConfigSala(idSessao, idFuncionario);
                     this.formAtendimento.ShowDialog(this);
-
                 }
             }
         }

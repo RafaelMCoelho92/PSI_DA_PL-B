@@ -18,23 +18,23 @@ namespace Projeto_DA_PL_B_2223
 
         public FormClientes()
         {
-
             InitializeComponent();
             //atualizarDadosAoEntrar();
-
         }
+
         public FormClientes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
         {
             this.formPrincipal = formPrincipal;
         }
+
         public TabPage getPage()
         {
             return tabPage1;
         }
+
         private void atualizarDadosAoEntrar()
         {
             listBoxClientes.Items.Clear();
-
             using (var db = new ApplicationContext())
             {
                 var clientes = db.Pessoas.OfType<Cliente>();
@@ -44,6 +44,7 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
         private void buttonGuardarClientes_Click(object sender, EventArgs e)
         {
             // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
@@ -68,7 +69,6 @@ namespace Projeto_DA_PL_B_2223
 
             // VARIAVEL PARA FAZER O PARSE
             double contribuinte = 0;
-
             try
             {
                 // FAZ O PARSE DE STRING PARA DOUBLE - APENAS PERMITE A INSERÇÃO DE NUMEROS
@@ -86,7 +86,7 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Apenas devem constar números neste campo!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-           var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
+            var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
             if (verifica == false)
             {
                 return;
@@ -111,7 +111,6 @@ namespace Projeto_DA_PL_B_2223
             else
             {
                 Cliente novocliente = new Cliente(textBoxNomeClientes.Text, textBoxMoradaClientes.Text, textBoxNumFiscClientes.Text, totalbilhetes:0, valortotal:0);
-
                 listBoxClientes.Items.Add(novocliente); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
                 {   // cria novo funcionario
@@ -119,8 +118,6 @@ namespace Projeto_DA_PL_B_2223
                     db.SaveChanges();
                 }
             }
-
-
         }
 
         // METODO PARA VERIFICAR SE JA EXISTE ALGUM CLIENTE NA LISTBOX DOS CLIENTES
@@ -143,6 +140,7 @@ namespace Projeto_DA_PL_B_2223
 
             return true; // NUMERO FISCAL DO CLIENTE NAO EXISTE
         }
+
         private void buttonApagarClientes_Click(object sender, EventArgs e)
         {
             int apagarCliente = listBoxClientes.SelectedIndex;
@@ -168,7 +166,6 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
             atualizarDadosAoEntrar();
-
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -190,7 +187,6 @@ namespace Projeto_DA_PL_B_2223
             textBoxNomeClientes.Clear();
             textBoxMoradaClientes.Clear();
             textBoxNumFiscClientes.Clear();
-          
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,15 +203,13 @@ namespace Projeto_DA_PL_B_2223
                     textBoxNumFiscClientes.Text = clienteSelecionado.NumFiscCliente;
 
                 }
-
             }
         }
+
         public void setNifCliente(string nifCliente)
         {
             textBoxNumFiscClientes.Text = nifCliente;
         }
-
-   
 
         private void buttonPesquisarClientes_Click_1(object sender, EventArgs e)
         {
@@ -243,7 +237,6 @@ namespace Projeto_DA_PL_B_2223
                                 textBoxMoradaClientes.Text = clienteSelecionado.MoradaPessoa;
                                 textBoxNumFiscClientes.Text = clienteSelecionado.NumFiscCliente;
                             }
-                            
                         }
                         else
                         {
@@ -256,7 +249,6 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Digite um valor para pesquisa!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
         }
 
         private void buttonMaisInfo_Click(object sender, EventArgs e)
@@ -274,5 +266,4 @@ namespace Projeto_DA_PL_B_2223
             }
         }
     }
-
 }

@@ -33,7 +33,6 @@ namespace Projeto_DA_PL_B_2223
             Hora = hora;
         }
 
-
         public override string ToString()
         {
             var db = new ApplicationContext();

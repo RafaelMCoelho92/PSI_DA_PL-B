@@ -22,6 +22,7 @@ namespace Projeto_DA_PL_B_2223
             TipoFuncionario = tipoFuncionario;
 
         }
+
         public Funcionario()
         {
             // Construtor vazio necessário para o Entity Framework
@@ -31,7 +32,5 @@ namespace Projeto_DA_PL_B_2223
         {
             return "NOME: " + NomePessoa + "  MORADA: " + MoradaPessoa + "  FUNÇÃO: " + TipoFuncionario + " SALARIO: " + SalarioFuncionario;
         }
-
-
     }
 }

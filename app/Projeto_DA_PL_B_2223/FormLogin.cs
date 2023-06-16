@@ -17,6 +17,7 @@ namespace Projeto_DA_PL_B_2223
             InitializeComponent();
             // INVISIVEL OS OUTROS BOTOES ENQUANTO N FIZER LOG IN
         }
+
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
@@ -33,7 +34,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else
             {
-                MessageBox.Show("Username ou password errado, tente outra vez!");
+                MessageBox.Show("Username e/ou password incorreto(s)! Tente novamente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
