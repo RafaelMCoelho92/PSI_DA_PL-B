@@ -12,11 +12,25 @@ namespace Projeto_DA_PL_B_2223
     {
         [Key]
         public int Id { get; set; }
+        public string categoria { get; set; }
+        public string estado { get; set; }
+
         public string[] Categorias = { "Comédia", "Sci-Fi","Terror","Romance","Acção","Thriller","Drama","Mistério","Crime","Aventura","Fantasia","Animação"  };
 
         public Categoria()
         {
             // construtor vazio para entity framework
+        }
+
+        public Categoria(string categoria, string estado)
+        {
+            this.categoria = categoria;
+            this.estado = estado;
+        }
+
+        public override string ToString()
+        {
+            return "Categoria: " + categoria + " Estado: " + estado;
         }
     }
 

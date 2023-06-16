@@ -23,7 +23,6 @@ namespace Projeto_DA_PL_B_2223
             this.categoriaFilme = categoriaFilme;
             this.estadoFilme = estadoFilme;
             this.Duracao = hora;
-            // Hora = hora ---- porquê o this? dá na mesma sem this
         }
 
         public Filme() // construtor vazio para o entity framework 

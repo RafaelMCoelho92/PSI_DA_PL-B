@@ -22,7 +22,7 @@ namespace Projeto_DA_PL_B_2223
         Form formSessoes;
         Form formFilmes;
         Form formEstadoBilhete;
-        //Form formCategorias;
+        Form formCategorias;
        // Form formAtendimento;
 
         private FormAtendimento formAtendimento;
@@ -40,7 +40,7 @@ namespace Projeto_DA_PL_B_2223
             formCinema = new FormCinema(this);
             formAtendimento = new FormAtendimento(this);
             formEstadoBilhete = new FormEstadoBilhete(this);
-            //formCategorias = new FormCategorias(this);
+            formCategorias = new FormCategorias(this);
             dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
             setNomeCinema(1);
         }
@@ -165,7 +165,7 @@ namespace Projeto_DA_PL_B_2223
         //CHAMA O FORM DAS CATEGORIAS
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //formCategorias.ShowDialog();
+            formCategorias.ShowDialog();
         }
 
         private void dateTimePicker_formPrincipal()
