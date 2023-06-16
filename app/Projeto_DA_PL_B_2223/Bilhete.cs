@@ -19,7 +19,7 @@ namespace Projeto_DA_PL_B_2223
         //public Sala salaBilhete { get; }
         public int idFuncionario { get; set;}
         public int idSessao { get; set;}
-        //public Sessao sessaoBilhete { get; }
+        public DateTime dataHoraCompra { get; set; }
 
         //CRIADA ESTA VARIAVEL ESTATICA PARA SER INCREMENTADA SEMPRE QUE UM OBJ BILHETE SEJA CRIADO
         private static int contadorBilhete = 0;
@@ -31,6 +31,7 @@ namespace Projeto_DA_PL_B_2223
             this.idCliente = idCliente;
             this.idSessao = idSessao;
             this.idFuncionario = idFuncionario;
+            this.dataHoraCompra = DateTime.Now;
         }
 
         public Bilhete()
