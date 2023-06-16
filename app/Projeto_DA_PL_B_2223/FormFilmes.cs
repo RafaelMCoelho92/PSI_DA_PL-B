@@ -90,7 +90,7 @@ namespace Projeto_DA_PL_B_2223
             }
             catch (Exception)
             {   // caso haja algum erro
-                MessageBox.Show("Erro ao criar o filme");
+                MessageBox.Show("Erro ao criar o filme!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (listBoxFilmes.SelectedIndex != -1) // se tiver um funcionario selecionado, altera os dados
             {
@@ -170,7 +170,7 @@ namespace Projeto_DA_PL_B_2223
                 if (apagarFilme == -1)
                 {
                     // se n tiver filme selecionado mensagem de erro
-                    MessageBox.Show("Selecione um Filme", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Selecione um Filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 

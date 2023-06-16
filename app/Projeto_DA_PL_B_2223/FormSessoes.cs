@@ -100,6 +100,8 @@ namespace Projeto_DA_PL_B_2223
             listBoxSalasSessoes.ClearSelected();
             listBoxSessoes.ClearSelected();
             listBoxSalasSessoes.Items.Clear();
+            textBoxPrecoSessoes.Text = 0.ToString();
+            dateTimePickerHoraSessao.Value = dateTimePickerHoraSessao.Value.Date.AddHours(10).AddMinutes(0);
         }
 
         private void FormSessoes_Load(object sender, EventArgs e)
@@ -110,6 +112,8 @@ namespace Projeto_DA_PL_B_2223
             listBoxSalasSessoes.ClearSelected();
             listBoxSessoes.Items.Clear();
             listBoxSessoes.ClearSelected();
+            textBoxPrecoSessoes.Text = 0.ToString();
+            dateTimePickerHoraSessao.Value = dateTimePickerHoraSessao.Value.Date.AddHours(10).AddMinutes(0);
             atualizarDadosAoEntrar();
         }
 
@@ -134,52 +138,62 @@ namespace Projeto_DA_PL_B_2223
                     double preco = double.Parse(valorPreco);
                     string data = dateTimePickerDataSessao.Value.ToString("dd/MM/yyyy");
                     TimeSpan horaInicial = TimeSpan.Parse(dateTimePickerHoraSessao.Value.ToString("HH:mm"));
+                    TimeSpan horaAtual = DateTime.Now.TimeOfDay;
 
-                    Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
-                    Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
+                    if (TimeSpan.Compare(horaInicial, horaAtual) > 0)
+                    {
 
-                    Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id, preco, data, horaInicial);
-                    var db = new ApplicationContext();
+                        Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
+                        Sala salaSelecionada = (Sala)listBoxSalasSessoes.SelectedItem;
 
-                    TimeSpan duracaoFilme = db.Filmes.Single(f => f.Id == filmeSelecionado.Id).Duracao; // Obtém a duração do filme selecionado a partir da base de dados
+                        Sessao sessao = new Sessao(filmeSelecionado.Id, salaSelecionada.Id, preco, data, horaInicial);
+                        var db = new ApplicationContext();
 
-                    TimeSpan duracaoExtra = TimeSpan.FromMinutes(30); // 30 minutos extras
-                    TimeSpan duracaoTotal = duracaoFilme.Add(duracaoExtra); // duração total da sessão (filme + 30 minutos)
-                    TimeSpan horaFim = horaInicial.Add(duracaoTotal); // horário de término da sessão
+                        TimeSpan duracaoFilme = db.Filmes.Single(f => f.Id == filmeSelecionado.Id).Duracao; // Obtém a duração do filme selecionado a partir da base de dados
 
-                    bool existeSessao = db.Sessoes.Any(s => s.Data == sessao.Data && s.idSala == salaSelecionada.Id &&
-                        ((s.Hora <= horaInicial && DbFunctions.AddSeconds(s.Hora, (int)duracaoTotal.TotalSeconds) > horaInicial) ||
-                        (s.Hora >= horaInicial && s.Hora < horaFim)));
+                        TimeSpan duracaoExtra = TimeSpan.FromMinutes(30); // 30 minutos extras
+                        TimeSpan duracaoTotal = duracaoFilme.Add(duracaoExtra); // duração total da sessão (filme + 30 minutos)
+                        TimeSpan horaFim = horaInicial.Add(duracaoTotal); // horário de término da sessão
 
-                    ////////////////////////////////////////////////////// completei esta informação com o chat mas vou tentar explicar
+                        bool existeSessao = db.Sessoes.Any(s => s.Data == sessao.Data && s.idSala == salaSelecionada.Id &&
+                            ((s.Hora <= horaInicial && DbFunctions.AddSeconds(s.Hora, (int)duracaoTotal.TotalSeconds) > horaInicial) ||
+                            (s.Hora >= horaInicial && s.Hora < horaFim)));
+
+
+                        ////////////////////////////////////////////////////// completei esta informação com o chat mas vou tentar explicar
                         // db.Sessoes.Any(...): O método Any verifica se existe algum elemento na coleção 
                         // s => ...O parâmetro s representa cada sessão na coleção
                         // esta tinha feito em aula s.Data == sessao.Data && s.idSala == salaSelecionada.Id: Verifica se a sessão atual tem a mesma data e sala que a sessão existente
                         //s.Hora >= horaInicial && s.Hora < horaFim: Verifica se a sessão existente começa depois do início da nova sessão (s.Hora >= horaInicial)
-                                //e termina antes do horário de término da nova sessão (s.Hora < horaFim
+                        //e termina antes do horário de término da nova sessão (s.Hora < horaFim
 
-                    if (existeSessao)
-                    {
-                        MessageBox.Show("A sala já está ocupada nesse horário.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                        if (existeSessao)
+                        {
+                            MessageBox.Show("A sala já está ocupada nesse horário!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
 
-                    if (existeSessao)
-                    {
-                        MessageBox.Show("Existe sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        
-                    }
-                    else
-                    {
+                        if (existeSessao)
+                        {
+                            MessageBox.Show("Existe sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                        else
+                        {
                             listBoxSessoes.Items.Add(sessao);
                             var sessoes = db.Sessoes.ToList();
                             db.Sessoes.Add(sessao); // Adiciona a nova sessão ao contexto do banco de dados
                             db.SaveChanges(); // Salva as alterações no banco de dados
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("A hora inserida da sessão deve ser superior à hora atual!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Apenas devem constar números neste campo!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
 
@@ -209,7 +223,7 @@ namespace Projeto_DA_PL_B_2223
             if (apagarSessao == -1)
             {
                 // se n tiver sessao selecionada mensagem de erro
-                MessageBox.Show("Selecione uma Sessão", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione uma Sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
