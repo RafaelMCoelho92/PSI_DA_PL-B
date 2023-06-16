@@ -151,7 +151,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else if (button.BackColor == Color.Gray)
             {
-                MessageBox.Show("Lugar já comprado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Este lugar já está comprado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -179,18 +179,18 @@ namespace Projeto_DA_PL_B_2223
                         }
                         else
                         {
-                            MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Cliente não encontrado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite um valor de pesquisa", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Digite um valor para pesquisa!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Campo válido apenas para Clientes já registados", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Campo válido apenas para clientes já registados!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void limparTextBoxes()
@@ -257,7 +257,6 @@ namespace Projeto_DA_PL_B_2223
                     MessageBox.Show("Selecione o tipo de cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-
                 else
                 {
                     if (radioButton_cliente.Checked == true)
@@ -280,7 +279,7 @@ namespace Projeto_DA_PL_B_2223
                                     var nifCliente = db.Pessoas.OfType<Cliente>().FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
                                     if (nifCliente == null)
                                     {
-                                        MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Cliente não encontrado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }
                                     else
                                     {
@@ -298,6 +297,7 @@ namespace Projeto_DA_PL_B_2223
                                             db.SaveChanges();  
 
                                         }
+                                        MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         limparSelecao();
                                     }
 
@@ -331,7 +331,7 @@ namespace Projeto_DA_PL_B_2223
 
                                 if (contribuinte < 100000000 || contribuinte >= 700000000)
                                 {
-                                    MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
 
@@ -342,7 +342,7 @@ namespace Projeto_DA_PL_B_2223
                                     bool existeCliente = db.Pessoas.OfType<Cliente>().Any(p => p.NumFiscCliente == novocliente.NumFiscCliente);
                                     if (existeCliente)
                                     {
-                                        MessageBox.Show("Cliente com numero fiscal ja existente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Cliente com número fiscal já existente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
 
@@ -363,18 +363,19 @@ namespace Projeto_DA_PL_B_2223
                                         db.SaveChanges();
 
                                     }
+                                    MessageBox.Show("Cliente criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     limparSelecao();
-                                    MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             catch (FormatException)
                             {
-                                MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Apenas devem constar números neste campo!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Insira o numero fiscal do novo cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Insira o número fiscal do novo cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
 
@@ -384,13 +385,32 @@ namespace Projeto_DA_PL_B_2223
                         {
                             MessageBox.Show("Nao insira dados para a compra do bilhete!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
+
+                        var db = new ApplicationContext();
+                        Cliente clienteanonimo = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text, totalbilhetes: 0, valortotal: 0);
+                        clienteanonimo.totalBilhetes += listBox_lugaresSelecionados.Items.Count;
+                        clienteanonimo.valorTotal += double.Parse(textBox_valorBilhete.Text);
+                        db.Pessoas.AddOrUpdate(clienteanonimo);
+                        db.SaveChanges();
+                        cadeira_gray();
+                        foreach (var item in listBox_lugaresSelecionados.Items)
+                        {
+                            string lugar = item.ToString();
+                            string estadoBilhete = "Por utilizar!";
+                            Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, clienteanonimo.Id, idsessao, idfuncionario);
+                            db.Bilhetes.Add(novoBilhete);
+                            db.SaveChanges();
+
+                        }
+                        MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limparSelecao();
                     }
                 }
             }
 
             else
             {
-                MessageBox.Show("Selecione Primeiro os Lugares pretendidos para criar Bilhete", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione primeiro os lugares pretendidos para criar bilhete!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

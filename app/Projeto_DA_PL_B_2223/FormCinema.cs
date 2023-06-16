@@ -66,12 +66,14 @@ namespace Projeto_DA_PL_B_2223
                     existeCinema.NomeCinema = textBoxNomeCinema.Text;
                     existeCinema.MoradaCinema = textBoxMoradaCinema.Text;
                     existeCinema.EmailCinema = textBoxEmailCinema.Text;
+                    MessageBox.Show("Cinema atualizado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     // O cinema não existe, criar um novo cinema
                     var cinema = new Cinema(textBoxNomeCinema.Text, textBoxMoradaCinema.Text, textBoxEmailCinema.Text);
                     db.Cinemas.Add(cinema);
+                    MessageBox.Show("Cinema criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 db.SaveChanges();
@@ -125,7 +127,7 @@ namespace Projeto_DA_PL_B_2223
 
                 if (email == string.Empty || !Regex.IsMatch(email, vefifyemail))
                 {
-                        MessageBox.Show("Email inválido, insira um email no fomato correto: mail@valido.com", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Email inválido! Insira um email no fomato correto: mail@valido.com", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                 }
                 else
@@ -146,7 +148,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else
             {
-                MessageBox.Show("Registe primeiro um cinema", "Aviso", MessageBoxButtons.OK , MessageBoxIcon.Warning );
+                MessageBox.Show("Registe primeiro um cinema!", "Aviso", MessageBoxButtons.OK , MessageBoxIcon.Warning );
             }
         }
 

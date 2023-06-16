@@ -50,19 +50,19 @@ namespace Projeto_DA_PL_B_2223
             string nomeCliente = textBoxNomeClientes.Text;
             if (nomeCliente.Length == 0)
             {
-                MessageBox.Show("O nome não pode ser vazio", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O nome não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string moradaCliente = textBoxMoradaClientes.Text;
             if (moradaCliente.Length == 0)
             {
-                MessageBox.Show("A morada não pode ser vazia", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("A morada não pode ser vazia!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string numFiscCliente = textBoxNumFiscClientes.Text;
             if (numFiscCliente.Length == 0)
             {
-                MessageBox.Show("É necessário um número fiscal", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("É necessário um número fiscal!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -77,13 +77,13 @@ namespace Projeto_DA_PL_B_2223
                 // VERIFICA CASO O NUMERO NAO SEJA COMPREENDIDO ENTRE OS VALORES INSERIDOS - MOSTRA O ERRO
                 if (contribuinte < 100000000 || contribuinte >= 700000000)
                 {
-                    MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Apenas devem constar números neste campo", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Apenas devem constar números neste campo!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
            var verifica=  VerificaClienteExistente(nomeCliente, moradaCliente, numFiscCliente);
@@ -130,7 +130,7 @@ namespace Projeto_DA_PL_B_2223
             {
                 if (clienteExistente.NumFiscCliente == numFiscCliente && listBoxClientes.SelectedIndex == -1)//  && listBoxClientes.SelectedIndex != -1 grava senao mensagem de erro
                 {
-                    MessageBox.Show("Não pode adicionar um cliente com um Numero Fiscal já utilizado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Não pode adicionar um cliente com um número fiscal já utilizado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // NUMERO FISCAL DO CLIENTE JA EXISTE
                 }
             }
@@ -149,7 +149,7 @@ namespace Projeto_DA_PL_B_2223
             if (apagarCliente == -1)
             {
                 // se n tiver funcionario selecionado mensagem de erro
-                MessageBox.Show("Selecione um Cliente", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -248,13 +248,13 @@ namespace Projeto_DA_PL_B_2223
                         }
                         else
                         {
-                            MessageBox.Show("Cliente não encontrado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Cliente não encontrado!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Digite um valor de pesquisa", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Digite um valor para pesquisa!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -266,12 +266,12 @@ namespace Projeto_DA_PL_B_2223
             {
                 var db = new ApplicationContext();
                 Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-                string mensagem = $"Valor total: {clienteSelecionado.valorTotal}€ | Total de Bilhetes: {clienteSelecionado.totalBilhetes}";
-                MessageBox.Show(mensagem, "Mais Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string mensagem = $"Valor total: {clienteSelecionado.valorTotal}€ | Total de bilhetes: {clienteSelecionado.totalBilhetes}";
+                MessageBox.Show(mensagem, "Mais Info!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Escolha um cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Escolha um cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

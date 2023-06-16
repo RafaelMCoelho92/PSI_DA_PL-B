@@ -138,9 +138,10 @@ namespace Projeto_DA_PL_B_2223
                     double preco = double.Parse(valorPreco);
                     string data = dateTimePickerDataSessao.Value.ToString("dd/MM/yyyy");
                     TimeSpan horaInicial = TimeSpan.Parse(dateTimePickerHoraSessao.Value.ToString("HH:mm"));
-                    TimeSpan horaAtual = DateTime.Now.TimeOfDay;
+                    DateTime dataHoraSelecionada = dateTimePickerDataSessao.Value.Date.AddHours(horaInicial.Hours).AddMinutes(horaInicial.Minutes);
+                    DateTime dataHoraAtual = DateTime.Now;
 
-                    if (TimeSpan.Compare(horaInicial, horaAtual) > 0)
+                    if (dataHoraSelecionada > dataHoraAtual)
                     {
 
                         Filme filmeSelecionado = (Filme)listBoxFilmesSessoes.SelectedItem;
@@ -171,12 +172,6 @@ namespace Projeto_DA_PL_B_2223
                         {
                             MessageBox.Show("A sala já está ocupada nesse horário!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
-                        }
-
-                        if (existeSessao)
-                        {
-                            MessageBox.Show("Existe sessão!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                         }
                         else
                         {
