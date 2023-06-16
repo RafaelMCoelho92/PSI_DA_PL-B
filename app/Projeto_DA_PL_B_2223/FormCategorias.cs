@@ -42,6 +42,7 @@ namespace Projeto_DA_PL_B_2223
                 else
                 {
                     categoriaSelecionada.estado = "Ativa";
+
                 }
                 db.Categorias.AddOrUpdate(categoriaSelecionada);
                 db.SaveChanges();
@@ -59,7 +60,7 @@ namespace Projeto_DA_PL_B_2223
 
                 foreach (var categoria in categorias)
                 {
-                    listBoxCategorias.Items.Add(categoria.ToString());
+                    listBoxCategorias.Items.Add(categoria);
                 }
             }
         }
@@ -138,10 +139,6 @@ namespace Projeto_DA_PL_B_2223
                     textBoxNomeCategoria.Text = categoriaSelecionada.categoria;
                     comboBoxEstadoCategoria.Text = categoriaSelecionada.estado;
                 }
-            }
-            else
-            {
-                return;
             }
         }
 
