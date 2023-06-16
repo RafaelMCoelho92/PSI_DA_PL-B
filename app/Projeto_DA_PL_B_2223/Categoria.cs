@@ -15,7 +15,6 @@ namespace Projeto_DA_PL_B_2223
         public string categoria { get; set; }
         public string estado { get; set; }
 
-        public string[] Categorias = { "Comédia", "Sci-Fi","Terror","Romance","Acção","Thriller","Drama","Mistério","Crime","Aventura","Fantasia","Animação"  };
 
         public Categoria()
         {

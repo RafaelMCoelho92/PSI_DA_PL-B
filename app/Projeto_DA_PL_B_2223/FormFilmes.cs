@@ -139,12 +139,32 @@ namespace Projeto_DA_PL_B_2223
 
         public void preencherComboBoxCategorias()
         {
-            Categoria categoria = new Categoria();// instancia da classe categoria
-            string[] categorias = categoria.Categorias;// vamos buscar o array que ja esta definido
-            comboBoxCategoriaFilme.Items.AddRange(categorias);// vamos por essa lista na combobox
+            var db = new ApplicationContext();
+            var categorias = db.Categorias.Where(c => c.estado == "Ativa").ToList();
+            if (categorias.Count == 0)
+            {
+                criarCategoriasCasoVazio();
+                categorias = db.Categorias.Where(c => c.categoria == "Ativa").ToList();
+            }
+            string[] categoriasCombo = categorias.Select(c => c.categoria).ToArray() ;// vamos ter q ir buscar a bd, caso a bd esteja vazia criamos tal e qual como esta no form categoria
+            comboBoxCategoriaFilme.Items.AddRange(categoriasCombo);// vamos por essa lista na combobox
             comboBoxCategoriaFilme.SelectedIndex = 0; // vamos por logo uma opcao selecionada
         }
-
+        public void criarCategoriasCasoVazio()
+        {
+            var db = new ApplicationContext();
+            var categorias = db.Categorias.ToList();
+            if (categorias.Count == 0)
+            {
+                var categoriasPredefinidas = new string[] { "Comédia", "Sci-Fi", "Terror", "Romance", "Acção", "Thriller", "Drama", "Mistério", "Crime", "Aventura", "Fantasia", "Animação" };
+                foreach (string categoria in categoriasPredefinidas)
+                {
+                    var novaCategoria = new Categoria { categoria = categoria, estado = "Ativa" };
+                    db.Categorias.Add(novaCategoria);
+                }
+                db.SaveChanges();
+            }
+        }
         private void listBoxFilmes_SelectedIndexChanged(object sender, EventArgs e)
         {
             int escolherFilme = listBoxFilmes.SelectedIndex;
