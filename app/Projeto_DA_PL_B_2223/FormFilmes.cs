@@ -20,8 +20,8 @@ namespace Projeto_DA_PL_B_2223
         {
             InitializeComponent();
             atualizarListboxFilmesaoEntrar();
-
         }
+
         public FormFilmes(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
         {
             this.formPrincipal = formPrincipal;
@@ -32,6 +32,7 @@ namespace Projeto_DA_PL_B_2223
         {
             return tabControl1.TabPages[0];
         }
+
         public bool validarDadosInseridos()
         {   // RECEBE VALORES DAS TEXTSBOX E VALIDA
             string nomeFilme = textBoxNomeFilme.Text;
@@ -72,10 +73,10 @@ namespace Projeto_DA_PL_B_2223
                 return true;
             }
         }
+
         //METODO PARA GUARDAR O FILME
         private void buttonGuardarFilme_Click(object sender, EventArgs e)
         {
-            
             string nomeFilme = textBoxNomeFilme.Text;
             string categoriaFilme = comboBoxCategoriaFilme.Text;
             string estadoFilme = comboBoxEstadoFilme.Text;
@@ -83,7 +84,7 @@ namespace Projeto_DA_PL_B_2223
             if (!validarDadosInseridos())
             {
                 return;
-            } 
+            }
             try
             {   // manda para o construtor faz a instancia
                 Filme filme = new Filme(nomeFilme, categoriaFilme, estadoFilme, hora);
@@ -112,7 +113,7 @@ namespace Projeto_DA_PL_B_2223
             }
             else // se não tiver, cria um novo
             {
-                Filme novofilme = new Filme(textBoxNomeFilme.Text,comboBoxCategoriaFilme.Text, comboBoxEstadoFilme.Text, TimeSpan.Parse(dateTimePickerDuracao.Text));
+                Filme novofilme = new Filme(textBoxNomeFilme.Text, comboBoxCategoriaFilme.Text, comboBoxEstadoFilme.Text, TimeSpan.Parse(dateTimePickerDuracao.Text));
 
                 listBoxFilmes.Items.Add(novofilme); // mostra na listbox antes de atualizar a db
                 using (var db = new ApplicationContext())
@@ -122,8 +123,9 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
         //METODO PARA ATUALIZAR A LISTBOX
-        public void atualizarListboxFilmesaoEntrar() 
+        public void atualizarListboxFilmesaoEntrar()
         {
             using (var db = new ApplicationContext())
             {
@@ -134,6 +136,7 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
         public void preencherComboBoxCategorias()
         {
             Categoria categoria = new Categoria();// instancia da classe categoria
@@ -158,32 +161,29 @@ namespace Projeto_DA_PL_B_2223
                     DateTime new_date = dateTimePickerDuracao.MinDate.AddHours(filmeEscolhido.Duracao.Hours);
                     new_date = new_date.AddMinutes(filmeEscolhido.Duracao.Minutes);
                     dateTimePickerDuracao.Value = new_date;
-
                 }
             }
         }
 
         private void buttonApagarFilme_Click(object sender, EventArgs e)
         {
+            int apagarFilme = listBoxFilmes.SelectedIndex;
+            if (apagarFilme == -1)
             {
-                int apagarFilme = listBoxFilmes.SelectedIndex;
-                if (apagarFilme == -1)
-                {
-                    // se n tiver filme selecionado mensagem de erro
-                    MessageBox.Show("Selecione um Filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                // se n tiver filme selecionado mensagem de erro
+                MessageBox.Show("Selecione um Filme!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                if (listBoxFilmes.Items[apagarFilme] is Filme filme)
+            if (listBoxFilmes.Items[apagarFilme] is Filme filme)
+            {
+                listBoxFilmes.Items.Remove(filme);
+                var db = new ApplicationContext();
+                var apagarfilme = db.Filmes.Find(filme.Id); // buscar o id do filme q queremos apagar
+                if (apagarfilme != null) // so faz isso se tiver um filme
                 {
-                    listBoxFilmes.Items.Remove(filme);
-                    var db = new ApplicationContext();
-                    var apagarfilme = db.Filmes.Find(filme.Id); // buscar o id do filme q queremos apagar
-                    if (apagarfilme != null) // so faz isso se tiver um filme
-                    {
-                        db.Filmes.Remove(apagarfilme); // remove filme pelo id
-                        db.SaveChanges(); // guarda as alterações na base de dados
-                    }
+                    db.Filmes.Remove(apagarfilme); // remove filme pelo id
+                    db.SaveChanges(); // guarda as alterações na base de dados
                 }
             }
         }
@@ -192,7 +192,6 @@ namespace Projeto_DA_PL_B_2223
         {
             listBoxFilmes.ClearSelected();
             limparDadosInseridos();
-
         }
 
         private void FormFilmes_Load(object sender, EventArgs e)
@@ -203,6 +202,7 @@ namespace Projeto_DA_PL_B_2223
             preencherComboBoxCategorias();
             comboBoxEstadoFilme.Text = "Desativado";
         }
+
         public void limparDadosInseridos()
         {
             textBoxNomeFilme.Clear();

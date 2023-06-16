@@ -16,18 +16,15 @@ namespace Projeto_DA_PL_B_2223
         public string NomePessoa { get; set; }
         public string MoradaPessoa { get; set; }
 
-
         public Pessoa(string nomePessoa, string moradaPessoa)
         {
             NomePessoa = nomePessoa;
             MoradaPessoa = moradaPessoa;
-
-
         }
+
         public Pessoa()
         {
             // Construtor vazio necessário para o Entity Framework
         }
-
     }
 }

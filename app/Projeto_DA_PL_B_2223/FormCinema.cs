@@ -20,8 +20,8 @@ namespace Projeto_DA_PL_B_2223
             InitializeComponent();
             this.CenterToScreen(); // centra o form no ecrã
             atualizarDadosAoEntrar();
-
         }
+
         private void atualizarDadosAoEntrar()
         {
             using (ApplicationContext db = new ApplicationContext()) // using para liberar recursos no fim, boas praticas
@@ -39,19 +39,22 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
         public FormCinema(FormPrincipal formPrincipal) : this() //CHAMAR CONSTRUCTOR DE CIMA    
         {
             this.formPrincipal = formPrincipal;
         }
+
         public TabPage getPage()
         {
             return tabControl1.TabPages[0];
         }
+
         // GUARDA OS DADOS DO CINEMA
         private void buttonGuardarCinema_Click(object sender, EventArgs e)
         {
             // a funcao abaixo retorna false se n cumprir qualquer um dos parametros, retorna true se cumprir a todos
-            if(!validarDadosInseridos())// se for FALSO sai, se for true continua
+            if (!validarDadosInseridos())// se for FALSO sai, se for true continua
             {
                 return;
             }
@@ -75,12 +78,12 @@ namespace Projeto_DA_PL_B_2223
                     db.Cinemas.Add(cinema);
                     MessageBox.Show("Cinema criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
                 db.SaveChanges();
             }
             // Atualizar os dados das labels
             atualizarDadosLabel();
         }
+
         // ATUALIZA AS LABELS DA LISTBOX
         public void atualizarDadosLabel()
         {
@@ -88,53 +91,49 @@ namespace Projeto_DA_PL_B_2223
             string morada = textBoxMoradaCinema.Text;
             string email = textBoxEmailCinema.Text;
             // INSTANCIAR 
-            
+
             Cinema cinema = new Cinema(nome, morada, email);
             // ENVIAR PARA OS LABELS
             labelNomeCinema.Text = cinema.NomeCinema;
             labelMoradaCinema.Text = cinema.MoradaCinema;
             labelEmailCinema.Text = cinema.EmailCinema;
-
         }
 
         //VALIDA OS DADOS INSERIDOS 
         public bool validarDadosInseridos()
         {
+            // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
+            // Retorna falso para quando nao esta a cumprir os parametros
+            // retorna true quando cumpre
+            string nome = textBoxNomeCinema.Text;
+            if (nome.Length == 0)
+            {
+                MessageBox.Show("O nome não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            string morada = textBoxMoradaCinema.Text;
+            if (morada.Length == 0)
+            {
+                MessageBox.Show("A morada não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            string email = textBoxEmailCinema.Text;
+            if (email.Length == 0)
+            {
+                MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
 
-                // RECEBE AS VARIAVEIS DAS TEXTBOX E VALIDA QUE NÃO ESTAO VAZIAS
-
-            //Retorna falso para quando nao esta a cumprir os parametros
-            //retorna true quando cumpre
-                string nome = textBoxNomeCinema.Text;
-                if (nome.Length == 0)
-                {
-                    MessageBox.Show("O nome não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                string morada = textBoxMoradaCinema.Text;
-                if (morada.Length == 0)
-                {
-                    MessageBox.Show("A morada não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                string email = textBoxEmailCinema.Text;
-                if (email.Length == 0)
-                {
-                    MessageBox.Show("O email não pode ser vazio!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                string vefifyemail = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-
-                if (email == string.Empty || !Regex.IsMatch(email, vefifyemail))
-                {
-                        MessageBox.Show("Email inválido! Insira um email no fomato correto: mail@valido.com", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                }
-                else
-                {
-                    return true ;
-                }
-
+            if (email == string.Empty || !Regex.IsMatch(email, vefifyemail))
+            {
+                MessageBox.Show("Email inválido! Insira um email no fomato correto: mail@valido.com", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
@@ -148,16 +147,13 @@ namespace Projeto_DA_PL_B_2223
             }
             else
             {
-                MessageBox.Show("Registe primeiro um cinema!", "Aviso", MessageBoxButtons.OK , MessageBoxIcon.Warning );
+                MessageBox.Show("Registe primeiro um cinema!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void FormCinema_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-
         }
-
-
     }
 }

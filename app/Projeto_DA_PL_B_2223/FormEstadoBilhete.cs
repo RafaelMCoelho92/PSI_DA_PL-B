@@ -39,7 +39,6 @@ namespace Projeto_DA_PL_B_2223
                     listBox_pesquisaIdBilhete.Items.Add(bilhete).ToString();
                 }
             }
-            
         }
 
         private void button_pesquisaIdBilhete_Click(object sender, EventArgs e)
@@ -91,9 +90,9 @@ namespace Projeto_DA_PL_B_2223
                 db.Bilhetes.AddOrUpdate(bilheteSelecionado);
                 db.SaveChanges();
             }
-             
             atualizarDadosAoEntrar();
             textBox_estado.Clear();
+            textBox_pesquisaIdBilhete.Clear();
         }
 
         private void listBox_pesquisaIdBilhete_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +104,7 @@ namespace Projeto_DA_PL_B_2223
                 {
                     Bilhete bilheteSelecionado = (Bilhete)listBox_pesquisaIdBilhete.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
                     textBox_estado.Text = bilheteSelecionado.estadoBilhete;
+                    textBox_pesquisaIdBilhete.Text = bilheteSelecionado.idBilhete.ToString();
                 }
             }
         }
@@ -117,6 +117,7 @@ namespace Projeto_DA_PL_B_2223
         private void limpar_selecao()
         {
             listBox_pesquisaIdBilhete.ClearSelected();
+            textBox_pesquisaIdBilhete.Clear();
             textBox_estado.Clear();
         }
 

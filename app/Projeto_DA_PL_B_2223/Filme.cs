@@ -31,8 +31,6 @@ namespace Projeto_DA_PL_B_2223
 
         }
 
-
-
         // OVERRIDE PARA DIZER O QUE VAI ESCREVER NA LISTBOX
         public override string ToString()
         {

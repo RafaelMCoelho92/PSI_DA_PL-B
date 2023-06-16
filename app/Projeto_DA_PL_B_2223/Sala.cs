@@ -20,7 +20,6 @@ namespace Projeto_DA_PL_B_2223
         public int Id_Cinema { get; set; }
 
         //Constructor
-
         public Sala(string nomeSala, string fila, string coluna, int id_Cinema)
         {
             this.nomeSala = nomeSala;
@@ -33,7 +32,6 @@ namespace Projeto_DA_PL_B_2223
         public Sala()
         {
             // Construtor vazio necessário para o Entity Framework
-
         }
 
         // OVERRIDE PARA DIZER COMO VAI ESCREVER NA LISTBOX

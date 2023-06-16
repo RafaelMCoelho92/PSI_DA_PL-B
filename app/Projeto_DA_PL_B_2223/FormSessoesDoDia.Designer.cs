@@ -59,7 +59,6 @@
             this.buttonCriarBilheteSessDia.TabIndex = 10;
             this.buttonCriarBilheteSessDia.Text = "Criar Bilhete";
             this.buttonCriarBilheteSessDia.UseVisualStyleBackColor = true;
-            this.buttonCriarBilheteSessDia.Click += new System.EventHandler(this.buttonCriarBilheteSessDia_Click);
             // 
             // dateTimePickerSessoesDoDia
             // 
