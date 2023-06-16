@@ -67,7 +67,9 @@ namespace Projeto_DA_PL_B_2223
         public string getNomeSala(int Id)
         {
             var db = new ApplicationContext();
-            var sala = db.Salas.Find(Id);
+            var sessao = db.Sessoes.Find(Id);
+            var idSalaSessao = sessao.idSala;
+            var sala = db.Salas.Find(idSalaSessao);
             string nomeSala = "Nome da Sala: " + sala.nomeSala;
 
             return nomeSala;
