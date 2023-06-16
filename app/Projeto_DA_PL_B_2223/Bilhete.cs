@@ -14,9 +14,7 @@ namespace Projeto_DA_PL_B_2223
         public int idBilhete { get; set; }
         public string lugarBilhete { get; set; }
         public string estadoBilhete { get; set; }
-        //public Filme filmeBilhete { get; } -------> FILME e SALA vao estar na SESSAO
         public int idCliente { get; set; }
-        //public Sala salaBilhete { get; }
         public int idFuncionario { get; set;}
         public int idSessao { get; set;}
         public DateTime dataHoraCompra { get; set; }
@@ -47,5 +45,20 @@ namespace Projeto_DA_PL_B_2223
             get { return idBilhete; }
         }
 
+        public override string ToString()
+        {
+            var db = new ApplicationContext();
+            var cliente = db.Pessoas.OfType<Cliente>().First(c => c.Id == idCliente);
+            var sessao = db.Sessoes.Find(idSessao);
+            var filme = db.Filmes.First(f => f.Id == sessao.idFilme);
+            var funcionario = db.Pessoas.OfType<Funcionario>().First(f => f.Id == idFuncionario);
+
+            return "ID Bilhete: " + idBilhete + " |  Lugar Bilhete: " + lugarBilhete + " | Estado Bilhete: " + estadoBilhete + Environment.NewLine +
+                   "Nome do Cliente: " + cliente.NomePessoa + " | Morada do Cliente: " + cliente.MoradaPessoa + " | Numero de Identificacao Fiscal: " + cliente.NumFiscCliente + Environment.NewLine +
+                   "Nome do Filme: " + filme.nomeFilme + " | Duracao do Filme: " + filme.Duracao + " | Categoria do Filme: " + filme.categoriaFilme + " | Estado do filme: " + filme.estadoFilme + Environment.NewLine +
+                   "Hora da Sessão: " + sessao.Hora + Environment.NewLine +
+                   "Nome do Funcionario: " + funcionario.NomePessoa + Environment.NewLine +
+                   "Data e hora de compra:" + dataHoraCompra;
+        }
     }
 }

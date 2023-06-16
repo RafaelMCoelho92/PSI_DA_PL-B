@@ -5,11 +5,13 @@ using System.Data;
 using System.Data.Entity.Migrations;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Projeto_DA_PL_B_2223
 {
@@ -125,6 +127,36 @@ namespace Projeto_DA_PL_B_2223
             }
 
             tableLayoutPanelEscolherLugar.ResumeLayout();
+        }
+        private void exportarBilhete(Bilhete bilhete)
+        {
+            string texto_a_escrever = "";
+            //parte 1
+            texto_a_escrever += bilhete.ToString();
+            texto_a_escrever += Environment.NewLine; 
+
+            //separador
+            texto_a_escrever += "---------------------------";
+            texto_a_escrever += Environment.NewLine;
+
+            var db = new ApplicationContext();
+            var cliente = db.Pessoas.OfType<Cliente>().First(c => c.Id == bilhete.idCliente);
+
+            string nome_documento = bilhete.idBilhete + "_" + cliente.NomePessoa;
+
+            // Configure save file dialog box
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = nome_documento; // Default file name
+            dlg.Filter = "(*.txt)|*.txt"; // Default file extensions
+            dlg.FilterIndex = 1; // Default filter index
+            // Show save file dialog box e process save file dialog box results
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                // Save document
+                string filename = dlg.FileName;
+                File.WriteAllText(filename, texto_a_escrever);
+                
+            }
         }
         private void LugarClicked(Object sender, EventArgs e)
         {
@@ -328,13 +360,11 @@ namespace Projeto_DA_PL_B_2223
                                 double contribuinte = 0;
                                 // FAZ O PARSE DE STRING PARA DOUBLE - APENAS PERMITE A INSERÇÃO DE NUMEROS
                                 contribuinte = double.Parse(nifNovoCliente);
-
                                 if (contribuinte < 100000000 || contribuinte >= 700000000)
                                 {
                                     MessageBox.Show("O número fiscal a inserir deve ser válido, e deve ser entre 100000000 e 700000000", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
-
                                 else
                                 {
                                     var db = new ApplicationContext();
@@ -345,10 +375,6 @@ namespace Projeto_DA_PL_B_2223
                                         MessageBox.Show("Cliente com numero fiscal ja existente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
-
-
-                                    // Cliente novocliente = new Cliente(textBox_nomeAtend.Text, textBox_moradaAtend.Text, textBox_nifAtend.Text);
-                                    // using (var db = new ApplicationContext())
                                     novocliente.totalBilhetes += listBox_lugaresSelecionados.Items.Count;
                                     novocliente.valorTotal += double.Parse(textBox_valorBilhete.Text);
                                     db.Pessoas.Add(novocliente);
@@ -361,7 +387,7 @@ namespace Projeto_DA_PL_B_2223
                                         Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, novocliente.Id, idsessao, idfuncionario);
                                         db.Bilhetes.Add(novoBilhete);
                                         db.SaveChanges();
-
+                                        exportarBilhete(novoBilhete);
                                     }
                                     limparSelecao();
                                     MessageBox.Show("Cliente criado com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
