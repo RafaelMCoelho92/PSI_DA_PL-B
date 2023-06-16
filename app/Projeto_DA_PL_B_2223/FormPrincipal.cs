@@ -21,6 +21,8 @@ namespace Projeto_DA_PL_B_2223
         Form formSala;
         Form formSessoes;
         Form formFilmes;
+        Form formEstadoBilhete;
+        //Form formCategorias;
        // Form formAtendimento;
 
         private FormAtendimento formAtendimento;
@@ -37,6 +39,8 @@ namespace Projeto_DA_PL_B_2223
             formFilmes = new FormFilmes(this);
             formCinema = new FormCinema(this);
             formAtendimento = new FormAtendimento(this);
+            formEstadoBilhete = new FormEstadoBilhete(this);
+            //formCategorias = new FormCategorias(this);
             dateTimePickerSessoesFormPrinc.MinDate = DateTime.Now; // seleciona data de hoje pra frente
             setNomeCinema(1);
         }
@@ -152,6 +156,16 @@ namespace Projeto_DA_PL_B_2223
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formClientes.ShowDialog();
+        }
+        //CHAMA O FORM DOS BILHETES
+        private void bilhetesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEstadoBilhete.ShowDialog();
+        }
+        //CHAMA O FORM DAS CATEGORIAS
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //formCategorias.ShowDialog();
         }
 
         private void dateTimePicker_formPrincipal()

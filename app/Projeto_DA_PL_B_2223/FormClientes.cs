@@ -228,8 +228,7 @@ namespace Projeto_DA_PL_B_2223
                     using (var db = new ApplicationContext())
                     {
                         // Realiza a consulta no banco de dados
-                        var nifCliente = db.Pessoas.OfType<Cliente>()
-                            .FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
+                        var nifCliente = db.Pessoas.OfType<Cliente>().FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
 
                         if (nifCliente != null)
                         {

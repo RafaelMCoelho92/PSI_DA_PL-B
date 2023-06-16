@@ -30,8 +30,6 @@ namespace Projeto_DA_PL_B_2223
             this.formPrincipal = formPrincipal;
         }
 
-
-
         public int getFilas(int Id)
         {
             var db = new ApplicationContext();
@@ -41,6 +39,7 @@ namespace Projeto_DA_PL_B_2223
             int filas = int.Parse(filascolunas.Fila); // faz o parse pra int da string com o valor das filas
             return filas;
         }
+
         public int getColunas(int Id)
         {
             var db = new ApplicationContext();
@@ -50,12 +49,14 @@ namespace Projeto_DA_PL_B_2223
             int colunas = int.Parse(filascolunas.Coluna);// faz o parse pra int da string com valor das colunas
             return colunas;
         }
+
         public void limparRadioButton()
         {
             radioButton_anonimo.Checked = false ;
             radioButton_cliente.Checked = false;
             radioButton_novoCliente.Checked = false;
         }
+
         public void limparSelecao()
         {
             limparTextBoxes();
@@ -65,6 +66,7 @@ namespace Projeto_DA_PL_B_2223
             textBox_valorBilhete.Text = zero.ToString();
 
         }
+
         public string getNomeSala(int Id)
         {
             var db = new ApplicationContext();
@@ -90,7 +92,6 @@ namespace Projeto_DA_PL_B_2223
             idsessao = idSessao;
             idfuncionario = idFuncionario;
 
-
             for (int i = 0; i < filas; i++)
             {
                 for (int j = 0; j < colunas; j++)
@@ -103,12 +104,13 @@ namespace Projeto_DA_PL_B_2223
                     //button.Image = Properties.Resources.chair5381;
                     button.Click += LugarClicked;
                     tableLayoutPanelEscolherLugar.Controls.Add(button, j, i);
-
                 }
             }
+
             var db = new ApplicationContext();
             // Consulta para encontrar os bilhetes comprados com o mesmo ID de sessão
             var bilhetes = db.Bilhetes.Where(b => b.idSessao == idsessao);
+
             foreach( var bilhete in bilhetes) // para cada bilhete com id sessao igual ao id da sessao atual
             {
                 string lugarBilhete = bilhete.lugarBilhete; // vai buscar o lugar do bilhete e se for igual a uma das cadeiras vai meter a cinza
@@ -127,6 +129,7 @@ namespace Projeto_DA_PL_B_2223
 
             tableLayoutPanelEscolherLugar.ResumeLayout();
         }
+
         private void exportarBilhete(Bilhete bilhete)
         {
             string texto_a_escrever = "";
@@ -154,9 +157,9 @@ namespace Projeto_DA_PL_B_2223
                 // Save document
                 string filename = dlg.FileName;
                 File.WriteAllText(filename, texto_a_escrever);
-                
             }
         }
+
         private void LugarClicked(Object sender, EventArgs e)
         {
             LugarButton button = (LugarButton)sender;
@@ -199,9 +202,7 @@ namespace Projeto_DA_PL_B_2223
                     using (var db = new ApplicationContext())
                     {
                         // Realiza a consulta no banco de dados
-                        var nifCliente = db.Pessoas.OfType<Cliente>()
-                            .FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
-
+                        var nifCliente = db.Pessoas.OfType<Cliente>().FirstOrDefault(p => p.NumFiscCliente == valorPesquisa);
                         if (nifCliente != null)
                         {   //coloca o que está na base de dados nas textBoxs
                             textBox_nomeAtend.Text = nifCliente.NomePessoa;
@@ -224,6 +225,7 @@ namespace Projeto_DA_PL_B_2223
                 MessageBox.Show("Campo válido apenas para clientes já registados!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void limparTextBoxes()
         {
             textBox_pesquisa.Clear();
@@ -231,6 +233,7 @@ namespace Projeto_DA_PL_B_2223
             textBox_moradaAtend.Clear();
             textBox_nifAtend.Clear();
         }
+
         private void radioButton_novoCliente_CheckedChanged(object sender, EventArgs e)
         {
             // vai limpar os dados ao trocar de butão de seleção
@@ -265,6 +268,7 @@ namespace Projeto_DA_PL_B_2223
                 limparTextBoxes();
             }
         }
+
         private void cadeira_gray()
         {
             foreach (Control control in tableLayoutPanelEscolherLugar.Controls)
@@ -279,6 +283,7 @@ namespace Projeto_DA_PL_B_2223
                 }
             }
         }
+
         private void button_criarBilhete_Click(object sender, EventArgs e)
         {
             if (listBox_lugaresSelecionados.Items.Count > 0)
@@ -287,7 +292,6 @@ namespace Projeto_DA_PL_B_2223
                 {
                     MessageBox.Show("Selecione o tipo de cliente!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
                 else
                 {
                     if (radioButton_cliente.Checked == true)
@@ -331,14 +335,11 @@ namespace Projeto_DA_PL_B_2223
                                         MessageBox.Show("Bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         limparSelecao();
                                     }
-
-
-
-
                                 }
                             }
                         }
                     }
+
                     else if (radioButton_novoCliente.Checked == true)
                     {
                         if (textBox_nomeAtend.Text == "")
@@ -435,7 +436,6 @@ namespace Projeto_DA_PL_B_2223
             {
                 MessageBox.Show("Selecione primeiro os lugares pretendidos para criar bilhete!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void radioButton_cliente_CheckedChanged(object sender, EventArgs e)
