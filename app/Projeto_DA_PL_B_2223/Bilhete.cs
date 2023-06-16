@@ -53,12 +53,12 @@ namespace Projeto_DA_PL_B_2223
             var filme = db.Filmes.First(f => f.Id == sessao.idFilme);
             var funcionario = db.Pessoas.OfType<Funcionario>().First(f => f.Id == idFuncionario);
 
-            return "ID Bilhete: " + idBilhete + " |  Lugar Bilhete: " + lugarBilhete + " | Estado Bilhete: " + estadoBilhete + Environment.NewLine +
-                   "Nome do Cliente: " + cliente.NomePessoa + " | Morada do Cliente: " + cliente.MoradaPessoa + " | Numero de Identificacao Fiscal: " + cliente.NumFiscCliente + Environment.NewLine +
-                   "Nome do Filme: " + filme.nomeFilme + " | Duracao do Filme: " + filme.Duracao + " | Categoria do Filme: " + filme.categoriaFilme + " | Estado do filme: " + filme.estadoFilme + Environment.NewLine +
-                   "Hora da Sessão: " + sessao.Hora + Environment.NewLine +
-                   "Nome do Funcionario: " + funcionario.NomePessoa + Environment.NewLine +
-                   "Data e hora de compra:" + dataHoraCompra;
+            return " ID Bilhete: " + idBilhete + " |  Lugar Bilhete: " + lugarBilhete + " | Estado Bilhete: " + estadoBilhete + Environment.NewLine +
+                   " Nome do Cliente: " + cliente.NomePessoa + " | Morada do Cliente: " + cliente.MoradaPessoa + " | Numero de Identificacao Fiscal: " + cliente.NumFiscCliente + Environment.NewLine +
+                   " Nome do Filme: " + filme.nomeFilme + " | Duracao do Filme: " + filme.Duracao + " | Categoria do Filme: " + filme.categoriaFilme + " | Estado do filme: " + filme.estadoFilme + Environment.NewLine +
+                   " Hora da Sessão: " + sessao.Hora + Environment.NewLine +
+                   " Nome do Funcionario: " + funcionario.NomePessoa + Environment.NewLine +
+                   " Data e hora de compra:" + dataHoraCompra;
         }
     }
 }

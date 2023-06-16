@@ -326,7 +326,7 @@ namespace Projeto_DA_PL_B_2223
                                         foreach (var item in listBox_lugaresSelecionados.Items)
                                         {
                                             string lugar = item.ToString();
-                                            string estadoBilhete = "Por utilizar!";
+                                            string estadoBilhete = "Activo";
                                             Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, nifCliente.Id, idsessao, idfuncionario);
                                             db.Bilhetes.Add(novoBilhete);
                                             db.SaveChanges();
@@ -383,7 +383,7 @@ namespace Projeto_DA_PL_B_2223
                                     foreach (var item in listBox_lugaresSelecionados.Items)
                                     {
                                         string lugar = item.ToString();
-                                        string estadoBilhete = "Por utilizar!";
+                                        string estadoBilhete = "Activo";
                                         Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, novocliente.Id, idsessao, idfuncionario);
                                         db.Bilhetes.Add(novoBilhete);
                                         db.SaveChanges();
@@ -420,7 +420,7 @@ namespace Projeto_DA_PL_B_2223
                         foreach (var item in listBox_lugaresSelecionados.Items)
                         {
                             string lugar = item.ToString();
-                            string estadoBilhete = "Por utilizar!";
+                            string estadoBilhete = "Activo";
                             Bilhete novoBilhete = new Bilhete(lugar, estadoBilhete, clienteanonimo.Id, idsessao, idfuncionario);
                             db.Bilhetes.Add(novoBilhete);
                             db.SaveChanges();

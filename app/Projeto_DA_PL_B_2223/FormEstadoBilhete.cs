@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,12 +32,11 @@ namespace Projeto_DA_PL_B_2223
             using (var db = new ApplicationContext())
             {
                 var bilhetes = db.Bilhetes.OfType<Bilhete>();
+                
                 foreach (var bilhete in bilhetes)
                 {
-                    listBox_pesquisaIdBilhete.Items.Add("ID Bilhete: " + bilhete.idBilhete + 
-                        " | Lugar Bilhete: " + bilhete.lugarBilhete + 
-                        " | Estado Bilhete: " + bilhete.estadoBilhete +
-                        " | Nome do Cliente: " + bilhete.idCliente); // REVER PARA PUXAR O NOME DO CLIENTE E NAO O ID
+                    var cliente = db.Pessoas.OfType<Cliente>().First(c => c.Id == bilhete.idCliente);
+                    listBox_pesquisaIdBilhete.Items.Add(bilhete).ToString();
                 }
             }
         }
@@ -65,6 +65,47 @@ namespace Projeto_DA_PL_B_2223
             else
             {
                 MessageBox.Show("Digite um valor para pesquisa!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void button_mudarEstadoBilhete_Click(object sender, EventArgs e)
+        {
+            var db = new ApplicationContext();
+
+            if (listBox_pesquisaIdBilhete.Items.Count == -1)
+            {
+                MessageBox.Show("Selecione um bilhete para alterar estado", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Bilhete bilheteSelecionado = (Bilhete)listBox_pesquisaIdBilhete.SelectedItem;
+                textBox_estado.Text = bilheteSelecionado.estadoBilhete;
+                if (bilheteSelecionado.estadoBilhete == "Activo")
+                {
+                    bilheteSelecionado.estadoBilhete = "Inactivo";
+                } else
+                {
+                    bilheteSelecionado.estadoBilhete = "Activo";
+                }
+                db.Bilhetes.AddOrUpdate(bilheteSelecionado);
+                db.SaveChanges();
+            }
+             
+            atualizarDadosAoEntrar();
+            textBox_estado.Clear();
+        }
+
+        private void listBox_pesquisaIdBilhete_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int escolherBilhete = listBox_pesquisaIdBilhete.SelectedIndex;
+            if (escolherBilhete != -1)
+            {
+                using (var db = new ApplicationContext())
+                {
+                    Bilhete bilheteSelecionado = (Bilhete)listBox_pesquisaIdBilhete.SelectedItem; // descobrir o que será indicado nas textbox ao selecionar na listBox
+                    textBox_estado.Text = bilheteSelecionado.estadoBilhete;
+                }
+
             }
         }
     }
