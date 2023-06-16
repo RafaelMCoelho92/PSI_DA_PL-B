@@ -103,6 +103,25 @@ namespace Projeto_DA_PL_B_2223
 
                 }
             }
+            var db = new ApplicationContext();
+            // Consulta para encontrar os bilhetes comprados com o mesmo ID de sessão
+            var bilhetes = db.Bilhetes.Where(b => b.idSessao == idsessao);
+            foreach( var bilhete in bilhetes) // para cada bilhete com id sessao igual ao id da sessao atual
+            {
+                string lugarBilhete = bilhete.lugarBilhete; // vai buscar o lugar do bilhete e se for igual a uma das cadeiras vai meter a cinza
+                foreach (Control control in tableLayoutPanelEscolherLugar.Controls)
+                {
+                    if (control is LugarButton button) //
+                    {
+                        // Verificar se o texto do botão é igual ao do bilhete previamente comprado
+                        if (button.Text == lugarBilhete)
+                        {
+                            button.BackColor = Color.Gray; // Alterar cor para cinza
+                        }
+                    }
+                }
+            }
+
             tableLayoutPanelEscolherLugar.ResumeLayout();
         }
         private void LugarClicked(Object sender, EventArgs e)
