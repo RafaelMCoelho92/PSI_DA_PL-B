@@ -46,6 +46,21 @@ namespace Projeto_DA_PL_B_2223
                 db.Categorias.AddOrUpdate(categoriaSelecionada);
                 db.SaveChanges();
                 limparSelecao();
+                atualizarListBox();
+            }
+        }
+        private void atualizarListBox()
+        {
+            listBoxCategorias.Items.Clear();
+
+            using (var db = new ApplicationContext())
+            {
+                var categorias = db.Categorias.ToList();
+
+                foreach (var categoria in categorias)
+                {
+                    listBoxCategorias.Items.Add(categoria.ToString());
+                }
             }
         }
         private void limparSelecao()
