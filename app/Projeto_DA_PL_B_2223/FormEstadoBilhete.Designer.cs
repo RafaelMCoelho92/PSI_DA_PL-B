@@ -97,6 +97,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormEstadoBilhete";
             this.Text = "FormEstadoBilhete";
+            this.Load += new System.EventHandler(this.FormEstadoBilhete_Load);
+            this.Click += new System.EventHandler(this.FormEstadoBilhete_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
