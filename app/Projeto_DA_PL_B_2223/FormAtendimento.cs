@@ -390,6 +390,7 @@ namespace Projeto_DA_PL_B_2223
                                         exportarBilhete(novoBilhete);
                                     }
                                     MessageBox.Show("Cliente e bilhete criado com sucesso!", "Informação!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    limparSelecao();
                                 }
                             }
                             catch (FormatException)
