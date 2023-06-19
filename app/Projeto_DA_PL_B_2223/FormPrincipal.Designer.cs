@@ -48,9 +48,9 @@
             this.filmesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bilhetesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_mostrar_sessoes_dia = new System.Windows.Forms.ListBox();
             this.dateTimePickerSessoesFormPrinc = new System.Windows.Forms.DateTimePicker();
-            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -63,9 +63,10 @@
             this.labelNomeCinema.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelNomeCinema.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomeCinema.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelNomeCinema.Location = new System.Drawing.Point(322, 39);
+            this.labelNomeCinema.Location = new System.Drawing.Point(429, 48);
+            this.labelNomeCinema.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNomeCinema.Name = "labelNomeCinema";
-            this.labelNomeCinema.Size = new System.Drawing.Size(141, 28);
+            this.labelNomeCinema.Size = new System.Drawing.Size(172, 33);
             this.labelNomeCinema.TabIndex = 5;
             this.labelNomeCinema.Text = "CINE GEST";
             // 
@@ -78,41 +79,41 @@
             this.toolStripStatusLabelNomeCinema,
             this.toolStripStatusLabel1,
             this.toolStripStatusLabelNomeFuncionarioLogado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 554);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 7, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(798, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1064, 26);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabelHora
             // 
             this.toolStripStatusLabelHora.Name = "toolStripStatusLabelHora";
-            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(49, 17);
+            this.toolStripStatusLabelHora.Size = new System.Drawing.Size(63, 20);
             this.toolStripStatusLabelHora.Text = "00:00:00";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(101, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(126, 20);
             this.toolStripStatusLabel2.Text = "Nome do Cinema";
             // 
             // toolStripStatusLabelNomeCinema
             // 
             this.toolStripStatusLabelNomeCinema.Name = "toolStripStatusLabelNomeCinema";
-            this.toolStripStatusLabelNomeCinema.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabelNomeCinema.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabelNomeCinema.Text = "toolStripStatusLabel3";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(129, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(160, 20);
             this.toolStripStatusLabel1.Text = "Nome do Funcionario: ";
             // 
             // toolStripStatusLabelNomeFuncionarioLogado
             // 
             this.toolStripStatusLabelNomeFuncionarioLogado.Name = "toolStripStatusLabelNomeFuncionarioLogado";
-            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(74, 17);
+            this.toolStripStatusLabelNomeFuncionarioLogado.Size = new System.Drawing.Size(90, 20);
             this.toolStripStatusLabelNomeFuncionarioLogado.Text = "FAÇA LOGIN";
             this.toolStripStatusLabelNomeFuncionarioLogado.Click += new System.EventHandler(this.toolStripStatusLabelNomeFuncionarioLogado_Click);
             // 
@@ -124,10 +125,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 42);
+            this.pictureBox1.Size = new System.Drawing.Size(161, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -139,8 +140,8 @@
             this.definiçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(798, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 26);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,65 +157,73 @@
             this.bilhetesToolStripMenuItem,
             this.categoriasToolStripMenuItem});
             this.definiçõesToolStripMenuItem.Name = "definiçõesToolStripMenuItem";
-            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(74, 22);
+            this.definiçõesToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.definiçõesToolStripMenuItem.Text = "Definições";
             // 
             // cinemaToolStripMenuItem
             // 
             this.cinemaToolStripMenuItem.Name = "cinemaToolStripMenuItem";
-            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cinemaToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.cinemaToolStripMenuItem.Text = "Cinema";
             this.cinemaToolStripMenuItem.Click += new System.EventHandler(this.cinemaToolStripMenuItem_Click);
             // 
             // salaToolStripMenuItem
             // 
             this.salaToolStripMenuItem.Name = "salaToolStripMenuItem";
-            this.salaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salaToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.salaToolStripMenuItem.Text = "Salas";
             this.salaToolStripMenuItem.Click += new System.EventHandler(this.salasToolStripMenuItem_Click);
             // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.funcionarioToolStripMenuItem.Text = "Funcionários";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
             // 
             // sessoesToolStripMenuItem
             // 
             this.sessoesToolStripMenuItem.Name = "sessoesToolStripMenuItem";
-            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sessoesToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.sessoesToolStripMenuItem.Text = "Sessões";
             this.sessoesToolStripMenuItem.Click += new System.EventHandler(this.sessoesToolStripMenuItem_Click);
             // 
             // filmesToolStripMenuItem
             // 
             this.filmesToolStripMenuItem.Name = "filmesToolStripMenuItem";
-            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filmesToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.filmesToolStripMenuItem.Text = "Filmes";
             this.filmesToolStripMenuItem.Click += new System.EventHandler(this.filmesToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // bilhetesToolStripMenuItem
             // 
             this.bilhetesToolStripMenuItem.Name = "bilhetesToolStripMenuItem";
-            this.bilhetesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bilhetesToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.bilhetesToolStripMenuItem.Text = "Bilhetes";
             this.bilhetesToolStripMenuItem.Click += new System.EventHandler(this.bilhetesToolStripMenuItem_Click);
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
             // listBox_mostrar_sessoes_dia
             // 
             this.listBox_mostrar_sessoes_dia.FormattingEnabled = true;
-            this.listBox_mostrar_sessoes_dia.Location = new System.Drawing.Point(33, 95);
-            this.listBox_mostrar_sessoes_dia.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBox_mostrar_sessoes_dia.ItemHeight = 16;
+            this.listBox_mostrar_sessoes_dia.Location = new System.Drawing.Point(44, 117);
+            this.listBox_mostrar_sessoes_dia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox_mostrar_sessoes_dia.Name = "listBox_mostrar_sessoes_dia";
-            this.listBox_mostrar_sessoes_dia.Size = new System.Drawing.Size(720, 238);
+            this.listBox_mostrar_sessoes_dia.Size = new System.Drawing.Size(959, 292);
             this.listBox_mostrar_sessoes_dia.TabIndex = 12;
             this.listBox_mostrar_sessoes_dia.DoubleClick += new System.EventHandler(this.listBox_mostrar_sessoes_dia_DoubleClick);
             // 
@@ -222,25 +231,21 @@
             // 
             this.dateTimePickerSessoesFormPrinc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerSessoesFormPrinc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePickerSessoesFormPrinc.Location = new System.Drawing.Point(308, 71);
+            this.dateTimePickerSessoesFormPrinc.Location = new System.Drawing.Point(411, 87);
+            this.dateTimePickerSessoesFormPrinc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePickerSessoesFormPrinc.MinDate = new System.DateTime(2023, 6, 3, 0, 0, 0, 0);
             this.dateTimePickerSessoesFormPrinc.Name = "dateTimePickerSessoesFormPrinc";
-            this.dateTimePickerSessoesFormPrinc.Size = new System.Drawing.Size(162, 20);
+            this.dateTimePickerSessoesFormPrinc.Size = new System.Drawing.Size(215, 23);
             this.dateTimePickerSessoesFormPrinc.TabIndex = 13;
             this.dateTimePickerSessoesFormPrinc.ValueChanged += new System.EventHandler(this.dateTimePickerSessoesFormPrinc_ValueChanged);
             // 
-            // categoriasToolStripMenuItem
-            // 
-            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.categoriasToolStripMenuItem.Text = "Categorias";
-            this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
-            // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 471);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1064, 580);
             this.Controls.Add(this.dateTimePickerSessoesFormPrinc);
             this.Controls.Add(this.listBox_mostrar_sessoes_dia);
             this.Controls.Add(this.pictureBox1);
@@ -248,6 +253,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labelNomeCinema);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPrincipal";
             this.Text = "CineGest";
             this.Activated += new System.EventHandler(this.FormPrincipal_Activated);
