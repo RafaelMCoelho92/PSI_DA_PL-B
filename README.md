@@ -1,4 +1,4 @@
-
+![IPLeiria](doc/ipleiria.png)
 # Nome da Aplicação - CineGest
 
 # Desenvolvido pelos alunos do TeSP de PSI-PL 22/23.
